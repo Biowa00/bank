@@ -28,13 +28,13 @@ function LoginForm() {
           <input id="email" name="email" type="email" autoComplete="email" required className="input" placeholder="vous@exemple.com" />
         </div>
         <div>
-          <div className="flex items-center justify-between">
-            <label className="label" htmlFor="password">Mot de passe</label>
-            <Link href="/mot-de-passe-oublie" className="mb-1.5 text-xs font-medium text-brand-600 hover:text-brand-700">
+          <label className="label" htmlFor="password">Mot de passe</label>
+          <input id="password" name="password" type="password" autoComplete="current-password" required className="input" placeholder="••••••••" />
+          <div className="mt-1.5 text-right">
+            <Link href="/mot-de-passe-oublie" className="text-xs font-medium text-brand-600 hover:text-brand-700">
               Mot de passe oublié ?
             </Link>
           </div>
-          <input id="password" name="password" type="password" autoComplete="current-password" required className="input" placeholder="••••••••" />
         </div>
         <SubmitButton pendingLabel="Connexion…">Se connecter</SubmitButton>
       </form>
