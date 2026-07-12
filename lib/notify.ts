@@ -2,14 +2,17 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { sendEmail, renderNotificationEmail } from "@/lib/email";
 
 export type NotifyOptions = {
-  /** Envoyer aussi un email (best-effort) en plus de la notification in-app. */
+  /**
+   * Envoyer aussi un email (best-effort) en plus de la notification in-app.
+   * Activé par défaut : passer `email: false` pour une notif purement in-app.
+   */
   email?: boolean;
   /** Bouton d'action optionnel dans l'email. */
   cta?: { label: string; url: string };
 };
 
 /**
- * Crée une notification in-app et, si `email: true`, envoie un email
+ * Crée une notification in-app et, sauf `email: false`, envoie un email
  * transactionnel via l'Edge Function. L'échec d'email n'interrompt jamais
  * l'action métier appelante.
  */
@@ -22,7 +25,7 @@ export async function notify(
   const admin = createAdminClient();
   await admin.from("notifications").insert({ user_id: userId, title, body });
 
-  if (!opts.email) return;
+  if (opts.email === false) return;
 
   const { data: profile } = await admin
     .from("profiles")

@@ -66,8 +66,6 @@ export async function setAccountStatus(
     status === "active"
       ? "Votre compte a été réactivé. Vous avez de nouveau accès à tous les services."
       : `Votre compte a été ${labels[status]}. Motif : ${reason}`,
-    // 🔴 Critique : bannissement ou réactivation → email (accès au compte).
-    { email: status === "banned" || status === "active" },
   );
   await logAudit(adminId, email, `account.${status}`, targetId, reason || null);
 
@@ -212,9 +210,7 @@ export async function setRestriction(
     .eq("id", targetId);
   if (error) return { error: "Échec de la mise à jour." };
 
-  // 🔴 Critique : le bannissement/réactivation affecte l'accès au compte
-  // → notification + email (le client peut ne plus pouvoir se connecter).
-  await notify(targetId, title, body, { email: kind === "ban" });
+  await notify(targetId, title, body);
   await logAudit(adminId, email, action, targetId, reason);
 
   revalidatePath(`/admin/users/${targetId}`);
