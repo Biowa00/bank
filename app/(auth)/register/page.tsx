@@ -4,27 +4,18 @@ import Link from "next/link";
 import { useActionState, useState } from "react";
 import { signUp, type AuthState } from "../actions";
 import { SubmitButton } from "@/components/SubmitButton";
-
-const dialCodes = [
-  { code: "+33", label: "France (+33)" },
-  { code: "+32", label: "Belgique (+32)" },
-  { code: "+41", label: "Suisse (+41)" },
-  { code: "+352", label: "Luxembourg (+352)" },
-  { code: "+1", label: "Canada / USA (+1)" },
-  { code: "+34", label: "Espagne (+34)" },
-  { code: "+39", label: "Italie (+39)" },
-  { code: "+49", label: "Allemagne (+49)" },
-  { code: "+212", label: "Maroc (+212)" },
-  { code: "+213", label: "Algérie (+213)" },
-  { code: "+216", label: "Tunisie (+216)" },
-  { code: "+225", label: "Côte d'Ivoire (+225)" },
-  { code: "+221", label: "Sénégal (+221)" },
-  { code: "+44", label: "Royaume-Uni (+44)" },
-];
+import { PasswordChecklist } from "@/components/auth/PasswordChecklist";
+import { phoneFormats, formatPhone, phonePlaceholder, isPhoneComplete } from "@/lib/phone";
 
 export default function RegisterPage() {
   const [state, action] = useActionState<AuthState, FormData>(signUp, {});
   const [fileName, setFileName] = useState<string>("");
+  const [dialCode, setDialCode] = useState<string>("+33");
+  const [phone, setPhone] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [confirm, setConfirm] = useState<string>("");
+
+  const phoneComplete = isPhoneComplete(phone, dialCode);
 
   return (
     <div>
@@ -75,14 +66,37 @@ export default function RegisterPage() {
         <div>
           <label className="label" htmlFor="phone">Numéro de téléphone *</label>
           <div className="flex gap-2">
-            <select name="dial_code" defaultValue="+33" className="input w-40 shrink-0" aria-label="Indicatif pays">
-              {dialCodes.map((d) => (
+            <select
+              name="dial_code"
+              value={dialCode}
+              onChange={(e) => {
+                setDialCode(e.target.value);
+                setPhone((p) => formatPhone(p, e.target.value));
+              }}
+              className="input w-40 shrink-0"
+              aria-label="Indicatif pays"
+            >
+              {phoneFormats.map((d) => (
                 <option key={d.code + d.label} value={d.code}>{d.label}</option>
               ))}
             </select>
-            <input id="phone" name="phone" type="tel" required className="input" placeholder="0 00 00 00 00" />
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              inputMode="numeric"
+              required
+              value={phone}
+              onChange={(e) => setPhone(formatPhone(e.target.value, dialCode))}
+              className="input"
+              placeholder={phonePlaceholder(dialCode)}
+            />
           </div>
-          <p className="mt-1 text-xs text-ink/40">Format attendu : +33 0 00 00 00 00 (9 chiffres)</p>
+          <p className={`mt-1 text-xs ${phone && !phoneComplete ? "text-amber-600" : "text-ink/40"}`}>
+            {phone && !phoneComplete
+              ? `Format attendu : ${dialCode} ${phonePlaceholder(dialCode)}`
+              : `Format : ${dialCode} ${phonePlaceholder(dialCode)}`}
+          </p>
         </div>
 
         <div>
@@ -119,13 +133,40 @@ export default function RegisterPage() {
 
         <div>
           <label className="label" htmlFor="password">Mot de passe *</label>
-          <input id="password" name="password" type="password" autoComplete="new-password" required minLength={8} className="input" placeholder="••••••••" />
-          <p className="mt-1 text-xs text-ink/40">8 caractères minimum, 1 lettre majuscule, 1 chiffre</p>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autoComplete="new-password"
+            required
+            minLength={8}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="input"
+            placeholder="••••••••"
+          />
+          <PasswordChecklist password={password} />
+          {!password && (
+            <p className="mt-1 text-xs text-ink/40">8 caractères minimum, 1 lettre majuscule, 1 chiffre</p>
+          )}
         </div>
 
         <div>
           <label className="label" htmlFor="confirm">Confirmez le mot de passe *</label>
-          <input id="confirm" name="confirm" type="password" autoComplete="new-password" required className="input" placeholder="Répétez le mot de passe" />
+          <input
+            id="confirm"
+            name="confirm"
+            type="password"
+            autoComplete="new-password"
+            required
+            value={confirm}
+            onChange={(e) => setConfirm(e.target.value)}
+            className="input"
+            placeholder="Répétez le mot de passe"
+          />
+          {confirm.length > 0 && password !== confirm && (
+            <p className="mt-1 text-xs text-red-600">Les mots de passe ne correspondent pas.</p>
+          )}
         </div>
 
         <label className="flex cursor-pointer items-start gap-2.5 text-sm text-ink/70">

@@ -38,6 +38,7 @@ export default async function UserDetailPage({
       .createSignedUrl(user.id_document_path, 300);
     docUrl = signed?.signedUrl ?? null;
   }
+  const isPdf = (user.id_document_path ?? "").toLowerCase().endsWith(".pdf");
 
   return (
     <div className="space-y-6">
@@ -91,14 +92,26 @@ export default async function UserDetailPage({
           </div>
         </dl>
         <div className="mt-5 border-t border-black/5 pt-4">
-          <p className="mb-2 text-xs font-medium uppercase tracking-wide text-ink/40">Pièce d&apos;identité</p>
+          <p className="mb-2 text-xs font-medium uppercase tracking-wide text-ink/40">Pièce d&apos;identité fournie à l&apos;inscription</p>
           {docUrl ? (
-            <a href={docUrl} target="_blank" rel="noopener noreferrer" className="btn-outline text-sm">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                <path d="M14 3v4a1 1 0 001 1h4M5 3h9l6 6v11a1 1 0 01-1 1H5a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              Voir le document
-            </a>
+            <div className="space-y-3">
+              {isPdf ? (
+                <embed src={docUrl} type="application/pdf" className="h-96 w-full rounded-xl border border-black/10" />
+              ) : (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={docUrl}
+                  alt="Pièce d'identité"
+                  className="max-h-96 w-auto rounded-xl border border-black/10 object-contain"
+                />
+              )}
+              <a href={docUrl} target="_blank" rel="noopener noreferrer" className="btn-outline text-sm">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path d="M14 3v4a1 1 0 001 1h4M5 3h9l6 6v11a1 1 0 01-1 1H5a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                Ouvrir en plein écran
+              </a>
+            </div>
           ) : (
             <p className="text-sm text-ink/40">Aucun document fourni.</p>
           )}

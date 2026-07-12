@@ -1,13 +1,23 @@
 "use server";
 
 import { redirect } from "next/navigation";
+import { headers } from "next/headers";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { isPasswordValid } from "@/lib/password";
 
 export type AuthState = {
   error?: string;
   info?: string;
 };
+
+/** Reconstruit l'origine (protocole + hôte) de la requête courante. */
+async function getOrigin(): Promise<string> {
+  const h = await headers();
+  const host = h.get("x-forwarded-host") ?? h.get("host") ?? "localhost:3000";
+  const proto = h.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
+  return `${proto}://${host}`;
+}
 
 const ALLOWED_DOC_TYPES = ["image/jpeg", "image/png", "application/pdf"];
 const MAX_DOC_SIZE = 5 * 1024 * 1024; // 5 Mo
@@ -164,6 +174,57 @@ export async function signInAdmin(
   }
 
   redirect("/admin");
+}
+
+/** Demande de réinitialisation : envoie le lien par email (flux conventionnel). */
+export async function requestPasswordReset(
+  _prev: AuthState,
+  formData: FormData,
+): Promise<AuthState> {
+  const email = String(formData.get("email") ?? "").trim().toLowerCase();
+  if (!email) return { error: "Adresse e-mail requise." };
+
+  const origin = await getOrigin();
+  const supabase = await createClient();
+  // redirectTo pointe vers notre route d'échange, qui ouvre la session de
+  // récupération puis renvoie vers la page de nouveau mot de passe.
+  await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: `${origin}/auth/callback?next=/reinitialiser-mot-de-passe`,
+  });
+
+  // Réponse volontairement générique (ne révèle pas si le compte existe).
+  return {
+    info: "Si un compte est associé à cette adresse, un e-mail contenant un lien de réinitialisation vient d'être envoyé. Pensez à vérifier vos spams.",
+  };
+}
+
+/** Définit le nouveau mot de passe (session de récupération active requise). */
+export async function updatePassword(
+  _prev: AuthState,
+  formData: FormData,
+): Promise<AuthState> {
+  const password = String(formData.get("password") ?? "");
+  const confirm = String(formData.get("confirm") ?? "");
+
+  if (!isPasswordValid(password))
+    return { error: "Le mot de passe ne respecte pas les critères de sécurité." };
+  if (password !== confirm)
+    return { error: "Les mots de passe ne correspondent pas." };
+
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user)
+    return {
+      error:
+        "Lien invalide ou expiré. Refaites une demande de réinitialisation.",
+    };
+
+  const { error } = await supabase.auth.updateUser({ password });
+  if (error) return { error: traduireErreur(error.message) };
+
+  redirect("/dashboard");
 }
 
 export async function signOut() {

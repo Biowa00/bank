@@ -275,13 +275,13 @@ function Security() {
             Vos données, entre de bonnes mains
           </h2>
           <p className="mt-4 text-lg text-white/60">
-            Authentification chiffrée, sessions sécurisées et contrôle d&apos;accès
-            par rôle protègent votre compte à chaque instant.
+            Authentification chiffrée et sessions sécurisées protègent votre
+            compte à chaque instant.
           </p>
           <div className="mt-8 grid grid-cols-2 gap-4">
             {[
               ["Chiffrement des sessions", "Jetons signés & cookies httpOnly"],
-              ["Contrôle par rôle", "Espaces client et admin séparés"],
+              ["Protection anti-fraude", "Opérations surveillées en continu"],
               ["Journal d'audit", "Chaque action sensible est tracée"],
               ["Données protégées", "Confidentialité par défaut"],
             ].map(([t, d]) => (
