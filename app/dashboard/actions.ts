@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { getVerifiedProfile } from "@/lib/auth";
+import { notify } from "@/lib/notify";
 import { canDeposit, canTransfer, canWithdraw } from "@/lib/permissions";
 import { cleanIban, isPlausibleIban, formatEuro } from "@/lib/format";
 
@@ -390,10 +391,4 @@ export async function updateProfile(
 
   revalidatePath("/dashboard", "layout");
   return { success: "Profil mis à jour." };
-}
-
-/* ==================== util interne ==================== */
-async function notify(userId: string, title: string, body: string) {
-  const admin = createAdminClient();
-  await admin.from("notifications").insert({ user_id: userId, title, body });
 }

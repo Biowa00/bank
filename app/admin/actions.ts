@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { requireAdmin } from "@/lib/auth";
+import { notify } from "@/lib/notify";
 import { formatEuro } from "@/lib/format";
 import type { AccountStatus } from "@/lib/types";
 
@@ -26,11 +27,6 @@ async function logAudit(
     reason,
     details,
   });
-}
-
-async function notify(userId: string, title: string, body: string) {
-  const admin = createAdminClient();
-  await admin.from("notifications").insert({ user_id: userId, title, body });
 }
 
 /* ==================== STATUT DE COMPTE ==================== */
@@ -70,6 +66,8 @@ export async function setAccountStatus(
     status === "active"
       ? "Votre compte a été réactivé. Vous avez de nouveau accès à tous les services."
       : `Votre compte a été ${labels[status]}. Motif : ${reason}`,
+    // 🔴 Critique : bannissement ou réactivation → email (accès au compte).
+    { email: status === "banned" || status === "active" },
   );
   await logAudit(adminId, email, `account.${status}`, targetId, reason || null);
 
@@ -214,7 +212,9 @@ export async function setRestriction(
     .eq("id", targetId);
   if (error) return { error: "Échec de la mise à jour." };
 
-  await notify(targetId, title, body);
+  // 🔴 Critique : le bannissement/réactivation affecte l'accès au compte
+  // → notification + email (le client peut ne plus pouvoir se connecter).
+  await notify(targetId, title, body, { email: kind === "ban" });
   await logAudit(adminId, email, action, targetId, reason);
 
   revalidatePath(`/admin/users/${targetId}`);
