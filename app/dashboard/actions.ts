@@ -448,10 +448,12 @@ export async function confirmTransferPhase(
     .from("transfer_phase_codes")
     .update({ status: "valide", confirmed_at: nowIso })
     .eq("id", row.id);
-  await admin
+  const { error: phaseErr } = await admin
     .from("transactions")
-    .update({ unlock_phase: currentPhase, updated_at: nowIso })
+    .update({ unlock_phase: currentPhase })
     .eq("id", tx.id);
+  if (phaseErr)
+    return { error: "Échec de la mise à jour de la phase.", phase: tx.unlock_phase };
 
   // Journalise la confirmation client (traçabilité).
   await admin.from("admin_audit_log").insert({
