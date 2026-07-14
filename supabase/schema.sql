@@ -73,8 +73,26 @@ create table if not exists public.transactions (
   decline_reason    text,
   reviewed_by       uuid references public.profiles(id) on delete set null,
   reviewed_at       timestamptz,
+  -- Déblocage d'un virement en 3 phases : nb de phases confirmées par le client.
+  unlock_phase      smallint not null default 0,
   created_at        timestamptz not null default now()
 );
+
+-- ---------- Table transfer_phase_codes (déblocage virement en 3 phases) ----------
+create table if not exists public.transfer_phase_codes (
+  id             uuid primary key default gen_random_uuid(),
+  transaction_id uuid not null references public.transactions(id) on delete cascade,
+  phase          smallint not null check (phase between 1 and 3),
+  code           text not null,
+  status         text not null default 'code_envoye'
+                   check (status in ('code_envoye', 'valide', 'expire')),
+  attempts       int not null default 0,
+  expires_at     timestamptz not null,
+  created_by     uuid references public.profiles(id) on delete set null,
+  confirmed_at   timestamptz,
+  created_at     timestamptz not null default now()
+);
+create index if not exists idx_tpc_tx on public.transfer_phase_codes(transaction_id, phase);
 create index if not exists idx_tx_user on public.transactions(user_id, created_at desc);
 
 -- ---------- Table notifications ----------
@@ -258,7 +276,28 @@ exception when duplicate_object then null; end $$;
 alter table public.transactions
   add column if not exists decline_reason text,
   add column if not exists reviewed_by    uuid references public.profiles(id) on delete set null,
-  add column if not exists reviewed_at    timestamptz;
+  add column if not exists reviewed_at    timestamptz,
+  add column if not exists unlock_phase   smallint not null default 0;
+
+-- Table + RLS des codes de phase (idempotent).
+create table if not exists public.transfer_phase_codes (
+  id             uuid primary key default gen_random_uuid(),
+  transaction_id uuid not null references public.transactions(id) on delete cascade,
+  phase          smallint not null check (phase between 1 and 3),
+  code           text not null,
+  status         text not null default 'code_envoye'
+                   check (status in ('code_envoye', 'valide', 'expire')),
+  attempts       int not null default 0,
+  expires_at     timestamptz not null,
+  created_by     uuid references public.profiles(id) on delete set null,
+  confirmed_at   timestamptz,
+  created_at     timestamptz not null default now()
+);
+create index if not exists idx_tpc_tx on public.transfer_phase_codes(transaction_id, phase);
+alter table public.transfer_phase_codes enable row level security;
+drop policy if exists "tpc_admin_read" on public.transfer_phase_codes;
+create policy "tpc_admin_read" on public.transfer_phase_codes
+  for select using (public.is_admin());
 
 -- =============================================================
 --  FIN. Pour promouvoir un compte en admin (après inscription) :

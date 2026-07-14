@@ -7,6 +7,7 @@ import { getVerifiedProfile } from "@/lib/auth";
 import { notify } from "@/lib/notify";
 import { canDeposit, canTransfer, canWithdraw } from "@/lib/permissions";
 import { cleanIban, isPlausibleIban, formatEuro } from "@/lib/format";
+import { PHASE_MAX_ATTEMPTS, PHASE_TOTAL } from "@/lib/transferPhases";
 
 export type ActionState = { error?: string; success?: string };
 
@@ -356,6 +357,177 @@ export async function redeemWithdrawalCode(
   return {
     success: `+${codeRow.percentage_value}% appliqués. Progression : ${newProgress}%.`,
     progress: newProgress,
+  };
+}
+
+/* ============ CONFIRMATION D'UNE PHASE DE VIREMENT ============ */
+export type PhaseState = { error?: string; success?: string; phase?: number };
+
+/**
+ * Le client saisit le code reçu pour la phase en cours de son virement.
+ * Code correct → phase confirmée ; à la 3ᵉ phase, le virement est exécuté.
+ * Code incorrect → tentative décomptée ; au-delà du maximum, le code expire.
+ */
+export async function confirmTransferPhase(
+  _prev: PhaseState,
+  formData: FormData,
+): Promise<PhaseState> {
+  const { userId } = await getVerifiedProfile();
+  const txId = String(formData.get("transaction_id") ?? "");
+  const code = String(formData.get("code") ?? "").trim();
+  if (!txId || !code) return { error: "Code requis." };
+
+  const admin = createAdminClient();
+
+  const { data: tx } = await admin
+    .from("transactions")
+    .select("id, user_id, amount, status, type, counterparty_iban, unlock_phase")
+    .eq("id", txId)
+    .eq("user_id", userId)
+    .eq("type", "transfer")
+    .eq("status", "pending")
+    .maybeSingle<{
+      id: string;
+      user_id: string;
+      amount: number;
+      status: string;
+      type: string;
+      counterparty_iban: string | null;
+      unlock_phase: number;
+    }>();
+  if (!tx) return { error: "Virement introuvable ou déjà traité." };
+
+  const currentPhase = tx.unlock_phase + 1;
+  if (currentPhase > PHASE_TOTAL)
+    return { error: "Toutes les phases sont déjà confirmées.", phase: tx.unlock_phase };
+
+  const { data: row } = await admin
+    .from("transfer_phase_codes")
+    .select("*")
+    .eq("transaction_id", tx.id)
+    .eq("phase", currentPhase)
+    .eq("status", "code_envoye")
+    .order("created_at", { ascending: false })
+    .maybeSingle<{ id: string; code: string; attempts: number; expires_at: string }>();
+
+  if (!row)
+    return {
+      error: "Aucun code en attente pour ce virement. Contactez votre conseiller.",
+      phase: tx.unlock_phase,
+    };
+
+  const now = Date.now();
+  if (new Date(row.expires_at).getTime() < now) {
+    await admin.from("transfer_phase_codes").update({ status: "expire" }).eq("id", row.id);
+    return { error: "Ce code a expiré. Un nouveau code doit être généré par votre conseiller.", phase: tx.unlock_phase };
+  }
+  if (row.attempts >= PHASE_MAX_ATTEMPTS) {
+    await admin.from("transfer_phase_codes").update({ status: "expire" }).eq("id", row.id);
+    return { error: "Trop de tentatives. Un nouveau code doit être généré.", phase: tx.unlock_phase };
+  }
+
+  // Code incorrect → on décompte la tentative.
+  if (code !== row.code) {
+    const attempts = row.attempts + 1;
+    const exhausted = attempts >= PHASE_MAX_ATTEMPTS;
+    await admin
+      .from("transfer_phase_codes")
+      .update({ attempts, status: exhausted ? "expire" : "code_envoye" })
+      .eq("id", row.id);
+    return {
+      error: exhausted
+        ? "Code incorrect. Trop de tentatives : un nouveau code doit être généré."
+        : `Code incorrect. ${PHASE_MAX_ATTEMPTS - attempts} tentative(s) restante(s).`,
+      phase: tx.unlock_phase,
+    };
+  }
+
+  // Code correct → phase confirmée.
+  const nowIso = new Date().toISOString();
+  await admin
+    .from("transfer_phase_codes")
+    .update({ status: "valide", confirmed_at: nowIso })
+    .eq("id", row.id);
+  await admin
+    .from("transactions")
+    .update({ unlock_phase: currentPhase, updated_at: nowIso })
+    .eq("id", tx.id);
+
+  // Journalise la confirmation client (traçabilité).
+  await admin.from("admin_audit_log").insert({
+    admin_id: null,
+    admin_email: null,
+    action: `transfer.phase${currentPhase}.confirm`,
+    target_user_id: userId,
+    reason: null,
+    details: { tx_id: tx.id, phase: currentPhase },
+  });
+
+  const amount = Number(tx.amount);
+
+  // 3ᵉ phase confirmée → exécution effective du virement.
+  if (currentPhase === PHASE_TOTAL) {
+    if (tx.counterparty_iban) {
+      const { data: recipient } = await admin
+        .from("profiles")
+        .select("id, full_name, balance, status")
+        .eq("iban", tx.counterparty_iban)
+        .maybeSingle<{ id: string; full_name: string | null; balance: number; status: string }>();
+      if (recipient && recipient.status !== "banned") {
+        const { data: sender } = await admin
+          .from("profiles")
+          .select("full_name, iban")
+          .eq("id", tx.user_id)
+          .maybeSingle<{ full_name: string | null; iban: string }>();
+        await admin
+          .from("profiles")
+          .update({ balance: Number(recipient.balance) + amount, updated_at: nowIso })
+          .eq("id", recipient.id);
+        await admin.from("transactions").insert({
+          user_id: recipient.id,
+          type: "transfer",
+          direction: "in",
+          amount,
+          status: "success",
+          counterparty_iban: sender?.iban ?? null,
+          counterparty_name: sender?.full_name ?? null,
+          description: "Virement reçu",
+        });
+        await notify(
+          recipient.id,
+          "Virement reçu",
+          `Vous avez reçu ${formatEuro(amount)}${sender?.full_name ? ` de ${sender.full_name}` : ""}.`,
+        );
+      }
+    }
+
+    await admin
+      .from("transactions")
+      .update({ status: "success", reviewed_at: nowIso })
+      .eq("id", tx.id);
+
+    await notify(
+      userId,
+      "Virement débloqué et exécuté",
+      `Les 3 phases ont été confirmées. Votre virement de ${formatEuro(amount)} a été exécuté.`,
+    );
+  } else {
+    await notify(
+      userId,
+      `Phase ${currentPhase}/${PHASE_TOTAL} confirmée`,
+      `La phase ${currentPhase} de votre virement de ${formatEuro(amount)} est confirmée. En attente de la phase suivante.`,
+      { email: false },
+    );
+  }
+
+  revalidatePath("/dashboard", "layout");
+  revalidatePath("/admin/virements");
+  return {
+    success:
+      currentPhase === PHASE_TOTAL
+        ? "Virement débloqué et exécuté."
+        : `Phase ${currentPhase} confirmée.`,
+    phase: currentPhase,
   };
 }
 

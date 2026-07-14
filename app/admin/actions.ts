@@ -5,6 +5,12 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { requireAdmin } from "@/lib/auth";
 import { notify } from "@/lib/notify";
 import { formatEuro } from "@/lib/format";
+import {
+  generatePhaseCode,
+  phaseName,
+  PHASE_CODE_TTL_MIN,
+  PHASE_TOTAL,
+} from "@/lib/transferPhases";
 import type { AccountStatus } from "@/lib/types";
 
 export type AdminState = { error?: string; success?: string; code?: string };
@@ -286,89 +292,83 @@ type TransferRow = {
   status: string;
   type: string;
   counterparty_iban: string | null;
+  unlock_phase: number;
 };
 
 async function loadPendingTransfer(id: string) {
   const admin = createAdminClient();
   const { data } = await admin
     .from("transactions")
-    .select("id, user_id, amount, status, type, counterparty_iban")
+    .select("id, user_id, amount, status, type, counterparty_iban, unlock_phase")
     .eq("id", id)
     .maybeSingle<TransferRow>();
   return data;
 }
 
-/** L'administrateur VALIDE un virement en attente : le bénéficiaire interne
- *  (le cas échéant) est crédité, la transaction passe à « réussi ». */
-export async function approveTransfer(
+/**
+ * L'administrateur VALIDE une phase (1, 2 ou 3) d'un virement en attente.
+ * Chaque validation génère un code unique (6 chiffres, à usage unique, expirant)
+ * envoyé au client (email + notification). Les phases sont séquentielles :
+ * une phase n'est validable que si la précédente a été confirmée par le client.
+ * Le virement n'est exécuté qu'après confirmation de la 3ᵉ phase (côté client).
+ */
+export async function startTransferPhase(
   _prev: AdminState,
   formData: FormData,
 ): Promise<AdminState> {
   const { userId: adminId, email } = await requireAdmin();
   const id = String(formData.get("tx_id") ?? "");
+  const phase = Number(formData.get("phase") ?? 0);
+
   const tx = await loadPendingTransfer(id);
   if (!tx || tx.type !== "transfer" || tx.status !== "pending")
     return { error: "Virement introuvable ou déjà traité." };
+  if (![1, 2, 3].includes(phase)) return { error: "Phase invalide." };
+  if (phase !== tx.unlock_phase + 1)
+    return {
+      error:
+        phase <= tx.unlock_phase
+          ? "Cette phase est déjà confirmée."
+          : "La phase précédente doit d'abord être confirmée par le client.",
+    };
 
   const admin = createAdminClient();
-  const now = new Date().toISOString();
-  const amount = Number(tx.amount);
+  const now = new Date();
+  const code = generatePhaseCode();
+  const expiresAt = new Date(now.getTime() + PHASE_CODE_TTL_MIN * 60_000).toISOString();
 
-  // Bénéficiaire interne éventuel (résolu par IBAN au moment de la validation).
-  if (tx.counterparty_iban) {
-    const { data: recipient } = await admin
-      .from("profiles")
-      .select("id, full_name, balance, status")
-      .eq("iban", tx.counterparty_iban)
-      .maybeSingle<{ id: string; full_name: string | null; balance: number; status: string }>();
-
-    if (recipient && recipient.status !== "banned") {
-      const { data: sender } = await admin
-        .from("profiles")
-        .select("full_name, iban")
-        .eq("id", tx.user_id)
-        .maybeSingle<{ full_name: string | null; iban: string }>();
-
-      await admin
-        .from("profiles")
-        .update({ balance: Number(recipient.balance) + amount, updated_at: now })
-        .eq("id", recipient.id);
-      await admin.from("transactions").insert({
-        user_id: recipient.id,
-        type: "transfer",
-        direction: "in",
-        amount,
-        status: "success",
-        counterparty_iban: sender?.iban ?? null,
-        counterparty_name: sender?.full_name ?? null,
-        description: "Virement reçu",
-      });
-      await notify(
-        recipient.id,
-        "Virement reçu",
-        `Vous avez reçu ${formatEuro(amount)}${sender?.full_name ? ` de ${sender.full_name}` : ""}.`,
-      );
-    }
-  }
-
+  // Invalide un éventuel code encore actif pour cette phase (régénération).
   await admin
-    .from("transactions")
-    .update({ status: "success", reviewed_by: adminId, reviewed_at: now })
-    .eq("id", tx.id);
+    .from("transfer_phase_codes")
+    .update({ status: "expire" })
+    .eq("transaction_id", tx.id)
+    .eq("phase", phase)
+    .eq("status", "code_envoye");
 
+  const { error: insErr } = await admin.from("transfer_phase_codes").insert({
+    transaction_id: tx.id,
+    phase,
+    code,
+    status: "code_envoye",
+    expires_at: expiresAt,
+    created_by: adminId,
+  });
+  if (insErr) return { error: "Échec de la génération du code." };
+
+  const name = phaseName(phase);
   await notify(
     tx.user_id,
-    "Virement validé",
-    `Votre virement de ${formatEuro(amount)} a été validé et exécuté.`,
+    `${name} — ${code}`,
+    `Phase ${phase}/${PHASE_TOTAL} de votre virement de ${formatEuro(Number(tx.amount))} : votre ${name.toLowerCase()} est ${code}. Saisissez-le dans votre espace pour confirmer. Code valable ${PHASE_CODE_TTL_MIN} minutes.`,
   );
-  await logAudit(adminId, email, "transfer.approve", tx.user_id, null, {
+  await logAudit(adminId, email, `transfer.phase${phase}.send`, tx.user_id, null, {
     tx_id: tx.id,
-    amount,
+    phase,
   });
 
   revalidatePath("/admin/virements");
   revalidatePath("/admin");
-  return { success: `Virement de ${formatEuro(amount)} validé.` };
+  return { success: `Phase ${phase} validée — code envoyé au client.` };
 }
 
 /** L'administrateur REFUSE un virement en attente : les fonds réservés sont

@@ -46,6 +46,22 @@ export interface Transaction {
   decline_reason: string | null;
   reviewed_by: string | null;
   reviewed_at: string | null;
+  unlock_phase: number; // 0-3 : nombre de phases confirmées par le client
+  created_at: string;
+}
+
+export type PhaseCodeStatus = "code_envoye" | "valide" | "expire";
+
+export interface TransferPhaseCode {
+  id: string;
+  transaction_id: string;
+  phase: number;
+  code: string;
+  status: PhaseCodeStatus;
+  attempts: number;
+  expires_at: string;
+  created_by: string | null;
+  confirmed_at: string | null;
   created_at: string;
 }
 
