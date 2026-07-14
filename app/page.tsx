@@ -1,11 +1,18 @@
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
 import { Reveal } from "@/components/Reveal";
+import { isSupabaseConfigured } from "@/lib/supabase/config";
+import { getSessionProfile } from "@/lib/auth";
 
-export default function LandingPage() {
+export default async function LandingPage() {
+  // Le logo ramène ici sans casser la session ; on détecte l'utilisateur
+  // connecté pour afficher un accès direct à son espace personnel.
+  const session = isSupabaseConfigured() ? await getSessionProfile() : null;
+  const loggedIn = Boolean(session);
+
   return (
     <div className="flex min-h-screen flex-col bg-canvas">
-      <SiteNav />
+      <SiteNav loggedIn={loggedIn} />
       <main className="flex-1">
         <Hero />
         <LogoStrip />
@@ -23,10 +30,11 @@ export default function LandingPage() {
 }
 
 /* ---------------- Navigation ---------------- */
-function SiteNav() {
+function SiteNav({ loggedIn }: { loggedIn: boolean }) {
   return (
     <header className="sticky top-0 z-30 border-b border-black/5 bg-canvas/80 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5">
+        {/* Le logo ramène à l'accueil public, sans déconnecter. */}
         <Logo />
         <div className="hidden items-center gap-8 text-sm font-medium text-ink/70 md:flex">
           <a href="#fonctionnalites" className="hover:text-ink">Fonctionnalités</a>
@@ -34,11 +42,34 @@ function SiteNav() {
           <a href="#etapes" className="hover:text-ink">Comment ça marche</a>
         </div>
         <div className="flex items-center gap-2">
-          <Link href="/login" className="btn-ghost">Se connecter</Link>
-          <Link href="/register" className="btn-primary">Créer un compte</Link>
+          {loggedIn ? (
+            // Accès rapide à l'espace personnel — visible uniquement connecté.
+            <Link
+              href="/dashboard"
+              aria-label="Mon espace personnel"
+              title="Mon espace"
+              className="btn-primary gap-2"
+            >
+              <UserIcon />
+              <span className="hidden sm:inline">Mon espace</span>
+            </Link>
+          ) : (
+            <>
+              <Link href="/login" className="btn-ghost">Se connecter</Link>
+              <Link href="/register" className="btn-primary">Créer un compte</Link>
+            </>
+          )}
         </div>
       </nav>
     </header>
+  );
+}
+
+function UserIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path d="M12 12a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   );
 }
 
