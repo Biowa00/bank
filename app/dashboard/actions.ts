@@ -95,11 +95,12 @@ export async function transfer(
     return { error: "Solde insuffisant pour ce virement." };
 
   // Bénéficiaire interne éventuel (pour l'affichage ; le crédit n'a lieu qu'à
-  // la validation par l'administrateur).
+  // la validation par l'administrateur). Les comptes admin sont exclus.
   const { data: recipient } = await admin
     .from("profiles")
     .select("full_name")
     .eq("iban", iban)
+    .neq("role", "admin")
     .maybeSingle<{ full_name: string | null }>();
 
   // Les fonds sont RÉSERVÉS immédiatement (débit) puis le virement reste
@@ -474,6 +475,7 @@ export async function confirmTransferPhase(
         .from("profiles")
         .select("id, full_name, balance, status")
         .eq("iban", tx.counterparty_iban)
+        .neq("role", "admin")
         .maybeSingle<{ id: string; full_name: string | null; balance: number; status: string }>();
       if (recipient && recipient.status !== "banned") {
         const { data: sender } = await admin

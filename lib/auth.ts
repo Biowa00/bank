@@ -25,10 +25,11 @@ export async function getSessionProfile(): Promise<{
   return { userId: user.id, email: user.email ?? profile.email, profile };
 }
 
-/** Exige une session utilisateur, sinon redirige vers /login. */
+/** Exige une session CLIENT, sinon redirige. L'admin n'a pas d'espace client. */
 export async function requireUser() {
   const session = await getSessionProfile();
   if (!session) redirect("/login");
+  if (session.profile.role === "admin") redirect("/admin");
   return session;
 }
 

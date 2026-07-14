@@ -21,7 +21,7 @@ export default async function ProfilPage() {
           </div>
           <div className="text-right">
             <p className="text-sm text-ink/50">IBAN</p>
-            <p className="mt-1 font-mono text-sm text-ink">{formatIban(profile.iban)}</p>
+            <p className="mt-1 font-mono text-sm text-ink">{profile.iban ? formatIban(profile.iban) : "—"}</p>
           </div>
         </div>
         {profile.status_reason && (

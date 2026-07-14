@@ -16,7 +16,7 @@ export interface Profile {
   phone: string | null;
   id_document_path: string | null;
   card_frozen: boolean;
-  iban: string;
+  iban: string | null; // null pour les comptes admin (pas de compte client)
   balance: number;
   status: AccountStatus;
   status_reason: string | null;

@@ -83,7 +83,7 @@ export default async function UsersPage({
                 <div className="min-w-0">
                   <p className="truncate font-medium text-ink">{u.full_name || "—"}</p>
                   <p className="truncate text-xs text-ink/50">{u.email}</p>
-                  <p className="mt-0.5 truncate font-mono text-xs text-ink/30">{formatIban(u.iban)}</p>
+                  <p className="mt-0.5 truncate font-mono text-xs text-ink/30">{u.iban ? formatIban(u.iban) : "—"}</p>
                 </div>
                 <p className="font-semibold text-ink">{formatEuro(Number(u.balance))}</p>
                 <div className="max-w-[180px]">

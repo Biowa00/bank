@@ -36,12 +36,12 @@ export default async function DashboardHome() {
       <div className="grid gap-6 lg:grid-cols-2">
         <BalanceCard
           balance={Number(profile.balance)}
-          iban={profile.iban}
+          iban={profile.iban ?? ""}
           status={profile.status}
           name={profile.full_name}
         />
         <BankCard
-          iban={profile.iban}
+          iban={profile.iban ?? ""}
           createdAt={profile.created_at}
           holderName={profile.full_name}
           frozen={profile.card_frozen}

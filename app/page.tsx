@@ -9,10 +9,12 @@ export default async function LandingPage() {
   // connecté pour afficher un accès direct à son espace personnel.
   const session = isSupabaseConfigured() ? await getSessionProfile() : null;
   const loggedIn = Boolean(session);
+  // L'admin est dirigé vers son back-office, le client vers son espace.
+  const spaceHref = session?.profile.role === "admin" ? "/admin" : "/dashboard";
 
   return (
     <div className="flex min-h-screen flex-col bg-canvas">
-      <SiteNav loggedIn={loggedIn} />
+      <SiteNav loggedIn={loggedIn} spaceHref={spaceHref} />
       <main className="flex-1">
         <Hero />
         <LogoStrip />
@@ -30,7 +32,7 @@ export default async function LandingPage() {
 }
 
 /* ---------------- Navigation ---------------- */
-function SiteNav({ loggedIn }: { loggedIn: boolean }) {
+function SiteNav({ loggedIn, spaceHref }: { loggedIn: boolean; spaceHref: string }) {
   return (
     <header className="sticky top-0 z-30 border-b border-black/5 bg-canvas/80 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5">
@@ -45,7 +47,7 @@ function SiteNav({ loggedIn }: { loggedIn: boolean }) {
           {loggedIn ? (
             // Accès rapide à l'espace personnel — visible uniquement connecté.
             <Link
-              href="/dashboard"
+              href={spaceHref}
               aria-label="Mon espace personnel"
               title="Mon espace"
               className="btn-primary gap-2"

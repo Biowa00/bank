@@ -53,7 +53,7 @@ export default async function UserDetailPage({
               <AccountStatusBadge status={user.status} />
             </div>
             <p className="mt-1 text-sm text-ink/60">{user.email}</p>
-            <p className="mt-2 font-mono text-sm text-ink/70">{formatIban(user.iban)}</p>
+            <p className="mt-2 font-mono text-sm text-ink/70">{user.iban ? formatIban(user.iban) : "—"}</p>
             <p className="mt-1 text-xs text-ink/40">Inscrit le {formatDate(user.created_at)}</p>
           </div>
           <div className="text-right">
