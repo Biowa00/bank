@@ -24,7 +24,7 @@ export function ProfileForm({
       <div>
         <label className="label" htmlFor="email">Adresse e-mail</label>
         <input id="email" type="email" disabled value={email} className="input cursor-not-allowed opacity-60" />
-        <p className="mt-1 text-xs text-ink/40">L&apos;e-mail n&apos;est pas modifiable dans cette démo.</p>
+        <p className="mt-1 text-xs text-ink/40">Pour modifier votre adresse e-mail, contactez votre conseiller.</p>
       </div>
       <SubmitButton className="btn-primary" pendingLabel="Enregistrement…">
         Enregistrer

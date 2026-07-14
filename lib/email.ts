@@ -75,8 +75,8 @@ export function renderNotificationEmail(params: {
         </td></tr>
         <tr><td style="padding:16px 24px;border-top:1px solid rgba(10,10,20,.06)">
           <p style="margin:0;font-size:12px;line-height:1.5;color:#9a9aa2">
-            Ceci est un message automatique — merci de ne pas y répondre.<br>
-            Projet pédagogique — aucune donnée bancaire réelle.
+            Ceci est un message automatique, merci de ne pas y répondre.<br>
+            © Nébula Bank. Cet e-mail et les informations qu'il contient sont confidentiels.
           </p>
         </td></tr>
       </table>

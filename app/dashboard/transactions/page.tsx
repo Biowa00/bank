@@ -3,6 +3,8 @@ import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/dashboard/PageHeader";
 import { TransactionItem } from "@/components/dashboard/TransactionItem";
+import { TransferPhaseConfirm } from "@/components/dashboard/TransferPhaseConfirm";
+import { getPendingTransfers } from "@/lib/pendingTransfers";
 import type { Transaction, TxType, TxStatus } from "@/lib/types";
 
 const typeFilters: { key: string; label: string }[] = [
@@ -29,6 +31,8 @@ export default async function TransactionsPage({
   const type = sp.type ?? "all";
   const status = sp.status ?? "all";
 
+  const pendingTransfers = await getPendingTransfers(userId);
+
   const supabase = await createClient();
   let query = supabase
     .from("transactions")
@@ -50,6 +54,8 @@ export default async function TransactionsPage({
   return (
     <div className="space-y-5">
       <PageHeader title="Historique des transactions" subtitle="Filtrez par type et par statut." />
+
+      <TransferPhaseConfirm transfers={pendingTransfers} />
 
       <div className="space-y-3">
         <div className="flex flex-wrap gap-2">

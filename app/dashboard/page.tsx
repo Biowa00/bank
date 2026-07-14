@@ -1,15 +1,11 @@
 import Link from "next/link";
 import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
-import { createAdminClient } from "@/lib/supabase/admin";
 import { BalanceCard } from "@/components/dashboard/BalanceCard";
 import { BankCard } from "@/components/dashboard/BankCard";
 import { TransactionItem } from "@/components/dashboard/TransactionItem";
-import {
-  TransferPhaseConfirm,
-  type PendingTransfer,
-} from "@/components/dashboard/TransferPhaseConfirm";
-import { isCodeActive } from "@/lib/transferPhases";
+import { TransferPhaseConfirm } from "@/components/dashboard/TransferPhaseConfirm";
+import { getPendingTransfers } from "@/lib/pendingTransfers";
 import type { Transaction } from "@/lib/types";
 
 export default async function DashboardHome() {
@@ -24,36 +20,7 @@ export default async function DashboardHome() {
     .limit(6)
     .returns<Transaction[]>();
 
-  // Virements en attente de confirmation (déblocage en 3 phases).
-  const admin = createAdminClient();
-  const { data: pendingTx } = await admin
-    .from("transactions")
-    .select("id, amount, counterparty_iban, unlock_phase")
-    .eq("user_id", userId)
-    .eq("type", "transfer")
-    .eq("status", "pending")
-    .eq("direction", "out")
-    .order("created_at", { ascending: false })
-    .returns<{ id: string; amount: number; counterparty_iban: string | null; unlock_phase: number }[]>();
-
-  const pending = pendingTx ?? [];
-  let pendingTransfers: PendingTransfer[] = [];
-  if (pending.length) {
-    const { data: codes } = await admin
-      .from("transfer_phase_codes")
-      .select("transaction_id, phase, status, expires_at")
-      .in("transaction_id", pending.map((t) => t.id))
-      .returns<{ transaction_id: string; phase: number; status: string; expires_at: string }[]>();
-    pendingTransfers = pending.map((t) => ({
-      id: t.id,
-      amount: Number(t.amount),
-      counterparty_iban: t.counterparty_iban,
-      unlock_phase: t.unlock_phase,
-      awaitingCode: (codes ?? []).some(
-        (c) => c.transaction_id === t.id && c.phase === t.unlock_phase + 1 && isCodeActive(c.status, c.expires_at),
-      ),
-    }));
-  }
+  const pendingTransfers = await getPendingTransfers(userId);
 
   const firstName = (profile.full_name ?? "").split(" ")[0];
 

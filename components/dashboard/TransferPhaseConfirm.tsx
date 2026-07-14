@@ -5,15 +5,9 @@ import { confirmTransferPhase, type PhaseState } from "@/app/dashboard/actions";
 import { SubmitButton } from "@/components/SubmitButton";
 import { TRANSFER_PHASES, PHASE_TOTAL } from "@/lib/transferPhases";
 import { formatEuro, formatIban } from "@/lib/format";
+import type { PendingTransfer } from "@/lib/pendingTransfers";
 
-export type PendingTransfer = {
-  id: string;
-  amount: number;
-  counterparty_iban: string | null;
-  unlock_phase: number;
-  /** true si un code est en attente de confirmation pour la phase en cours. */
-  awaitingCode: boolean;
-};
+export type { PendingTransfer };
 
 export function TransferPhaseConfirm({ transfers }: { transfers: PendingTransfer[] }) {
   if (transfers.length === 0) return null;
