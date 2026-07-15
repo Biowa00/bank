@@ -15,39 +15,39 @@ export type PhoneFormat = {
  */
 export const phoneFormats: PhoneFormat[] = [
   // Français
-  { code: "+33", label: "France (+33)", groups: [1, 2, 2, 2, 2] },
-  { code: "+32", label: "Belgique (+32)", groups: [3, 2, 2, 2] },
-  { code: "+352", label: "Luxembourg (+352)", groups: [3, 3, 3] },
-  { code: "+377", label: "Monaco (+377)", groups: [2, 2, 2, 2] },
+  { code: "+33", label: "+33 France", groups: [1, 2, 2, 2, 2] },
+  { code: "+32", label: "+32 Belgique", groups: [3, 2, 2, 2] },
+  { code: "+352", label: "+352 Luxembourg", groups: [3, 3, 3] },
+  { code: "+377", label: "+377 Monaco", groups: [2, 2, 2, 2] },
   // Allemand
-  { code: "+49", label: "Deutschland (+49)", groups: [3, 4, 4] },
-  { code: "+43", label: "Österreich (+43)", groups: [3, 3, 4] },
-  { code: "+41", label: "Schweiz (+41)", groups: [2, 3, 2, 2] },
-  { code: "+423", label: "Liechtenstein (+423)", groups: [3, 2, 2] },
+  { code: "+49", label: "+49 Deutschland", groups: [3, 4, 4] },
+  { code: "+43", label: "+43 Österreich", groups: [3, 3, 4] },
+  { code: "+41", label: "+41 Schweiz", groups: [2, 3, 2, 2] },
+  { code: "+423", label: "+423 Liechtenstein", groups: [3, 2, 2] },
   // Anglais
-  { code: "+44", label: "United Kingdom (+44)", groups: [4, 6] },
-  { code: "+353", label: "Ireland (+353)", groups: [2, 3, 4] },
+  { code: "+44", label: "+44 United Kingdom", groups: [4, 6] },
+  { code: "+353", label: "+353 Ireland", groups: [2, 3, 4] },
   // Espagnol
-  { code: "+34", label: "España (+34)", groups: [3, 3, 3] },
+  { code: "+34", label: "+34 España", groups: [3, 3, 3] },
   // Italien
-  { code: "+39", label: "Italia (+39)", groups: [3, 3, 4] },
+  { code: "+39", label: "+39 Italia", groups: [3, 3, 4] },
   // Portugais
-  { code: "+351", label: "Portugal (+351)", groups: [3, 3, 3] },
+  { code: "+351", label: "+351 Portugal", groups: [3, 3, 3] },
   // Polonais
-  { code: "+48", label: "Polska (+48)", groups: [3, 3, 3] },
+  { code: "+48", label: "+48 Polska", groups: [3, 3, 3] },
   // Tchèque
-  { code: "+420", label: "Česko (+420)", groups: [3, 3, 3] },
+  { code: "+420", label: "+420 Česko", groups: [3, 3, 3] },
   // Slovaque
-  { code: "+421", label: "Slovensko (+421)", groups: [3, 3, 3] },
+  { code: "+421", label: "+421 Slovensko", groups: [3, 3, 3] },
   // Slovène
-  { code: "+386", label: "Slovenija (+386)", groups: [2, 3, 3] },
+  { code: "+386", label: "+386 Slovenija", groups: [2, 3, 3] },
   // Hongrois
-  { code: "+36", label: "Magyarország (+36)", groups: [2, 3, 4] },
+  { code: "+36", label: "+36 Magyarország", groups: [2, 3, 4] },
   // Bulgare
-  { code: "+359", label: "България (+359)", groups: [3, 3, 3] },
+  { code: "+359", label: "+359 България", groups: [3, 3, 3] },
   // Grec
-  { code: "+30", label: "Ελλάδα (+30)", groups: [3, 3, 4] },
-  { code: "+357", label: "Κύπρος (+357)", groups: [2, 3, 3] },
+  { code: "+30", label: "+30 Ελλάδα", groups: [3, 3, 4] },
+  { code: "+357", label: "+357 Κύπρος", groups: [2, 3, 3] },
 ];
 
 const byCode = new Map(phoneFormats.map((f) => [f.code, f]));

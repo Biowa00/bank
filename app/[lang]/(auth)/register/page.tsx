@@ -69,7 +69,10 @@ export default function RegisterPage() {
 
         <div>
           <label className="label" htmlFor="phone">{t.register.phone}</label>
-          <div className="flex gap-2">
+          {/* Grille : colonne indicatif (fixe) + colonne numéro (reste).
+              Évite que le sélecteur (`.input` en w-full hors layer) n'écrase
+              le champ numéro comme le ferait une simple rangée flex. */}
+          <div className="grid grid-cols-[8.5rem_1fr] gap-2">
             <select
               name="dial_code"
               value={dialCode}
@@ -77,7 +80,7 @@ export default function RegisterPage() {
                 setDialCode(e.target.value);
                 setPhone((p) => formatPhone(p, e.target.value));
               }}
-              className="input w-40 shrink-0"
+              className="input min-w-0"
               aria-label={t.register.dialCodeAria}
             >
               {phoneFormats.map((d) => (
@@ -92,7 +95,7 @@ export default function RegisterPage() {
               required
               value={phone}
               onChange={(e) => setPhone(formatPhone(e.target.value, dialCode))}
-              className="input min-w-0 flex-1"
+              className="input min-w-0"
               placeholder={phonePlaceholder(dialCode)}
             />
           </div>
