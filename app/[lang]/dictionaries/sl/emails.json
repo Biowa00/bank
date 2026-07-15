@@ -1,0 +1,57 @@
+{
+  "notify": {
+    "depositReceived": {
+      "title": "Polog prejet",
+      "body": "{amount} je bilo pripisano na vaš račun."
+    },
+    "transferRejected": {
+      "title": "Nakazilo zavrnjeno",
+      "fallbackBody": "Nakazila niso na voljo."
+    },
+    "transferPending": {
+      "title": "Nakazilo čaka na potrditev",
+      "body": "Vaše nakazilo {amount} na {iban} je bilo oddano. Sredstva so rezervirana do potrditve svetovalca."
+    },
+    "withdrawalRejected": {
+      "title": "Dvig zavrnjen",
+      "fallbackBody": "Dvigi niso na voljo.",
+      "invalidCode": "Navedena koda za dvig je neveljavna, potekla ali že uporabljena."
+    },
+    "withdrawalDone": {
+      "title": "Dvig opravljen",
+      "body": "{amount} dvignjeno na {iban}."
+    },
+    "cardFrozen": {
+      "title": "Kartica zamrznjena",
+      "body": "Vaša kartica je bila zamrznjena. Operacije so začasno blokirane."
+    },
+    "cardUnfrozen": {
+      "title": "Kartica ponovno aktivirana",
+      "body": "Vaša kartica je bila ponovno aktivirana. Znova lahko opravljate operacije."
+    },
+    "progressUpdated": {
+      "title": "Napredek dviga posodobljen",
+      "body": "Vaš kazalnik dviga se je povečal za +{pct}% (zdaj {progress}%)."
+    },
+    "transferReceived": {
+      "title": "Nakazilo prejeto",
+      "body": "Prejeli ste {amount}{from}.",
+      "fromName": " od {name}"
+    },
+    "transferExecuted": {
+      "title": "Nakazilo odklenjeno in izvedeno",
+      "body": "Vse 3 faze so potrjene. Vaše nakazilo {amount} je bilo izvedeno."
+    },
+    "phaseConfirmed": {
+      "title": "Faza {phase}/{total} potrjena",
+      "body": "Faza {phase} vašega nakazila {amount} je potrjena. Čakanje na naslednjo fazo."
+    }
+  },
+  "chrome": {
+    "greeting": "Pozdravljeni, {name},",
+    "greetingNoName": "Pozdravljeni,",
+    "header": "Nébula Bank",
+    "footerAuto": "To je samodejno sporočilo, prosimo, ne odgovarjajte nanj.",
+    "footerConfidential": "To e-poštno sporočilo in informacije v njem so zaupni."
+  }
+}

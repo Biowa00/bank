@@ -1,0 +1,45 @@
+{
+  "brand": "Nébula",
+  "language": "Nyelv",
+  "actions": {
+    "login": "Bejelentkezés",
+    "register": "Számla nyitása",
+    "logout": "Kijelentkezés",
+    "back": "Vissza",
+    "backToSite": "← Vissza az oldalra",
+    "home": "Főoldal",
+    "mySpace": "Saját terület",
+    "mySpaceAria": "Saját személyes terület",
+    "seeAll": "Összes megtekintése",
+    "cancel": "Mégse",
+    "confirm": "Megerősítés",
+    "save": "Mentés",
+    "send": "Küldés",
+    "validate": "Jóváhagyás",
+    "delete": "Törlés",
+    "oneMoment": "Egy pillanat…"
+  },
+  "account": {
+    "availableBalance": "Elérhető egyenleg",
+    "currentAccount": "Folyószámla",
+    "iban": "IBAN"
+  },
+  "statuses": {
+    "account": {
+      "active": "Aktív",
+      "restricted": "Korlátozott",
+      "banned": "Letiltott"
+    },
+    "tx": {
+      "success": "Sikeres",
+      "pending": "Függőben",
+      "blocked": "Letiltott",
+      "rejected": "Elutasított"
+    },
+    "code": {
+      "active": "Aktív",
+      "used": "Felhasznált",
+      "revoked": "Visszavont"
+    }
+  }
+}

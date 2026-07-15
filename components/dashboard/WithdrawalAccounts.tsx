@@ -5,10 +5,11 @@ import {
   addWithdrawalAccount,
   deleteWithdrawalAccount,
   type ActionState,
-} from "@/app/dashboard/actions";
+} from "@/app/[lang]/dashboard/actions";
 import { SubmitButton } from "@/components/SubmitButton";
 import { FormFeedback } from "./FormFeedback";
 import { formatIban } from "@/lib/format";
+import { useZone } from "@/components/i18n/DictionaryProvider";
 import type { WithdrawalAccount } from "@/lib/types";
 
 export function WithdrawalAccounts({
@@ -20,6 +21,8 @@ export function WithdrawalAccounts({
     addWithdrawalAccount,
     {},
   );
+  const t = useZone("dashboard").withdrawalAccounts;
+  const c = useZone("common");
 
   return (
     <div className="space-y-4">
@@ -34,7 +37,7 @@ export function WithdrawalAccounts({
               <form action={deleteWithdrawalAccount}>
                 <input type="hidden" name="id" value={a.id} />
                 <button type="submit" className="text-xs font-medium text-red-600 hover:text-red-700">
-                  Supprimer
+                  {c.actions.delete}
                 </button>
               </form>
             </li>
@@ -45,15 +48,15 @@ export function WithdrawalAccounts({
       <form action={action} className="space-y-3 border-t border-black/5 pt-4">
         <FormFeedback state={state} />
         <div>
-          <label className="label" htmlFor="label">Libellé (facultatif)</label>
-          <input id="label" name="label" type="text" className="input" placeholder="Mon autre compte" />
+          <label className="label" htmlFor="label">{t.labelLabel}</label>
+          <input id="label" name="label" type="text" className="input" placeholder={t.labelPlaceholder} />
         </div>
         <div>
-          <label className="label" htmlFor="iban_new">IBAN de destination</label>
+          <label className="label" htmlFor="iban_new">{t.ibanLabel}</label>
           <input id="iban_new" name="iban" type="text" required className="input font-mono" placeholder="FR76 …" />
         </div>
-        <SubmitButton className="btn-outline w-full" pendingLabel="Ajout…">
-          Enregistrer cet IBAN
+        <SubmitButton className="btn-outline w-full" pendingLabel={t.pending}>
+          {t.submit}
         </SubmitButton>
       </form>
     </div>

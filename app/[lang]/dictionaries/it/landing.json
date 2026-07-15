@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "features": "Funzionalità",
+    "security": "Sicurezza",
+    "howItWorks": "Come funziona"
+  },
+  "hero": {
+    "badge": "La neobanca di nuova generazione",
+    "titleLead": "La banca che mette il tuo denaro",
+    "titleHighlight": "in movimento",
+    "description": "Apri un conto in 2 minuti, ottieni il tuo IBAN, effettua depositi e bonifici e segui tutta la tua attività in tempo reale.",
+    "ctaPrimary": "Apri un conto gratuito",
+    "ctaSecondary": "Accedi",
+    "guarantee": "Apertura gratuita · Senza vincoli",
+    "cardTier": "Premium"
+  },
+  "logoStrip": {
+    "sepa": "Bonifici SEPA",
+    "instantIban": "IBAN immediato",
+    "realtimeNotifications": "Notifiche in tempo reale",
+    "fullHistory": "Cronologia completa"
+  },
+  "features": {
+    "title": "Tutto ciò che una banca moderna deve fare",
+    "subtitle": "Un'esperienza fluida e completa, pensata per la tua quotidianità.",
+    "items": {
+      "transfers": {
+        "title": "Bonifici istantanei",
+        "desc": "Invia denaro a qualsiasi IBAN, interno o esterno, con una cronologia completa."
+      },
+      "card": {
+        "title": "Carta e IBAN",
+        "desc": "Un IBAN ti viene assegnato automaticamente all'apertura del conto, pronto per ricevere e inviare."
+      },
+      "notifications": {
+        "title": "Notifiche",
+        "desc": "Ogni deposito, bonifico o modifica sul tuo conto genera una notifica istantanea."
+      },
+      "deposits": {
+        "title": "Depositi con un clic",
+        "desc": "Ricarica il tuo conto in pochi secondi e osserva il tuo saldo evolvere in tempo reale."
+      }
+    }
+  },
+  "showcase": {
+    "badge": "Dashboard",
+    "title": "Gestisci il tuo conto in un colpo d'occhio",
+    "description": "Saldo in tempo reale, cronologia filtrabile, depositi, bonifici e prelievi — tutto riunito in uno spazio chiaro e responsive.",
+    "points": [
+      "Saldo aggiornato all'istante",
+      "Cronologia filtrabile per tipo e stato",
+      "Prelievi protetti da codice di convalida"
+    ],
+    "sampleDeposit": "Deposito",
+    "sampleTransfer": "Bonifico — FR76…4021",
+    "sampleToday": "Oggi",
+    "sampleYesterday": "Ieri"
+  },
+  "steps": {
+    "title": "Tre passaggi e sei pronto",
+    "items": [
+      {
+        "title": "Crea il tuo conto",
+        "desc": "Registrazione in 2 minuti con un'e-mail. Il tuo IBAN viene generato automaticamente."
+      },
+      {
+        "title": "Ricarica il tuo saldo",
+        "desc": "Aggiungi fondi con un clic dalla tua dashboard."
+      },
+      {
+        "title": "Invia e segui",
+        "desc": "Effettua bonifici e prelievi, ricevi notifiche, consulta la cronologia."
+      }
+    ]
+  },
+  "security": {
+    "badge": "Sicurezza",
+    "title": "I tuoi dati, in buone mani",
+    "description": "Autenticazione crittografata e sessioni sicure proteggono il tuo conto in ogni momento.",
+    "cards": [
+      { "title": "Crittografia delle sessioni", "desc": "Token firmati e cookie httpOnly" },
+      { "title": "Protezione antifrode", "desc": "Operazioni monitorate continuamente" },
+      { "title": "Registro di controllo", "desc": "Ogni azione sensibile viene tracciata" },
+      { "title": "Dati protetti", "desc": "Riservatezza per impostazione predefinita" }
+    ]
+  },
+  "stats": {
+    "accounts": "conti aperti",
+    "satisfaction": "indice di soddisfazione",
+    "free": "gratuito e sicuro"
+  },
+  "testimonials": {
+    "title": "Si fidano di noi",
+    "items": [
+      { "quote": "Finalmente una banca online semplice e veloce, senza inutili scartoffie.", "author": "Sarah M." },
+      { "quote": "L'interfaccia è chiara e fluida, esattamente ciò che mi serve ogni giorno.", "author": "Karim B." },
+      { "quote": "I bonifici e la cronologia sono un vero piacere da usare.", "author": "Léa D." }
+    ]
+  },
+  "finalCta": {
+    "title": "Pronto ad aprire il tuo conto?",
+    "description": "Crea il tuo conto in 2 minuti. Gratis e senza vincoli.",
+    "ctaPrimary": "Apri un conto",
+    "ctaSecondary": "Accedi"
+  },
+  "footer": {
+    "tagline": "La neobanca di nuova generazione. Semplice, veloce, sicura.",
+    "columns": {
+      "product": {
+        "title": "Prodotto",
+        "links": ["Funzionalità", "Sicurezza", "Dashboard"]
+      },
+      "account": {
+        "title": "Conto",
+        "links": ["Apri un conto", "Accedi"]
+      },
+      "legal": {
+        "title": "Legale",
+        "links": ["Note legali", "Privacy"]
+      }
+    },
+    "rights": "Tutti i diritti riservati."
+  }
+}

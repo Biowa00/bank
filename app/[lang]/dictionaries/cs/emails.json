@@ -1,0 +1,57 @@
+{
+  "notify": {
+    "depositReceived": {
+      "title": "Vklad přijat",
+      "body": "{amount} bylo připsáno na váš účet."
+    },
+    "transferRejected": {
+      "title": "Převod zamítnut",
+      "fallbackBody": "Převody nejsou dostupné."
+    },
+    "transferPending": {
+      "title": "Převod čeká na potvrzení",
+      "body": "Váš převod {amount} na {iban} byl odeslán. Prostředky jsou rezervovány do potvrzení poradcem."
+    },
+    "withdrawalRejected": {
+      "title": "Výběr zamítnut",
+      "fallbackBody": "Výběry nejsou dostupné.",
+      "invalidCode": "Poskytnutý kód pro výběr je neplatný, vypršel nebo již byl použit."
+    },
+    "withdrawalDone": {
+      "title": "Výběr proveden",
+      "body": "{amount} vybráno na {iban}."
+    },
+    "cardFrozen": {
+      "title": "Karta zmrazena",
+      "body": "Vaše karta byla zmrazena. Operace jsou dočasně blokovány."
+    },
+    "cardUnfrozen": {
+      "title": "Karta reaktivována",
+      "body": "Vaše karta byla reaktivována. Znovu můžete provádět operace."
+    },
+    "progressUpdated": {
+      "title": "Průběh výběru aktualizován",
+      "body": "Váš ukazatel výběru se zvýšil o +{pct}% (nyní {progress}%)."
+    },
+    "transferReceived": {
+      "title": "Převod přijat",
+      "body": "Přijali jste {amount}{from}.",
+      "fromName": " od {name}"
+    },
+    "transferExecuted": {
+      "title": "Převod odemčen a proveden",
+      "body": "Všechny 3 fáze byly potvrzeny. Váš převod {amount} byl proveden."
+    },
+    "phaseConfirmed": {
+      "title": "Fáze {phase}/{total} potvrzena",
+      "body": "Fáze {phase} vašeho převodu {amount} je potvrzena. Čeká se na další fázi."
+    }
+  },
+  "chrome": {
+    "greeting": "Ahoj {name},",
+    "greetingNoName": "Ahoj,",
+    "header": "Nébula Bank",
+    "footerAuto": "Toto je automatická zpráva, prosím neodpovídejte na ni.",
+    "footerConfidential": "Tento e-mail a informace v něm obsažené jsou důvěrné."
+  }
+}

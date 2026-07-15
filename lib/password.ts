@@ -1,15 +1,20 @@
 /** Règles de validation du mot de passe, partagées client + serveur. */
-export type PasswordRule = { label: string; test: (pwd: string) => boolean };
+export type PasswordRuleKey = "minLength" | "uppercase" | "digit";
+export type PasswordRule = {
+  /** Clé de traduction (voir dictionnaires `auth.passwordRules`). */
+  key: PasswordRuleKey;
+  test: (pwd: string) => boolean;
+};
 
 export const passwordRules: PasswordRule[] = [
-  { label: "Au moins 8 caractères", test: (p) => p.length >= 8 },
-  { label: "Une lettre majuscule", test: (p) => /[A-Z]/.test(p) },
-  { label: "Un chiffre", test: (p) => /[0-9]/.test(p) },
+  { key: "minLength", test: (p) => p.length >= 8 },
+  { key: "uppercase", test: (p) => /[A-Z]/.test(p) },
+  { key: "digit", test: (p) => /[0-9]/.test(p) },
 ];
 
 /** Renvoie l'état de chaque règle pour un mot de passe donné. */
-export function checkPassword(pwd: string): { label: string; ok: boolean }[] {
-  return passwordRules.map((r) => ({ label: r.label, ok: r.test(pwd) }));
+export function checkPassword(pwd: string): { key: PasswordRuleKey; ok: boolean }[] {
+  return passwordRules.map((r) => ({ key: r.key, ok: r.test(pwd) }));
 }
 
 /** true si toutes les règles sont satisfaites. */

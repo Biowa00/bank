@@ -1,0 +1,45 @@
+{
+  "brand": "Nébula",
+  "language": "Jazyk",
+  "actions": {
+    "login": "Prihlásiť sa",
+    "register": "Otvoriť účet",
+    "logout": "Odhlásiť sa",
+    "back": "Späť",
+    "backToSite": "← Späť na stránku",
+    "home": "Domov",
+    "mySpace": "Môj priestor",
+    "mySpaceAria": "Môj osobný priestor",
+    "seeAll": "Zobraziť všetko",
+    "cancel": "Zrušiť",
+    "confirm": "Potvrdiť",
+    "save": "Uložiť",
+    "send": "Odoslať",
+    "validate": "Potvrdiť",
+    "delete": "Odstrániť",
+    "oneMoment": "Moment…"
+  },
+  "account": {
+    "availableBalance": "Dostupný zostatok",
+    "currentAccount": "Bežný účet",
+    "iban": "IBAN"
+  },
+  "statuses": {
+    "account": {
+      "active": "Aktívny",
+      "restricted": "Obmedzený",
+      "banned": "Zablokovaný"
+    },
+    "tx": {
+      "success": "Úspešná",
+      "pending": "Čaká sa",
+      "blocked": "Zablokovaná",
+      "rejected": "Zamietnutá"
+    },
+    "code": {
+      "active": "Aktívny",
+      "used": "Použitý",
+      "revoked": "Zrušený"
+    }
+  }
+}

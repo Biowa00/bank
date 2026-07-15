@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "features": "Funkcie",
+    "security": "Bezpečnosť",
+    "howItWorks": "Ako to funguje"
+  },
+  "hero": {
+    "badge": "Neobanka novej generácie",
+    "titleLead": "Banka, ktorá udržiava vaše peniaze",
+    "titleHighlight": "v pohybe",
+    "description": "Otvorte si účet za 2 minúty, získajte svoj IBAN, vykonávajte vklady a prevody a sledujte všetku svoju aktivitu v reálnom čase.",
+    "ctaPrimary": "Otvoriť účet zdarma",
+    "ctaSecondary": "Prihlásiť sa",
+    "guarantee": "Otvorenie zdarma · Bez záväzkov",
+    "cardTier": "Premium"
+  },
+  "logoStrip": {
+    "sepa": "Prevody SEPA",
+    "instantIban": "Okamžitý IBAN",
+    "realtimeNotifications": "Upozornenia v reálnom čase",
+    "fullHistory": "Úplná história"
+  },
+  "features": {
+    "title": "Všetko, čo by moderná banka mala robiť",
+    "subtitle": "Plynulý a kompletný zážitok navrhnutý pre váš každodenný život.",
+    "items": {
+      "transfers": {
+        "title": "Okamžité prevody",
+        "desc": "Posielajte peniaze na akýkoľvek IBAN, interne alebo externe, s úplnou históriou."
+      },
+      "card": {
+        "title": "Karta a IBAN",
+        "desc": "Pri otvorení účtu vám je automaticky pridelený IBAN, pripravený na prijímanie a odosielanie."
+      },
+      "notifications": {
+        "title": "Upozornenia",
+        "desc": "Každý vklad, prevod alebo zmena na vašom účte vyvolá okamžité upozornenie."
+      },
+      "deposits": {
+        "title": "Vklady jedným kliknutím",
+        "desc": "Dobite svoj účet za pár sekúnd a sledujte svoj zostatok rásť v reálnom čase."
+      }
+    }
+  },
+  "showcase": {
+    "badge": "Prehľad",
+    "title": "Spravujte svoj účet jedným pohľadom",
+    "description": "Zostatok v reálnom čase, filtrovateľná história, vklady, prevody a výbery — všetko na jednom prehľadnom a responzívnom mieste.",
+    "points": [
+      "Zostatok aktualizovaný okamžite",
+      "História filtrovateľná podľa typu a stavu",
+      "Výbery chránené overovacím kódom"
+    ],
+    "sampleDeposit": "Vklad",
+    "sampleTransfer": "Prevod — FR76…4021",
+    "sampleToday": "Dnes",
+    "sampleYesterday": "Včera"
+  },
+  "steps": {
+    "title": "Tri kroky a je to",
+    "items": [
+      {
+        "title": "Vytvorte si účet",
+        "desc": "Registrácia za 2 minúty s e-mailom. Váš IBAN sa vygeneruje automaticky."
+      },
+      {
+        "title": "Dobite svoj zostatok",
+        "desc": "Pridajte prostriedky jedným kliknutím z vášho prehľadu."
+      },
+      {
+        "title": "Posielajte a sledujte",
+        "desc": "Vykonávajte prevody a výbery, dostávajte upozornenia, prezerajte históriu."
+      }
+    ]
+  },
+  "security": {
+    "badge": "Bezpečnosť",
+    "title": "Vaše údaje v dobrých rukách",
+    "description": "Šifrované overovanie a bezpečné relácie chránia váš účet po celý čas.",
+    "cards": [
+      { "title": "Šifrovanie relácií", "desc": "Podpísané tokeny a súbory cookie httpOnly" },
+      { "title": "Ochrana proti podvodom", "desc": "Operácie sú nepretržite monitorované" },
+      { "title": "Auditný denník", "desc": "Každá citlivá akcia je zaznamenaná" },
+      { "title": "Chránené údaje", "desc": "Súkromie predvolene" }
+    ]
+  },
+  "stats": {
+    "accounts": "otvorených účtov",
+    "satisfaction": "hodnotenie spokojnosti",
+    "free": "zdarma a bezpečne"
+  },
+  "testimonials": {
+    "title": "Dôverujú nám",
+    "items": [
+      { "quote": "Konečne jednoduchá a rýchla online banka bez zbytočnej byrokracie.", "author": "Sarah M." },
+      { "quote": "Rozhranie je prehľadné a plynulé, presne to, čo potrebujem každý deň.", "author": "Karim B." },
+      { "quote": "Prevody a história sú skutočným potešením na používanie.", "author": "Léa D." }
+    ]
+  },
+  "finalCta": {
+    "title": "Ste pripravení otvoriť si účet?",
+    "description": "Vytvorte si účet za 2 minúty. Zdarma a bez záväzkov.",
+    "ctaPrimary": "Otvoriť účet",
+    "ctaSecondary": "Prihlásiť sa"
+  },
+  "footer": {
+    "tagline": "Neobanka novej generácie. Jednoduchá, rýchla, bezpečná.",
+    "columns": {
+      "product": {
+        "title": "Produkt",
+        "links": ["Funkcie", "Bezpečnosť", "Prehľad"]
+      },
+      "account": {
+        "title": "Účet",
+        "links": ["Otvoriť účet", "Prihlásiť sa"]
+      },
+      "legal": {
+        "title": "Právne",
+        "links": ["Právne informácie", "Súkromie"]
+      }
+    },
+    "rights": "Všetky práva vyhradené."
+  }
+}

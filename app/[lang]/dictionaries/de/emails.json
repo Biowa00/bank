@@ -1,0 +1,57 @@
+{
+  "notify": {
+    "depositReceived": {
+      "title": "Einzahlung erhalten",
+      "body": "{amount} wurden Ihrem Konto gutgeschrieben."
+    },
+    "transferRejected": {
+      "title": "Überweisung abgelehnt",
+      "fallbackBody": "Überweisungen nicht verfügbar."
+    },
+    "transferPending": {
+      "title": "Überweisung wartet auf Freigabe",
+      "body": "Ihre Überweisung von {amount} an {iban} wurde eingereicht. Die Mittel werden bis zur Freigabe durch einen Berater reserviert."
+    },
+    "withdrawalRejected": {
+      "title": "Abhebung abgelehnt",
+      "fallbackBody": "Abhebungen nicht verfügbar.",
+      "invalidCode": "Der angegebene Abhebungscode ist ungültig, abgelaufen oder bereits verwendet."
+    },
+    "withdrawalDone": {
+      "title": "Abhebung abgeschlossen",
+      "body": "{amount} auf {iban} abgehoben."
+    },
+    "cardFrozen": {
+      "title": "Karte gesperrt",
+      "body": "Ihre Karte wurde gesperrt. Vorgänge sind vorübergehend blockiert."
+    },
+    "cardUnfrozen": {
+      "title": "Karte reaktiviert",
+      "body": "Ihre Karte wurde reaktiviert. Sie können wieder Vorgänge durchführen."
+    },
+    "progressUpdated": {
+      "title": "Abhebungsfortschritt aktualisiert",
+      "body": "Ihre Abhebungsanzeige ist um +{pct}% gestiegen (jetzt {progress}%)."
+    },
+    "transferReceived": {
+      "title": "Überweisung erhalten",
+      "body": "Sie haben {amount}{from} erhalten.",
+      "fromName": " von {name}"
+    },
+    "transferExecuted": {
+      "title": "Überweisung freigeschaltet und ausgeführt",
+      "body": "Alle 3 Phasen wurden bestätigt. Ihre Überweisung von {amount} wurde ausgeführt."
+    },
+    "phaseConfirmed": {
+      "title": "Phase {phase}/{total} bestätigt",
+      "body": "Phase {phase} Ihrer Überweisung von {amount} ist bestätigt. Warten auf die nächste Phase."
+    }
+  },
+  "chrome": {
+    "greeting": "Hallo {name},",
+    "greetingNoName": "Hallo,",
+    "header": "Nébula Bank",
+    "footerAuto": "Dies ist eine automatische Nachricht, bitte antworten Sie nicht darauf.",
+    "footerConfidential": "Diese E-Mail und die darin enthaltenen Informationen sind vertraulich."
+  }
+}

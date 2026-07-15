@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState, useState } from "react";
-import { setAccountStatus, type AdminState } from "@/app/admin/actions";
+import { setAccountStatus, type AdminState } from "@/app/[lang]/admin/actions";
 import { SubmitButton } from "@/components/SubmitButton";
 import type { AccountStatus } from "@/lib/types";
 

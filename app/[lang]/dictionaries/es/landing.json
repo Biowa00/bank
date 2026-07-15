@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "features": "Funciones",
+    "security": "Seguridad",
+    "howItWorks": "Cómo funciona"
+  },
+  "hero": {
+    "badge": "El neobanco de nueva generación",
+    "titleLead": "El banco que mantiene tu dinero",
+    "titleHighlight": "en movimiento",
+    "description": "Abre una cuenta en 2 minutos, obtén tu IBAN, realiza depósitos y transferencias, y sigue toda tu actividad en tiempo real.",
+    "ctaPrimary": "Abrir una cuenta gratis",
+    "ctaSecondary": "Iniciar sesión",
+    "guarantee": "Apertura gratuita · Sin compromiso",
+    "cardTier": "Premium"
+  },
+  "logoStrip": {
+    "sepa": "Transferencias SEPA",
+    "instantIban": "IBAN instantáneo",
+    "realtimeNotifications": "Notificaciones en tiempo real",
+    "fullHistory": "Historial completo"
+  },
+  "features": {
+    "title": "Todo lo que un banco moderno debe hacer",
+    "subtitle": "Una experiencia fluida y completa, pensada para tu día a día.",
+    "items": {
+      "transfers": {
+        "title": "Transferencias instantáneas",
+        "desc": "Envía dinero a cualquier IBAN, interno o externo, con un historial completo."
+      },
+      "card": {
+        "title": "Tarjeta e IBAN",
+        "desc": "Se te asigna un IBAN automáticamente al abrir tu cuenta, listo para recibir y enviar."
+      },
+      "notifications": {
+        "title": "Notificaciones",
+        "desc": "Cada depósito, transferencia o cambio en tu cuenta genera una notificación instantánea."
+      },
+      "deposits": {
+        "title": "Depósitos con un clic",
+        "desc": "Recarga tu cuenta en segundos y observa cómo tu saldo evoluciona en tiempo real."
+      }
+    }
+  },
+  "showcase": {
+    "badge": "Panel de control",
+    "title": "Controla tu cuenta de un vistazo",
+    "description": "Saldo en tiempo real, historial filtrable, depósitos, transferencias y retiros — todo reunido en un espacio claro y adaptable.",
+    "points": [
+      "Saldo actualizado al instante",
+      "Historial filtrable por tipo y estado",
+      "Retiros protegidos por código de validación"
+    ],
+    "sampleDeposit": "Depósito",
+    "sampleTransfer": "Transferencia — FR76…4021",
+    "sampleToday": "Hoy",
+    "sampleYesterday": "Ayer"
+  },
+  "steps": {
+    "title": "Tres pasos y listo",
+    "items": [
+      {
+        "title": "Crea tu cuenta",
+        "desc": "Regístrate en 2 minutos con un correo electrónico. Tu IBAN se genera automáticamente."
+      },
+      {
+        "title": "Recarga tu saldo",
+        "desc": "Añade fondos con un clic desde tu panel de control."
+      },
+      {
+        "title": "Envía y sigue",
+        "desc": "Realiza transferencias y retiros, recibe notificaciones, consulta el historial."
+      }
+    ]
+  },
+  "security": {
+    "badge": "Seguridad",
+    "title": "Tus datos, en buenas manos",
+    "description": "La autenticación cifrada y las sesiones seguras protegen tu cuenta en todo momento.",
+    "cards": [
+      { "title": "Cifrado de sesiones", "desc": "Tokens firmados y cookies httpOnly" },
+      { "title": "Protección antifraude", "desc": "Operaciones supervisadas continuamente" },
+      { "title": "Registro de auditoría", "desc": "Cada acción sensible queda registrada" },
+      { "title": "Datos protegidos", "desc": "Privacidad por defecto" }
+    ]
+  },
+  "stats": {
+    "accounts": "cuentas abiertas",
+    "satisfaction": "índice de satisfacción",
+    "free": "gratuito y seguro"
+  },
+  "testimonials": {
+    "title": "Confían en nosotros",
+    "items": [
+      { "quote": "Por fin un banco en línea simple y rápido, sin papeleo inútil.", "author": "Sarah M." },
+      { "quote": "La interfaz es clara y fluida, justo lo que necesito a diario.", "author": "Karim B." },
+      { "quote": "Las transferencias y el historial son un verdadero placer de usar.", "author": "Léa D." }
+    ]
+  },
+  "finalCta": {
+    "title": "¿Listo para abrir tu cuenta?",
+    "description": "Crea tu cuenta en 2 minutos. Gratis y sin compromiso.",
+    "ctaPrimary": "Abrir una cuenta",
+    "ctaSecondary": "Iniciar sesión"
+  },
+  "footer": {
+    "tagline": "El neobanco de nueva generación. Simple, rápido, seguro.",
+    "columns": {
+      "product": {
+        "title": "Producto",
+        "links": ["Funciones", "Seguridad", "Panel de control"]
+      },
+      "account": {
+        "title": "Cuenta",
+        "links": ["Abrir una cuenta", "Iniciar sesión"]
+      },
+      "legal": {
+        "title": "Legal",
+        "links": ["Aviso legal", "Privacidad"]
+      }
+    },
+    "rights": "Todos los derechos reservados."
+  }
+}

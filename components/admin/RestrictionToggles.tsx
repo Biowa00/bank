@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { setRestriction } from "@/app/admin/actions";
+import { setRestriction } from "@/app/[lang]/admin/actions";
 import { ToggleSwitch } from "./ToggleSwitch";
 
 type Kind = "ban" | "deposit" | "withdrawal" | "transfer";

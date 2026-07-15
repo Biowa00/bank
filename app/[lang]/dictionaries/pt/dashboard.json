@@ -1,0 +1,156 @@
+{
+  "layout": {
+    "bannedTitle": "Conta bloqueada",
+    "bannedText": "A sua conta foi bloqueada e o acesso aos seus serviços está suspenso.",
+    "restrictedTitle": "Conta restrita.",
+    "restrictedDefault": "Algumas operações (transferências, levantamentos) não estão disponíveis.",
+    "reason": "Motivo:",
+    "defaultFirstName": "olá"
+  },
+  "home": {
+    "greeting": "Olá",
+    "subtitle": "Aqui está o estado da sua conta Nébula.",
+    "quickDeposit": "Depositar",
+    "quickTransfer": "Transferir",
+    "quickWithdraw": "Levantar",
+    "recentTransactions": "Transações recentes",
+    "emptyRecent": "Ainda não há transações. Faça o seu primeiro depósito!"
+  },
+  "balanceCard": {
+    "holder": "Titular",
+    "copyIban": "Copiar IBAN",
+    "copied": "Copiado ✓"
+  },
+  "bankCard": {
+    "paymentCard": "Cartão de pagamento",
+    "frozen": "Congelado",
+    "holder": "Titular",
+    "exp": "Val.",
+    "cvv": "CVV",
+    "showInfo": "Mostrar dados",
+    "hideInfo": "Ocultar dados",
+    "freezeTitle": "Congelar cartão",
+    "freezeDescFrozen": "As operações estão bloqueadas enquanto o cartão está congelado.",
+    "freezeDescActive": "Bloqueia temporariamente todas as operações do cartão.",
+    "freezeToggleAria": "Congelar ou descongelar o cartão"
+  },
+  "deposit": {
+    "title": "Depositar fundos",
+    "subtitle": "Credite o seu saldo instantaneamente.",
+    "amountLabel": "Montante a depositar (€)",
+    "pending": "A depositar…",
+    "submit": "Depositar fundos",
+    "note": "O seu saldo é creditado imediatamente após a validação."
+  },
+  "transfer": {
+    "title": "Fazer uma transferência",
+    "subtitle": "Envie dinheiro para um IBAN à sua escolha.",
+    "ibanLabel": "IBAN do beneficiário",
+    "amountLabel": "Montante (€)",
+    "availableBalance": "Saldo disponível:",
+    "descriptionLabel": "Descrição (opcional)",
+    "descriptionPlaceholder": "Renda, reembolso…",
+    "pending": "A enviar…",
+    "submit": "Submeter a transferência",
+    "note": "A transferência está sujeita à validação de um consultor. Os fundos são reservados no momento do envio; em caso de recusa, são-lhe integralmente creditados de volta."
+  },
+  "withdraw": {
+    "title": "Levantar fundos",
+    "subtitle": "O levantamento requer um código fornecido pelo administrador.",
+    "newWithdrawal": "Novo levantamento",
+    "savedIbansTitle": "IBAN de destino guardados",
+    "savedIbansDesc": "Faça a gestão das contas para as quais pode levantar.",
+    "noAccounts": "Registe primeiro um IBAN de destino abaixo para poder fazer um levantamento.",
+    "destLabel": "IBAN de destino",
+    "amountLabel": "Montante (€)",
+    "availableBalance": "Saldo disponível:",
+    "codeLabel": "Código de levantamento",
+    "codePlaceholder": "Código fornecido pelo administrador",
+    "codeHint": "É necessário um código de levantamento válido, gerado pelo administrador, para validar a operação.",
+    "pending": "A validar…",
+    "submit": "Validar o levantamento"
+  },
+  "withdrawalAccounts": {
+    "labelLabel": "Etiqueta (opcional)",
+    "labelPlaceholder": "A minha outra conta",
+    "ibanLabel": "IBAN de destino",
+    "pending": "A adicionar…",
+    "submit": "Guardar este IBAN"
+  },
+  "withdrawalProgress": {
+    "title": "Progresso do seu levantamento",
+    "complete": "O seu indicador está completo.",
+    "hint": "Introduza os códigos fornecidos pelo seu consultor para fazer progredir o indicador.",
+    "pending": "…",
+    "submit": "Validar"
+  },
+  "transferPhases": {
+    "title": "Transferências a aguardar confirmação",
+    "intro": "A sua transferência é desbloqueada em {total} fases. Introduza cada código recebido para passar à seguinte.",
+    "transferOf": "Transferência de {amount}",
+    "toIban": "para {iban}",
+    "pending": "…",
+    "confirm": "Confirmar",
+    "awaiting": "A aguardar a validação da fase {phase} pelo seu consultor. Receberá um código por e-mail.",
+    "names": {
+      "1": "Código de confirmação de ligação",
+      "2": "Código de aprovação bancária",
+      "3": "Código de ativação da transferência"
+    }
+  },
+  "transactions": {
+    "title": "Histórico de transações",
+    "subtitle": "Filtre por tipo e estado.",
+    "emptyFiltered": "Nenhuma transação corresponde a estes filtros.",
+    "typeFilters": {
+      "all": "Tudo",
+      "deposit": "Depósitos",
+      "transfer": "Transferências",
+      "withdrawal": "Levantamentos"
+    },
+    "statusFilters": {
+      "all": "Todos os estados",
+      "success": "Bem-sucedida",
+      "pending": "Pendente",
+      "rejected": "Recusada",
+      "blocked": "Bloqueada"
+    }
+  },
+  "transactionItem": {
+    "types": {
+      "deposit": "Depósito",
+      "transfer": "Transferência",
+      "withdrawal": "Levantamento",
+      "admin_credit": "Crédito administrativo"
+    },
+    "declineReason": "Recusa:"
+  },
+  "notifications": {
+    "title": "Notificações",
+    "subtitle": "Todos os eventos da sua conta.",
+    "markAllRead": "Marcar tudo como lido",
+    "empty": "Sem notificações."
+  },
+  "profile": {
+    "title": "Perfil",
+    "subtitle": "Os seus dados pessoais e a sua conta.",
+    "accountStatus": "Estado da conta",
+    "reason": "Motivo:",
+    "createdOn": "Conta criada em {date}",
+    "infoSection": "Informações",
+    "fullName": "Nome completo",
+    "email": "Endereço de e-mail",
+    "emailHint": "Para alterar o seu endereço de e-mail, contacte o seu consultor.",
+    "pending": "A guardar…",
+    "submit": "Guardar"
+  },
+  "permissions": {
+    "frozen": "O seu cartão está congelado. Descongele-o a partir do seu painel para efetuar operações.",
+    "banned": "Conta bloqueada.",
+    "depositNotAuthorized": "Os depósitos ainda não estão autorizados na sua conta. Contacte o seu consultor.",
+    "transferRestricted": "Conta restrita: transferências indisponíveis.",
+    "transfersBlocked": "As transferências estão bloqueadas na sua conta.",
+    "withdrawRestricted": "Conta restrita: levantamentos indisponíveis.",
+    "withdrawalsBlocked": "Os levantamentos estão bloqueados na sua conta."
+  }
+}

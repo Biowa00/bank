@@ -1,0 +1,57 @@
+{
+  "notify": {
+    "depositReceived": {
+      "title": "Deposit received",
+      "body": "{amount} has been credited to your account."
+    },
+    "transferRejected": {
+      "title": "Transfer refused",
+      "fallbackBody": "Transfers unavailable."
+    },
+    "transferPending": {
+      "title": "Transfer awaiting approval",
+      "body": "Your transfer of {amount} to {iban} has been submitted. The funds are reserved pending approval by an advisor."
+    },
+    "withdrawalRejected": {
+      "title": "Withdrawal refused",
+      "fallbackBody": "Withdrawals unavailable.",
+      "invalidCode": "The withdrawal code provided is invalid, expired or already used."
+    },
+    "withdrawalDone": {
+      "title": "Withdrawal completed",
+      "body": "{amount} withdrawn to {iban}."
+    },
+    "cardFrozen": {
+      "title": "Card frozen",
+      "body": "Your card has been frozen. Operations are temporarily blocked."
+    },
+    "cardUnfrozen": {
+      "title": "Card reactivated",
+      "body": "Your card has been reactivated. You can carry out operations again."
+    },
+    "progressUpdated": {
+      "title": "Withdrawal progress updated",
+      "body": "Your withdrawal gauge advanced by +{pct}% (now {progress}%)."
+    },
+    "transferReceived": {
+      "title": "Transfer received",
+      "body": "You have received {amount}{from}.",
+      "fromName": " from {name}"
+    },
+    "transferExecuted": {
+      "title": "Transfer unlocked and executed",
+      "body": "All 3 phases have been confirmed. Your transfer of {amount} has been executed."
+    },
+    "phaseConfirmed": {
+      "title": "Phase {phase}/{total} confirmed",
+      "body": "Phase {phase} of your transfer of {amount} is confirmed. Awaiting the next phase."
+    }
+  },
+  "chrome": {
+    "greeting": "Hello {name},",
+    "greetingNoName": "Hello,",
+    "header": "Nébula Bank",
+    "footerAuto": "This is an automated message, please do not reply.",
+    "footerConfidential": "This email and the information it contains are confidential."
+  }
+}

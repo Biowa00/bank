@@ -41,6 +41,15 @@ export async function sendEmail(opts: {
   }
 }
 
+/** Textes fixes (chrome) de l'e-mail, traduits selon la langue du destinataire. */
+export type EmailChrome = {
+  greeting: string;
+  greetingNoName: string;
+  header: string;
+  footerAuto: string;
+  footerConfidential: string;
+};
+
 /** Gabarit HTML sobre et responsive, réutilisable pour toute notification. */
 export function renderNotificationEmail(params: {
   title: string;
@@ -48,9 +57,22 @@ export function renderNotificationEmail(params: {
   name?: string | null;
   ctaLabel?: string;
   ctaUrl?: string;
+  /** Code langue BCP-47 court (ex. "fr", "de") pour l'attribut `<html lang>`. */
+  locale?: string;
+  /** Textes fixes traduits ; repli sur le français si absent. */
+  chrome?: EmailChrome;
 }): string {
-  const { title, body, name, ctaLabel, ctaUrl } = params;
-  const greeting = name ? `Bonjour ${escapeHtml(name)},` : "Bonjour,";
+  const { title, body, name, ctaLabel, ctaUrl, locale = "fr" } = params;
+  const chrome: EmailChrome = params.chrome ?? {
+    greeting: "Bonjour {name},",
+    greetingNoName: "Bonjour,",
+    header: "Nébula Bank",
+    footerAuto: "Ceci est un message automatique, merci de ne pas y répondre.",
+    footerConfidential: "Cet e-mail et les informations qu'il contient sont confidentiels.",
+  };
+  const greeting = name
+    ? chrome.greeting.replace("{name}", escapeHtml(name))
+    : chrome.greetingNoName;
   const cta =
     ctaLabel && ctaUrl
       ? `<tr><td style="padding:8px 0 4px">
@@ -59,13 +81,13 @@ export function renderNotificationEmail(params: {
       : "";
 
   return `<!doctype html>
-<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<html lang="${escapeAttr(locale)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
 <body style="margin:0;background:#f7f7fb;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0b0b12">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f7f7fb;padding:32px 16px">
     <tr><td align="center">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:480px;background:#fff;border-radius:16px;overflow:hidden;border:1px solid rgba(10,10,20,.06)">
         <tr><td style="background:#0b0b12;padding:20px 24px">
-          <span style="color:#fff;font-weight:700;font-size:16px;letter-spacing:.02em">Nébula Bank</span>
+          <span style="color:#fff;font-weight:700;font-size:16px;letter-spacing:.02em">${escapeHtml(chrome.header)}</span>
         </td></tr>
         <tr><td style="padding:28px 24px">
           <p style="margin:0 0 4px;color:#6b6b76;font-size:14px">${greeting}</p>
@@ -75,8 +97,8 @@ export function renderNotificationEmail(params: {
         </td></tr>
         <tr><td style="padding:16px 24px;border-top:1px solid rgba(10,10,20,.06)">
           <p style="margin:0;font-size:12px;line-height:1.5;color:#9a9aa2">
-            Ceci est un message automatique, merci de ne pas y répondre.<br>
-            © Nébula Bank. Cet e-mail et les informations qu'il contient sont confidentiels.
+            ${escapeHtml(chrome.footerAuto)}<br>
+            © ${escapeHtml(chrome.header)}. ${escapeHtml(chrome.footerConfidential)}
           </p>
         </td></tr>
       </table>

@@ -1,26 +1,29 @@
 "use client";
 
 import { useActionState } from "react";
-import { confirmTransferPhase, type PhaseState } from "@/app/dashboard/actions";
+import { confirmTransferPhase, type PhaseState } from "@/app/[lang]/dashboard/actions";
 import { SubmitButton } from "@/components/SubmitButton";
 import { TRANSFER_PHASES, PHASE_TOTAL } from "@/lib/transferPhases";
 import { formatEuro, formatIban } from "@/lib/format";
+import { useZone } from "@/components/i18n/DictionaryProvider";
+import { useLocale } from "@/components/i18n/navigation";
 import type { PendingTransfer } from "@/lib/pendingTransfers";
 
 export type { PendingTransfer };
 
 export function TransferPhaseConfirm({ transfers }: { transfers: PendingTransfer[] }) {
+  const t = useZone("dashboard").transferPhases;
   if (transfers.length === 0) return null;
 
   return (
     <div className="card p-6">
-      <h2 className="font-semibold text-ink">Virements en attente de confirmation</h2>
+      <h2 className="font-semibold text-ink">{t.title}</h2>
       <p className="mt-1 text-sm text-ink/50">
-        Votre virement se débloque en {PHASE_TOTAL} phases. Saisissez chaque code reçu pour passer à la suivante.
+        {t.intro.replace("{total}", String(PHASE_TOTAL))}
       </p>
       <div className="mt-4 space-y-4">
-        {transfers.map((t) => (
-          <PendingCard key={t.id} transfer={t} />
+        {transfers.map((tr) => (
+          <PendingCard key={tr.id} transfer={tr} />
         ))}
       </div>
     </div>
@@ -29,6 +32,8 @@ export function TransferPhaseConfirm({ transfers }: { transfers: PendingTransfer
 
 function PendingCard({ transfer }: { transfer: PendingTransfer }) {
   const [state, action] = useActionState<PhaseState, FormData>(confirmTransferPhase, {});
+  const t = useZone("dashboard").transferPhases;
+  const locale = useLocale();
   const done = transfer.unlock_phase;
   const currentPhase = done + 1;
 
@@ -36,15 +41,16 @@ function PendingCard({ transfer }: { transfer: PendingTransfer }) {
     <div className="rounded-2xl border border-black/[.06] p-4">
       <div className="flex items-center justify-between">
         <p className="text-sm font-medium text-ink">
-          Virement de {formatEuro(transfer.amount)}
-          {transfer.counterparty_iban ? ` vers ${formatIban(transfer.counterparty_iban)}` : ""}
+          {t.transferOf.replace("{amount}", formatEuro(transfer.amount, locale))}
+          {transfer.counterparty_iban ? ` ${t.toIban.replace("{iban}", formatIban(transfer.counterparty_iban))}` : ""}
         </p>
         <span className="text-xs font-semibold text-ink/60">{done}/{PHASE_TOTAL}</span>
       </div>
 
       {/* Étapes */}
       <ol className="mt-3 space-y-1.5">
-        {TRANSFER_PHASES.map(({ phase, name }) => {
+        {TRANSFER_PHASES.map(({ phase }) => {
+          const name = t.names[String(phase) as "1" | "2" | "3"];
           const state2 =
             phase <= done ? "valide" : phase === currentPhase ? "en_cours" : "a_venir";
           return (
@@ -90,13 +96,13 @@ function PendingCard({ transfer }: { transfer: PendingTransfer }) {
             placeholder="000000"
             maxLength={6}
           />
-          <SubmitButton className="btn-primary shrink-0 text-sm" pendingLabel="…">
-            Confirmer
+          <SubmitButton className="btn-primary shrink-0 text-sm" pendingLabel={t.pending}>
+            {t.confirm}
           </SubmitButton>
         </form>
       ) : (
         <p className="mt-3 rounded-lg bg-amber-50 px-3 py-2 text-xs text-amber-700">
-          En attente de la validation de la phase {currentPhase} par votre conseiller. Vous recevrez un code par e-mail.
+          {t.awaiting.replace("{phase}", String(currentPhase))}
         </p>
       )}
     </div>

@@ -1,0 +1,156 @@
+{
+  "layout": {
+    "bannedTitle": "Konto gesperrt",
+    "bannedText": "Ihr Konto wurde gesperrt und der Zugang zu Ihren Diensten ist ausgesetzt.",
+    "restrictedTitle": "Konto eingeschränkt.",
+    "restrictedDefault": "Einige Vorgänge (Überweisungen, Abhebungen) sind nicht verfügbar.",
+    "reason": "Grund:",
+    "defaultFirstName": "Sie"
+  },
+  "home": {
+    "greeting": "Hallo",
+    "subtitle": "Hier ist der Status Ihres Nébula-Kontos.",
+    "quickDeposit": "Einzahlen",
+    "quickTransfer": "Überweisen",
+    "quickWithdraw": "Abheben",
+    "recentTransactions": "Letzte Transaktionen",
+    "emptyRecent": "Noch keine Transaktionen. Tätigen Sie Ihre erste Einzahlung!"
+  },
+  "balanceCard": {
+    "holder": "Inhaber",
+    "copyIban": "IBAN kopieren",
+    "copied": "Kopiert ✓"
+  },
+  "bankCard": {
+    "paymentCard": "Zahlungskarte",
+    "frozen": "Gesperrt",
+    "holder": "Inhaber",
+    "exp": "Gült.",
+    "cvv": "CVV",
+    "showInfo": "Details anzeigen",
+    "hideInfo": "Details ausblenden",
+    "freezeTitle": "Karte sperren",
+    "freezeDescFrozen": "Vorgänge sind blockiert, solange die Karte gesperrt ist.",
+    "freezeDescActive": "Blockiert vorübergehend alle Kartenvorgänge.",
+    "freezeToggleAria": "Karte sperren oder entsperren"
+  },
+  "deposit": {
+    "title": "Geld einzahlen",
+    "subtitle": "Laden Sie Ihr Guthaben sofort auf.",
+    "amountLabel": "Einzuzahlender Betrag (€)",
+    "pending": "Einzahlung…",
+    "submit": "Geld einzahlen",
+    "note": "Ihr Guthaben wird unmittelbar nach der Bestätigung gutgeschrieben."
+  },
+  "transfer": {
+    "title": "Überweisung tätigen",
+    "subtitle": "Senden Sie Geld an eine IBAN Ihrer Wahl.",
+    "ibanLabel": "IBAN des Empfängers",
+    "amountLabel": "Betrag (€)",
+    "availableBalance": "Verfügbares Guthaben:",
+    "descriptionLabel": "Verwendungszweck (optional)",
+    "descriptionPlaceholder": "Miete, Rückzahlung…",
+    "pending": "Wird gesendet…",
+    "submit": "Überweisung absenden",
+    "note": "Die Überweisung unterliegt der Freigabe durch einen Berater. Die Mittel werden ab dem Absenden reserviert; bei Ablehnung werden sie Ihnen vollständig zurückerstattet."
+  },
+  "withdraw": {
+    "title": "Geld abheben",
+    "subtitle": "Für die Abhebung ist ein vom Administrator bereitgestellter Code erforderlich.",
+    "newWithdrawal": "Neue Abhebung",
+    "savedIbansTitle": "Gespeicherte Ziel-IBANs",
+    "savedIbansDesc": "Verwalten Sie die Konten, auf die Sie abheben können.",
+    "noAccounts": "Registrieren Sie zunächst unten eine Ziel-IBAN, um eine Abhebung tätigen zu können.",
+    "destLabel": "Ziel-IBAN",
+    "amountLabel": "Betrag (€)",
+    "availableBalance": "Verfügbares Guthaben:",
+    "codeLabel": "Abhebungscode",
+    "codePlaceholder": "Vom Administrator bereitgestellter Code",
+    "codeHint": "Ein gültiger, vom Administrator generierter Abhebungscode ist zur Bestätigung des Vorgangs erforderlich.",
+    "pending": "Wird bestätigt…",
+    "submit": "Abhebung bestätigen"
+  },
+  "withdrawalAccounts": {
+    "labelLabel": "Bezeichnung (optional)",
+    "labelPlaceholder": "Mein anderes Konto",
+    "ibanLabel": "Ziel-IBAN",
+    "pending": "Wird hinzugefügt…",
+    "submit": "Diese IBAN speichern"
+  },
+  "withdrawalProgress": {
+    "title": "Ihr Abhebungsfortschritt",
+    "complete": "Ihre Anzeige ist vollständig.",
+    "hint": "Geben Sie die von Ihrem Berater bereitgestellten Codes ein, um Ihre Anzeige voranzubringen.",
+    "pending": "…",
+    "submit": "Bestätigen"
+  },
+  "transferPhases": {
+    "title": "Überweisungen, die auf Bestätigung warten",
+    "intro": "Ihre Überweisung wird in {total} Phasen freigeschaltet. Geben Sie jeden erhaltenen Code ein, um zur nächsten zu gelangen.",
+    "transferOf": "Überweisung von {amount}",
+    "toIban": "an {iban}",
+    "pending": "…",
+    "confirm": "Bestätigen",
+    "awaiting": "Warten auf die Freigabe von Phase {phase} durch Ihren Berater. Sie erhalten einen Code per E-Mail.",
+    "names": {
+      "1": "Bestätigungscode für die Verbindung",
+      "2": "Bankgenehmigungscode",
+      "3": "Aktivierungscode für die Überweisung"
+    }
+  },
+  "transactions": {
+    "title": "Transaktionsverlauf",
+    "subtitle": "Nach Typ und Status filtern.",
+    "emptyFiltered": "Keine Transaktionen entsprechen diesen Filtern.",
+    "typeFilters": {
+      "all": "Alle",
+      "deposit": "Einzahlungen",
+      "transfer": "Überweisungen",
+      "withdrawal": "Abhebungen"
+    },
+    "statusFilters": {
+      "all": "Alle Status",
+      "success": "Erfolgreich",
+      "pending": "Ausstehend",
+      "rejected": "Abgelehnt",
+      "blocked": "Blockiert"
+    }
+  },
+  "transactionItem": {
+    "types": {
+      "deposit": "Einzahlung",
+      "transfer": "Überweisung",
+      "withdrawal": "Abhebung",
+      "admin_credit": "Administrative Gutschrift"
+    },
+    "declineReason": "Ablehnung:"
+  },
+  "notifications": {
+    "title": "Benachrichtigungen",
+    "subtitle": "Alle Ereignisse auf Ihrem Konto.",
+    "markAllRead": "Alle als gelesen markieren",
+    "empty": "Keine Benachrichtigungen."
+  },
+  "profile": {
+    "title": "Profil",
+    "subtitle": "Ihre persönlichen Daten und Ihr Konto.",
+    "accountStatus": "Kontostatus",
+    "reason": "Grund:",
+    "createdOn": "Konto erstellt am {date}",
+    "infoSection": "Informationen",
+    "fullName": "Vollständiger Name",
+    "email": "E-Mail-Adresse",
+    "emailHint": "Um Ihre E-Mail-Adresse zu ändern, wenden Sie sich an Ihren Berater.",
+    "pending": "Wird gespeichert…",
+    "submit": "Speichern"
+  },
+  "permissions": {
+    "frozen": "Ihre Karte ist gesperrt. Entsperren Sie sie über Ihr Dashboard, um Vorgänge durchzuführen.",
+    "banned": "Konto gesperrt.",
+    "depositNotAuthorized": "Einzahlungen sind auf Ihrem Konto noch nicht freigegeben. Wenden Sie sich an Ihren Berater.",
+    "transferRestricted": "Konto eingeschränkt: Überweisungen nicht verfügbar.",
+    "transfersBlocked": "Überweisungen sind auf Ihrem Konto blockiert.",
+    "withdrawRestricted": "Konto eingeschränkt: Abhebungen nicht verfügbar.",
+    "withdrawalsBlocked": "Abhebungen sind auf Ihrem Konto blockiert."
+  }
+}

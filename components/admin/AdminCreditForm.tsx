@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
-import { adminCredit, type AdminState } from "@/app/admin/actions";
+import { adminCredit, type AdminState } from "@/app/[lang]/admin/actions";
 import { SubmitButton } from "@/components/SubmitButton";
 
 export function AdminCreditForm({ userId }: { userId: string }) {

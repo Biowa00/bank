@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { deriveCard } from "@/lib/card";
-import { toggleCardFrozen } from "@/app/dashboard/actions";
+import { toggleCardFrozen } from "@/app/[lang]/dashboard/actions";
+import { useZone } from "@/components/i18n/DictionaryProvider";
 
 export function BankCard({
   iban,
@@ -16,6 +17,8 @@ export function BankCard({
   frozen: boolean;
 }) {
   const [revealed, setRevealed] = useState(false);
+  const t = useZone("dashboard").bankCard;
+  const c = useZone("common");
   const card = deriveCard(iban, createdAt);
 
   const maskedNumber = `•••• •••• •••• ${card.last4}`;
@@ -34,8 +37,8 @@ export function BankCard({
       >
         <div className="flex items-start justify-between">
           <div>
-            <p className="text-xs uppercase tracking-widest text-white/60">Nébula</p>
-            <p className="mt-0.5 text-sm font-medium">Carte de paiement</p>
+            <p className="text-xs uppercase tracking-widest text-white/60">{c.brand}</p>
+            <p className="mt-0.5 text-sm font-medium">{t.paymentCard}</p>
           </div>
           <div className="flex items-center gap-2">
             {frozen && (
@@ -43,13 +46,13 @@ export function BankCard({
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
                   <path d="M12 3v18M3 12h18M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                 </svg>
-                Gelée
+                {t.frozen}
               </span>
             )}
             <button
               type="button"
               onClick={() => setRevealed((v) => !v)}
-              aria-label={revealed ? "Masquer les informations" : "Afficher les informations"}
+              aria-label={revealed ? t.hideInfo : t.showInfo}
               aria-pressed={revealed}
               className="grid h-9 w-9 place-items-center rounded-full bg-white/15 text-white transition-colors hover:bg-white/25"
             >
@@ -69,15 +72,15 @@ export function BankCard({
         {/* Bas de carte */}
         <div className="mt-5 flex items-end justify-between">
           <div>
-            <p className="text-[10px] uppercase tracking-widest text-white/50">Titulaire</p>
+            <p className="text-[10px] uppercase tracking-widest text-white/50">{t.holder}</p>
             <p className="text-sm font-medium uppercase">{holderName || "—"}</p>
           </div>
           <div className="text-right">
-            <p className="text-[10px] uppercase tracking-widest text-white/50">Exp.</p>
+            <p className="text-[10px] uppercase tracking-widest text-white/50">{t.exp}</p>
             <p className="font-mono text-sm">{expDisplay}</p>
           </div>
           <div className="text-right">
-            <p className="text-[10px] uppercase tracking-widest text-white/50">CVV</p>
+            <p className="text-[10px] uppercase tracking-widest text-white/50">{t.cvv}</p>
             <p className="font-mono text-sm">{cvvDisplay}</p>
           </div>
         </div>
@@ -91,18 +94,16 @@ export function BankCard({
         className="mt-3 flex items-center justify-between rounded-2xl border border-black/[.06] bg-white px-4 py-3"
       >
         <div>
-          <p className="text-sm font-medium text-ink">Geler la carte</p>
+          <p className="text-sm font-medium text-ink">{t.freezeTitle}</p>
           <p className="text-xs text-ink/50">
-            {frozen
-              ? "Les opérations sont bloquées tant que la carte est gelée."
-              : "Bloque temporairement toutes les opérations de la carte."}
+            {frozen ? t.freezeDescFrozen : t.freezeDescActive}
           </p>
         </div>
         <button
           type="submit"
           role="switch"
           aria-checked={frozen}
-          aria-label="Geler ou dégeler la carte"
+          aria-label={t.freezeToggleAria}
           className={`relative h-6 w-11 shrink-0 rounded-full transition-colors ${
             frozen ? "bg-brand-600" : "bg-black/15"
           }`}

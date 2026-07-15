@@ -1,0 +1,156 @@
+{
+  "layout": {
+    "bannedTitle": "Conto bloccato",
+    "bannedText": "Il tuo conto è stato bloccato e l'accesso ai tuoi servizi è sospeso.",
+    "restrictedTitle": "Conto limitato.",
+    "restrictedDefault": "Alcune operazioni (bonifici, prelievi) non sono disponibili.",
+    "reason": "Motivo:",
+    "defaultFirstName": "ciao"
+  },
+  "home": {
+    "greeting": "Ciao",
+    "subtitle": "Ecco lo stato del tuo conto Nébula.",
+    "quickDeposit": "Deposita",
+    "quickTransfer": "Bonifico",
+    "quickWithdraw": "Preleva",
+    "recentTransactions": "Transazioni recenti",
+    "emptyRecent": "Nessuna transazione per il momento. Effettua il tuo primo deposito!"
+  },
+  "balanceCard": {
+    "holder": "Intestatario",
+    "copyIban": "Copia IBAN",
+    "copied": "Copiato ✓"
+  },
+  "bankCard": {
+    "paymentCard": "Carta di pagamento",
+    "frozen": "Congelata",
+    "holder": "Intestatario",
+    "exp": "Scad.",
+    "cvv": "CVV",
+    "showInfo": "Mostra dati",
+    "hideInfo": "Nascondi dati",
+    "freezeTitle": "Congela carta",
+    "freezeDescFrozen": "Le operazioni sono bloccate finché la carta è congelata.",
+    "freezeDescActive": "Blocca temporaneamente tutte le operazioni della carta.",
+    "freezeToggleAria": "Congela o scongela la carta"
+  },
+  "deposit": {
+    "title": "Deposita fondi",
+    "subtitle": "Accredita il tuo saldo all'istante.",
+    "amountLabel": "Importo da depositare (€)",
+    "pending": "Deposito…",
+    "submit": "Deposita fondi",
+    "note": "Il tuo saldo viene accreditato immediatamente dopo la convalida."
+  },
+  "transfer": {
+    "title": "Effettua un bonifico",
+    "subtitle": "Invia denaro a un IBAN a tua scelta.",
+    "ibanLabel": "IBAN del beneficiario",
+    "amountLabel": "Importo (€)",
+    "availableBalance": "Saldo disponibile:",
+    "descriptionLabel": "Causale (facoltativa)",
+    "descriptionPlaceholder": "Affitto, rimborso…",
+    "pending": "Invio in corso…",
+    "submit": "Invia il bonifico",
+    "note": "Il bonifico è soggetto alla convalida di un consulente. I fondi sono riservati al momento dell'invio; in caso di rifiuto, ti vengono interamente riaccreditati."
+  },
+  "withdraw": {
+    "title": "Preleva fondi",
+    "subtitle": "Il prelievo richiede un codice fornito dall'amministratore.",
+    "newWithdrawal": "Nuovo prelievo",
+    "savedIbansTitle": "IBAN di destinazione salvati",
+    "savedIbansDesc": "Gestisci i conti verso cui puoi prelevare.",
+    "noAccounts": "Registra prima un IBAN di destinazione qui sotto per poter effettuare un prelievo.",
+    "destLabel": "IBAN di destinazione",
+    "amountLabel": "Importo (€)",
+    "availableBalance": "Saldo disponibile:",
+    "codeLabel": "Codice di prelievo",
+    "codePlaceholder": "Codice fornito dall'amministratore",
+    "codeHint": "È richiesto un codice di prelievo valido, generato dall'amministratore, per convalidare l'operazione.",
+    "pending": "Convalida in corso…",
+    "submit": "Convalida il prelievo"
+  },
+  "withdrawalAccounts": {
+    "labelLabel": "Etichetta (facoltativa)",
+    "labelPlaceholder": "Il mio altro conto",
+    "ibanLabel": "IBAN di destinazione",
+    "pending": "Aggiunta…",
+    "submit": "Salva questo IBAN"
+  },
+  "withdrawalProgress": {
+    "title": "Avanzamento del tuo prelievo",
+    "complete": "Il tuo indicatore è completo.",
+    "hint": "Inserisci i codici forniti dal tuo consulente per far avanzare l'indicatore.",
+    "pending": "…",
+    "submit": "Convalida"
+  },
+  "transferPhases": {
+    "title": "Bonifici in attesa di conferma",
+    "intro": "Il tuo bonifico si sblocca in {total} fasi. Inserisci ogni codice ricevuto per passare alla successiva.",
+    "transferOf": "Bonifico di {amount}",
+    "toIban": "verso {iban}",
+    "pending": "…",
+    "confirm": "Conferma",
+    "awaiting": "In attesa della convalida della fase {phase} da parte del tuo consulente. Riceverai un codice via e-mail.",
+    "names": {
+      "1": "Codice di conferma del collegamento",
+      "2": "Codice di approvazione bancaria",
+      "3": "Codice di attivazione del bonifico"
+    }
+  },
+  "transactions": {
+    "title": "Cronologia delle transazioni",
+    "subtitle": "Filtra per tipo e stato.",
+    "emptyFiltered": "Nessuna transazione corrisponde a questi filtri.",
+    "typeFilters": {
+      "all": "Tutto",
+      "deposit": "Depositi",
+      "transfer": "Bonifici",
+      "withdrawal": "Prelievi"
+    },
+    "statusFilters": {
+      "all": "Tutti gli stati",
+      "success": "Riuscita",
+      "pending": "In attesa",
+      "rejected": "Rifiutata",
+      "blocked": "Bloccata"
+    }
+  },
+  "transactionItem": {
+    "types": {
+      "deposit": "Deposito",
+      "transfer": "Bonifico",
+      "withdrawal": "Prelievo",
+      "admin_credit": "Accredito amministrativo"
+    },
+    "declineReason": "Rifiuto:"
+  },
+  "notifications": {
+    "title": "Notifiche",
+    "subtitle": "Tutti gli eventi del tuo conto.",
+    "markAllRead": "Segna tutto come letto",
+    "empty": "Nessuna notifica."
+  },
+  "profile": {
+    "title": "Profilo",
+    "subtitle": "I tuoi dati personali e il tuo conto.",
+    "accountStatus": "Stato del conto",
+    "reason": "Motivo:",
+    "createdOn": "Conto creato il {date}",
+    "infoSection": "Informazioni",
+    "fullName": "Nome completo",
+    "email": "Indirizzo e-mail",
+    "emailHint": "Per modificare il tuo indirizzo e-mail, contatta il tuo consulente.",
+    "pending": "Salvataggio…",
+    "submit": "Salva"
+  },
+  "permissions": {
+    "frozen": "La tua carta è congelata. Scongelala dalla tua dashboard per effettuare operazioni.",
+    "banned": "Conto bloccato.",
+    "depositNotAuthorized": "I depositi non sono ancora autorizzati sul tuo conto. Contatta il tuo consulente.",
+    "transferRestricted": "Conto limitato: bonifici non disponibili.",
+    "transfersBlocked": "I bonifici sono bloccati sul tuo conto.",
+    "withdrawRestricted": "Conto limitato: prelievi non disponibili.",
+    "withdrawalsBlocked": "I prelievi sono bloccati sul tuo conto."
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "layout": {
+    "bannedTitle": "Compte banni",
+    "bannedText": "Votre compte a été banni et l'accès à vos services est suspendu.",
+    "restrictedTitle": "Compte restreint.",
+    "restrictedDefault": "Certaines opérations (virements, retraits) sont indisponibles.",
+    "reason": "Motif :",
+    "defaultFirstName": "vous"
+  },
+  "home": {
+    "greeting": "Bonjour",
+    "subtitle": "Voici l'état de votre compte Nébula.",
+    "quickDeposit": "Déposer",
+    "quickTransfer": "Virer",
+    "quickWithdraw": "Retirer",
+    "recentTransactions": "Transactions récentes",
+    "emptyRecent": "Aucune transaction pour le moment. Faites votre premier dépôt !"
+  },
+  "balanceCard": {
+    "holder": "Titulaire",
+    "copyIban": "Copier l'IBAN",
+    "copied": "Copié ✓"
+  },
+  "bankCard": {
+    "paymentCard": "Carte de paiement",
+    "frozen": "Gelée",
+    "holder": "Titulaire",
+    "exp": "Exp.",
+    "cvv": "CVV",
+    "showInfo": "Afficher les informations",
+    "hideInfo": "Masquer les informations",
+    "freezeTitle": "Geler la carte",
+    "freezeDescFrozen": "Les opérations sont bloquées tant que la carte est gelée.",
+    "freezeDescActive": "Bloque temporairement toutes les opérations de la carte.",
+    "freezeToggleAria": "Geler ou dégeler la carte"
+  },
+  "deposit": {
+    "title": "Déposer des fonds",
+    "subtitle": "Créditez votre solde instantanément.",
+    "amountLabel": "Montant à déposer (€)",
+    "pending": "Dépôt…",
+    "submit": "Déposer les fonds",
+    "note": "Votre solde est crédité immédiatement après validation."
+  },
+  "transfer": {
+    "title": "Effectuer un virement",
+    "subtitle": "Envoyez de l'argent vers un IBAN de votre choix.",
+    "ibanLabel": "IBAN du bénéficiaire",
+    "amountLabel": "Montant (€)",
+    "availableBalance": "Solde disponible :",
+    "descriptionLabel": "Motif (facultatif)",
+    "descriptionPlaceholder": "Loyer, remboursement…",
+    "pending": "Envoi…",
+    "submit": "Soumettre le virement",
+    "note": "Le virement est soumis à validation par un conseiller. Les fonds sont réservés dès l'envoi ; en cas de refus, ils vous sont intégralement recrédités."
+  },
+  "withdraw": {
+    "title": "Retirer des fonds",
+    "subtitle": "Le retrait nécessite un code fourni par l'administrateur.",
+    "newWithdrawal": "Nouveau retrait",
+    "savedIbansTitle": "IBAN de destination enregistrés",
+    "savedIbansDesc": "Gérez les comptes vers lesquels vous pouvez retirer.",
+    "noAccounts": "Enregistrez d'abord un IBAN de destination ci-dessous pour pouvoir effectuer un retrait.",
+    "destLabel": "IBAN de destination",
+    "amountLabel": "Montant (€)",
+    "availableBalance": "Solde disponible :",
+    "codeLabel": "Code de retrait",
+    "codePlaceholder": "Code fourni par l'administrateur",
+    "codeHint": "Un code de retrait valide, généré par l'administrateur, est requis pour valider l'opération.",
+    "pending": "Validation…",
+    "submit": "Valider le retrait"
+  },
+  "withdrawalAccounts": {
+    "labelLabel": "Libellé (facultatif)",
+    "labelPlaceholder": "Mon autre compte",
+    "ibanLabel": "IBAN de destination",
+    "pending": "Ajout…",
+    "submit": "Enregistrer cet IBAN"
+  },
+  "withdrawalProgress": {
+    "title": "Progression de votre retrait",
+    "complete": "Votre jauge est complète.",
+    "hint": "Saisissez les codes fournis par votre conseiller pour faire progresser votre jauge.",
+    "pending": "…",
+    "submit": "Valider"
+  },
+  "transferPhases": {
+    "title": "Virements en attente de confirmation",
+    "intro": "Votre virement se débloque en {total} phases. Saisissez chaque code reçu pour passer à la suivante.",
+    "transferOf": "Virement de {amount}",
+    "toIban": "vers {iban}",
+    "pending": "…",
+    "confirm": "Confirmer",
+    "awaiting": "En attente de la validation de la phase {phase} par votre conseiller. Vous recevrez un code par e-mail.",
+    "names": {
+      "1": "Code de confirmation de mise en relation",
+      "2": "Code d'approbation bancaire",
+      "3": "Code d'activation de virement"
+    }
+  },
+  "transactions": {
+    "title": "Historique des transactions",
+    "subtitle": "Filtrez par type et par statut.",
+    "emptyFiltered": "Aucune transaction ne correspond à ces filtres.",
+    "typeFilters": {
+      "all": "Tout",
+      "deposit": "Dépôts",
+      "transfer": "Virements",
+      "withdrawal": "Retraits"
+    },
+    "statusFilters": {
+      "all": "Tous statuts",
+      "success": "Réussi",
+      "pending": "En attente",
+      "rejected": "Refusé",
+      "blocked": "Bloqué"
+    }
+  },
+  "transactionItem": {
+    "types": {
+      "deposit": "Dépôt",
+      "transfer": "Virement",
+      "withdrawal": "Retrait",
+      "admin_credit": "Crédit administratif"
+    },
+    "declineReason": "Refus :"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "subtitle": "Tous les événements de votre compte.",
+    "markAllRead": "Tout marquer comme lu",
+    "empty": "Aucune notification."
+  },
+  "profile": {
+    "title": "Profil",
+    "subtitle": "Vos informations personnelles et votre compte.",
+    "accountStatus": "Statut du compte",
+    "reason": "Motif :",
+    "createdOn": "Compte créé le {date}",
+    "infoSection": "Informations",
+    "fullName": "Nom complet",
+    "email": "Adresse e-mail",
+    "emailHint": "Pour modifier votre adresse e-mail, contactez votre conseiller.",
+    "pending": "Enregistrement…",
+    "submit": "Enregistrer"
+  },
+  "permissions": {
+    "frozen": "Votre carte est gelée. Dégelez-la depuis votre tableau de bord pour effectuer des opérations.",
+    "banned": "Compte banni.",
+    "depositNotAuthorized": "Les dépôts ne sont pas encore autorisés sur votre compte. Contactez votre conseiller.",
+    "transferRestricted": "Compte restreint : virements indisponibles.",
+    "transfersBlocked": "Les virements sont bloqués sur votre compte.",
+    "withdrawRestricted": "Compte restreint : retraits indisponibles.",
+    "withdrawalsBlocked": "Les retraits sont bloqués sur votre compte."
+  }
+}

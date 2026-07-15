@@ -1,0 +1,88 @@
+{
+  "auth": {
+    "lastNameRequired": "Los apellidos son obligatorios.",
+    "firstNameRequired": "El nombre es obligatorio.",
+    "cityRequired": "La ciudad es obligatoria.",
+    "professionRequired": "La profesión es obligatoria.",
+    "addressRequired": "La dirección completa es obligatoria.",
+    "phoneRequired": "El número de teléfono es obligatorio.",
+    "emailRequired": "El correo electrónico es obligatorio.",
+    "passwordMinLength": "La contraseña debe contener al menos 8 caracteres.",
+    "passwordUppercase": "La contraseña debe contener al menos una letra mayúscula.",
+    "passwordDigit": "La contraseña debe contener al menos un dígito.",
+    "passwordsMismatch": "Las contraseñas no coinciden.",
+    "cguRequired": "Debes aceptar las condiciones generales y la política de privacidad.",
+    "idRequired": "El documento de identidad (foto) es obligatorio.",
+    "idFormat": "Formato del documento de identidad no válido (JPG, PNG o PDF).",
+    "idTooLarge": "El documento de identidad supera los 5 MB.",
+    "accountCreatedConfirm": "Cuenta creada. Revisa tu correo para confirmar tu dirección y luego inicia sesión.",
+    "credentialsRequired": "Correo electrónico y contraseña obligatorios.",
+    "notAdmin": "Esta cuenta no tiene permisos de administrador.",
+    "emailRequiredShort": "Correo electrónico obligatorio.",
+    "resetEmailSent": "Si hay una cuenta asociada a esta dirección, acabamos de enviar un correo con un enlace de restablecimiento. Recuerda revisar tu carpeta de spam.",
+    "passwordCriteria": "La contraseña no cumple los requisitos de seguridad.",
+    "resetLinkInvalid": "Enlace no válido o caducado. Solicita un nuevo restablecimiento.",
+    "supabase": {
+      "invalidLogin": "Correo electrónico o contraseña incorrectos.",
+      "alreadyRegistered": "Ya existe una cuenta con este correo electrónico.",
+      "emailNotConfirmed": "Correo no confirmado. Revisa tu bandeja de entrada.",
+      "rateLimit": "Demasiados intentos. Inténtalo de nuevo en un momento.",
+      "generic": "Se ha producido un error. Inténtalo de nuevo."
+    }
+  },
+  "amount": {
+    "invalid": "Importe no válido.",
+    "max": "Importe máximo: 1.000.000 €."
+  },
+  "deposit": {
+    "failed": "Error en el depósito. Inténtalo de nuevo."
+  },
+  "transfer": {
+    "ibanInvalid": "IBAN del destinatario no válido.",
+    "ownAccount": "No puedes transferir a tu propia cuenta.",
+    "insufficient": "Saldo insuficiente para esta transferencia.",
+    "failed": "Error en la transferencia. Inténtalo de nuevo.",
+    "unavailable": "Transferencias no disponibles."
+  },
+  "withdrawalAccount": {
+    "ibanInvalid": "IBAN no válido.",
+    "saveFailed": "No se ha podido guardar este IBAN."
+  },
+  "withdraw": {
+    "chooseIban": "Elige un IBAN de destino.",
+    "codeRequired": "El código de retiro es obligatorio.",
+    "ibanNotFound": "IBAN de destino no encontrado.",
+    "insufficient": "Saldo insuficiente para este retiro.",
+    "codeInvalid": "Código de retiro no válido, caducado o ya utilizado.",
+    "unavailable": "Retiros no disponibles."
+  },
+  "redeem": {
+    "enterCode": "Introduce un código.",
+    "codeInvalid": "Código no válido, caducado o ya utilizado.",
+    "updateFailed": "Error en la actualización."
+  },
+  "phase": {
+    "codeRequired": "Código obligatorio.",
+    "notFound": "Transferencia no encontrada o ya procesada.",
+    "allConfirmed": "Todas las fases ya están confirmadas.",
+    "noCode": "No hay ningún código pendiente para esta transferencia. Contacta con tu asesor.",
+    "expired": "Este código ha caducado. Tu asesor debe generar uno nuevo.",
+    "tooManyAttempts": "Demasiados intentos. Debe generarse un nuevo código.",
+    "incorrectExhausted": "Código incorrecto. Demasiados intentos: debe generarse un nuevo código.",
+    "incorrectRemaining": "Código incorrecto. Quedan {n} intento(s).",
+    "updateFailed": "Error al actualizar la fase."
+  },
+  "profile": {
+    "nameEmpty": "El nombre no puede estar vacío."
+  },
+  "success": {
+    "deposit": "Depósito de {amount} realizado.",
+    "transferSubmitted": "Transferencia de {amount} enviada — a la espera de validación.",
+    "ibanSaved": "IBAN de retiro guardado.",
+    "withdraw": "Retiro de {amount} realizado.",
+    "redeem": "+{pct}% aplicado. Progreso: {progress}%.",
+    "phaseConfirmed": "Fase {phase} confirmada.",
+    "transferUnlocked": "Transferencia desbloqueada y ejecutada.",
+    "profileUpdated": "Perfil actualizado."
+  }
+}

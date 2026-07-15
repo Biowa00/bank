@@ -1,0 +1,57 @@
+{
+  "notify": {
+    "depositReceived": {
+      "title": "Otrzymano wpłatę",
+      "body": "{amount} zostało uznane na Twoim koncie."
+    },
+    "transferRejected": {
+      "title": "Przelew odrzucony",
+      "fallbackBody": "Przelewy niedostępne."
+    },
+    "transferPending": {
+      "title": "Przelew oczekuje na zatwierdzenie",
+      "body": "Twój przelew {amount} na {iban} został złożony. Środki są zarezerwowane do czasu zatwierdzenia przez doradcę."
+    },
+    "withdrawalRejected": {
+      "title": "Wypłata odrzucona",
+      "fallbackBody": "Wypłaty niedostępne.",
+      "invalidCode": "Podany kod wypłaty jest nieprawidłowy, wygasł lub został już użyty."
+    },
+    "withdrawalDone": {
+      "title": "Wypłata zrealizowana",
+      "body": "{amount} wypłacone na {iban}."
+    },
+    "cardFrozen": {
+      "title": "Karta zamrożona",
+      "body": "Twoja karta została zamrożona. Operacje są tymczasowo zablokowane."
+    },
+    "cardUnfrozen": {
+      "title": "Karta ponownie aktywowana",
+      "body": "Twoja karta została ponownie aktywowana. Możesz znów wykonywać operacje."
+    },
+    "progressUpdated": {
+      "title": "Zaktualizowano postęp wypłaty",
+      "body": "Twój wskaźnik wypłaty wzrósł o +{pct}% (teraz {progress}%)."
+    },
+    "transferReceived": {
+      "title": "Otrzymano przelew",
+      "body": "Otrzymałeś {amount}{from}.",
+      "fromName": " od {name}"
+    },
+    "transferExecuted": {
+      "title": "Przelew odblokowany i wykonany",
+      "body": "Wszystkie 3 fazy zostały potwierdzone. Twój przelew {amount} został wykonany."
+    },
+    "phaseConfirmed": {
+      "title": "Faza {phase}/{total} potwierdzona",
+      "body": "Faza {phase} Twojego przelewu {amount} została potwierdzona. Oczekiwanie na następną fazę."
+    }
+  },
+  "chrome": {
+    "greeting": "Cześć {name},",
+    "greetingNoName": "Cześć,",
+    "header": "Nébula Bank",
+    "footerAuto": "To wiadomość automatyczna, prosimy na nią nie odpowiadać.",
+    "footerConfidential": "Ten e-mail i zawarte w nim informacje są poufne."
+  }
+}

@@ -1,5 +1,7 @@
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sendEmail, renderNotificationEmail } from "@/lib/email";
+import { getRequestLocale } from "@/lib/i18n/server";
+import { getDictionary } from "@/app/[lang]/dictionaries";
 
 export type NotifyOptions = {
   /**
@@ -35,6 +37,12 @@ export async function notify(
 
   if (!profile?.email) return;
 
+  // Le titre/corps sont déjà rendus dans la langue de l'utilisateur actif ;
+  // on aligne le chrome (en-tête, salutation, pied) et l'attribut <html lang>
+  // sur cette même langue pour un e-mail cohérent.
+  const locale = await getRequestLocale();
+  const chrome = (await getDictionary(locale)).emails.chrome;
+
   await sendEmail({
     to: profile.email,
     subject: title,
@@ -44,6 +52,8 @@ export async function notify(
       name: profile.full_name,
       ctaLabel: opts.cta?.label,
       ctaUrl: opts.cta?.url,
+      locale,
+      chrome,
     }),
     text: body,
   });

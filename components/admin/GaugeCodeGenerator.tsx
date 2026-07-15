@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState, useState } from "react";
-import { createWithdrawalCode, type AdminState } from "@/app/admin/actions";
+import { createWithdrawalCode, type AdminState } from "@/app/[lang]/admin/actions";
 import { SubmitButton } from "@/components/SubmitButton";
 
 const STEPS = [10, 20, 50, 100];

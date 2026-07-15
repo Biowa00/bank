@@ -1,0 +1,57 @@
+{
+  "notify": {
+    "depositReceived": {
+      "title": "Depósito recebido",
+      "body": "{amount} foram creditados na sua conta."
+    },
+    "transferRejected": {
+      "title": "Transferência recusada",
+      "fallbackBody": "Transferências indisponíveis."
+    },
+    "transferPending": {
+      "title": "Transferência a aguardar validação",
+      "body": "A sua transferência de {amount} para {iban} foi submetida. Os fundos ficam reservados a aguardar a validação de um consultor."
+    },
+    "withdrawalRejected": {
+      "title": "Levantamento recusado",
+      "fallbackBody": "Levantamentos indisponíveis.",
+      "invalidCode": "O código de levantamento fornecido é inválido, expirou ou já foi utilizado."
+    },
+    "withdrawalDone": {
+      "title": "Levantamento efetuado",
+      "body": "{amount} levantados para {iban}."
+    },
+    "cardFrozen": {
+      "title": "Cartão congelado",
+      "body": "O seu cartão foi congelado. As operações estão temporariamente bloqueadas."
+    },
+    "cardUnfrozen": {
+      "title": "Cartão reativado",
+      "body": "O seu cartão foi reativado. Pode voltar a efetuar operações."
+    },
+    "progressUpdated": {
+      "title": "Progresso de levantamento atualizado",
+      "body": "O seu indicador de levantamento avançou +{pct}% (agora {progress}%)."
+    },
+    "transferReceived": {
+      "title": "Transferência recebida",
+      "body": "Recebeu {amount}{from}.",
+      "fromName": " de {name}"
+    },
+    "transferExecuted": {
+      "title": "Transferência desbloqueada e executada",
+      "body": "As 3 fases foram confirmadas. A sua transferência de {amount} foi executada."
+    },
+    "phaseConfirmed": {
+      "title": "Fase {phase}/{total} confirmada",
+      "body": "A fase {phase} da sua transferência de {amount} está confirmada. A aguardar a fase seguinte."
+    }
+  },
+  "chrome": {
+    "greeting": "Olá {name},",
+    "greetingNoName": "Olá,",
+    "header": "Nébula Bank",
+    "footerAuto": "Esta é uma mensagem automática, não responda.",
+    "footerConfidential": "Este e-mail e as informações que contém são confidenciais."
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "features": "Fonctionnalités",
+    "security": "Sécurité",
+    "howItWorks": "Comment ça marche"
+  },
+  "hero": {
+    "badge": "Néobanque nouvelle génération",
+    "titleLead": "La banque qui met votre argent",
+    "titleHighlight": "en mouvement",
+    "description": "Ouvrez un compte en 2 minutes, obtenez votre IBAN, effectuez dépôts et virements, et suivez toute votre activité en temps réel.",
+    "ctaPrimary": "Créer un compte gratuit",
+    "ctaSecondary": "Se connecter",
+    "guarantee": "Ouverture gratuite · Sans engagement",
+    "cardTier": "Premium"
+  },
+  "logoStrip": {
+    "sepa": "Virements SEPA",
+    "instantIban": "IBAN instantané",
+    "realtimeNotifications": "Notifications en temps réel",
+    "fullHistory": "Historique complet"
+  },
+  "features": {
+    "title": "Tout ce qu'une banque moderne doit faire",
+    "subtitle": "Une expérience fluide et complète, pensée pour votre quotidien.",
+    "items": {
+      "transfers": {
+        "title": "Virements instantanés",
+        "desc": "Envoyez de l'argent vers n'importe quel IBAN, en interne ou à l'extérieur, avec un historique complet."
+      },
+      "card": {
+        "title": "Carte & IBAN",
+        "desc": "Un IBAN vous est attribué automatiquement à l'ouverture de votre compte, prêt à recevoir et envoyer."
+      },
+      "notifications": {
+        "title": "Notifications",
+        "desc": "Chaque dépôt, virement ou changement sur votre compte génère une notification instantanée."
+      },
+      "deposits": {
+        "title": "Dépôts en un clic",
+        "desc": "Alimentez votre compte en quelques secondes et suivez votre solde évoluer en temps réel."
+      }
+    }
+  },
+  "showcase": {
+    "badge": "Tableau de bord",
+    "title": "Pilotez votre compte en un coup d'œil",
+    "description": "Solde en temps réel, historique filtrable, dépôts, virements et retraits — tout est réuni dans un espace clair et responsive.",
+    "points": [
+      "Solde mis à jour instantanément",
+      "Historique filtrable par type et statut",
+      "Retraits sécurisés par code de validation"
+    ],
+    "sampleDeposit": "Dépôt",
+    "sampleTransfer": "Virement — FR76…4021",
+    "sampleToday": "Aujourd'hui",
+    "sampleYesterday": "Hier"
+  },
+  "steps": {
+    "title": "Trois étapes, et c'est parti",
+    "items": [
+      {
+        "title": "Créez votre compte",
+        "desc": "Inscription en 2 minutes avec un e-mail. Votre IBAN est généré automatiquement."
+      },
+      {
+        "title": "Alimentez votre solde",
+        "desc": "Ajoutez des fonds en un clic depuis votre tableau de bord."
+      },
+      {
+        "title": "Envoyez & suivez",
+        "desc": "Effectuez virements et retraits, recevez des notifications, consultez l'historique."
+      }
+    ]
+  },
+  "security": {
+    "badge": "Sécurité",
+    "title": "Vos données, entre de bonnes mains",
+    "description": "Authentification chiffrée et sessions sécurisées protègent votre compte à chaque instant.",
+    "cards": [
+      { "title": "Chiffrement des sessions", "desc": "Jetons signés & cookies httpOnly" },
+      { "title": "Protection anti-fraude", "desc": "Opérations surveillées en continu" },
+      { "title": "Journal d'audit", "desc": "Chaque action sensible est tracée" },
+      { "title": "Données protégées", "desc": "Confidentialité par défaut" }
+    ]
+  },
+  "stats": {
+    "accounts": "comptes ouverts",
+    "satisfaction": "note de satisfaction",
+    "free": "gratuit et sécurisé"
+  },
+  "testimonials": {
+    "title": "Ils nous font confiance",
+    "items": [
+      { "quote": "Enfin une banque en ligne simple et rapide, sans paperasse inutile.", "author": "Sarah M." },
+      { "quote": "L'interface est claire et fluide, exactement ce qu'il me faut au quotidien.", "author": "Karim B." },
+      { "quote": "Les virements et l'historique sont un vrai plaisir à utiliser.", "author": "Léa D." }
+    ]
+  },
+  "finalCta": {
+    "title": "Prêt à ouvrir votre compte ?",
+    "description": "Créez votre compte en 2 minutes. Gratuit et sans engagement.",
+    "ctaPrimary": "Créer un compte",
+    "ctaSecondary": "Se connecter"
+  },
+  "footer": {
+    "tagline": "Néobanque nouvelle génération. Simple, rapide, sécurisée.",
+    "columns": {
+      "product": {
+        "title": "Produit",
+        "links": ["Fonctionnalités", "Sécurité", "Tableau de bord"]
+      },
+      "account": {
+        "title": "Compte",
+        "links": ["Créer un compte", "Se connecter"]
+      },
+      "legal": {
+        "title": "Légal",
+        "links": ["Mentions légales", "Confidentialité"]
+      }
+    },
+    "rights": "Tous droits réservés."
+  }
+}

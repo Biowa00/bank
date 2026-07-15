@@ -1,6 +1,7 @@
 "use client";
 
 import { useFormStatus } from "react-dom";
+import { useZone } from "@/components/i18n/DictionaryProvider";
 
 export function SubmitButton({
   children,
@@ -12,12 +13,13 @@ export function SubmitButton({
   pendingLabel?: string;
 }) {
   const { pending } = useFormStatus();
+  const common = useZone("common");
   return (
     <button type="submit" className={className} disabled={pending} aria-busy={pending}>
       {pending ? (
         <>
           <Spinner />
-          {pendingLabel ?? "Un instant…"}
+          {pendingLabel ?? common.actions.oneMoment}
         </>
       ) : (
         children

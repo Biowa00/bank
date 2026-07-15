@@ -1,0 +1,88 @@
+{
+  "auth": {
+    "lastNameRequired": "Nazwisko jest wymagane.",
+    "firstNameRequired": "Imię jest wymagane.",
+    "cityRequired": "Miasto jest wymagane.",
+    "professionRequired": "Zawód jest wymagany.",
+    "addressRequired": "Pełny adres jest wymagany.",
+    "phoneRequired": "Numer telefonu jest wymagany.",
+    "emailRequired": "Adres e-mail jest wymagany.",
+    "passwordMinLength": "Hasło musi zawierać co najmniej 8 znaków.",
+    "passwordUppercase": "Hasło musi zawierać co najmniej jedną wielką literę.",
+    "passwordDigit": "Hasło musi zawierać co najmniej jedną cyfrę.",
+    "passwordsMismatch": "Hasła nie są zgodne.",
+    "cguRequired": "Musisz zaakceptować regulamin i politykę prywatności.",
+    "idRequired": "Dokument tożsamości (zdjęcie) jest wymagany.",
+    "idFormat": "Nieprawidłowy format dokumentu tożsamości (JPG, PNG lub PDF).",
+    "idTooLarge": "Dokument tożsamości przekracza 5 MB.",
+    "accountCreatedConfirm": "Konto utworzone. Sprawdź skrzynkę pocztową, aby potwierdzić adres, a następnie zaloguj się.",
+    "credentialsRequired": "E-mail i hasło są wymagane.",
+    "notAdmin": "To konto nie ma uprawnień administratora.",
+    "emailRequiredShort": "Adres e-mail jest wymagany.",
+    "resetEmailSent": "Jeśli konto jest powiązane z tym adresem, właśnie wysłano e-mail z linkiem do zresetowania. Sprawdź także folder spam.",
+    "passwordCriteria": "Hasło nie spełnia wymagań bezpieczeństwa.",
+    "resetLinkInvalid": "Nieprawidłowy lub wygasły link. Poproś o nowe zresetowanie.",
+    "supabase": {
+      "invalidLogin": "Nieprawidłowy e-mail lub hasło.",
+      "alreadyRegistered": "Konto z tym adresem e-mail już istnieje.",
+      "emailNotConfirmed": "E-mail niepotwierdzony. Sprawdź skrzynkę pocztową.",
+      "rateLimit": "Zbyt wiele prób. Spróbuj ponownie za chwilę.",
+      "generic": "Wystąpił błąd. Spróbuj ponownie."
+    }
+  },
+  "amount": {
+    "invalid": "Nieprawidłowa kwota.",
+    "max": "Maksymalna kwota: 1 000 000 €."
+  },
+  "deposit": {
+    "failed": "Wpłata nie powiodła się. Spróbuj ponownie."
+  },
+  "transfer": {
+    "ibanInvalid": "Nieprawidłowy IBAN odbiorcy.",
+    "ownAccount": "Nie możesz przelać na własne konto.",
+    "insufficient": "Niewystarczające saldo na ten przelew.",
+    "failed": "Przelew nie powiódł się. Spróbuj ponownie.",
+    "unavailable": "Przelewy niedostępne."
+  },
+  "withdrawalAccount": {
+    "ibanInvalid": "Nieprawidłowy IBAN.",
+    "saveFailed": "Nie można zapisać tego IBAN-u."
+  },
+  "withdraw": {
+    "chooseIban": "Wybierz docelowy IBAN.",
+    "codeRequired": "Kod wypłaty jest wymagany.",
+    "ibanNotFound": "Nie znaleziono docelowego IBAN-u.",
+    "insufficient": "Niewystarczające saldo na tę wypłatę.",
+    "codeInvalid": "Kod wypłaty jest nieprawidłowy, wygasł lub został już użyty.",
+    "unavailable": "Wypłaty niedostępne."
+  },
+  "redeem": {
+    "enterCode": "Wprowadź kod.",
+    "codeInvalid": "Kod jest nieprawidłowy, wygasł lub został już użyty.",
+    "updateFailed": "Aktualizacja nie powiodła się."
+  },
+  "phase": {
+    "codeRequired": "Kod jest wymagany.",
+    "notFound": "Nie znaleziono przelewu lub został już przetworzony.",
+    "allConfirmed": "Wszystkie fazy są już potwierdzone.",
+    "noCode": "Brak oczekującego kodu dla tego przelewu. Skontaktuj się z doradcą.",
+    "expired": "Ten kod wygasł. Doradca musi wygenerować nowy.",
+    "tooManyAttempts": "Zbyt wiele prób. Należy wygenerować nowy kod.",
+    "incorrectExhausted": "Nieprawidłowy kod. Zbyt wiele prób: należy wygenerować nowy kod.",
+    "incorrectRemaining": "Nieprawidłowy kod. Pozostało prób: {n}.",
+    "updateFailed": "Aktualizacja fazy nie powiodła się."
+  },
+  "profile": {
+    "nameEmpty": "Nazwa nie może być pusta."
+  },
+  "success": {
+    "deposit": "Wpłata {amount} zrealizowana.",
+    "transferSubmitted": "Przelew {amount} złożony — oczekuje na zatwierdzenie.",
+    "ibanSaved": "IBAN wypłaty zapisany.",
+    "withdraw": "Wypłata {amount} zrealizowana.",
+    "redeem": "Zastosowano +{pct}%. Postęp: {progress}%.",
+    "phaseConfirmed": "Faza {phase} potwierdzona.",
+    "transferUnlocked": "Przelew odblokowany i wykonany.",
+    "profileUpdated": "Profil zaktualizowany."
+  }
+}

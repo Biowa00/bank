@@ -1,0 +1,45 @@
+{
+  "brand": "Nébula",
+  "language": "Jezik",
+  "actions": {
+    "login": "Prijava",
+    "register": "Odprite račun",
+    "logout": "Odjava",
+    "back": "Nazaj",
+    "backToSite": "← Nazaj na spletno mesto",
+    "home": "Domov",
+    "mySpace": "Moj prostor",
+    "mySpaceAria": "Moj osebni prostor",
+    "seeAll": "Prikaži vse",
+    "cancel": "Prekliči",
+    "confirm": "Potrdi",
+    "save": "Shrani",
+    "send": "Pošlji",
+    "validate": "Potrdi",
+    "delete": "Izbriši",
+    "oneMoment": "Trenutek…"
+  },
+  "account": {
+    "availableBalance": "Razpoložljivo stanje",
+    "currentAccount": "Tekoči račun",
+    "iban": "IBAN"
+  },
+  "statuses": {
+    "account": {
+      "active": "Aktiven",
+      "restricted": "Omejen",
+      "banned": "Blokiran"
+    },
+    "tx": {
+      "success": "Uspešna",
+      "pending": "V čakanju",
+      "blocked": "Blokirana",
+      "rejected": "Zavrnjena"
+    },
+    "code": {
+      "active": "Aktivna",
+      "used": "Uporabljena",
+      "revoked": "Preklicana"
+    }
+  }
+}

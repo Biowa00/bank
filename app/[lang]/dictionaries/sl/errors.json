@@ -1,0 +1,88 @@
+{
+  "auth": {
+    "lastNameRequired": "Priimek je obvezen.",
+    "firstNameRequired": "Ime je obvezno.",
+    "cityRequired": "Mesto je obvezno.",
+    "professionRequired": "Poklic je obvezen.",
+    "addressRequired": "Polni naslov je obvezen.",
+    "phoneRequired": "Telefonska številka je obvezna.",
+    "emailRequired": "E-poštni naslov je obvezen.",
+    "passwordMinLength": "Geslo mora vsebovati vsaj 8 znakov.",
+    "passwordUppercase": "Geslo mora vsebovati vsaj eno veliko črko.",
+    "passwordDigit": "Geslo mora vsebovati vsaj eno številko.",
+    "passwordsMismatch": "Gesli se ne ujemata.",
+    "cguRequired": "Sprejeti morate splošne pogoje in pravilnik o zasebnosti.",
+    "idRequired": "Osebni dokument (fotografija) je obvezen.",
+    "idFormat": "Neveljavna oblika osebnega dokumenta (JPG, PNG ali PDF).",
+    "idTooLarge": "Osebni dokument presega 5 MB.",
+    "accountCreatedConfirm": "Račun ustvarjen. Preverite e-pošto za potrditev naslova in se nato prijavite.",
+    "credentialsRequired": "E-pošta in geslo sta obvezna.",
+    "notAdmin": "Ta račun nima skrbniških pravic.",
+    "emailRequiredShort": "E-poštni naslov je obvezen.",
+    "resetEmailSent": "Če je s tem naslovom povezan račun, smo pravkar poslali e-pošto s povezavo za ponastavitev. Preverite tudi vsiljeno pošto.",
+    "passwordCriteria": "Geslo ne izpolnjuje varnostnih zahtev.",
+    "resetLinkInvalid": "Neveljavna ali potekla povezava. Zahtevajte novo ponastavitev.",
+    "supabase": {
+      "invalidLogin": "Napačna e-pošta ali geslo.",
+      "alreadyRegistered": "Račun s to e-pošto že obstaja.",
+      "emailNotConfirmed": "E-pošta ni potrjena. Preverite svoj poštni predal.",
+      "rateLimit": "Preveč poskusov. Poskusite znova čez trenutek.",
+      "generic": "Prišlo je do napake. Poskusite znova."
+    }
+  },
+  "amount": {
+    "invalid": "Neveljaven znesek.",
+    "max": "Najvišji znesek: 1.000.000 €."
+  },
+  "deposit": {
+    "failed": "Polog ni uspel. Poskusite znova."
+  },
+  "transfer": {
+    "ibanInvalid": "Neveljaven IBAN prejemnika.",
+    "ownAccount": "Ne morete nakazati na svoj lastni račun.",
+    "insufficient": "Nezadostno stanje za to nakazilo.",
+    "failed": "Nakazilo ni uspelo. Poskusite znova.",
+    "unavailable": "Nakazila niso na voljo."
+  },
+  "withdrawalAccount": {
+    "ibanInvalid": "Neveljaven IBAN.",
+    "saveFailed": "Tega IBAN-a ni mogoče shraniti."
+  },
+  "withdraw": {
+    "chooseIban": "Izberite ciljni IBAN.",
+    "codeRequired": "Koda za dvig je obvezna.",
+    "ibanNotFound": "Ciljnega IBAN-a ni mogoče najti.",
+    "insufficient": "Nezadostno stanje za ta dvig.",
+    "codeInvalid": "Koda za dvig je neveljavna, potekla ali že uporabljena.",
+    "unavailable": "Dvigi niso na voljo."
+  },
+  "redeem": {
+    "enterCode": "Vnesite kodo.",
+    "codeInvalid": "Koda je neveljavna, potekla ali že uporabljena.",
+    "updateFailed": "Posodobitev ni uspela."
+  },
+  "phase": {
+    "codeRequired": "Koda je obvezna.",
+    "notFound": "Nakazila ni mogoče najti ali je že obdelano.",
+    "allConfirmed": "Vse faze so že potrjene.",
+    "noCode": "Za to nakazilo ni čakajoče kode. Obrnite se na svojega svetovalca.",
+    "expired": "Ta koda je potekla. Vaš svetovalec mora ustvariti novo.",
+    "tooManyAttempts": "Preveč poskusov. Ustvariti je treba novo kodo.",
+    "incorrectExhausted": "Napačna koda. Preveč poskusov: ustvariti je treba novo kodo.",
+    "incorrectRemaining": "Napačna koda. Preostali poskusi: {n}.",
+    "updateFailed": "Posodobitev faze ni uspela."
+  },
+  "profile": {
+    "nameEmpty": "Ime ne sme biti prazno."
+  },
+  "success": {
+    "deposit": "Polog {amount} opravljen.",
+    "transferSubmitted": "Nakazilo {amount} oddano — čaka na potrditev.",
+    "ibanSaved": "IBAN za dvig shranjen.",
+    "withdraw": "Dvig {amount} opravljen.",
+    "redeem": "+{pct}% uporabljeno. Napredek: {progress}%.",
+    "phaseConfirmed": "Faza {phase} potrjena.",
+    "transferUnlocked": "Nakazilo odklenjeno in izvedeno.",
+    "profileUpdated": "Profil posodobljen."
+  }
+}

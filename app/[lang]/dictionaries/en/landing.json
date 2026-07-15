@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "features": "Features",
+    "security": "Security",
+    "howItWorks": "How it works"
+  },
+  "hero": {
+    "badge": "The next-generation neobank",
+    "titleLead": "The bank that keeps your money",
+    "titleHighlight": "on the move",
+    "description": "Open an account in 2 minutes, get your IBAN, make deposits and transfers, and track all your activity in real time.",
+    "ctaPrimary": "Open a free account",
+    "ctaSecondary": "Log in",
+    "guarantee": "Free to open · No commitment",
+    "cardTier": "Premium"
+  },
+  "logoStrip": {
+    "sepa": "SEPA transfers",
+    "instantIban": "Instant IBAN",
+    "realtimeNotifications": "Real-time notifications",
+    "fullHistory": "Full history"
+  },
+  "features": {
+    "title": "Everything a modern bank should do",
+    "subtitle": "A smooth, complete experience designed for your everyday life.",
+    "items": {
+      "transfers": {
+        "title": "Instant transfers",
+        "desc": "Send money to any IBAN, internally or externally, with a complete history."
+      },
+      "card": {
+        "title": "Card & IBAN",
+        "desc": "An IBAN is automatically assigned when you open your account, ready to receive and send."
+      },
+      "notifications": {
+        "title": "Notifications",
+        "desc": "Every deposit, transfer or change to your account triggers an instant notification."
+      },
+      "deposits": {
+        "title": "One-click deposits",
+        "desc": "Top up your account in seconds and watch your balance update in real time."
+      }
+    }
+  },
+  "showcase": {
+    "badge": "Dashboard",
+    "title": "Manage your account at a glance",
+    "description": "Real-time balance, filterable history, deposits, transfers and withdrawals — all in one clear, responsive space.",
+    "points": [
+      "Balance updated instantly",
+      "History filterable by type and status",
+      "Withdrawals secured by validation code"
+    ],
+    "sampleDeposit": "Deposit",
+    "sampleTransfer": "Transfer — FR76…4021",
+    "sampleToday": "Today",
+    "sampleYesterday": "Yesterday"
+  },
+  "steps": {
+    "title": "Three steps and you're off",
+    "items": [
+      {
+        "title": "Create your account",
+        "desc": "Sign up in 2 minutes with an email. Your IBAN is generated automatically."
+      },
+      {
+        "title": "Fund your balance",
+        "desc": "Add funds in one click from your dashboard."
+      },
+      {
+        "title": "Send & track",
+        "desc": "Make transfers and withdrawals, get notifications, review your history."
+      }
+    ]
+  },
+  "security": {
+    "badge": "Security",
+    "title": "Your data, in good hands",
+    "description": "Encrypted authentication and secure sessions protect your account at all times.",
+    "cards": [
+      { "title": "Session encryption", "desc": "Signed tokens & httpOnly cookies" },
+      { "title": "Fraud protection", "desc": "Operations monitored continuously" },
+      { "title": "Audit log", "desc": "Every sensitive action is traced" },
+      { "title": "Protected data", "desc": "Privacy by default" }
+    ]
+  },
+  "stats": {
+    "accounts": "accounts opened",
+    "satisfaction": "satisfaction rating",
+    "free": "free and secure"
+  },
+  "testimonials": {
+    "title": "They trust us",
+    "items": [
+      { "quote": "Finally an online bank that's simple and fast, without pointless paperwork.", "author": "Sarah M." },
+      { "quote": "The interface is clear and smooth, exactly what I need day to day.", "author": "Karim B." },
+      { "quote": "Transfers and history are a real pleasure to use.", "author": "Léa D." }
+    ]
+  },
+  "finalCta": {
+    "title": "Ready to open your account?",
+    "description": "Create your account in 2 minutes. Free and no commitment.",
+    "ctaPrimary": "Open an account",
+    "ctaSecondary": "Log in"
+  },
+  "footer": {
+    "tagline": "The next-generation neobank. Simple, fast, secure.",
+    "columns": {
+      "product": {
+        "title": "Product",
+        "links": ["Features", "Security", "Dashboard"]
+      },
+      "account": {
+        "title": "Account",
+        "links": ["Open an account", "Log in"]
+      },
+      "legal": {
+        "title": "Legal",
+        "links": ["Legal notice", "Privacy"]
+      }
+    },
+    "rights": "All rights reserved."
+  }
+}

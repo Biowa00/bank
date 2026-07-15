@@ -1,0 +1,156 @@
+{
+  "layout": {
+    "bannedTitle": "Konto zablokowane",
+    "bannedText": "Twoje konto zostało zablokowane, a dostęp do usług jest zawieszony.",
+    "restrictedTitle": "Konto ograniczone.",
+    "restrictedDefault": "Niektóre operacje (przelewy, wypłaty) są niedostępne.",
+    "reason": "Powód:",
+    "defaultFirstName": "Cię"
+  },
+  "home": {
+    "greeting": "Cześć",
+    "subtitle": "Oto stan Twojego konta Nébula.",
+    "quickDeposit": "Wpłać",
+    "quickTransfer": "Przelej",
+    "quickWithdraw": "Wypłać",
+    "recentTransactions": "Ostatnie transakcje",
+    "emptyRecent": "Na razie brak transakcji. Dokonaj pierwszej wpłaty!"
+  },
+  "balanceCard": {
+    "holder": "Właściciel",
+    "copyIban": "Kopiuj IBAN",
+    "copied": "Skopiowano ✓"
+  },
+  "bankCard": {
+    "paymentCard": "Karta płatnicza",
+    "frozen": "Zamrożona",
+    "holder": "Właściciel",
+    "exp": "Ważn.",
+    "cvv": "CVV",
+    "showInfo": "Pokaż dane",
+    "hideInfo": "Ukryj dane",
+    "freezeTitle": "Zamroź kartę",
+    "freezeDescFrozen": "Operacje są zablokowane, dopóki karta jest zamrożona.",
+    "freezeDescActive": "Tymczasowo blokuje wszystkie operacje karty.",
+    "freezeToggleAria": "Zamroź lub odblokuj kartę"
+  },
+  "deposit": {
+    "title": "Wpłać środki",
+    "subtitle": "Natychmiast zasil swoje saldo.",
+    "amountLabel": "Kwota do wpłaty (€)",
+    "pending": "Wpłacanie…",
+    "submit": "Wpłać środki",
+    "note": "Twoje saldo jest uznawane natychmiast po zatwierdzeniu."
+  },
+  "transfer": {
+    "title": "Wykonaj przelew",
+    "subtitle": "Wyślij pieniądze na wybrany IBAN.",
+    "ibanLabel": "IBAN odbiorcy",
+    "amountLabel": "Kwota (€)",
+    "availableBalance": "Dostępne saldo:",
+    "descriptionLabel": "Tytuł (opcjonalnie)",
+    "descriptionPlaceholder": "Czynsz, zwrot…",
+    "pending": "Wysyłanie…",
+    "submit": "Wyślij przelew",
+    "note": "Przelew podlega zatwierdzeniu przez doradcę. Środki są rezerwowane w momencie wysłania; w razie odmowy są w całości zwracane."
+  },
+  "withdraw": {
+    "title": "Wypłać środki",
+    "subtitle": "Wypłata wymaga kodu dostarczonego przez administratora.",
+    "newWithdrawal": "Nowa wypłata",
+    "savedIbansTitle": "Zapisane docelowe IBAN-y",
+    "savedIbansDesc": "Zarządzaj kontami, na które możesz wypłacać.",
+    "noAccounts": "Najpierw zarejestruj poniżej docelowy IBAN, aby móc wykonać wypłatę.",
+    "destLabel": "Docelowy IBAN",
+    "amountLabel": "Kwota (€)",
+    "availableBalance": "Dostępne saldo:",
+    "codeLabel": "Kod wypłaty",
+    "codePlaceholder": "Kod dostarczony przez administratora",
+    "codeHint": "Do zatwierdzenia operacji wymagany jest ważny kod wypłaty wygenerowany przez administratora.",
+    "pending": "Zatwierdzanie…",
+    "submit": "Zatwierdź wypłatę"
+  },
+  "withdrawalAccounts": {
+    "labelLabel": "Etykieta (opcjonalnie)",
+    "labelPlaceholder": "Moje inne konto",
+    "ibanLabel": "Docelowy IBAN",
+    "pending": "Dodawanie…",
+    "submit": "Zapisz ten IBAN"
+  },
+  "withdrawalProgress": {
+    "title": "Postęp Twojej wypłaty",
+    "complete": "Twój wskaźnik jest pełny.",
+    "hint": "Wprowadź kody dostarczone przez doradcę, aby zwiększyć wskaźnik.",
+    "pending": "…",
+    "submit": "Zatwierdź"
+  },
+  "transferPhases": {
+    "title": "Przelewy oczekujące na potwierdzenie",
+    "intro": "Twój przelew jest odblokowywany w {total} fazach. Wprowadź każdy otrzymany kod, aby przejść do następnej.",
+    "transferOf": "Przelew na {amount}",
+    "toIban": "na {iban}",
+    "pending": "…",
+    "confirm": "Potwierdź",
+    "awaiting": "Oczekiwanie na zatwierdzenie fazy {phase} przez doradcę. Otrzymasz kod e-mailem.",
+    "names": {
+      "1": "Kod potwierdzenia połączenia",
+      "2": "Kod zatwierdzenia bankowego",
+      "3": "Kod aktywacji przelewu"
+    }
+  },
+  "transactions": {
+    "title": "Historia transakcji",
+    "subtitle": "Filtruj według typu i statusu.",
+    "emptyFiltered": "Żadna transakcja nie pasuje do tych filtrów.",
+    "typeFilters": {
+      "all": "Wszystko",
+      "deposit": "Wpłaty",
+      "transfer": "Przelewy",
+      "withdrawal": "Wypłaty"
+    },
+    "statusFilters": {
+      "all": "Wszystkie statusy",
+      "success": "Zakończona",
+      "pending": "Oczekująca",
+      "rejected": "Odrzucona",
+      "blocked": "Zablokowana"
+    }
+  },
+  "transactionItem": {
+    "types": {
+      "deposit": "Wpłata",
+      "transfer": "Przelew",
+      "withdrawal": "Wypłata",
+      "admin_credit": "Uznanie administracyjne"
+    },
+    "declineReason": "Odmowa:"
+  },
+  "notifications": {
+    "title": "Powiadomienia",
+    "subtitle": "Wszystkie zdarzenia na Twoim koncie.",
+    "markAllRead": "Oznacz wszystkie jako przeczytane",
+    "empty": "Brak powiadomień."
+  },
+  "profile": {
+    "title": "Profil",
+    "subtitle": "Twoje dane osobowe i konto.",
+    "accountStatus": "Status konta",
+    "reason": "Powód:",
+    "createdOn": "Konto utworzono {date}",
+    "infoSection": "Informacje",
+    "fullName": "Imię i nazwisko",
+    "email": "Adres e-mail",
+    "emailHint": "Aby zmienić adres e-mail, skontaktuj się z doradcą.",
+    "pending": "Zapisywanie…",
+    "submit": "Zapisz"
+  },
+  "permissions": {
+    "frozen": "Twoja karta jest zamrożona. Odblokuj ją w panelu, aby wykonywać operacje.",
+    "banned": "Konto zablokowane.",
+    "depositNotAuthorized": "Wpłaty nie są jeszcze dozwolone na Twoim koncie. Skontaktuj się z doradcą.",
+    "transferRestricted": "Konto ograniczone: przelewy niedostępne.",
+    "transfersBlocked": "Przelewy są zablokowane na Twoim koncie.",
+    "withdrawRestricted": "Konto ograniczone: wypłaty niedostępne.",
+    "withdrawalsBlocked": "Wypłaty są zablokowane na Twoim koncie."
+  }
+}

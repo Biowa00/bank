@@ -1,7 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import {
+  LocaleLink as Link,
+  useLogicalPathname,
+} from "@/components/i18n/navigation";
 import { Logo } from "@/components/Logo";
 
 const links = [
@@ -15,7 +17,7 @@ const links = [
 ];
 
 export function Sidebar({ unread }: { unread: number }) {
-  const pathname = usePathname();
+  const pathname = useLogicalPathname();
   return (
     <nav className="flex flex-col gap-1">
       <div className="mb-6 px-3">

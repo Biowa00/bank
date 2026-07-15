@@ -1,7 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import {
+  LocaleLink as Link,
+  useLogicalPathname,
+} from "@/components/i18n/navigation";
 import { useState } from "react";
 
 type Item = { href: string; label: string; icon: string };
@@ -20,7 +22,7 @@ const MORE: Item[] = [
 ];
 
 export function MobileBottomNav({ unread }: { unread: number }) {
-  const pathname = usePathname();
+  const pathname = useLogicalPathname();
   const [open, setOpen] = useState(false);
 
   const isActive = (href: string) =>

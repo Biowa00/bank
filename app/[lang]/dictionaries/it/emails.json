@@ -1,0 +1,57 @@
+{
+  "notify": {
+    "depositReceived": {
+      "title": "Deposito ricevuto",
+      "body": "{amount} sono stati accreditati sul tuo conto."
+    },
+    "transferRejected": {
+      "title": "Bonifico rifiutato",
+      "fallbackBody": "Bonifici non disponibili."
+    },
+    "transferPending": {
+      "title": "Bonifico in attesa di convalida",
+      "body": "Il tuo bonifico di {amount} verso {iban} è stato inviato. I fondi sono riservati in attesa della convalida di un consulente."
+    },
+    "withdrawalRejected": {
+      "title": "Prelievo rifiutato",
+      "fallbackBody": "Prelievi non disponibili.",
+      "invalidCode": "Il codice di prelievo fornito non è valido, è scaduto o è già stato utilizzato."
+    },
+    "withdrawalDone": {
+      "title": "Prelievo effettuato",
+      "body": "{amount} prelevati verso {iban}."
+    },
+    "cardFrozen": {
+      "title": "Carta congelata",
+      "body": "La tua carta è stata congelata. Le operazioni sono temporaneamente bloccate."
+    },
+    "cardUnfrozen": {
+      "title": "Carta riattivata",
+      "body": "La tua carta è stata riattivata. Puoi di nuovo effettuare operazioni."
+    },
+    "progressUpdated": {
+      "title": "Avanzamento del prelievo aggiornato",
+      "body": "Il tuo indicatore di prelievo è avanzato di +{pct}% (ora {progress}%)."
+    },
+    "transferReceived": {
+      "title": "Bonifico ricevuto",
+      "body": "Hai ricevuto {amount}{from}.",
+      "fromName": " da {name}"
+    },
+    "transferExecuted": {
+      "title": "Bonifico sbloccato ed eseguito",
+      "body": "Le 3 fasi sono state confermate. Il tuo bonifico di {amount} è stato eseguito."
+    },
+    "phaseConfirmed": {
+      "title": "Fase {phase}/{total} confermata",
+      "body": "La fase {phase} del tuo bonifico di {amount} è confermata. In attesa della fase successiva."
+    }
+  },
+  "chrome": {
+    "greeting": "Ciao {name},",
+    "greetingNoName": "Ciao,",
+    "header": "Nébula Bank",
+    "footerAuto": "Questo è un messaggio automatico, ti preghiamo di non rispondere.",
+    "footerConfidential": "Questa e-mail e le informazioni in essa contenute sono riservate."
+  }
+}

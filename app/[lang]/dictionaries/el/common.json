@@ -1,0 +1,45 @@
+{
+  "brand": "Nébula",
+  "language": "Γλώσσα",
+  "actions": {
+    "login": "Σύνδεση",
+    "register": "Άνοιγμα λογαριασμού",
+    "logout": "Αποσύνδεση",
+    "back": "Πίσω",
+    "backToSite": "← Επιστροφή στον ιστότοπο",
+    "home": "Αρχική",
+    "mySpace": "Ο χώρος μου",
+    "mySpaceAria": "Ο προσωπικός μου χώρος",
+    "seeAll": "Προβολή όλων",
+    "cancel": "Ακύρωση",
+    "confirm": "Επιβεβαίωση",
+    "save": "Αποθήκευση",
+    "send": "Αποστολή",
+    "validate": "Επικύρωση",
+    "delete": "Διαγραφή",
+    "oneMoment": "Μια στιγμή…"
+  },
+  "account": {
+    "availableBalance": "Διαθέσιμο υπόλοιπο",
+    "currentAccount": "Τρεχούμενος λογαριασμός",
+    "iban": "IBAN"
+  },
+  "statuses": {
+    "account": {
+      "active": "Ενεργός",
+      "restricted": "Περιορισμένος",
+      "banned": "Αποκλεισμένος"
+    },
+    "tx": {
+      "success": "Επιτυχής",
+      "pending": "Σε εκκρεμότητα",
+      "blocked": "Μπλοκαρισμένη",
+      "rejected": "Απορρίφθηκε"
+    },
+    "code": {
+      "active": "Ενεργός",
+      "used": "Χρησιμοποιημένος",
+      "revoked": "Ανακλήθηκε"
+    }
+  }
+}

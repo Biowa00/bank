@@ -1,0 +1,88 @@
+{
+  "auth": {
+    "lastNameRequired": "A vezetéknév kötelező.",
+    "firstNameRequired": "A keresztnév kötelező.",
+    "cityRequired": "A város kötelező.",
+    "professionRequired": "A foglalkozás kötelező.",
+    "addressRequired": "A teljes cím kötelező.",
+    "phoneRequired": "A telefonszám kötelező.",
+    "emailRequired": "Az e-mail-cím kötelező.",
+    "passwordMinLength": "A jelszónak legalább 8 karaktert kell tartalmaznia.",
+    "passwordUppercase": "A jelszónak legalább egy nagybetűt kell tartalmaznia.",
+    "passwordDigit": "A jelszónak legalább egy számjegyet kell tartalmaznia.",
+    "passwordsMismatch": "A jelszavak nem egyeznek.",
+    "cguRequired": "El kell fogadnia az általános feltételeket és az adatvédelmi szabályzatot.",
+    "idRequired": "A személyazonosító okmány (fénykép) kötelező.",
+    "idFormat": "Érvénytelen személyazonosító okmány formátum (JPG, PNG vagy PDF).",
+    "idTooLarge": "A személyazonosító okmány meghaladja az 5 MB-ot.",
+    "accountCreatedConfirm": "Fiók létrehozva. Ellenőrizze postafiókját a cím megerősítéséhez, majd jelentkezzen be.",
+    "credentialsRequired": "E-mail és jelszó kötelező.",
+    "notAdmin": "Ennek a fióknak nincsenek rendszergazdai jogosultságai.",
+    "emailRequiredShort": "Az e-mail-cím kötelező.",
+    "resetEmailSent": "Ha ehhez a címhez tartozik fiók, épp most küldtünk egy e-mailt visszaállítási linkkel. Ellenőrizze a levélszemét mappát is.",
+    "passwordCriteria": "A jelszó nem felel meg a biztonsági követelményeknek.",
+    "resetLinkInvalid": "Érvénytelen vagy lejárt link. Kérjen új visszaállítást.",
+    "supabase": {
+      "invalidLogin": "Hibás e-mail vagy jelszó.",
+      "alreadyRegistered": "Már létezik fiók ezzel az e-mail-címmel.",
+      "emailNotConfirmed": "Az e-mail nincs megerősítve. Ellenőrizze postafiókját.",
+      "rateLimit": "Túl sok próbálkozás. Próbálja újra egy pillanat múlva.",
+      "generic": "Hiba történt. Próbálja újra."
+    }
+  },
+  "amount": {
+    "invalid": "Érvénytelen összeg.",
+    "max": "Maximális összeg: 1 000 000 €."
+  },
+  "deposit": {
+    "failed": "A befizetés sikertelen. Próbálja újra."
+  },
+  "transfer": {
+    "ibanInvalid": "Érvénytelen kedvezményezett IBAN.",
+    "ownAccount": "Nem utalhat a saját számlájára.",
+    "insufficient": "Nincs elegendő egyenleg ehhez az átutaláshoz.",
+    "failed": "Az átutalás sikertelen. Próbálja újra.",
+    "unavailable": "Az átutalások nem érhetők el."
+  },
+  "withdrawalAccount": {
+    "ibanInvalid": "Érvénytelen IBAN.",
+    "saveFailed": "Ezt az IBAN-t nem sikerült menteni."
+  },
+  "withdraw": {
+    "chooseIban": "Válasszon cél-IBAN-t.",
+    "codeRequired": "A kifizetési kód kötelező.",
+    "ibanNotFound": "A cél-IBAN nem található.",
+    "insufficient": "Nincs elegendő egyenleg ehhez a kifizetéshez.",
+    "codeInvalid": "A kifizetési kód érvénytelen, lejárt vagy már felhasználták.",
+    "unavailable": "A kifizetések nem érhetők el."
+  },
+  "redeem": {
+    "enterCode": "Adjon meg egy kódot.",
+    "codeInvalid": "A kód érvénytelen, lejárt vagy már felhasználták.",
+    "updateFailed": "A frissítés sikertelen."
+  },
+  "phase": {
+    "codeRequired": "A kód kötelező.",
+    "notFound": "Az átutalás nem található, vagy már feldolgozták.",
+    "allConfirmed": "Minden fázis már megerősítve.",
+    "noCode": "Nincs függőben lévő kód ehhez az átutaláshoz. Vegye fel a kapcsolatot tanácsadójával.",
+    "expired": "Ez a kód lejárt. Tanácsadójának újat kell generálnia.",
+    "tooManyAttempts": "Túl sok próbálkozás. Új kódot kell generálni.",
+    "incorrectExhausted": "Hibás kód. Túl sok próbálkozás: új kódot kell generálni.",
+    "incorrectRemaining": "Hibás kód. Hátralévő próbálkozás: {n}.",
+    "updateFailed": "A fázis frissítése sikertelen."
+  },
+  "profile": {
+    "nameEmpty": "A név nem lehet üres."
+  },
+  "success": {
+    "deposit": "{amount} befizetése megtörtént.",
+    "transferSubmitted": "{amount} átutalása elküldve — jóváhagyásra vár.",
+    "ibanSaved": "Kifizetési IBAN mentve.",
+    "withdraw": "{amount} kifizetése megtörtént.",
+    "redeem": "+{pct}% alkalmazva. Előrehaladás: {progress}%.",
+    "phaseConfirmed": "{phase}. fázis megerősítve.",
+    "transferUnlocked": "Átutalás feloldva és végrehajtva.",
+    "profileUpdated": "Profil frissítve."
+  }
+}

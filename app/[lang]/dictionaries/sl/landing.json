@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "features": "Funkcije",
+    "security": "Varnost",
+    "howItWorks": "Kako deluje"
+  },
+  "hero": {
+    "badge": "Neobanka nove generacije",
+    "titleLead": "Banka, ki ohranja vaš denar",
+    "titleHighlight": "v gibanju",
+    "description": "Odprite račun v 2 minutah, pridobite svoj IBAN, opravljajte pologe in nakazila ter spremljajte vse svoje dejavnosti v realnem času.",
+    "ctaPrimary": "Odprite brezplačen račun",
+    "ctaSecondary": "Prijava",
+    "guarantee": "Brezplačno odprtje · Brez obveznosti",
+    "cardTier": "Premium"
+  },
+  "logoStrip": {
+    "sepa": "Nakazila SEPA",
+    "instantIban": "Takojšnji IBAN",
+    "realtimeNotifications": "Obvestila v realnem času",
+    "fullHistory": "Popolna zgodovina"
+  },
+  "features": {
+    "title": "Vse, kar mora sodobna banka početi",
+    "subtitle": "Gladka in celovita izkušnja, zasnovana za vaš vsakdan.",
+    "items": {
+      "transfers": {
+        "title": "Takojšnja nakazila",
+        "desc": "Pošljite denar na kateri koli IBAN, interno ali zunanje, s popolno zgodovino."
+      },
+      "card": {
+        "title": "Kartica in IBAN",
+        "desc": "Ob odprtju računa vam je samodejno dodeljen IBAN, pripravljen za prejemanje in pošiljanje."
+      },
+      "notifications": {
+        "title": "Obvestila",
+        "desc": "Vsak polog, nakazilo ali sprememba na vašem računu sproži takojšnje obvestilo."
+      },
+      "deposits": {
+        "title": "Pologi z enim klikom",
+        "desc": "Napolnite račun v nekaj sekundah in spremljajte stanje v realnem času."
+      }
+    }
+  },
+  "showcase": {
+    "badge": "Nadzorna plošča",
+    "title": "Upravljajte svoj račun z enim pogledom",
+    "description": "Stanje v realnem času, zgodovina z možnostjo filtriranja, pologi, nakazila in dvigi — vse na enem preglednem in odzivnem mestu.",
+    "points": [
+      "Stanje posodobljeno takoj",
+      "Zgodovina, filtrirana po vrsti in stanju",
+      "Dvigi zaščiteni s potrditveno kodo"
+    ],
+    "sampleDeposit": "Polog",
+    "sampleTransfer": "Nakazilo — FR76…4021",
+    "sampleToday": "Danes",
+    "sampleYesterday": "Včeraj"
+  },
+  "steps": {
+    "title": "Trije koraki in gremo",
+    "items": [
+      {
+        "title": "Ustvarite račun",
+        "desc": "Registracija v 2 minutah z e-pošto. Vaš IBAN se ustvari samodejno."
+      },
+      {
+        "title": "Napolnite stanje",
+        "desc": "Dodajte sredstva z enim klikom na nadzorni plošči."
+      },
+      {
+        "title": "Pošiljajte in spremljajte",
+        "desc": "Opravljajte nakazila in dvige, prejemajte obvestila, preglejte zgodovino."
+      }
+    ]
+  },
+  "security": {
+    "badge": "Varnost",
+    "title": "Vaši podatki v dobrih rokah",
+    "description": "Šifrirano preverjanje pristnosti in varne seje ves čas ščitijo vaš račun.",
+    "cards": [
+      { "title": "Šifriranje sej", "desc": "Podpisani žetoni in piškotki httpOnly" },
+      { "title": "Zaščita pred goljufijami", "desc": "Operacije se neprekinjeno nadzorujejo" },
+      { "title": "Revizijski dnevnik", "desc": "Vsako občutljivo dejanje je zabeleženo" },
+      { "title": "Zaščiteni podatki", "desc": "Zasebnost privzeto" }
+    ]
+  },
+  "stats": {
+    "accounts": "odprtih računov",
+    "satisfaction": "ocena zadovoljstva",
+    "free": "brezplačno in varno"
+  },
+  "testimonials": {
+    "title": "Zaupajo nam",
+    "items": [
+      { "quote": "Končno preprosta in hitra spletna banka brez nepotrebne papirologije.", "author": "Sarah M." },
+      { "quote": "Vmesnik je pregleden in gladek, točno to, kar potrebujem vsak dan.", "author": "Karim B." },
+      { "quote": "Nakazila in zgodovina so pravo veselje za uporabo.", "author": "Léa D." }
+    ]
+  },
+  "finalCta": {
+    "title": "Ste pripravljeni odpreti račun?",
+    "description": "Ustvarite račun v 2 minutah. Brezplačno in brez obveznosti.",
+    "ctaPrimary": "Odprite račun",
+    "ctaSecondary": "Prijava"
+  },
+  "footer": {
+    "tagline": "Neobanka nove generacije. Preprosta, hitra, varna.",
+    "columns": {
+      "product": {
+        "title": "Izdelek",
+        "links": ["Funkcije", "Varnost", "Nadzorna plošča"]
+      },
+      "account": {
+        "title": "Račun",
+        "links": ["Odprite račun", "Prijava"]
+      },
+      "legal": {
+        "title": "Pravno",
+        "links": ["Pravno obvestilo", "Zasebnost"]
+      }
+    },
+    "rights": "Vse pravice pridržane."
+  }
+}

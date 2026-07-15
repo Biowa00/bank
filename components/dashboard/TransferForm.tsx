@@ -1,18 +1,23 @@
 "use client";
 
 import { useActionState } from "react";
-import { transfer, type ActionState } from "@/app/dashboard/actions";
+import { transfer, type ActionState } from "@/app/[lang]/dashboard/actions";
 import { SubmitButton } from "@/components/SubmitButton";
 import { FormFeedback } from "./FormFeedback";
+import { useZone } from "@/components/i18n/DictionaryProvider";
+import { useLocale } from "@/components/i18n/navigation";
+import { formatEuro } from "@/lib/format";
 
 export function TransferForm({ balance }: { balance: number }) {
   const [state, action] = useActionState<ActionState, FormData>(transfer, {});
+  const t = useZone("dashboard").transfer;
+  const locale = useLocale();
 
   return (
     <form action={action} className="space-y-4">
       <FormFeedback state={state} />
       <div>
-        <label className="label" htmlFor="iban">IBAN du bénéficiaire</label>
+        <label className="label" htmlFor="iban">{t.ibanLabel}</label>
         <input
           id="iban"
           name="iban"
@@ -23,7 +28,7 @@ export function TransferForm({ balance }: { balance: number }) {
         />
       </div>
       <div>
-        <label className="label" htmlFor="amount">Montant (€)</label>
+        <label className="label" htmlFor="amount">{t.amountLabel}</label>
         <input
           id="amount"
           name="amount"
@@ -34,18 +39,17 @@ export function TransferForm({ balance }: { balance: number }) {
           className="input text-lg"
           placeholder="0,00"
         />
-        <p className="mt-1 text-xs text-ink/40">Solde disponible : {balance.toLocaleString("fr-FR", { style: "currency", currency: "EUR" })}</p>
+        <p className="mt-1 text-xs text-ink/40">{t.availableBalance} {formatEuro(balance, locale)}</p>
       </div>
       <div>
-        <label className="label" htmlFor="description">Motif (facultatif)</label>
-        <input id="description" name="description" type="text" maxLength={140} className="input" placeholder="Loyer, remboursement…" />
+        <label className="label" htmlFor="description">{t.descriptionLabel}</label>
+        <input id="description" name="description" type="text" maxLength={140} className="input" placeholder={t.descriptionPlaceholder} />
       </div>
-      <SubmitButton className="btn-primary w-full py-3 text-base" pendingLabel="Envoi…">
-        Soumettre le virement
+      <SubmitButton className="btn-primary w-full py-3 text-base" pendingLabel={t.pending}>
+        {t.submit}
       </SubmitButton>
       <p className="text-center text-xs text-ink/40">
-        Le virement est soumis à validation par un conseiller. Les fonds sont réservés dès l&apos;envoi ;
-        en cas de refus, ils vous sont intégralement recrédités.
+        {t.note}
       </p>
     </form>
   );

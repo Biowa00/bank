@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
-import { setBlock, type AdminState } from "@/app/admin/actions";
+import { setBlock, type AdminState } from "@/app/[lang]/admin/actions";
 import { SubmitButton } from "@/components/SubmitButton";
 
 export function BlockControl({

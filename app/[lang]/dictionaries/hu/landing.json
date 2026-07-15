@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "features": "Funkciók",
+    "security": "Biztonság",
+    "howItWorks": "Hogyan működik"
+  },
+  "hero": {
+    "badge": "Az új generációs neobank",
+    "titleLead": "A bank, amely mozgásban tartja",
+    "titleHighlight": "a pénzét",
+    "description": "Nyisson számlát 2 perc alatt, szerezze meg IBAN-ját, végezzen befizetéseket és átutalásokat, és kövesse nyomon minden tevékenységét valós időben.",
+    "ctaPrimary": "Nyisson ingyenes számlát",
+    "ctaSecondary": "Bejelentkezés",
+    "guarantee": "Ingyenes nyitás · Kötelezettség nélkül",
+    "cardTier": "Premium"
+  },
+  "logoStrip": {
+    "sepa": "SEPA-átutalások",
+    "instantIban": "Azonnali IBAN",
+    "realtimeNotifications": "Valós idejű értesítések",
+    "fullHistory": "Teljes előzmények"
+  },
+  "features": {
+    "title": "Minden, amit egy modern banknak tudnia kell",
+    "subtitle": "Gördülékeny és teljes körű élmény, a mindennapjaira tervezve.",
+    "items": {
+      "transfers": {
+        "title": "Azonnali átutalások",
+        "desc": "Küldjön pénzt bármely IBAN-ra, belső vagy külső, teljes előzményekkel."
+      },
+      "card": {
+        "title": "Kártya és IBAN",
+        "desc": "A számlanyitáskor automatikusan IBAN-t kap, készen a fogadásra és a küldésre."
+      },
+      "notifications": {
+        "title": "Értesítések",
+        "desc": "Minden befizetés, átutalás vagy változás a számláján azonnali értesítést generál."
+      },
+      "deposits": {
+        "title": "Befizetések egy kattintással",
+        "desc": "Töltse fel számláját másodpercek alatt, és kövesse egyenlege alakulását valós időben."
+      }
+    }
+  },
+  "showcase": {
+    "badge": "Irányítópult",
+    "title": "Kezelje számláját egyetlen pillantással",
+    "description": "Valós idejű egyenleg, szűrhető előzmények, befizetések, átutalások és kifizetések — mind egy áttekinthető és reszponzív felületen.",
+    "points": [
+      "Egyenleg azonnal frissítve",
+      "Előzmények típus és állapot szerint szűrhetők",
+      "Kifizetések jóváhagyási kóddal védve"
+    ],
+    "sampleDeposit": "Befizetés",
+    "sampleTransfer": "Átutalás — FR76…4021",
+    "sampleToday": "Ma",
+    "sampleYesterday": "Tegnap"
+  },
+  "steps": {
+    "title": "Három lépés, és kész",
+    "items": [
+      {
+        "title": "Hozza létre számláját",
+        "desc": "Regisztráció 2 perc alatt e-maillel. Az IBAN-ja automatikusan generálódik."
+      },
+      {
+        "title": "Töltse fel egyenlegét",
+        "desc": "Adjon hozzá pénzt egy kattintással az irányítópultról."
+      },
+      {
+        "title": "Küldjön és kövessen nyomon",
+        "desc": "Végezzen átutalásokat és kifizetéseket, kapjon értesítéseket, tekintse meg az előzményeket."
+      }
+    ]
+  },
+  "security": {
+    "badge": "Biztonság",
+    "title": "Az adatai jó kezekben",
+    "description": "A titkosított hitelesítés és a biztonságos munkamenetek mindig védik a számláját.",
+    "cards": [
+      { "title": "Munkamenetek titkosítása", "desc": "Aláírt tokenek és httpOnly sütik" },
+      { "title": "Csalás elleni védelem", "desc": "A műveletek folyamatosan figyelve" },
+      { "title": "Auditnapló", "desc": "Minden érzékeny művelet naplózva" },
+      { "title": "Védett adatok", "desc": "Adatvédelem alapértelmezetten" }
+    ]
+  },
+  "stats": {
+    "accounts": "nyitott számla",
+    "satisfaction": "elégedettségi mutató",
+    "free": "ingyenes és biztonságos"
+  },
+  "testimonials": {
+    "title": "Bíznak bennünk",
+    "items": [
+      { "quote": "Végre egy egyszerű és gyors online bank, felesleges papírmunka nélkül.", "author": "Sarah M." },
+      { "quote": "A felület áttekinthető és gördülékeny, pontosan az, amire nap mint nap szükségem van.", "author": "Karim B." },
+      { "quote": "Az átutalások és az előzmények igazi élményt nyújtanak.", "author": "Léa D." }
+    ]
+  },
+  "finalCta": {
+    "title": "Készen áll a számlanyitásra?",
+    "description": "Hozza létre számláját 2 perc alatt. Ingyenes és kötelezettség nélkül.",
+    "ctaPrimary": "Számla nyitása",
+    "ctaSecondary": "Bejelentkezés"
+  },
+  "footer": {
+    "tagline": "Az új generációs neobank. Egyszerű, gyors, biztonságos.",
+    "columns": {
+      "product": {
+        "title": "Termék",
+        "links": ["Funkciók", "Biztonság", "Irányítópult"]
+      },
+      "account": {
+        "title": "Számla",
+        "links": ["Számla nyitása", "Bejelentkezés"]
+      },
+      "legal": {
+        "title": "Jogi",
+        "links": ["Jogi nyilatkozat", "Adatvédelem"]
+      }
+    },
+    "rights": "Minden jog fenntartva."
+  }
+}

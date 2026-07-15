@@ -1,0 +1,45 @@
+{
+  "brand": "Nébula",
+  "language": "Idioma",
+  "actions": {
+    "login": "Iniciar sesión",
+    "register": "Abrir una cuenta",
+    "logout": "Cerrar sesión",
+    "back": "Volver",
+    "backToSite": "← Volver al sitio",
+    "home": "Inicio",
+    "mySpace": "Mi espacio",
+    "mySpaceAria": "Mi espacio personal",
+    "seeAll": "Ver todo",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "save": "Guardar",
+    "send": "Enviar",
+    "validate": "Validar",
+    "delete": "Eliminar",
+    "oneMoment": "Un momento…"
+  },
+  "account": {
+    "availableBalance": "Saldo disponible",
+    "currentAccount": "Cuenta corriente",
+    "iban": "IBAN"
+  },
+  "statuses": {
+    "account": {
+      "active": "Activa",
+      "restricted": "Restringida",
+      "banned": "Bloqueada"
+    },
+    "tx": {
+      "success": "Exitosa",
+      "pending": "Pendiente",
+      "blocked": "Bloqueada",
+      "rejected": "Rechazada"
+    },
+    "code": {
+      "active": "Activo",
+      "used": "Usado",
+      "revoked": "Revocado"
+    }
+  }
+}

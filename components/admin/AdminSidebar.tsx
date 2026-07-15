@@ -1,7 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import {
+  LocaleLink as Link,
+  useLogicalPathname,
+} from "@/components/i18n/navigation";
 
 const links = [
   { href: "/admin", label: "Tableau de bord", icon: "M4 13h6V4H4v9zm0 7h6v-5H4v5zm10 0h6V11h-6v9zm0-16v5h6V4h-6z" },
@@ -12,7 +14,7 @@ const links = [
 ];
 
 export function AdminSidebar() {
-  const pathname = usePathname();
+  const pathname = useLogicalPathname();
   return (
     <nav className="flex flex-col gap-1">
       {links.map((l) => {

@@ -1,0 +1,57 @@
+{
+  "notify": {
+    "depositReceived": {
+      "title": "Depósito recibido",
+      "body": "Se han acreditado {amount} en tu cuenta."
+    },
+    "transferRejected": {
+      "title": "Transferencia rechazada",
+      "fallbackBody": "Transferencias no disponibles."
+    },
+    "transferPending": {
+      "title": "Transferencia pendiente de validación",
+      "body": "Tu transferencia de {amount} a {iban} ha sido enviada. Los fondos quedan reservados a la espera de la validación de un asesor."
+    },
+    "withdrawalRejected": {
+      "title": "Retiro rechazado",
+      "fallbackBody": "Retiros no disponibles.",
+      "invalidCode": "El código de retiro proporcionado no es válido, ha caducado o ya se ha utilizado."
+    },
+    "withdrawalDone": {
+      "title": "Retiro realizado",
+      "body": "{amount} retirados a {iban}."
+    },
+    "cardFrozen": {
+      "title": "Tarjeta congelada",
+      "body": "Tu tarjeta ha sido congelada. Las operaciones están temporalmente bloqueadas."
+    },
+    "cardUnfrozen": {
+      "title": "Tarjeta reactivada",
+      "body": "Tu tarjeta ha sido reactivada. Puedes volver a realizar operaciones."
+    },
+    "progressUpdated": {
+      "title": "Progreso de retiro actualizado",
+      "body": "Tu indicador de retiro ha avanzado un +{pct}% (ahora {progress}%)."
+    },
+    "transferReceived": {
+      "title": "Transferencia recibida",
+      "body": "Has recibido {amount}{from}.",
+      "fromName": " de {name}"
+    },
+    "transferExecuted": {
+      "title": "Transferencia desbloqueada y ejecutada",
+      "body": "Las 3 fases han sido confirmadas. Tu transferencia de {amount} ha sido ejecutada."
+    },
+    "phaseConfirmed": {
+      "title": "Fase {phase}/{total} confirmada",
+      "body": "La fase {phase} de tu transferencia de {amount} está confirmada. A la espera de la siguiente fase."
+    }
+  },
+  "chrome": {
+    "greeting": "Hola {name},",
+    "greetingNoName": "Hola,",
+    "header": "Nébula Bank",
+    "footerAuto": "Este es un mensaje automático, por favor no respondas.",
+    "footerConfidential": "Este correo y la información que contiene son confidenciales."
+  }
+}

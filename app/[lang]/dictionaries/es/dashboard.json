@@ -1,0 +1,156 @@
+{
+  "layout": {
+    "bannedTitle": "Cuenta bloqueada",
+    "bannedText": "Tu cuenta ha sido bloqueada y el acceso a tus servicios está suspendido.",
+    "restrictedTitle": "Cuenta restringida.",
+    "restrictedDefault": "Algunas operaciones (transferencias, retiros) no están disponibles.",
+    "reason": "Motivo:",
+    "defaultFirstName": "hola"
+  },
+  "home": {
+    "greeting": "Hola",
+    "subtitle": "Este es el estado de tu cuenta Nébula.",
+    "quickDeposit": "Depositar",
+    "quickTransfer": "Transferir",
+    "quickWithdraw": "Retirar",
+    "recentTransactions": "Transacciones recientes",
+    "emptyRecent": "Aún no hay transacciones. ¡Realiza tu primer depósito!"
+  },
+  "balanceCard": {
+    "holder": "Titular",
+    "copyIban": "Copiar IBAN",
+    "copied": "Copiado ✓"
+  },
+  "bankCard": {
+    "paymentCard": "Tarjeta de pago",
+    "frozen": "Congelada",
+    "holder": "Titular",
+    "exp": "Cad.",
+    "cvv": "CVV",
+    "showInfo": "Mostrar datos",
+    "hideInfo": "Ocultar datos",
+    "freezeTitle": "Congelar tarjeta",
+    "freezeDescFrozen": "Las operaciones están bloqueadas mientras la tarjeta está congelada.",
+    "freezeDescActive": "Bloquea temporalmente todas las operaciones de la tarjeta.",
+    "freezeToggleAria": "Congelar o descongelar la tarjeta"
+  },
+  "deposit": {
+    "title": "Depositar fondos",
+    "subtitle": "Acredita tu saldo al instante.",
+    "amountLabel": "Importe a depositar (€)",
+    "pending": "Depositando…",
+    "submit": "Depositar fondos",
+    "note": "Tu saldo se acredita inmediatamente tras la validación."
+  },
+  "transfer": {
+    "title": "Realizar una transferencia",
+    "subtitle": "Envía dinero a un IBAN de tu elección.",
+    "ibanLabel": "IBAN del beneficiario",
+    "amountLabel": "Importe (€)",
+    "availableBalance": "Saldo disponible:",
+    "descriptionLabel": "Concepto (opcional)",
+    "descriptionPlaceholder": "Alquiler, reembolso…",
+    "pending": "Enviando…",
+    "submit": "Enviar transferencia",
+    "note": "La transferencia está sujeta a la validación de un asesor. Los fondos se reservan al enviarla; en caso de rechazo, se te reembolsan íntegramente."
+  },
+  "withdraw": {
+    "title": "Retirar fondos",
+    "subtitle": "El retiro requiere un código proporcionado por el administrador.",
+    "newWithdrawal": "Nuevo retiro",
+    "savedIbansTitle": "IBAN de destino guardados",
+    "savedIbansDesc": "Gestiona las cuentas a las que puedes retirar.",
+    "noAccounts": "Primero registra un IBAN de destino a continuación para poder realizar un retiro.",
+    "destLabel": "IBAN de destino",
+    "amountLabel": "Importe (€)",
+    "availableBalance": "Saldo disponible:",
+    "codeLabel": "Código de retiro",
+    "codePlaceholder": "Código proporcionado por el administrador",
+    "codeHint": "Se requiere un código de retiro válido, generado por el administrador, para validar la operación.",
+    "pending": "Validando…",
+    "submit": "Validar el retiro"
+  },
+  "withdrawalAccounts": {
+    "labelLabel": "Etiqueta (opcional)",
+    "labelPlaceholder": "Mi otra cuenta",
+    "ibanLabel": "IBAN de destino",
+    "pending": "Añadiendo…",
+    "submit": "Guardar este IBAN"
+  },
+  "withdrawalProgress": {
+    "title": "Progreso de tu retiro",
+    "complete": "Tu indicador está completo.",
+    "hint": "Introduce los códigos proporcionados por tu asesor para hacer avanzar tu indicador.",
+    "pending": "…",
+    "submit": "Validar"
+  },
+  "transferPhases": {
+    "title": "Transferencias pendientes de confirmación",
+    "intro": "Tu transferencia se desbloquea en {total} fases. Introduce cada código recibido para pasar a la siguiente.",
+    "transferOf": "Transferencia de {amount}",
+    "toIban": "a {iban}",
+    "pending": "…",
+    "confirm": "Confirmar",
+    "awaiting": "A la espera de la validación de la fase {phase} por tu asesor. Recibirás un código por correo electrónico.",
+    "names": {
+      "1": "Código de confirmación de conexión",
+      "2": "Código de aprobación bancaria",
+      "3": "Código de activación de la transferencia"
+    }
+  },
+  "transactions": {
+    "title": "Historial de transacciones",
+    "subtitle": "Filtra por tipo y estado.",
+    "emptyFiltered": "Ninguna transacción coincide con estos filtros.",
+    "typeFilters": {
+      "all": "Todo",
+      "deposit": "Depósitos",
+      "transfer": "Transferencias",
+      "withdrawal": "Retiros"
+    },
+    "statusFilters": {
+      "all": "Todos los estados",
+      "success": "Exitosa",
+      "pending": "Pendiente",
+      "rejected": "Rechazada",
+      "blocked": "Bloqueada"
+    }
+  },
+  "transactionItem": {
+    "types": {
+      "deposit": "Depósito",
+      "transfer": "Transferencia",
+      "withdrawal": "Retiro",
+      "admin_credit": "Crédito administrativo"
+    },
+    "declineReason": "Rechazo:"
+  },
+  "notifications": {
+    "title": "Notificaciones",
+    "subtitle": "Todos los eventos de tu cuenta.",
+    "markAllRead": "Marcar todo como leído",
+    "empty": "Sin notificaciones."
+  },
+  "profile": {
+    "title": "Perfil",
+    "subtitle": "Tus datos personales y tu cuenta.",
+    "accountStatus": "Estado de la cuenta",
+    "reason": "Motivo:",
+    "createdOn": "Cuenta creada el {date}",
+    "infoSection": "Información",
+    "fullName": "Nombre completo",
+    "email": "Correo electrónico",
+    "emailHint": "Para cambiar tu correo electrónico, contacta con tu asesor.",
+    "pending": "Guardando…",
+    "submit": "Guardar"
+  },
+  "permissions": {
+    "frozen": "Tu tarjeta está congelada. Descongélala desde tu panel de control para realizar operaciones.",
+    "banned": "Cuenta bloqueada.",
+    "depositNotAuthorized": "Los depósitos aún no están autorizados en tu cuenta. Contacta con tu asesor.",
+    "transferRestricted": "Cuenta restringida: transferencias no disponibles.",
+    "transfersBlocked": "Las transferencias están bloqueadas en tu cuenta.",
+    "withdrawRestricted": "Cuenta restringida: retiros no disponibles.",
+    "withdrawalsBlocked": "Los retiros están bloqueados en tu cuenta."
+  }
+}

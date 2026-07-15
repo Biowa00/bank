@@ -1,0 +1,156 @@
+{
+  "layout": {
+    "bannedTitle": "Účet zablokovaný",
+    "bannedText": "Váš účet bol zablokovaný a prístup k vašim službám je pozastavený.",
+    "restrictedTitle": "Účet obmedzený.",
+    "restrictedDefault": "Niektoré operácie (prevody, výbery) nie sú dostupné.",
+    "reason": "Dôvod:",
+    "defaultFirstName": "vás"
+  },
+  "home": {
+    "greeting": "Ahoj",
+    "subtitle": "Tu je stav vášho účtu Nébula.",
+    "quickDeposit": "Vložiť",
+    "quickTransfer": "Previesť",
+    "quickWithdraw": "Vybrať",
+    "recentTransactions": "Nedávne transakcie",
+    "emptyRecent": "Zatiaľ žiadne transakcie. Vykonajte svoj prvý vklad!"
+  },
+  "balanceCard": {
+    "holder": "Majiteľ",
+    "copyIban": "Kopírovať IBAN",
+    "copied": "Skopírované ✓"
+  },
+  "bankCard": {
+    "paymentCard": "Platobná karta",
+    "frozen": "Zmrazená",
+    "holder": "Majiteľ",
+    "exp": "Plat.",
+    "cvv": "CVV",
+    "showInfo": "Zobraziť údaje",
+    "hideInfo": "Skryť údaje",
+    "freezeTitle": "Zmraziť kartu",
+    "freezeDescFrozen": "Operácie sú blokované, kým je karta zmrazená.",
+    "freezeDescActive": "Dočasne zablokuje všetky operácie s kartou.",
+    "freezeToggleAria": "Zmraziť alebo odomknúť kartu"
+  },
+  "deposit": {
+    "title": "Vloženie prostriedkov",
+    "subtitle": "Okamžite dobite svoj zostatok.",
+    "amountLabel": "Suma na vloženie (€)",
+    "pending": "Vkladanie…",
+    "submit": "Vložiť prostriedky",
+    "note": "Váš zostatok je pripísaný ihneď po potvrdení."
+  },
+  "transfer": {
+    "title": "Vykonať prevod",
+    "subtitle": "Pošlite peniaze na IBAN podľa vášho výberu.",
+    "ibanLabel": "IBAN príjemcu",
+    "amountLabel": "Suma (€)",
+    "availableBalance": "Dostupný zostatok:",
+    "descriptionLabel": "Účel (voliteľné)",
+    "descriptionPlaceholder": "Nájomné, náhrada…",
+    "pending": "Odosielanie…",
+    "submit": "Odoslať prevod",
+    "note": "Prevod podlieha schváleniu poradcom. Prostriedky sú rezervované pri odoslaní; v prípade zamietnutia sú vám v plnej výške vrátené."
+  },
+  "withdraw": {
+    "title": "Výber prostriedkov",
+    "subtitle": "Výber vyžaduje kód poskytnutý administrátorom.",
+    "newWithdrawal": "Nový výber",
+    "savedIbansTitle": "Uložené cieľové IBAN-y",
+    "savedIbansDesc": "Spravujte účty, na ktoré môžete vyberať.",
+    "noAccounts": "Najprv nižšie zaregistrujte cieľový IBAN, aby ste mohli vykonať výber.",
+    "destLabel": "Cieľový IBAN",
+    "amountLabel": "Suma (€)",
+    "availableBalance": "Dostupný zostatok:",
+    "codeLabel": "Kód na výber",
+    "codePlaceholder": "Kód poskytnutý administrátorom",
+    "codeHint": "Na potvrdenie operácie je potrebný platný kód na výber vygenerovaný administrátorom.",
+    "pending": "Potvrdzovanie…",
+    "submit": "Potvrdiť výber"
+  },
+  "withdrawalAccounts": {
+    "labelLabel": "Označenie (voliteľné)",
+    "labelPlaceholder": "Môj iný účet",
+    "ibanLabel": "Cieľový IBAN",
+    "pending": "Pridávanie…",
+    "submit": "Uložiť tento IBAN"
+  },
+  "withdrawalProgress": {
+    "title": "Priebeh vášho výberu",
+    "complete": "Váš ukazovateľ je plný.",
+    "hint": "Zadajte kódy poskytnuté vaším poradcom, aby ste posunuli ukazovateľ.",
+    "pending": "…",
+    "submit": "Potvrdiť"
+  },
+  "transferPhases": {
+    "title": "Prevody čakajúce na potvrdenie",
+    "intro": "Váš prevod sa odomkne v {total} fázach. Zadajte každý prijatý kód na prechod k ďalšej.",
+    "transferOf": "Prevod {amount}",
+    "toIban": "na {iban}",
+    "pending": "…",
+    "confirm": "Potvrdiť",
+    "awaiting": "Čaká sa na potvrdenie fázy {phase} vaším poradcom. Kód dostanete e-mailom.",
+    "names": {
+      "1": "Kód na potvrdenie spojenia",
+      "2": "Kód bankového schválenia",
+      "3": "Kód na aktiváciu prevodu"
+    }
+  },
+  "transactions": {
+    "title": "História transakcií",
+    "subtitle": "Filtrujte podľa typu a stavu.",
+    "emptyFiltered": "Žiadna transakcia nezodpovedá týmto filtrom.",
+    "typeFilters": {
+      "all": "Všetko",
+      "deposit": "Vklady",
+      "transfer": "Prevody",
+      "withdrawal": "Výbery"
+    },
+    "statusFilters": {
+      "all": "Všetky stavy",
+      "success": "Úspešná",
+      "pending": "Čaká sa",
+      "rejected": "Zamietnutá",
+      "blocked": "Zablokovaná"
+    }
+  },
+  "transactionItem": {
+    "types": {
+      "deposit": "Vklad",
+      "transfer": "Prevod",
+      "withdrawal": "Výber",
+      "admin_credit": "Administratívny kredit"
+    },
+    "declineReason": "Zamietnutie:"
+  },
+  "notifications": {
+    "title": "Upozornenia",
+    "subtitle": "Všetky udalosti na vašom účte.",
+    "markAllRead": "Označiť všetky ako prečítané",
+    "empty": "Žiadne upozornenia."
+  },
+  "profile": {
+    "title": "Profil",
+    "subtitle": "Vaše osobné údaje a váš účet.",
+    "accountStatus": "Stav účtu",
+    "reason": "Dôvod:",
+    "createdOn": "Účet vytvorený {date}",
+    "infoSection": "Informácie",
+    "fullName": "Celé meno",
+    "email": "E-mailová adresa",
+    "emailHint": "Ak chcete zmeniť e-mailovú adresu, kontaktujte svojho poradcu.",
+    "pending": "Ukladanie…",
+    "submit": "Uložiť"
+  },
+  "permissions": {
+    "frozen": "Vaša karta je zmrazená. Odomknite ju vo svojom prehľade, aby ste mohli vykonávať operácie.",
+    "banned": "Účet zablokovaný.",
+    "depositNotAuthorized": "Vklady zatiaľ nie sú na vašom účte povolené. Kontaktujte svojho poradcu.",
+    "transferRestricted": "Účet obmedzený: prevody nie sú dostupné.",
+    "transfersBlocked": "Prevody na vašom účte sú zablokované.",
+    "withdrawRestricted": "Účet obmedzený: výbery nie sú dostupné.",
+    "withdrawalsBlocked": "Výbery na vašom účte sú zablokované."
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "auth": {
+    "lastNameRequired": "O apelido é obrigatório.",
+    "firstNameRequired": "O nome é obrigatório.",
+    "cityRequired": "A cidade é obrigatória.",
+    "professionRequired": "A profissão é obrigatória.",
+    "addressRequired": "A morada completa é obrigatória.",
+    "phoneRequired": "O número de telefone é obrigatório.",
+    "emailRequired": "O endereço de e-mail é obrigatório.",
+    "passwordMinLength": "A palavra-passe deve conter pelo menos 8 caracteres.",
+    "passwordUppercase": "A palavra-passe deve conter pelo menos uma letra maiúscula.",
+    "passwordDigit": "A palavra-passe deve conter pelo menos um dígito.",
+    "passwordsMismatch": "As palavras-passe não coincidem.",
+    "cguRequired": "Deve aceitar os termos e condições e a política de privacidade.",
+    "idRequired": "O documento de identificação (foto) é obrigatório.",
+    "idFormat": "Formato do documento de identificação inválido (JPG, PNG ou PDF).",
+    "idTooLarge": "O documento de identificação excede 5 MB.",
+    "accountCreatedConfirm": "Conta criada. Verifique o seu e-mail para confirmar o endereço e, em seguida, inicie sessão.",
+    "credentialsRequired": "E-mail e palavra-passe obrigatórios.",
+    "notAdmin": "Esta conta não tem privilégios de administrador.",
+    "emailRequiredShort": "Endereço de e-mail obrigatório.",
+    "resetEmailSent": "Se existir uma conta associada a este endereço, acabámos de enviar um e-mail com um link de reposição. Verifique também o spam.",
+    "passwordCriteria": "A palavra-passe não cumpre os requisitos de segurança.",
+    "resetLinkInvalid": "Link inválido ou expirado. Solicite uma nova reposição.",
+    "supabase": {
+      "invalidLogin": "E-mail ou palavra-passe incorretos.",
+      "alreadyRegistered": "Já existe uma conta com este e-mail.",
+      "emailNotConfirmed": "E-mail não confirmado. Verifique a sua caixa de entrada.",
+      "rateLimit": "Demasiadas tentativas. Tente novamente dentro de instantes.",
+      "generic": "Ocorreu um erro. Tente novamente."
+    }
+  },
+  "amount": {
+    "invalid": "Montante inválido.",
+    "max": "Montante máximo: 1 000 000 €."
+  },
+  "deposit": {
+    "failed": "Falha no depósito. Tente novamente."
+  },
+  "transfer": {
+    "ibanInvalid": "IBAN do destinatário inválido.",
+    "ownAccount": "Não pode transferir para a sua própria conta.",
+    "insufficient": "Saldo insuficiente para esta transferência.",
+    "failed": "Falha na transferência. Tente novamente.",
+    "unavailable": "Transferências indisponíveis."
+  },
+  "withdrawalAccount": {
+    "ibanInvalid": "IBAN inválido.",
+    "saveFailed": "Não foi possível guardar este IBAN."
+  },
+  "withdraw": {
+    "chooseIban": "Escolha um IBAN de destino.",
+    "codeRequired": "O código de levantamento é obrigatório.",
+    "ibanNotFound": "IBAN de destino não encontrado.",
+    "insufficient": "Saldo insuficiente para este levantamento.",
+    "codeInvalid": "Código de levantamento inválido, expirado ou já utilizado.",
+    "unavailable": "Levantamentos indisponíveis."
+  },
+  "redeem": {
+    "enterCode": "Introduza um código.",
+    "codeInvalid": "Código inválido, expirado ou já utilizado.",
+    "updateFailed": "Falha na atualização."
+  },
+  "phase": {
+    "codeRequired": "Código obrigatório.",
+    "notFound": "Transferência não encontrada ou já processada.",
+    "allConfirmed": "Todas as fases já estão confirmadas.",
+    "noCode": "Nenhum código pendente para esta transferência. Contacte o seu consultor.",
+    "expired": "Este código expirou. O seu consultor deve gerar um novo.",
+    "tooManyAttempts": "Demasiadas tentativas. Deve ser gerado um novo código.",
+    "incorrectExhausted": "Código incorreto. Demasiadas tentativas: deve ser gerado um novo código.",
+    "incorrectRemaining": "Código incorreto. {n} tentativa(s) restante(s).",
+    "updateFailed": "Falha ao atualizar a fase."
+  },
+  "profile": {
+    "nameEmpty": "O nome não pode estar vazio."
+  },
+  "success": {
+    "deposit": "Depósito de {amount} efetuado.",
+    "transferSubmitted": "Transferência de {amount} submetida — a aguardar validação.",
+    "ibanSaved": "IBAN de levantamento guardado.",
+    "withdraw": "Levantamento de {amount} efetuado.",
+    "redeem": "+{pct}% aplicado. Progresso: {progress}%.",
+    "phaseConfirmed": "Fase {phase} confirmada.",
+    "transferUnlocked": "Transferência desbloqueada e executada.",
+    "profileUpdated": "Perfil atualizado."
+  }
+}

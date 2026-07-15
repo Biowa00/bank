@@ -1,0 +1,88 @@
+{
+  "auth": {
+    "lastNameRequired": "Il cognome è obbligatorio.",
+    "firstNameRequired": "Il nome è obbligatorio.",
+    "cityRequired": "La città è obbligatoria.",
+    "professionRequired": "La professione è obbligatoria.",
+    "addressRequired": "L'indirizzo completo è obbligatorio.",
+    "phoneRequired": "Il numero di telefono è obbligatorio.",
+    "emailRequired": "L'indirizzo e-mail è obbligatorio.",
+    "passwordMinLength": "La password deve contenere almeno 8 caratteri.",
+    "passwordUppercase": "La password deve contenere almeno una lettera maiuscola.",
+    "passwordDigit": "La password deve contenere almeno una cifra.",
+    "passwordsMismatch": "Le password non corrispondono.",
+    "cguRequired": "Devi accettare le condizioni generali e l'informativa sulla privacy.",
+    "idRequired": "Il documento d'identità (foto) è obbligatorio.",
+    "idFormat": "Formato del documento d'identità non valido (JPG, PNG o PDF).",
+    "idTooLarge": "Il documento d'identità supera i 5 MB.",
+    "accountCreatedConfirm": "Conto creato. Controlla la tua casella di posta per confermare l'indirizzo, poi accedi.",
+    "credentialsRequired": "E-mail e password obbligatorie.",
+    "notAdmin": "Questo conto non dispone dei diritti di amministratore.",
+    "emailRequiredShort": "Indirizzo e-mail obbligatorio.",
+    "resetEmailSent": "Se un conto è associato a questo indirizzo, è stata appena inviata un'e-mail con un link di reimpostazione. Controlla anche lo spam.",
+    "passwordCriteria": "La password non soddisfa i requisiti di sicurezza.",
+    "resetLinkInvalid": "Link non valido o scaduto. Richiedi una nuova reimpostazione.",
+    "supabase": {
+      "invalidLogin": "E-mail o password errati.",
+      "alreadyRegistered": "Esiste già un conto con questa e-mail.",
+      "emailNotConfirmed": "E-mail non confermata. Controlla la tua casella di posta.",
+      "rateLimit": "Troppi tentativi. Riprova tra un momento.",
+      "generic": "Si è verificato un errore. Riprova."
+    }
+  },
+  "amount": {
+    "invalid": "Importo non valido.",
+    "max": "Importo massimo: 1.000.000 €."
+  },
+  "deposit": {
+    "failed": "Deposito non riuscito. Riprova."
+  },
+  "transfer": {
+    "ibanInvalid": "IBAN del destinatario non valido.",
+    "ownAccount": "Non puoi effettuare un bonifico verso il tuo stesso conto.",
+    "insufficient": "Saldo insufficiente per questo bonifico.",
+    "failed": "Bonifico non riuscito. Riprova.",
+    "unavailable": "Bonifici non disponibili."
+  },
+  "withdrawalAccount": {
+    "ibanInvalid": "IBAN non valido.",
+    "saveFailed": "Impossibile salvare questo IBAN."
+  },
+  "withdraw": {
+    "chooseIban": "Scegli un IBAN di destinazione.",
+    "codeRequired": "Il codice di prelievo è obbligatorio.",
+    "ibanNotFound": "IBAN di destinazione non trovato.",
+    "insufficient": "Saldo insufficiente per questo prelievo.",
+    "codeInvalid": "Codice di prelievo non valido, scaduto o già utilizzato.",
+    "unavailable": "Prelievi non disponibili."
+  },
+  "redeem": {
+    "enterCode": "Inserisci un codice.",
+    "codeInvalid": "Codice non valido, scaduto o già utilizzato.",
+    "updateFailed": "Aggiornamento non riuscito."
+  },
+  "phase": {
+    "codeRequired": "Codice obbligatorio.",
+    "notFound": "Bonifico non trovato o già elaborato.",
+    "allConfirmed": "Tutte le fasi sono già confermate.",
+    "noCode": "Nessun codice in attesa per questo bonifico. Contatta il tuo consulente.",
+    "expired": "Questo codice è scaduto. Il tuo consulente deve generarne uno nuovo.",
+    "tooManyAttempts": "Troppi tentativi. Deve essere generato un nuovo codice.",
+    "incorrectExhausted": "Codice errato. Troppi tentativi: deve essere generato un nuovo codice.",
+    "incorrectRemaining": "Codice errato. {n} tentativo(i) rimanente(i).",
+    "updateFailed": "Aggiornamento della fase non riuscito."
+  },
+  "profile": {
+    "nameEmpty": "Il nome non può essere vuoto."
+  },
+  "success": {
+    "deposit": "Deposito di {amount} effettuato.",
+    "transferSubmitted": "Bonifico di {amount} inviato — in attesa di convalida.",
+    "ibanSaved": "IBAN di prelievo salvato.",
+    "withdraw": "Prelievo di {amount} effettuato.",
+    "redeem": "+{pct}% applicato. Avanzamento: {progress}%.",
+    "phaseConfirmed": "Fase {phase} confermata.",
+    "transferUnlocked": "Bonifico sbloccato ed eseguito.",
+    "profileUpdated": "Profilo aggiornato."
+  }
+}

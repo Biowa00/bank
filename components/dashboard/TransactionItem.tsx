@@ -1,16 +1,23 @@
+"use client";
+
 import { formatEuro, formatDate } from "@/lib/format";
 import { TxStatusBadge } from "@/components/StatusBadge";
+import { useZone } from "@/components/i18n/DictionaryProvider";
+import { useLocale } from "@/components/i18n/navigation";
 import type { Transaction } from "@/lib/types";
 
-const meta: Record<Transaction["type"], { label: string; icon: string }> = {
-  deposit: { label: "Dépôt", icon: "M12 4v12m0 0l4-4m-4 4l-4-4M4 20h16" },
-  transfer: { label: "Virement", icon: "M4 12h16m0 0l-5-5m5 5l-5 5" },
-  withdrawal: { label: "Retrait", icon: "M12 20V8m0 0l4 4m-4-4l-4 4M4 4h16" },
-  admin_credit: { label: "Crédit administratif", icon: "M12 4v12m0 0l4-4m-4 4l-4-4M4 20h16" },
+const icons: Record<Transaction["type"], string> = {
+  deposit: "M12 4v12m0 0l4-4m-4 4l-4-4M4 20h16",
+  transfer: "M4 12h16m0 0l-5-5m5 5l-5 5",
+  withdrawal: "M12 20V8m0 0l4 4m-4-4l-4 4M4 4h16",
+  admin_credit: "M12 4v12m0 0l4-4m-4 4l-4-4M4 20h16",
 };
 
 export function TransactionItem({ tx }: { tx: Transaction }) {
-  const m = meta[tx.type];
+  const t = useZone("dashboard").transactionItem;
+  const locale = useLocale();
+  const label = t.types[tx.type];
+  const icon = icons[tx.type];
   const credit = tx.direction === "in";
   const voided = tx.status === "blocked" || tx.status === "rejected";
 
@@ -22,22 +29,22 @@ export function TransactionItem({ tx }: { tx: Transaction }) {
         }`}
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <path d={m.icon} stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+          <path d={icon} stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </span>
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-2">
-          <p className="truncate font-medium text-ink">{m.label}</p>
+          <p className="truncate font-medium text-ink">{label}</p>
           {tx.status !== "success" && <TxStatusBadge status={tx.status} />}
         </div>
         <p className="truncate text-xs text-ink/50">
           {tx.counterparty_name
             ? `${tx.counterparty_name} · `
             : ""}
-          {tx.counterparty_iban ?? tx.description ?? "—"} · {formatDate(tx.created_at)}
+          {tx.counterparty_iban ?? tx.description ?? "—"} · {formatDate(tx.created_at, locale)}
         </p>
         {tx.status === "rejected" && tx.decline_reason && (
-          <p className="mt-0.5 truncate text-xs text-red-600">Refus : {tx.decline_reason}</p>
+          <p className="mt-0.5 truncate text-xs text-red-600">{t.declineReason} {tx.decline_reason}</p>
         )}
       </div>
       <span
@@ -50,7 +57,7 @@ export function TransactionItem({ tx }: { tx: Transaction }) {
         }`}
       >
         {credit ? "+ " : "− "}
-        {formatEuro(Number(tx.amount))}
+        {formatEuro(Number(tx.amount), locale)}
       </span>
     </div>
   );

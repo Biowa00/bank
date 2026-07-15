@@ -1,0 +1,156 @@
+{
+  "layout": {
+    "bannedTitle": "Fiók letiltva",
+    "bannedText": "Fiókját letiltottuk, és a szolgáltatásaihoz való hozzáférés fel van függesztve.",
+    "restrictedTitle": "Fiók korlátozva.",
+    "restrictedDefault": "Egyes műveletek (átutalások, kifizetések) nem érhetők el.",
+    "reason": "Indok:",
+    "defaultFirstName": "Üdv"
+  },
+  "home": {
+    "greeting": "Szia",
+    "subtitle": "Íme a Nébula-számlája állapota.",
+    "quickDeposit": "Befizetés",
+    "quickTransfer": "Átutalás",
+    "quickWithdraw": "Kifizetés",
+    "recentTransactions": "Legutóbbi tranzakciók",
+    "emptyRecent": "Egyelőre nincsenek tranzakciók. Végezze el első befizetését!"
+  },
+  "balanceCard": {
+    "holder": "Tulajdonos",
+    "copyIban": "IBAN másolása",
+    "copied": "Másolva ✓"
+  },
+  "bankCard": {
+    "paymentCard": "Fizetőkártya",
+    "frozen": "Befagyasztva",
+    "holder": "Tulajdonos",
+    "exp": "Lej.",
+    "cvv": "CVV",
+    "showInfo": "Adatok megjelenítése",
+    "hideInfo": "Adatok elrejtése",
+    "freezeTitle": "Kártya befagyasztása",
+    "freezeDescFrozen": "A műveletek le vannak tiltva, amíg a kártya be van fagyasztva.",
+    "freezeDescActive": "Ideiglenesen letiltja az összes kártyaműveletet.",
+    "freezeToggleAria": "Kártya befagyasztása vagy feloldása"
+  },
+  "deposit": {
+    "title": "Pénz befizetése",
+    "subtitle": "Töltse fel egyenlegét azonnal.",
+    "amountLabel": "Befizetendő összeg (€)",
+    "pending": "Befizetés…",
+    "submit": "Pénz befizetése",
+    "note": "Egyenlege a jóváhagyás után azonnal jóváíródik."
+  },
+  "transfer": {
+    "title": "Átutalás végzése",
+    "subtitle": "Küldjön pénzt egy Ön által választott IBAN-ra.",
+    "ibanLabel": "Kedvezményezett IBAN-ja",
+    "amountLabel": "Összeg (€)",
+    "availableBalance": "Elérhető egyenleg:",
+    "descriptionLabel": "Közlemény (opcionális)",
+    "descriptionPlaceholder": "Bérleti díj, visszatérítés…",
+    "pending": "Küldés…",
+    "submit": "Átutalás elküldése",
+    "note": "Az átutalás tanácsadói jóváhagyáshoz kötött. Az összeg a küldéskor zárolásra kerül; elutasítás esetén teljes egészében visszaíródik Önnek."
+  },
+  "withdraw": {
+    "title": "Pénz kifizetése",
+    "subtitle": "A kifizetéshez a rendszergazda által biztosított kód szükséges.",
+    "newWithdrawal": "Új kifizetés",
+    "savedIbansTitle": "Mentett cél-IBAN-ok",
+    "savedIbansDesc": "Kezelje azokat a számlákat, amelyekre kifizethet.",
+    "noAccounts": "Először regisztráljon egy cél-IBAN-t alább, hogy kifizetést végezhessen.",
+    "destLabel": "Cél-IBAN",
+    "amountLabel": "Összeg (€)",
+    "availableBalance": "Elérhető egyenleg:",
+    "codeLabel": "Kifizetési kód",
+    "codePlaceholder": "A rendszergazda által biztosított kód",
+    "codeHint": "A művelet jóváhagyásához a rendszergazda által generált érvényes kifizetési kód szükséges.",
+    "pending": "Jóváhagyás…",
+    "submit": "Kifizetés jóváhagyása"
+  },
+  "withdrawalAccounts": {
+    "labelLabel": "Címke (opcionális)",
+    "labelPlaceholder": "Másik számlám",
+    "ibanLabel": "Cél-IBAN",
+    "pending": "Hozzáadás…",
+    "submit": "IBAN mentése"
+  },
+  "withdrawalProgress": {
+    "title": "Kifizetésének előrehaladása",
+    "complete": "A mutatója teljes.",
+    "hint": "Adja meg a tanácsadója által biztosított kódokat a mutató növeléséhez.",
+    "pending": "…",
+    "submit": "Jóváhagyás"
+  },
+  "transferPhases": {
+    "title": "Megerősítésre váró átutalások",
+    "intro": "Átutalása {total} fázisban oldódik fel. Adjon meg minden kapott kódot a következőre lépéshez.",
+    "transferOf": "{amount} átutalása",
+    "toIban": "ide: {iban}",
+    "pending": "…",
+    "confirm": "Megerősítés",
+    "awaiting": "Várakozás a(z) {phase}. fázis tanácsadói jóváhagyására. Kódot fog kapni e-mailben.",
+    "names": {
+      "1": "Kapcsolat-megerősítő kód",
+      "2": "Banki jóváhagyási kód",
+      "3": "Átutalás-aktiválási kód"
+    }
+  },
+  "transactions": {
+    "title": "Tranzakciós előzmények",
+    "subtitle": "Szűrés típus és állapot szerint.",
+    "emptyFiltered": "Egyetlen tranzakció sem felel meg ezeknek a szűrőknek.",
+    "typeFilters": {
+      "all": "Mind",
+      "deposit": "Befizetések",
+      "transfer": "Átutalások",
+      "withdrawal": "Kifizetések"
+    },
+    "statusFilters": {
+      "all": "Minden állapot",
+      "success": "Sikeres",
+      "pending": "Függőben",
+      "rejected": "Elutasított",
+      "blocked": "Letiltott"
+    }
+  },
+  "transactionItem": {
+    "types": {
+      "deposit": "Befizetés",
+      "transfer": "Átutalás",
+      "withdrawal": "Kifizetés",
+      "admin_credit": "Adminisztratív jóváírás"
+    },
+    "declineReason": "Elutasítás:"
+  },
+  "notifications": {
+    "title": "Értesítések",
+    "subtitle": "Fiókja összes eseménye.",
+    "markAllRead": "Összes megjelölése olvasottként",
+    "empty": "Nincsenek értesítések."
+  },
+  "profile": {
+    "title": "Profil",
+    "subtitle": "Személyes adatai és fiókja.",
+    "accountStatus": "Számla állapota",
+    "reason": "Indok:",
+    "createdOn": "Számla létrehozva: {date}",
+    "infoSection": "Információk",
+    "fullName": "Teljes név",
+    "email": "E-mail-cím",
+    "emailHint": "E-mail-címe módosításához vegye fel a kapcsolatot tanácsadójával.",
+    "pending": "Mentés…",
+    "submit": "Mentés"
+  },
+  "permissions": {
+    "frozen": "Kártyája be van fagyasztva. Oldja fel az irányítópultján a műveletek elvégzéséhez.",
+    "banned": "Fiók letiltva.",
+    "depositNotAuthorized": "A befizetések még nem engedélyezettek a számláján. Vegye fel a kapcsolatot tanácsadójával.",
+    "transferRestricted": "Fiók korlátozva: az átutalások nem érhetők el.",
+    "transfersBlocked": "Az átutalások le vannak tiltva a számláján.",
+    "withdrawRestricted": "Fiók korlátozva: a kifizetések nem érhetők el.",
+    "withdrawalsBlocked": "A kifizetések le vannak tiltva a számláján."
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "features": "Funktionen",
+    "security": "Sicherheit",
+    "howItWorks": "So funktioniert's"
+  },
+  "hero": {
+    "badge": "Die Neobank der neuen Generation",
+    "titleLead": "Die Bank, die Ihr Geld",
+    "titleHighlight": "in Bewegung hält",
+    "description": "Eröffnen Sie in 2 Minuten ein Konto, erhalten Sie Ihre IBAN, tätigen Sie Einzahlungen und Überweisungen und verfolgen Sie alle Aktivitäten in Echtzeit.",
+    "ctaPrimary": "Kostenloses Konto eröffnen",
+    "ctaSecondary": "Anmelden",
+    "guarantee": "Kostenlose Eröffnung · Ohne Verpflichtung",
+    "cardTier": "Premium"
+  },
+  "logoStrip": {
+    "sepa": "SEPA-Überweisungen",
+    "instantIban": "Sofortige IBAN",
+    "realtimeNotifications": "Echtzeit-Benachrichtigungen",
+    "fullHistory": "Vollständiger Verlauf"
+  },
+  "features": {
+    "title": "Alles, was eine moderne Bank können muss",
+    "subtitle": "Ein reibungsloses und umfassendes Erlebnis, für Ihren Alltag gemacht.",
+    "items": {
+      "transfers": {
+        "title": "Sofortüberweisungen",
+        "desc": "Senden Sie Geld an jede IBAN, intern oder extern, mit vollständigem Verlauf."
+      },
+      "card": {
+        "title": "Karte & IBAN",
+        "desc": "Bei der Kontoeröffnung wird Ihnen automatisch eine IBAN zugewiesen, bereit zum Empfangen und Senden."
+      },
+      "notifications": {
+        "title": "Benachrichtigungen",
+        "desc": "Jede Einzahlung, Überweisung oder Änderung an Ihrem Konto löst eine sofortige Benachrichtigung aus."
+      },
+      "deposits": {
+        "title": "Einzahlungen mit einem Klick",
+        "desc": "Laden Sie Ihr Konto in Sekunden auf und sehen Sie Ihr Guthaben in Echtzeit wachsen."
+      }
+    }
+  },
+  "showcase": {
+    "badge": "Dashboard",
+    "title": "Behalten Sie Ihr Konto auf einen Blick im Griff",
+    "description": "Echtzeit-Guthaben, filterbarer Verlauf, Einzahlungen, Überweisungen und Abhebungen — alles in einem klaren, responsiven Bereich.",
+    "points": [
+      "Guthaben sofort aktualisiert",
+      "Verlauf nach Typ und Status filterbar",
+      "Abhebungen durch Bestätigungscode gesichert"
+    ],
+    "sampleDeposit": "Einzahlung",
+    "sampleTransfer": "Überweisung — FR76…4021",
+    "sampleToday": "Heute",
+    "sampleYesterday": "Gestern"
+  },
+  "steps": {
+    "title": "Drei Schritte, und los geht's",
+    "items": [
+      {
+        "title": "Konto erstellen",
+        "desc": "Registrierung in 2 Minuten mit einer E-Mail. Ihre IBAN wird automatisch generiert."
+      },
+      {
+        "title": "Guthaben aufladen",
+        "desc": "Fügen Sie mit einem Klick über Ihr Dashboard Geld hinzu."
+      },
+      {
+        "title": "Senden & verfolgen",
+        "desc": "Tätigen Sie Überweisungen und Abhebungen, erhalten Sie Benachrichtigungen, sehen Sie Ihren Verlauf."
+      }
+    ]
+  },
+  "security": {
+    "badge": "Sicherheit",
+    "title": "Ihre Daten, in guten Händen",
+    "description": "Verschlüsselte Authentifizierung und sichere Sitzungen schützen Ihr Konto jederzeit.",
+    "cards": [
+      { "title": "Sitzungsverschlüsselung", "desc": "Signierte Token & httpOnly-Cookies" },
+      { "title": "Betrugsschutz", "desc": "Vorgänge werden kontinuierlich überwacht" },
+      { "title": "Prüfprotokoll", "desc": "Jede sensible Aktion wird protokolliert" },
+      { "title": "Geschützte Daten", "desc": "Datenschutz von Anfang an" }
+    ]
+  },
+  "stats": {
+    "accounts": "eröffnete Konten",
+    "satisfaction": "Zufriedenheitsbewertung",
+    "free": "kostenlos und sicher"
+  },
+  "testimonials": {
+    "title": "Sie vertrauen uns",
+    "items": [
+      { "quote": "Endlich eine Online-Bank, die einfach und schnell ist, ohne unnötigen Papierkram.", "author": "Sarah M." },
+      { "quote": "Die Oberfläche ist klar und flüssig, genau das, was ich täglich brauche.", "author": "Karim B." },
+      { "quote": "Überweisungen und Verlauf machen richtig Freude.", "author": "Léa D." }
+    ]
+  },
+  "finalCta": {
+    "title": "Bereit, Ihr Konto zu eröffnen?",
+    "description": "Erstellen Sie Ihr Konto in 2 Minuten. Kostenlos und ohne Verpflichtung.",
+    "ctaPrimary": "Konto eröffnen",
+    "ctaSecondary": "Anmelden"
+  },
+  "footer": {
+    "tagline": "Die Neobank der neuen Generation. Einfach, schnell, sicher.",
+    "columns": {
+      "product": {
+        "title": "Produkt",
+        "links": ["Funktionen", "Sicherheit", "Dashboard"]
+      },
+      "account": {
+        "title": "Konto",
+        "links": ["Konto eröffnen", "Anmelden"]
+      },
+      "legal": {
+        "title": "Rechtliches",
+        "links": ["Impressum", "Datenschutz"]
+      }
+    },
+    "rights": "Alle Rechte vorbehalten."
+  }
+}

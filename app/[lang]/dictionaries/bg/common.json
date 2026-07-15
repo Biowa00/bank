@@ -1,0 +1,45 @@
+{
+  "brand": "Nébula",
+  "language": "Език",
+  "actions": {
+    "login": "Вход",
+    "register": "Отваряне на сметка",
+    "logout": "Изход",
+    "back": "Назад",
+    "backToSite": "← Обратно към сайта",
+    "home": "Начало",
+    "mySpace": "Моето пространство",
+    "mySpaceAria": "Моето лично пространство",
+    "seeAll": "Виж всички",
+    "cancel": "Отказ",
+    "confirm": "Потвърди",
+    "save": "Запази",
+    "send": "Изпрати",
+    "validate": "Потвърди",
+    "delete": "Изтрий",
+    "oneMoment": "Момент…"
+  },
+  "account": {
+    "availableBalance": "Наличен баланс",
+    "currentAccount": "Разплащателна сметка",
+    "iban": "IBAN"
+  },
+  "statuses": {
+    "account": {
+      "active": "Активна",
+      "restricted": "Ограничена",
+      "banned": "Блокирана"
+    },
+    "tx": {
+      "success": "Успешна",
+      "pending": "В изчакване",
+      "blocked": "Блокирана",
+      "rejected": "Отхвърлена"
+    },
+    "code": {
+      "active": "Активен",
+      "used": "Използван",
+      "revoked": "Отменен"
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "auth": {
+    "lastNameRequired": "Příjmení je povinné.",
+    "firstNameRequired": "Jméno je povinné.",
+    "cityRequired": "Město je povinné.",
+    "professionRequired": "Povolání je povinné.",
+    "addressRequired": "Úplná adresa je povinná.",
+    "phoneRequired": "Telefonní číslo je povinné.",
+    "emailRequired": "E-mailová adresa je povinná.",
+    "passwordMinLength": "Heslo musí obsahovat alespoň 8 znaků.",
+    "passwordUppercase": "Heslo musí obsahovat alespoň jedno velké písmeno.",
+    "passwordDigit": "Heslo musí obsahovat alespoň jednu číslici.",
+    "passwordsMismatch": "Hesla se neshodují.",
+    "cguRequired": "Musíte souhlasit s obchodními podmínkami a zásadami ochrany osobních údajů.",
+    "idRequired": "Doklad totožnosti (fotografie) je povinný.",
+    "idFormat": "Neplatný formát dokladu totožnosti (JPG, PNG nebo PDF).",
+    "idTooLarge": "Doklad totožnosti přesahuje 5 MB.",
+    "accountCreatedConfirm": "Účet vytvořen. Zkontrolujte svou schránku a potvrďte adresu, poté se přihlaste.",
+    "credentialsRequired": "E-mail a heslo jsou povinné.",
+    "notAdmin": "Tento účet nemá práva administrátora.",
+    "emailRequiredShort": "E-mailová adresa je povinná.",
+    "resetEmailSent": "Pokud je s touto adresou spojen účet, právě jsme odeslali e-mail s odkazem pro obnovení. Zkontrolujte také složku se spamem.",
+    "passwordCriteria": "Heslo nesplňuje bezpečnostní požadavky.",
+    "resetLinkInvalid": "Neplatný nebo vypršelý odkaz. Požádejte o nové obnovení.",
+    "supabase": {
+      "invalidLogin": "Nesprávný e-mail nebo heslo.",
+      "alreadyRegistered": "Účet s tímto e-mailem již existuje.",
+      "emailNotConfirmed": "E-mail není potvrzen. Zkontrolujte svou schránku.",
+      "rateLimit": "Příliš mnoho pokusů. Zkuste to znovu za okamžik.",
+      "generic": "Došlo k chybě. Zkuste to znovu."
+    }
+  },
+  "amount": {
+    "invalid": "Neplatná částka.",
+    "max": "Maximální částka: 1 000 000 €."
+  },
+  "deposit": {
+    "failed": "Vklad se nezdařil. Zkuste to znovu."
+  },
+  "transfer": {
+    "ibanInvalid": "Neplatný IBAN příjemce.",
+    "ownAccount": "Nemůžete převést na svůj vlastní účet.",
+    "insufficient": "Nedostatečný zůstatek pro tento převod.",
+    "failed": "Převod se nezdařil. Zkuste to znovu.",
+    "unavailable": "Převody nejsou dostupné."
+  },
+  "withdrawalAccount": {
+    "ibanInvalid": "Neplatný IBAN.",
+    "saveFailed": "Tento IBAN se nepodařilo uložit."
+  },
+  "withdraw": {
+    "chooseIban": "Vyberte cílový IBAN.",
+    "codeRequired": "Kód pro výběr je povinný.",
+    "ibanNotFound": "Cílový IBAN nebyl nalezen.",
+    "insufficient": "Nedostatečný zůstatek pro tento výběr.",
+    "codeInvalid": "Kód pro výběr je neplatný, vypršel nebo již byl použit.",
+    "unavailable": "Výběry nejsou dostupné."
+  },
+  "redeem": {
+    "enterCode": "Zadejte kód.",
+    "codeInvalid": "Kód je neplatný, vypršel nebo již byl použit.",
+    "updateFailed": "Aktualizace se nezdařila."
+  },
+  "phase": {
+    "codeRequired": "Kód je povinný.",
+    "notFound": "Převod nebyl nalezen nebo již byl zpracován.",
+    "allConfirmed": "Všechny fáze jsou již potvrzeny.",
+    "noCode": "Pro tento převod není čekající kód. Kontaktujte svého poradce.",
+    "expired": "Tento kód vypršel. Váš poradce musí vygenerovat nový.",
+    "tooManyAttempts": "Příliš mnoho pokusů. Je nutné vygenerovat nový kód.",
+    "incorrectExhausted": "Nesprávný kód. Příliš mnoho pokusů: je nutné vygenerovat nový kód.",
+    "incorrectRemaining": "Nesprávný kód. Zbývá pokusů: {n}.",
+    "updateFailed": "Aktualizace fáze se nezdařila."
+  },
+  "profile": {
+    "nameEmpty": "Jméno nemůže být prázdné."
+  },
+  "success": {
+    "deposit": "Vklad {amount} proveden.",
+    "transferSubmitted": "Převod {amount} odeslán — čeká na potvrzení.",
+    "ibanSaved": "IBAN pro výběr uložen.",
+    "withdraw": "Výběr {amount} proveden.",
+    "redeem": "+{pct}% použito. Průběh: {progress}%.",
+    "phaseConfirmed": "Fáze {phase} potvrzena.",
+    "transferUnlocked": "Převod odemčen a proveden.",
+    "profileUpdated": "Profil aktualizován."
+  }
+}

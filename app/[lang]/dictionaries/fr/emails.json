@@ -1,0 +1,57 @@
+{
+  "notify": {
+    "depositReceived": {
+      "title": "Dépôt reçu",
+      "body": "{amount} ont été crédités sur votre compte."
+    },
+    "transferRejected": {
+      "title": "Virement refusé",
+      "fallbackBody": "Virements indisponibles."
+    },
+    "transferPending": {
+      "title": "Virement en attente de validation",
+      "body": "Votre virement de {amount} vers {iban} a été soumis. Les fonds sont réservés en attendant la validation par un conseiller."
+    },
+    "withdrawalRejected": {
+      "title": "Retrait refusé",
+      "fallbackBody": "Retraits indisponibles.",
+      "invalidCode": "Le code de retrait fourni est invalide, expiré ou déjà utilisé."
+    },
+    "withdrawalDone": {
+      "title": "Retrait effectué",
+      "body": "{amount} retirés vers {iban}."
+    },
+    "cardFrozen": {
+      "title": "Carte gelée",
+      "body": "Votre carte a été gelée. Les opérations sont temporairement bloquées."
+    },
+    "cardUnfrozen": {
+      "title": "Carte réactivée",
+      "body": "Votre carte a été réactivée. Vous pouvez de nouveau effectuer des opérations."
+    },
+    "progressUpdated": {
+      "title": "Progression de retrait mise à jour",
+      "body": "Votre jauge de retrait a progressé de +{pct}% (désormais {progress}%)."
+    },
+    "transferReceived": {
+      "title": "Virement reçu",
+      "body": "Vous avez reçu {amount}{from}.",
+      "fromName": " de {name}"
+    },
+    "transferExecuted": {
+      "title": "Virement débloqué et exécuté",
+      "body": "Les 3 phases ont été confirmées. Votre virement de {amount} a été exécuté."
+    },
+    "phaseConfirmed": {
+      "title": "Phase {phase}/{total} confirmée",
+      "body": "La phase {phase} de votre virement de {amount} est confirmée. En attente de la phase suivante."
+    }
+  },
+  "chrome": {
+    "greeting": "Bonjour {name},",
+    "greetingNoName": "Bonjour,",
+    "header": "Nébula Bank",
+    "footerAuto": "Ceci est un message automatique, merci de ne pas y répondre.",
+    "footerConfidential": "Cet e-mail et les informations qu'il contient sont confidentiels."
+  }
+}

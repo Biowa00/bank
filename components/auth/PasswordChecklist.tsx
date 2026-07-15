@@ -1,6 +1,7 @@
 "use client";
 
 import { checkPassword } from "@/lib/password";
+import { useZone } from "@/components/i18n/DictionaryProvider";
 
 /**
  * Liste des règles de mot de passe mise à jour en temps réel.
@@ -13,12 +14,16 @@ export function PasswordChecklist({
   password: string;
   confirm?: string;
 }) {
+  const rules = useZone("auth").passwordRules;
   if (!password) return null;
 
-  const items = checkPassword(password);
+  const items = checkPassword(password).map((it) => ({
+    label: rules[it.key],
+    ok: it.ok,
+  }));
   if (confirm !== undefined) {
     items.push({
-      label: "Les deux mots de passe correspondent",
+      label: rules.match,
       ok: confirm.length > 0 && password === confirm,
     });
   }

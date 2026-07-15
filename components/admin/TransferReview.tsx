@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { startTransferPhase, rejectTransfer } from "@/app/admin/actions";
+import { startTransferPhase, rejectTransfer } from "@/app/[lang]/admin/actions";
 import { TRANSFER_PHASES } from "@/lib/transferPhases";
 
 export type PhaseState = "valide" | "attente" | "a_valider" | "verrouille";

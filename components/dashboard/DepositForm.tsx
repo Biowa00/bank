@@ -1,21 +1,23 @@
 "use client";
 
 import { useActionState, useRef } from "react";
-import { deposit, type ActionState } from "@/app/dashboard/actions";
+import { deposit, type ActionState } from "@/app/[lang]/dashboard/actions";
 import { SubmitButton } from "@/components/SubmitButton";
 import { FormFeedback } from "./FormFeedback";
+import { useZone } from "@/components/i18n/DictionaryProvider";
 
 const presets = [50, 100, 250, 500, 1000];
 
 export function DepositForm() {
   const [state, action] = useActionState<ActionState, FormData>(deposit, {});
   const inputRef = useRef<HTMLInputElement>(null);
+  const t = useZone("dashboard").deposit;
 
   return (
     <form action={action} className="space-y-4">
       <FormFeedback state={state} />
       <div>
-        <label className="label" htmlFor="amount">Montant à déposer (€)</label>
+        <label className="label" htmlFor="amount">{t.amountLabel}</label>
         <input
           ref={inputRef}
           id="amount"
@@ -42,11 +44,11 @@ export function DepositForm() {
           </button>
         ))}
       </div>
-      <SubmitButton className="btn-accent w-full py-3 text-base" pendingLabel="Dépôt…">
-        Déposer les fonds
+      <SubmitButton className="btn-accent w-full py-3 text-base" pendingLabel={t.pending}>
+        {t.submit}
       </SubmitButton>
       <p className="text-center text-xs text-ink/40">
-        Votre solde est crédité immédiatement après validation.
+        {t.note}
       </p>
     </form>
   );

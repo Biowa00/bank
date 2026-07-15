@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { formatEuro, formatIban } from "@/lib/format";
 import { AccountStatusBadge } from "@/components/StatusBadge";
+import { useZone } from "@/components/i18n/DictionaryProvider";
+import { useLocale } from "@/components/i18n/navigation";
 import type { AccountStatus } from "@/lib/types";
 
 export function BalanceCard({
@@ -17,6 +19,9 @@ export function BalanceCard({
   name: string | null;
 }) {
   const [copied, setCopied] = useState(false);
+  const locale = useLocale();
+  const c = useZone("common");
+  const t = useZone("dashboard").balanceCard;
 
   async function copy() {
     try {
@@ -32,9 +37,9 @@ export function BalanceCard({
     <div className="relative overflow-hidden rounded-[var(--radius-xl2)] bg-gradient-to-br from-ink to-ink-soft p-7 text-white shadow-xl">
       <div className="flex items-start justify-between">
         <div>
-          <p className="text-sm text-white/50">Solde disponible</p>
+          <p className="text-sm text-white/50">{c.account.availableBalance}</p>
           <p className="mt-1 text-4xl font-bold tracking-tight sm:text-5xl">
-            {formatEuro(balance)}
+            {formatEuro(balance, locale)}
           </p>
         </div>
         <AccountStatusBadge status={status} />
@@ -42,9 +47,9 @@ export function BalanceCard({
 
       <div className="mt-8 flex items-end justify-between gap-4">
         <div className="min-w-0">
-          <p className="text-xs text-white/40">Titulaire</p>
+          <p className="text-xs text-white/40">{t.holder}</p>
           <p className="truncate text-sm font-medium">{name ?? "—"}</p>
-          <p className="mt-3 text-xs text-white/40">IBAN</p>
+          <p className="mt-3 text-xs text-white/40">{c.account.iban}</p>
           <p className="truncate font-mono text-sm tracking-wide text-white/90">
             {formatIban(iban)}
           </p>
@@ -53,7 +58,7 @@ export function BalanceCard({
           onClick={copy}
           className="btn shrink-0 border border-white/20 bg-white/10 text-xs text-white hover:bg-white/20"
         >
-          {copied ? "Copié ✓" : "Copier l'IBAN"}
+          {copied ? t.copied : t.copyIban}
         </button>
       </div>
 

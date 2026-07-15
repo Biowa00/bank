@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "features": "Funkce",
+    "security": "Zabezpečení",
+    "howItWorks": "Jak to funguje"
+  },
+  "hero": {
+    "badge": "Neobanka nové generace",
+    "titleLead": "Banka, která udržuje vaše peníze",
+    "titleHighlight": "v pohybu",
+    "description": "Otevřete si účet za 2 minuty, získejte svůj IBAN, provádějte vklady a převody a sledujte veškerou svou aktivitu v reálném čase.",
+    "ctaPrimary": "Otevřít účet zdarma",
+    "ctaSecondary": "Přihlásit se",
+    "guarantee": "Otevření zdarma · Bez závazků",
+    "cardTier": "Premium"
+  },
+  "logoStrip": {
+    "sepa": "Převody SEPA",
+    "instantIban": "Okamžitý IBAN",
+    "realtimeNotifications": "Oznámení v reálném čase",
+    "fullHistory": "Úplná historie"
+  },
+  "features": {
+    "title": "Vše, co by moderní banka měla dělat",
+    "subtitle": "Plynulý a kompletní zážitek navržený pro váš každodenní život.",
+    "items": {
+      "transfers": {
+        "title": "Okamžité převody",
+        "desc": "Posílejte peníze na jakýkoli IBAN, interně nebo externě, s úplnou historií."
+      },
+      "card": {
+        "title": "Karta a IBAN",
+        "desc": "Při otevření účtu je vám automaticky přidělen IBAN, připravený k přijímání a odesílání."
+      },
+      "notifications": {
+        "title": "Oznámení",
+        "desc": "Každý vklad, převod nebo změna na vašem účtu vyvolá okamžité oznámení."
+      },
+      "deposits": {
+        "title": "Vklady jedním kliknutím",
+        "desc": "Dobijte svůj účet během několika sekund a sledujte svůj zůstatek růst v reálném čase."
+      }
+    }
+  },
+  "showcase": {
+    "badge": "Přehled",
+    "title": "Ovládejte svůj účet jedním pohledem",
+    "description": "Zůstatek v reálném čase, filtrovatelná historie, vklady, převody a výběry — vše na jednom přehledném a responzivním místě.",
+    "points": [
+      "Zůstatek aktualizovaný okamžitě",
+      "Historie filtrovatelná podle typu a stavu",
+      "Výběry chráněné ověřovacím kódem"
+    ],
+    "sampleDeposit": "Vklad",
+    "sampleTransfer": "Převod — FR76…4021",
+    "sampleToday": "Dnes",
+    "sampleYesterday": "Včera"
+  },
+  "steps": {
+    "title": "Tři kroky a je to",
+    "items": [
+      {
+        "title": "Vytvořte si účet",
+        "desc": "Registrace za 2 minuty s e-mailem. Váš IBAN se vygeneruje automaticky."
+      },
+      {
+        "title": "Dobijte svůj zůstatek",
+        "desc": "Přidejte prostředky jedním kliknutím z vašeho přehledu."
+      },
+      {
+        "title": "Posílejte a sledujte",
+        "desc": "Provádějte převody a výběry, dostávejte oznámení, prohlížejte historii."
+      }
+    ]
+  },
+  "security": {
+    "badge": "Zabezpečení",
+    "title": "Vaše údaje v dobrých rukou",
+    "description": "Šifrované ověřování a bezpečné relace chrání váš účet po celou dobu.",
+    "cards": [
+      { "title": "Šifrování relací", "desc": "Podepsané tokeny a soubory cookie httpOnly" },
+      { "title": "Ochrana proti podvodům", "desc": "Operace jsou nepřetržitě sledovány" },
+      { "title": "Auditní protokol", "desc": "Každá citlivá akce je zaznamenána" },
+      { "title": "Chráněné údaje", "desc": "Soukromí ve výchozím nastavení" }
+    ]
+  },
+  "stats": {
+    "accounts": "otevřených účtů",
+    "satisfaction": "hodnocení spokojenosti",
+    "free": "zdarma a bezpečně"
+  },
+  "testimonials": {
+    "title": "Důvěřují nám",
+    "items": [
+      { "quote": "Konečně jednoduchá a rychlá online banka bez zbytečné byrokracie.", "author": "Sarah M." },
+      { "quote": "Rozhraní je přehledné a plynulé, přesně to, co potřebuji každý den.", "author": "Karim B." },
+      { "quote": "Převody a historie jsou skutečným potěšením k používání.", "author": "Léa D." }
+    ]
+  },
+  "finalCta": {
+    "title": "Jste připraveni otevřít si účet?",
+    "description": "Vytvořte si účet za 2 minuty. Zdarma a bez závazků.",
+    "ctaPrimary": "Otevřít účet",
+    "ctaSecondary": "Přihlásit se"
+  },
+  "footer": {
+    "tagline": "Neobanka nové generace. Jednoduchá, rychlá, bezpečná.",
+    "columns": {
+      "product": {
+        "title": "Produkt",
+        "links": ["Funkce", "Zabezpečení", "Přehled"]
+      },
+      "account": {
+        "title": "Účet",
+        "links": ["Otevřít účet", "Přihlásit se"]
+      },
+      "legal": {
+        "title": "Právní",
+        "links": ["Právní informace", "Soukromí"]
+      }
+    },
+    "rights": "Všechna práva vyhrazena."
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "features": "Funkcje",
+    "security": "Bezpieczeństwo",
+    "howItWorks": "Jak to działa"
+  },
+  "hero": {
+    "badge": "Neobank nowej generacji",
+    "titleLead": "Bank, który utrzymuje Twoje pieniądze",
+    "titleHighlight": "w ruchu",
+    "description": "Otwórz konto w 2 minuty, otrzymaj swój IBAN, dokonuj wpłat i przelewów oraz śledź całą swoją aktywność w czasie rzeczywistym.",
+    "ctaPrimary": "Otwórz darmowe konto",
+    "ctaSecondary": "Zaloguj się",
+    "guarantee": "Darmowe otwarcie · Bez zobowiązań",
+    "cardTier": "Premium"
+  },
+  "logoStrip": {
+    "sepa": "Przelewy SEPA",
+    "instantIban": "Natychmiastowy IBAN",
+    "realtimeNotifications": "Powiadomienia w czasie rzeczywistym",
+    "fullHistory": "Pełna historia"
+  },
+  "features": {
+    "title": "Wszystko, co powinien robić nowoczesny bank",
+    "subtitle": "Płynne i kompletne doświadczenie, stworzone z myślą o Twojej codzienności.",
+    "items": {
+      "transfers": {
+        "title": "Przelewy natychmiastowe",
+        "desc": "Wysyłaj pieniądze na dowolny IBAN, wewnętrznie lub zewnętrznie, z pełną historią."
+      },
+      "card": {
+        "title": "Karta i IBAN",
+        "desc": "IBAN jest przypisywany automatycznie przy otwarciu konta, gotowy do odbierania i wysyłania."
+      },
+      "notifications": {
+        "title": "Powiadomienia",
+        "desc": "Każda wpłata, przelew lub zmiana na Twoim koncie generuje natychmiastowe powiadomienie."
+      },
+      "deposits": {
+        "title": "Wpłaty jednym kliknięciem",
+        "desc": "Zasil swoje konto w kilka sekund i obserwuj saldo rosnące w czasie rzeczywistym."
+      }
+    }
+  },
+  "showcase": {
+    "badge": "Panel",
+    "title": "Zarządzaj kontem jednym spojrzeniem",
+    "description": "Saldo w czasie rzeczywistym, filtrowalna historia, wpłaty, przelewy i wypłaty — wszystko w jednym przejrzystym i responsywnym miejscu.",
+    "points": [
+      "Saldo aktualizowane natychmiast",
+      "Historia filtrowana według typu i statusu",
+      "Wypłaty zabezpieczone kodem weryfikacyjnym"
+    ],
+    "sampleDeposit": "Wpłata",
+    "sampleTransfer": "Przelew — FR76…4021",
+    "sampleToday": "Dziś",
+    "sampleYesterday": "Wczoraj"
+  },
+  "steps": {
+    "title": "Trzy kroki i gotowe",
+    "items": [
+      {
+        "title": "Utwórz konto",
+        "desc": "Rejestracja w 2 minuty za pomocą e-maila. Twój IBAN jest generowany automatycznie."
+      },
+      {
+        "title": "Zasil saldo",
+        "desc": "Dodaj środki jednym kliknięciem z poziomu panelu."
+      },
+      {
+        "title": "Wysyłaj i śledź",
+        "desc": "Dokonuj przelewów i wypłat, otrzymuj powiadomienia, przeglądaj historię."
+      }
+    ]
+  },
+  "security": {
+    "badge": "Bezpieczeństwo",
+    "title": "Twoje dane w dobrych rękach",
+    "description": "Szyfrowane uwierzytelnianie i bezpieczne sesje chronią Twoje konto w każdej chwili.",
+    "cards": [
+      { "title": "Szyfrowanie sesji", "desc": "Podpisane tokeny i pliki cookie httpOnly" },
+      { "title": "Ochrona przed oszustwami", "desc": "Operacje monitorowane na bieżąco" },
+      { "title": "Dziennik audytu", "desc": "Każda wrażliwa akcja jest rejestrowana" },
+      { "title": "Chronione dane", "desc": "Prywatność domyślnie" }
+    ]
+  },
+  "stats": {
+    "accounts": "otwartych kont",
+    "satisfaction": "wskaźnik satysfakcji",
+    "free": "za darmo i bezpiecznie"
+  },
+  "testimonials": {
+    "title": "Zaufali nam",
+    "items": [
+      { "quote": "Wreszcie prosty i szybki bank internetowy, bez zbędnych formalności.", "author": "Sarah M." },
+      { "quote": "Interfejs jest przejrzysty i płynny, dokładnie to, czego potrzebuję na co dzień.", "author": "Karim B." },
+      { "quote": "Przelewy i historia to prawdziwa przyjemność w użyciu.", "author": "Léa D." }
+    ]
+  },
+  "finalCta": {
+    "title": "Gotowy, aby otworzyć konto?",
+    "description": "Utwórz konto w 2 minuty. Za darmo i bez zobowiązań.",
+    "ctaPrimary": "Otwórz konto",
+    "ctaSecondary": "Zaloguj się"
+  },
+  "footer": {
+    "tagline": "Neobank nowej generacji. Prosty, szybki, bezpieczny.",
+    "columns": {
+      "product": {
+        "title": "Produkt",
+        "links": ["Funkcje", "Bezpieczeństwo", "Panel"]
+      },
+      "account": {
+        "title": "Konto",
+        "links": ["Otwórz konto", "Zaloguj się"]
+      },
+      "legal": {
+        "title": "Informacje prawne",
+        "links": ["Nota prawna", "Prywatność"]
+      }
+    },
+    "rights": "Wszelkie prawa zastrzeżone."
+  }
+}

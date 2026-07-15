@@ -1,4 +1,4 @@
-import type { ActionState } from "@/app/dashboard/actions";
+import type { ActionState } from "@/app/[lang]/dashboard/actions";
 
 export function FormFeedback({ state }: { state: ActionState }) {
   if (state.error)

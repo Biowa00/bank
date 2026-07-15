@@ -1,0 +1,156 @@
+{
+  "layout": {
+    "bannedTitle": "Račun blokiran",
+    "bannedText": "Vaš račun je bil blokiran in dostop do vaših storitev je začasno onemogočen.",
+    "restrictedTitle": "Račun omejen.",
+    "restrictedDefault": "Nekatere operacije (nakazila, dvigi) niso na voljo.",
+    "reason": "Razlog:",
+    "defaultFirstName": "vas"
+  },
+  "home": {
+    "greeting": "Pozdravljeni",
+    "subtitle": "Tukaj je stanje vašega računa Nébula.",
+    "quickDeposit": "Polog",
+    "quickTransfer": "Nakazilo",
+    "quickWithdraw": "Dvig",
+    "recentTransactions": "Nedavne transakcije",
+    "emptyRecent": "Zaenkrat še ni transakcij. Opravite svoj prvi polog!"
+  },
+  "balanceCard": {
+    "holder": "Imetnik",
+    "copyIban": "Kopiraj IBAN",
+    "copied": "Kopirano ✓"
+  },
+  "bankCard": {
+    "paymentCard": "Plačilna kartica",
+    "frozen": "Zamrznjena",
+    "holder": "Imetnik",
+    "exp": "Velj.",
+    "cvv": "CVV",
+    "showInfo": "Prikaži podatke",
+    "hideInfo": "Skrij podatke",
+    "freezeTitle": "Zamrzni kartico",
+    "freezeDescFrozen": "Operacije so blokirane, dokler je kartica zamrznjena.",
+    "freezeDescActive": "Začasno blokira vse operacije kartice.",
+    "freezeToggleAria": "Zamrzni ali odmrzni kartico"
+  },
+  "deposit": {
+    "title": "Polog sredstev",
+    "subtitle": "Takoj napolnite svoje stanje.",
+    "amountLabel": "Znesek za polog (€)",
+    "pending": "Polaganje…",
+    "submit": "Položi sredstva",
+    "note": "Vaše stanje je pripisano takoj po potrditvi."
+  },
+  "transfer": {
+    "title": "Opravite nakazilo",
+    "subtitle": "Pošljite denar na IBAN po svoji izbiri.",
+    "ibanLabel": "IBAN prejemnika",
+    "amountLabel": "Znesek (€)",
+    "availableBalance": "Razpoložljivo stanje:",
+    "descriptionLabel": "Namen (neobvezno)",
+    "descriptionPlaceholder": "Najemnina, povračilo…",
+    "pending": "Pošiljanje…",
+    "submit": "Oddaj nakazilo",
+    "note": "Nakazilo je predmet potrditve svetovalca. Sredstva se rezervirajo ob pošiljanju; v primeru zavrnitve so vam v celoti vrnjena."
+  },
+  "withdraw": {
+    "title": "Dvig sredstev",
+    "subtitle": "Za dvig je potrebna koda, ki jo zagotovi skrbnik.",
+    "newWithdrawal": "Nov dvig",
+    "savedIbansTitle": "Shranjeni ciljni IBAN-i",
+    "savedIbansDesc": "Upravljajte račune, na katere lahko dvigujete.",
+    "noAccounts": "Najprej spodaj registrirajte ciljni IBAN, da boste lahko opravili dvig.",
+    "destLabel": "Ciljni IBAN",
+    "amountLabel": "Znesek (€)",
+    "availableBalance": "Razpoložljivo stanje:",
+    "codeLabel": "Koda za dvig",
+    "codePlaceholder": "Koda, ki jo zagotovi skrbnik",
+    "codeHint": "Za potrditev operacije je potrebna veljavna koda za dvig, ki jo ustvari skrbnik.",
+    "pending": "Potrjevanje…",
+    "submit": "Potrdi dvig"
+  },
+  "withdrawalAccounts": {
+    "labelLabel": "Oznaka (neobvezno)",
+    "labelPlaceholder": "Moj drugi račun",
+    "ibanLabel": "Ciljni IBAN",
+    "pending": "Dodajanje…",
+    "submit": "Shrani ta IBAN"
+  },
+  "withdrawalProgress": {
+    "title": "Napredek vašega dviga",
+    "complete": "Vaš kazalnik je poln.",
+    "hint": "Vnesite kode, ki vam jih zagotovi svetovalec, da povečate kazalnik.",
+    "pending": "…",
+    "submit": "Potrdi"
+  },
+  "transferPhases": {
+    "title": "Nakazila, ki čakajo na potrditev",
+    "intro": "Vaše nakazilo se odklene v {total} fazah. Vnesite vsako prejeto kodo za prehod na naslednjo.",
+    "transferOf": "Nakazilo {amount}",
+    "toIban": "na {iban}",
+    "pending": "…",
+    "confirm": "Potrdi",
+    "awaiting": "Čakanje na potrditev faze {phase} s strani vašega svetovalca. Kodo boste prejeli po e-pošti.",
+    "names": {
+      "1": "Koda za potrditev povezave",
+      "2": "Koda za bančno odobritev",
+      "3": "Koda za aktivacijo nakazila"
+    }
+  },
+  "transactions": {
+    "title": "Zgodovina transakcij",
+    "subtitle": "Filtrirajte po vrsti in stanju.",
+    "emptyFiltered": "Nobena transakcija ne ustreza tem filtrom.",
+    "typeFilters": {
+      "all": "Vse",
+      "deposit": "Pologi",
+      "transfer": "Nakazila",
+      "withdrawal": "Dvigi"
+    },
+    "statusFilters": {
+      "all": "Vsa stanja",
+      "success": "Uspešna",
+      "pending": "V čakanju",
+      "rejected": "Zavrnjena",
+      "blocked": "Blokirana"
+    }
+  },
+  "transactionItem": {
+    "types": {
+      "deposit": "Polog",
+      "transfer": "Nakazilo",
+      "withdrawal": "Dvig",
+      "admin_credit": "Skrbniško dobropisanje"
+    },
+    "declineReason": "Zavrnitev:"
+  },
+  "notifications": {
+    "title": "Obvestila",
+    "subtitle": "Vsi dogodki na vašem računu.",
+    "markAllRead": "Označi vse kot prebrano",
+    "empty": "Ni obvestil."
+  },
+  "profile": {
+    "title": "Profil",
+    "subtitle": "Vaši osebni podatki in vaš račun.",
+    "accountStatus": "Stanje računa",
+    "reason": "Razlog:",
+    "createdOn": "Račun ustvarjen {date}",
+    "infoSection": "Informacije",
+    "fullName": "Polno ime",
+    "email": "E-poštni naslov",
+    "emailHint": "Za spremembo e-poštnega naslova se obrnite na svojega svetovalca.",
+    "pending": "Shranjevanje…",
+    "submit": "Shrani"
+  },
+  "permissions": {
+    "frozen": "Vaša kartica je zamrznjena. Odmrznite jo na nadzorni plošči, da boste lahko opravljali operacije.",
+    "banned": "Račun blokiran.",
+    "depositNotAuthorized": "Pologi na vašem računu še niso dovoljeni. Obrnite se na svojega svetovalca.",
+    "transferRestricted": "Račun omejen: nakazila niso na voljo.",
+    "transfersBlocked": "Nakazila na vašem računu so blokirana.",
+    "withdrawRestricted": "Račun omejen: dvigi niso na voljo.",
+    "withdrawalsBlocked": "Dvigi na vašem računu so blokirani."
+  }
+}
