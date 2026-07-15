@@ -5,6 +5,7 @@ import { useActionState, useState } from "react";
 import { signUp, type AuthState } from "../actions";
 import { SubmitButton } from "@/components/SubmitButton";
 import { PasswordChecklist } from "@/components/auth/PasswordChecklist";
+import { SelfieCapture } from "@/components/auth/SelfieCapture";
 import { phoneFormats, formatPhone, phonePlaceholder, isPhoneComplete } from "@/lib/phone";
 import { useZone } from "@/components/i18n/DictionaryProvider";
 
@@ -133,6 +134,8 @@ export default function RegisterPage() {
           />
           <p className="mt-1 text-xs text-ink/40">{t.register.acceptedFormats}</p>
         </div>
+
+        <SelfieCapture />
 
         <div>
           <label className="label" htmlFor="password">{t.register.password}</label>

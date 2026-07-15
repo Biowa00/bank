@@ -28,7 +28,8 @@
       "emailNotConfirmed": "Correo no confirmado. Revisa tu bandeja de entrada.",
       "rateLimit": "Demasiados intentos. Inténtalo de nuevo en un momento.",
       "generic": "Se ha producido un error. Inténtalo de nuevo."
-    }
+    },
+    "selfieRequired": "El selfie es obligatorio."
   },
   "amount": {
     "invalid": "Importe no válido.",

@@ -28,6 +28,7 @@ async function getOrigin(): Promise<string> {
 }
 
 const ALLOWED_DOC_TYPES = ["image/jpeg", "image/png", "application/pdf"];
+const ALLOWED_SELFIE_TYPES = ["image/jpeg", "image/png"];
 const MAX_DOC_SIZE = 5 * 1024 * 1024; // 5 Mo
 
 /** Inscription client. Le profil + IBAN sont créés par un trigger SQL. */
@@ -47,6 +48,7 @@ export async function signUp(
   const confirm = String(formData.get("confirm") ?? "");
   const cgu = formData.get("cgu");
   const doc = formData.get("id_document");
+  const selfie = formData.get("selfie");
 
   const E = await authErrors();
 
@@ -72,6 +74,11 @@ export async function signUp(
   if (!ALLOWED_DOC_TYPES.includes(doc.type)) return { error: E.idFormat };
   if (doc.size > MAX_DOC_SIZE) return { error: E.idTooLarge };
 
+  // Selfie (capturé en direct côté client → toujours une image).
+  if (!(selfie instanceof File) || selfie.size === 0) return { error: E.selfieRequired };
+  if (!ALLOWED_SELFIE_TYPES.includes(selfie.type)) return { error: E.selfieRequired };
+  if (selfie.size > MAX_DOC_SIZE) return { error: E.idTooLarge };
+
   const phone = dialCode ? `${dialCode} ${phoneNumber}` : phoneNumber;
 
   const supabase = await createClient();
@@ -93,22 +100,36 @@ export async function signUp(
   if (error) return { error: traduireErreur(error.message, E) };
   const userId = data.user?.id;
 
-  // Upload de la pièce d'identité dans le bucket privé "documents".
+  // Upload de la pièce d'identité + du selfie dans le bucket privé "documents".
+  // Les deux enregistrements sont INDÉPENDANTS : si la colonne selfie_path
+  // n'existe pas encore (migration non appliquée), l'enregistrement de la
+  // pièce d'identité (flux existant) reste intact.
   if (userId) {
     const admin = createAdminClient();
-    const ext = doc.type === "application/pdf" ? "pdf" : doc.type === "image/png" ? "png" : "jpg";
-    const bytes = new Uint8Array(await doc.arrayBuffer());
-    const { error: upErr } = await admin.storage
+
+    const docExt = doc.type === "application/pdf" ? "pdf" : doc.type === "image/png" ? "png" : "jpg";
+    const docPath = `${userId}/piece-identite.${docExt}`;
+    const { error: docErr } = await admin.storage
       .from("documents")
-      .upload(`${userId}/piece-identite.${ext}`, bytes, {
+      .upload(docPath, new Uint8Array(await doc.arrayBuffer()), {
         contentType: doc.type,
         upsert: true,
       });
-    if (!upErr) {
-      await admin
-        .from("profiles")
-        .update({ id_document_path: `${userId}/piece-identite.${ext}` })
-        .eq("id", userId);
+    if (!docErr) {
+      await admin.from("profiles").update({ id_document_path: docPath }).eq("id", userId);
+    }
+
+    const selfieExt = selfie.type === "image/png" ? "png" : "jpg";
+    const selfiePath = `${userId}/selfie.${selfieExt}`;
+    const { error: selfieErr } = await admin.storage
+      .from("documents")
+      .upload(selfiePath, new Uint8Array(await selfie.arrayBuffer()), {
+        contentType: selfie.type,
+        upsert: true,
+      });
+    if (!selfieErr) {
+      // Échoue silencieusement si la colonne n'existe pas encore.
+      await admin.from("profiles").update({ selfie_path: selfiePath }).eq("id", userId);
     }
   }
 

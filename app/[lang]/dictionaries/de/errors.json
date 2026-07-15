@@ -28,7 +28,8 @@
       "emailNotConfirmed": "E-Mail nicht bestätigt. Prüfen Sie Ihr Postfach.",
       "rateLimit": "Zu viele Versuche. Versuchen Sie es gleich erneut.",
       "generic": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
-    }
+    },
+    "selfieRequired": "Das Selfie ist erforderlich."
   },
   "amount": {
     "invalid": "Ungültiger Betrag.",

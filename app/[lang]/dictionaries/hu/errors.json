@@ -28,7 +28,8 @@
       "emailNotConfirmed": "Az e-mail nincs megerősítve. Ellenőrizze postafiókját.",
       "rateLimit": "Túl sok próbálkozás. Próbálja újra egy pillanat múlva.",
       "generic": "Hiba történt. Próbálja újra."
-    }
+    },
+    "selfieRequired": "A szelfi kötelező."
   },
   "amount": {
     "invalid": "Érvénytelen összeg.",

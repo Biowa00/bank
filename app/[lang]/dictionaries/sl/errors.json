@@ -28,7 +28,8 @@
       "emailNotConfirmed": "E-pošta ni potrjena. Preverite svoj poštni predal.",
       "rateLimit": "Preveč poskusov. Poskusite znova čez trenutek.",
       "generic": "Prišlo je do napake. Poskusite znova."
-    }
+    },
+    "selfieRequired": "Selfi je obvezen."
   },
   "amount": {
     "invalid": "Neveljaven znesek.",

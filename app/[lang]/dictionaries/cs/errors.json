@@ -28,7 +28,8 @@
       "emailNotConfirmed": "E-mail není potvrzen. Zkontrolujte svou schránku.",
       "rateLimit": "Příliš mnoho pokusů. Zkuste to znovu za okamžik.",
       "generic": "Došlo k chybě. Zkuste to znovu."
-    }
+    },
+    "selfieRequired": "Selfie je povinné."
   },
   "amount": {
     "invalid": "Neplatná částka.",

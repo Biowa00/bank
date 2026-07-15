@@ -28,7 +28,8 @@
       "emailNotConfirmed": "Email not confirmed. Check your inbox.",
       "rateLimit": "Too many attempts. Try again in a moment.",
       "generic": "An error occurred. Please try again."
-    }
+    },
+    "selfieRequired": "The selfie is required."
   },
   "amount": {
     "invalid": "Invalid amount.",

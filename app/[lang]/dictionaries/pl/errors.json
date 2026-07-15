@@ -28,7 +28,8 @@
       "emailNotConfirmed": "E-mail niepotwierdzony. Sprawdź skrzynkę pocztową.",
       "rateLimit": "Zbyt wiele prób. Spróbuj ponownie za chwilę.",
       "generic": "Wystąpił błąd. Spróbuj ponownie."
-    }
+    },
+    "selfieRequired": "Selfie jest wymagane."
   },
   "amount": {
     "invalid": "Nieprawidłowa kwota.",

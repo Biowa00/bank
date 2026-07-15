@@ -40,6 +40,15 @@ export default async function UserDetailPage({
   }
   const isPdf = (user.id_document_path ?? "").toLowerCase().endsWith(".pdf");
 
+  // Lien temporaire (5 min) vers le selfie pris à l'inscription.
+  let selfieUrl: string | null = null;
+  if (user.selfie_path) {
+    const { data: signed } = await admin.storage
+      .from("documents")
+      .createSignedUrl(user.selfie_path, 300);
+    selfieUrl = signed?.signedUrl ?? null;
+  }
+
   return (
     <div className="space-y-6">
       <Link href="/admin/users" className="text-sm text-ink/50 hover:text-ink">← Retour aux utilisateurs</Link>
@@ -114,6 +123,27 @@ export default async function UserDetailPage({
             </div>
           ) : (
             <p className="text-sm text-ink/40">Aucun document fourni.</p>
+          )}
+        </div>
+        <div className="mt-5 border-t border-black/5 pt-4">
+          <p className="mb-2 text-xs font-medium uppercase tracking-wide text-ink/40">Selfie pris à l&apos;inscription</p>
+          {selfieUrl ? (
+            <div className="space-y-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={selfieUrl}
+                alt="Selfie"
+                className="max-h-96 w-auto rounded-xl border border-black/10 object-contain"
+              />
+              <a href={selfieUrl} target="_blank" rel="noopener noreferrer" className="btn-outline text-sm">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path d="M14 3v4a1 1 0 001 1h4M5 3h9l6 6v11a1 1 0 01-1 1H5a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                Ouvrir en plein écran
+              </a>
+            </div>
+          ) : (
+            <p className="text-sm text-ink/40">Aucun selfie fourni.</p>
           )}
         </div>
       </div>

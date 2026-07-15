@@ -28,7 +28,8 @@
       "emailNotConfirmed": "E-mail non confermata. Controlla la tua casella di posta.",
       "rateLimit": "Troppi tentativi. Riprova tra un momento.",
       "generic": "Si è verificato un errore. Riprova."
-    }
+    },
+    "selfieRequired": "Il selfie è obbligatorio."
   },
   "amount": {
     "invalid": "Importo non valido.",
