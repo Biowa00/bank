@@ -92,7 +92,7 @@ export default function RegisterPage() {
               required
               value={phone}
               onChange={(e) => setPhone(formatPhone(e.target.value, dialCode))}
-              className="input"
+              className="input min-w-0 flex-1"
               placeholder={phonePlaceholder(dialCode)}
             />
           </div>

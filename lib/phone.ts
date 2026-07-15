@@ -8,21 +8,46 @@ export type PhoneFormat = {
   groups: number[];
 };
 
+/**
+ * Uniquement les pays dont la langue de l'interface est disponible (les 13
+ * langues supportées). Libellés en nom local (endonyme) + indicatif, donc
+ * neutres vis-à-vis de la langue affichée.
+ */
 export const phoneFormats: PhoneFormat[] = [
-  { code: "+33", label: "France (+33)", groups: [1, 2, 2, 2, 2] }, //  6 12 34 56 78
-  { code: "+32", label: "Belgique (+32)", groups: [3, 2, 2, 2] }, // 470 12 34 56
-  { code: "+41", label: "Suisse (+41)", groups: [2, 3, 2, 2] }, // 79 123 45 67
-  { code: "+352", label: "Luxembourg (+352)", groups: [3, 3, 3] }, // 621 234 567
-  { code: "+1", label: "Canada / USA (+1)", groups: [3, 3, 4] }, // 234 567 8901
-  { code: "+34", label: "Espagne (+34)", groups: [3, 3, 3] }, // 612 345 678
-  { code: "+39", label: "Italie (+39)", groups: [3, 3, 4] }, // 312 345 6789
-  { code: "+49", label: "Allemagne (+49)", groups: [3, 4, 4] }, // 151 2345 6789
-  { code: "+212", label: "Maroc (+212)", groups: [1, 2, 2, 2, 2] }, // 6 12 34 56 78
-  { code: "+213", label: "Algérie (+213)", groups: [3, 2, 2, 2] }, // 551 23 45 67
-  { code: "+216", label: "Tunisie (+216)", groups: [2, 3, 3] }, // 20 123 456
-  { code: "+225", label: "Côte d'Ivoire (+225)", groups: [2, 2, 2, 2, 2] }, // 07 12 34 56 78
-  { code: "+221", label: "Sénégal (+221)", groups: [2, 3, 2, 2] }, // 77 123 45 67
-  { code: "+44", label: "Royaume-Uni (+44)", groups: [4, 6] }, // 7123 456789
+  // Français
+  { code: "+33", label: "France (+33)", groups: [1, 2, 2, 2, 2] },
+  { code: "+32", label: "Belgique (+32)", groups: [3, 2, 2, 2] },
+  { code: "+352", label: "Luxembourg (+352)", groups: [3, 3, 3] },
+  { code: "+377", label: "Monaco (+377)", groups: [2, 2, 2, 2] },
+  // Allemand
+  { code: "+49", label: "Deutschland (+49)", groups: [3, 4, 4] },
+  { code: "+43", label: "Österreich (+43)", groups: [3, 3, 4] },
+  { code: "+41", label: "Schweiz (+41)", groups: [2, 3, 2, 2] },
+  { code: "+423", label: "Liechtenstein (+423)", groups: [3, 2, 2] },
+  // Anglais
+  { code: "+44", label: "United Kingdom (+44)", groups: [4, 6] },
+  { code: "+353", label: "Ireland (+353)", groups: [2, 3, 4] },
+  // Espagnol
+  { code: "+34", label: "España (+34)", groups: [3, 3, 3] },
+  // Italien
+  { code: "+39", label: "Italia (+39)", groups: [3, 3, 4] },
+  // Portugais
+  { code: "+351", label: "Portugal (+351)", groups: [3, 3, 3] },
+  // Polonais
+  { code: "+48", label: "Polska (+48)", groups: [3, 3, 3] },
+  // Tchèque
+  { code: "+420", label: "Česko (+420)", groups: [3, 3, 3] },
+  // Slovaque
+  { code: "+421", label: "Slovensko (+421)", groups: [3, 3, 3] },
+  // Slovène
+  { code: "+386", label: "Slovenija (+386)", groups: [2, 3, 3] },
+  // Hongrois
+  { code: "+36", label: "Magyarország (+36)", groups: [2, 3, 4] },
+  // Bulgare
+  { code: "+359", label: "България (+359)", groups: [3, 3, 3] },
+  // Grec
+  { code: "+30", label: "Ελλάδα (+30)", groups: [3, 3, 4] },
+  { code: "+357", label: "Κύπρος (+357)", groups: [2, 3, 3] },
 ];
 
 const byCode = new Map(phoneFormats.map((f) => [f.code, f]));
