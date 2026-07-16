@@ -9,7 +9,7 @@
   },
   "home": {
     "greeting": "Hello",
-    "subtitle": "Here's the status of your Vantex account.",
+    "subtitle": "Here's the status of your Vantex Bank account.",
     "quickDeposit": "Deposit",
     "quickTransfer": "Transfer",
     "quickWithdraw": "Withdraw",

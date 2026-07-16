@@ -9,7 +9,7 @@
   },
   "home": {
     "greeting": "Szia",
-    "subtitle": "Íme a Vantex-számlája állapota.",
+    "subtitle": "Íme a Vantex Bank-számlája állapota.",
     "quickDeposit": "Befizetés",
     "quickTransfer": "Átutalás",
     "quickWithdraw": "Kifizetés",

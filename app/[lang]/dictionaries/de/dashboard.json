@@ -9,7 +9,7 @@
   },
   "home": {
     "greeting": "Hallo",
-    "subtitle": "Hier ist der Status Ihres Vantex-Kontos.",
+    "subtitle": "Hier ist der Status Ihres Vantex Bank-Kontos.",
     "quickDeposit": "Einzahlen",
     "quickTransfer": "Überweisen",
     "quickWithdraw": "Abheben",

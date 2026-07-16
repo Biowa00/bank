@@ -9,7 +9,7 @@
   },
   "home": {
     "greeting": "Ciao",
-    "subtitle": "Ecco lo stato del tuo conto Vantex.",
+    "subtitle": "Ecco lo stato del tuo conto Vantex Bank.",
     "quickDeposit": "Deposita",
     "quickTransfer": "Bonifico",
     "quickWithdraw": "Preleva",
