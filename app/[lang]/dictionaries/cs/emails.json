@@ -45,6 +45,68 @@
     "phaseConfirmed": {
       "title": "Fáze {phase}/{total} potvrzena",
       "body": "Fáze {phase} vašeho převodu {amount} je potvrzena. Čeká se na další fázi."
+    },
+    "admin": {
+      "accountReactivated": {
+        "title": "Účet znovu aktivován",
+        "body": "Váš účet byl znovu aktivován. Máte opět přístup ke všem službám."
+      },
+      "accountRestricted": {
+        "title": "Účet omezen",
+        "body": "Váš účet byl omezen. Důvod: {reason}"
+      },
+      "accountBanned": {
+        "title": "Účet zablokován",
+        "body": "Váš účet byl zablokován.",
+        "bodyReason": "Váš účet byl zablokován. Důvod: {reason}"
+      },
+      "depositsAuthorized": {
+        "title": "Vklady povoleny",
+        "body": "Vaše vklady jsou nyní povoleny."
+      },
+      "depositsSuspended": {
+        "title": "Vklady pozastaveny",
+        "body": "Vaše vklady byly pozastaveny."
+      },
+      "withdrawalsBlocked": {
+        "title": "Výběry zablokovány",
+        "body": "Vaše výběry byly zablokovány.",
+        "bodyReason": "Vaše výběry byly zablokovány. Důvod: {reason}"
+      },
+      "withdrawalsUnblocked": {
+        "title": "Výběry odblokovány",
+        "body": "Vaše výběry byly odblokovány."
+      },
+      "transfersBlocked": {
+        "title": "Převody zablokovány",
+        "body": "Vaše převody byly zablokovány.",
+        "bodyReason": "Vaše převody byly zablokovány. Důvod: {reason}"
+      },
+      "transfersUnblocked": {
+        "title": "Převody odblokovány",
+        "body": "Vaše převody byly odblokovány."
+      },
+      "credited": {
+        "title": "Připsání na účet",
+        "body": "+{amount} — {reason}"
+      },
+      "debited": {
+        "title": "Úprava účtu",
+        "body": "−{amount} — {reason}"
+      },
+      "phaseCode": {
+        "title": "{name} — {code}",
+        "body": "Fáze {phase}/{total} vašeho převodu {amount}: váš {name} je {code}. Zadejte jej ve své klientské zóně pro potvrzení. Kód platí {ttl} minut."
+      },
+      "phaseNames": {
+        "1": "Kód potvrzení spojení",
+        "2": "Kód bankovního schválení",
+        "3": "Kód aktivace převodu"
+      },
+      "transferRejected": {
+        "title": "Převod zamítnut",
+        "body": "Váš převod {amount} byl zamítnut. Důvod: {reason}. Prostředky byly vráceny na váš účet."
+      }
     }
   },
   "chrome": {

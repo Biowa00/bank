@@ -97,6 +97,9 @@ export async function signUp(
         profession,
         address,
         phone,
+        // Langue préférée : utilisée pour les notifications déclenchées
+        // par l'admin (rendues dans la langue du client).
+        locale,
       },
     },
   });
@@ -160,6 +163,11 @@ export async function signIn(
   const supabase = await createClient();
   const { error } = await supabase.auth.signInWithPassword({ email, password });
   if (error) return { error: traduireErreur(error.message, E) };
+
+  // Rafraîchit la langue préférée (best-effort) : la langue de navigation
+  // actuelle devient celle des futurs emails envoyés par l'admin.
+  const locale = await getRequestLocale();
+  await supabase.auth.updateUser({ data: { locale } }).catch(() => {});
 
   // `next` est déjà préfixé de la langue (posé par le proxy) ; sinon repli.
   if (next.startsWith("/")) redirect(next);

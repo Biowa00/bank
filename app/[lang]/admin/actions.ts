@@ -3,8 +3,9 @@
 import { revalidatePath } from "next/cache";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { requireAdmin } from "@/lib/auth";
-import { notify } from "@/lib/notify";
+import { notifyUser } from "@/lib/notify";
 import { formatEuro } from "@/lib/format";
+import { interpolate } from "@/lib/i18n/config";
 import {
   generatePhaseCode,
   phaseName,
@@ -66,13 +67,20 @@ export async function setAccountStatus(
     restricted: "restreint",
     banned: "banni",
   };
-  await notify(
-    targetId,
-    `Compte ${labels[status]}`,
-    status === "active"
-      ? "Votre compte a été réactivé. Vous avez de nouveau accès à tous les services."
-      : `Votre compte a été ${labels[status]}. Motif : ${reason}`,
-  );
+  // Notification/email rendus dans la langue du CLIENT (pas celle de l'admin).
+  await notifyUser(targetId, (dict) => {
+    const A = dict.emails.notify.admin;
+    if (status === "active") return A.accountReactivated;
+    if (status === "restricted")
+      return {
+        title: A.accountRestricted.title,
+        body: interpolate(A.accountRestricted.body, { reason }),
+      };
+    return {
+      title: A.accountBanned.title,
+      body: interpolate(A.accountBanned.bodyReason, { reason }),
+    };
+  });
   await logAudit(adminId, email, `account.${status}`, targetId, reason || null);
 
   revalidatePath("/[lang]/admin/users/[id]", "page");
@@ -115,13 +123,14 @@ export async function setBlock(
   if (error) return { error: "Échec du blocage." };
 
   const label = kind === "withdrawals" ? "retraits" : "virements";
-  await notify(
-    targetId,
-    blocked ? `${label[0].toUpperCase()}${label.slice(1)} bloqués` : `${label[0].toUpperCase()}${label.slice(1)} débloqués`,
-    blocked
-      ? `Vos ${label} ont été bloqués. Motif : ${reason}`
-      : `Vos ${label} ont été débloqués.`,
-  );
+  await notifyUser(targetId, (dict) => {
+    const A = dict.emails.notify.admin;
+    if (blocked) {
+      const k = kind === "withdrawals" ? A.withdrawalsBlocked : A.transfersBlocked;
+      return { title: k.title, body: interpolate(k.bodyReason, { reason }) };
+    }
+    return kind === "withdrawals" ? A.withdrawalsUnblocked : A.transfersUnblocked;
+  });
   await logAudit(
     adminId,
     email,
@@ -164,7 +173,6 @@ export async function setRestriction(
 
   let patch: Record<string, unknown>;
   let title: string;
-  let body: string;
   let action: string;
 
   switch (kind) {
@@ -174,17 +182,11 @@ export async function setRestriction(
         status_reason: value ? (reason ?? "Compte banni par l'administration.") : null,
       };
       title = value ? "Compte banni" : "Compte réactivé";
-      body = value
-        ? `Votre compte a été banni.${reason ? ` Motif : ${reason}` : ""}`
-        : "Votre compte a été réactivé.";
       action = value ? "account.banned" : "account.active";
       break;
     case "deposit":
       patch = { deposit_authorized: value };
       title = value ? "Dépôts autorisés" : "Dépôts suspendus";
-      body = value
-        ? "Vos dépôts sont désormais autorisés."
-        : "Vos dépôts ont été suspendus.";
       action = value ? "deposit.authorize" : "deposit.suspend";
       break;
     case "withdrawal":
@@ -193,9 +195,6 @@ export async function setRestriction(
         withdrawals_block_reason: value ? (reason ?? "Retraits bloqués.") : null,
       };
       title = value ? "Retraits bloqués" : "Retraits débloqués";
-      body = value
-        ? `Vos retraits ont été bloqués.${reason ? ` Motif : ${reason}` : ""}`
-        : "Vos retraits ont été débloqués.";
       action = value ? "withdrawals.block" : "withdrawals.unblock";
       break;
     default: // transfer
@@ -204,9 +203,6 @@ export async function setRestriction(
         transfers_block_reason: value ? (reason ?? "Virements bloqués.") : null,
       };
       title = value ? "Virements bloqués" : "Virements débloqués";
-      body = value
-        ? `Vos virements ont été bloqués.${reason ? ` Motif : ${reason}` : ""}`
-        : "Vos virements ont été débloqués.";
       action = value ? "transfers.block" : "transfers.unblock";
   }
 
@@ -216,7 +212,39 @@ export async function setRestriction(
     .eq("id", targetId);
   if (error) return { error: "Échec de la mise à jour." };
 
-  await notify(targetId, title, body);
+  // `title`/`body` (français) servent au retour UI admin ; la notification
+  // au client est rendue dans SA langue.
+  await notifyUser(targetId, (dict) => {
+    const A = dict.emails.notify.admin;
+    switch (kind) {
+      case "ban":
+        if (!value) return A.accountReactivated;
+        return reason
+          ? {
+              title: A.accountBanned.title,
+              body: interpolate(A.accountBanned.bodyReason, { reason }),
+            }
+          : A.accountBanned;
+      case "deposit":
+        return value ? A.depositsAuthorized : A.depositsSuspended;
+      case "withdrawal":
+        if (!value) return A.withdrawalsUnblocked;
+        return reason
+          ? {
+              title: A.withdrawalsBlocked.title,
+              body: interpolate(A.withdrawalsBlocked.bodyReason, { reason }),
+            }
+          : A.withdrawalsBlocked;
+      default: // transfer
+        if (!value) return A.transfersUnblocked;
+        return reason
+          ? {
+              title: A.transfersBlocked.title,
+              body: interpolate(A.transfersBlocked.bodyReason, { reason }),
+            }
+          : A.transfersBlocked;
+    }
+  });
   await logAudit(adminId, email, action, targetId, reason);
 
   revalidatePath("/[lang]/admin/users/[id]", "page");
@@ -270,11 +298,13 @@ export async function adminCredit(
     description: reason,
   });
 
-  await notify(
-    targetId,
-    amount >= 0 ? "Compte crédité" : "Ajustement de compte",
-    `${amount >= 0 ? "+" : "−"}${formatEuro(Math.abs(amount))} — ${reason}`,
-  );
+  await notifyUser(targetId, (dict, loc) => {
+    const k = amount >= 0 ? dict.emails.notify.admin.credited : dict.emails.notify.admin.debited;
+    return {
+      title: k.title,
+      body: interpolate(k.body, { amount: formatEuro(Math.abs(amount), loc), reason }),
+    };
+  });
   await logAudit(adminId, email, "account.credit", targetId, reason, { amount });
 
   revalidatePath("/[lang]/admin/users/[id]", "page");
@@ -355,12 +385,23 @@ export async function startTransferPhase(
   });
   if (insErr) return { error: "Échec de la génération du code." };
 
-  const name = phaseName(phase);
-  await notify(
-    tx.user_id,
-    `${name} — ${code}`,
-    `Phase ${phase}/${PHASE_TOTAL} de votre virement de ${formatEuro(Number(tx.amount))} : votre ${name.toLowerCase()} est ${code}. Saisissez-le dans votre espace pour confirmer. Code valable ${PHASE_CODE_TTL_MIN} minutes.`,
-  );
+  await notifyUser(tx.user_id, (dict, loc) => {
+    const A = dict.emails.notify.admin;
+    const name =
+      A.phaseNames[String(phase) as keyof typeof A.phaseNames] ?? phaseName(phase);
+    const vars = {
+      name,
+      code,
+      phase,
+      total: PHASE_TOTAL,
+      amount: formatEuro(Number(tx.amount), loc),
+      ttl: PHASE_CODE_TTL_MIN,
+    };
+    return {
+      title: interpolate(A.phaseCode.title, vars),
+      body: interpolate(A.phaseCode.body, vars),
+    };
+  });
   await logAudit(adminId, email, `transfer.phase${phase}.send`, tx.user_id, null, {
     tx_id: tx.id,
     phase,
@@ -413,11 +454,13 @@ export async function rejectTransfer(
     })
     .eq("id", tx.id);
 
-  await notify(
-    tx.user_id,
-    "Virement refusé",
-    `Votre virement de ${formatEuro(amount)} a été refusé. Motif : ${reason}. Les fonds ont été recrédités sur votre compte.`,
-  );
+  await notifyUser(tx.user_id, (dict, loc) => ({
+    title: dict.emails.notify.admin.transferRejected.title,
+    body: interpolate(dict.emails.notify.admin.transferRejected.body, {
+      amount: formatEuro(amount, loc),
+      reason,
+    }),
+  }));
   await logAudit(adminId, email, "transfer.reject", tx.user_id, reason, {
     tx_id: tx.id,
     amount,

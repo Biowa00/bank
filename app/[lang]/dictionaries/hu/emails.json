@@ -45,6 +45,68 @@
     "phaseConfirmed": {
       "title": "{phase}/{total}. fázis megerősítve",
       "body": "{amount} átutalásának {phase}. fázisa megerősítve. Várakozás a következő fázisra."
+    },
+    "admin": {
+      "accountReactivated": {
+        "title": "Fiók újraaktiválva",
+        "body": "Fiókját újraaktiváltuk. Ismét hozzáfér az összes szolgáltatáshoz."
+      },
+      "accountRestricted": {
+        "title": "Fiók korlátozva",
+        "body": "Fiókját korlátoztuk. Indok: {reason}"
+      },
+      "accountBanned": {
+        "title": "Fiók letiltva",
+        "body": "Fiókját letiltottuk.",
+        "bodyReason": "Fiókját letiltottuk. Indok: {reason}"
+      },
+      "depositsAuthorized": {
+        "title": "Befizetések engedélyezve",
+        "body": "Befizetései mostantól engedélyezettek."
+      },
+      "depositsSuspended": {
+        "title": "Befizetések felfüggesztve",
+        "body": "Befizetéseit felfüggesztettük."
+      },
+      "withdrawalsBlocked": {
+        "title": "Pénzfelvétel letiltva",
+        "body": "Pénzfelvételeit letiltottuk.",
+        "bodyReason": "Pénzfelvételeit letiltottuk. Indok: {reason}"
+      },
+      "withdrawalsUnblocked": {
+        "title": "Pénzfelvétel engedélyezve",
+        "body": "Pénzfelvételeit újra engedélyeztük."
+      },
+      "transfersBlocked": {
+        "title": "Átutalások letiltva",
+        "body": "Átutalásait letiltottuk.",
+        "bodyReason": "Átutalásait letiltottuk. Indok: {reason}"
+      },
+      "transfersUnblocked": {
+        "title": "Átutalások engedélyezve",
+        "body": "Átutalásait újra engedélyeztük."
+      },
+      "credited": {
+        "title": "Jóváírás a számlán",
+        "body": "+{amount} — {reason}"
+      },
+      "debited": {
+        "title": "Számlakorrekció",
+        "body": "−{amount} — {reason}"
+      },
+      "phaseCode": {
+        "title": "{name} — {code}",
+        "body": "Átutalásának ({amount}) {phase}/{total}. fázisa: az Ön {name} kódja {code}. Erősítse meg ügyfélterében a kód megadásával. A kód {ttl} percig érvényes."
+      },
+      "phaseNames": {
+        "1": "Kapcsolat-megerősítő",
+        "2": "Banki jóváhagyási",
+        "3": "Átutalás-aktiváló"
+      },
+      "transferRejected": {
+        "title": "Átutalás elutasítva",
+        "body": "Az Ön {amount} összegű átutalását elutasítottuk. Indok: {reason}. Az összeget visszaírtuk a számlájára."
+      }
     }
   },
   "chrome": {

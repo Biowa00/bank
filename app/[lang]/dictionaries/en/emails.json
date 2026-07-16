@@ -45,6 +45,68 @@
     "phaseConfirmed": {
       "title": "Phase {phase}/{total} confirmed",
       "body": "Phase {phase} of your transfer of {amount} is confirmed. Awaiting the next phase."
+    },
+    "admin": {
+      "accountReactivated": {
+        "title": "Account reactivated",
+        "body": "Your account has been reactivated. You have full access to all services again."
+      },
+      "accountRestricted": {
+        "title": "Account restricted",
+        "body": "Your account has been restricted. Reason: {reason}"
+      },
+      "accountBanned": {
+        "title": "Account banned",
+        "body": "Your account has been banned.",
+        "bodyReason": "Your account has been banned. Reason: {reason}"
+      },
+      "depositsAuthorized": {
+        "title": "Deposits authorized",
+        "body": "Your deposits are now authorized."
+      },
+      "depositsSuspended": {
+        "title": "Deposits suspended",
+        "body": "Your deposits have been suspended."
+      },
+      "withdrawalsBlocked": {
+        "title": "Withdrawals blocked",
+        "body": "Your withdrawals have been blocked.",
+        "bodyReason": "Your withdrawals have been blocked. Reason: {reason}"
+      },
+      "withdrawalsUnblocked": {
+        "title": "Withdrawals unblocked",
+        "body": "Your withdrawals have been unblocked."
+      },
+      "transfersBlocked": {
+        "title": "Transfers blocked",
+        "body": "Your transfers have been blocked.",
+        "bodyReason": "Your transfers have been blocked. Reason: {reason}"
+      },
+      "transfersUnblocked": {
+        "title": "Transfers unblocked",
+        "body": "Your transfers have been unblocked."
+      },
+      "credited": {
+        "title": "Account credited",
+        "body": "+{amount} — {reason}"
+      },
+      "debited": {
+        "title": "Account adjustment",
+        "body": "−{amount} — {reason}"
+      },
+      "phaseCode": {
+        "title": "{name} — {code}",
+        "body": "Phase {phase}/{total} of your transfer of {amount}: your {name} is {code}. Enter it in your client area to confirm. Code valid for {ttl} minutes."
+      },
+      "phaseNames": {
+        "1": "Connection confirmation code",
+        "2": "Bank approval code",
+        "3": "Transfer activation code"
+      },
+      "transferRejected": {
+        "title": "Transfer rejected",
+        "body": "Your transfer of {amount} has been rejected. Reason: {reason}. The funds have been re-credited to your account."
+      }
     }
   },
   "chrome": {

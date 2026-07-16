@@ -45,6 +45,68 @@
     "phaseConfirmed": {
       "title": "Phase {phase}/{total} bestätigt",
       "body": "Phase {phase} Ihrer Überweisung von {amount} ist bestätigt. Warten auf die nächste Phase."
+    },
+    "admin": {
+      "accountReactivated": {
+        "title": "Konto reaktiviert",
+        "body": "Ihr Konto wurde reaktiviert. Sie haben wieder Zugriff auf alle Dienste."
+      },
+      "accountRestricted": {
+        "title": "Konto eingeschränkt",
+        "body": "Ihr Konto wurde eingeschränkt. Grund: {reason}"
+      },
+      "accountBanned": {
+        "title": "Konto gesperrt",
+        "body": "Ihr Konto wurde gesperrt.",
+        "bodyReason": "Ihr Konto wurde gesperrt. Grund: {reason}"
+      },
+      "depositsAuthorized": {
+        "title": "Einzahlungen freigegeben",
+        "body": "Ihre Einzahlungen sind ab sofort freigegeben."
+      },
+      "depositsSuspended": {
+        "title": "Einzahlungen ausgesetzt",
+        "body": "Ihre Einzahlungen wurden ausgesetzt."
+      },
+      "withdrawalsBlocked": {
+        "title": "Abhebungen blockiert",
+        "body": "Ihre Abhebungen wurden blockiert.",
+        "bodyReason": "Ihre Abhebungen wurden blockiert. Grund: {reason}"
+      },
+      "withdrawalsUnblocked": {
+        "title": "Abhebungen freigegeben",
+        "body": "Ihre Abhebungen wurden wieder freigegeben."
+      },
+      "transfersBlocked": {
+        "title": "Überweisungen blockiert",
+        "body": "Ihre Überweisungen wurden blockiert.",
+        "bodyReason": "Ihre Überweisungen wurden blockiert. Grund: {reason}"
+      },
+      "transfersUnblocked": {
+        "title": "Überweisungen freigegeben",
+        "body": "Ihre Überweisungen wurden wieder freigegeben."
+      },
+      "credited": {
+        "title": "Konto gutgeschrieben",
+        "body": "+{amount} — {reason}"
+      },
+      "debited": {
+        "title": "Kontoanpassung",
+        "body": "−{amount} — {reason}"
+      },
+      "phaseCode": {
+        "title": "{name} — {code}",
+        "body": "Phase {phase}/{total} Ihrer Überweisung über {amount}: Ihr {name} lautet {code}. Geben Sie ihn in Ihrem Kundenbereich ein, um zu bestätigen. Der Code ist {ttl} Minuten gültig."
+      },
+      "phaseNames": {
+        "1": "Verbindungsbestätigungscode",
+        "2": "Bankfreigabecode",
+        "3": "Überweisungsaktivierungscode"
+      },
+      "transferRejected": {
+        "title": "Überweisung abgelehnt",
+        "body": "Ihre Überweisung über {amount} wurde abgelehnt. Grund: {reason}. Der Betrag wurde Ihrem Konto wieder gutgeschrieben."
+      }
     }
   },
   "chrome": {

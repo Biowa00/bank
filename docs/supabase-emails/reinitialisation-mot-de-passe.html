@@ -1,6 +1,6 @@
-<!-- Gabarit Supabase Auth : « Reset Password »
+<!-- Gabarit Supabase Auth : « Reset Password » (bilingue FR + EN)
      À coller dans Dashboard → Authentication → Emails → Templates → Reset Password
-     Objet conseillé : Réinitialisation de votre mot de passe — Vantex Bank -->
+     Objet conseillé : Réinitialisation de votre mot de passe / Reset your password — Vantex Bank -->
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f7f7fb;padding:32px 16px;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0b0b12">
   <tr><td align="center">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:480px;background:#fff;border-radius:16px;overflow:hidden;border:1px solid rgba(10,10,20,.06)">
@@ -15,17 +15,28 @@
           Cliquez sur le bouton ci-dessous pour en choisir un nouveau.
         </p>
         <table role="presentation" cellpadding="0" cellspacing="0"><tr><td style="padding:8px 0 4px">
-          <a href="{{ .ConfirmationURL }}" style="display:inline-block;background:#4f46e5;color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:12px 20px;border-radius:9999px">Choisir un nouveau mot de passe</a>
+          <a href="{{ .ConfirmationURL }}" style="display:inline-block;background:#4f46e5;color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:12px 20px;border-radius:9999px">Nouveau mot de passe / New password</a>
         </td></tr></table>
         <p style="margin:16px 0 0;font-size:13px;line-height:1.6;color:#6b6b76">
           Ce lien expire rapidement pour votre sécurité. Si vous n'avez pas demandé cette
           réinitialisation, ignorez cet email : votre mot de passe restera inchangé.
         </p>
+        <hr style="border:none;border-top:1px solid rgba(10,10,20,.08);margin:20px 0">
+        <p style="margin:0 0 4px;color:#6b6b76;font-size:14px">Hello,</p>
+        <h2 style="margin:0 0 12px;font-size:17px;line-height:1.3">Reset your password</h2>
+        <p style="margin:0 0 8px;font-size:14px;line-height:1.6;color:#26262e">
+          You asked to reset the password of your Vantex Bank account.
+          Click the button above to choose a new one.
+        </p>
+        <p style="margin:8px 0 0;font-size:13px;line-height:1.6;color:#6b6b76">
+          This link expires quickly for your security. If you did not request this reset,
+          you can safely ignore this email: your password will remain unchanged.
+        </p>
       </td></tr>
       <tr><td style="padding:16px 24px;border-top:1px solid rgba(10,10,20,.06)">
         <p style="margin:0;font-size:12px;line-height:1.5;color:#9a9aa2">
-          Ceci est un message automatique, merci de ne pas y répondre.<br>
-          © Vantex Bank. Cet e-mail et les informations qu'il contient sont confidentiels.
+          Ceci est un message automatique, merci de ne pas y répondre. / This is an automated message, please do not reply.<br>
+          © Vantex Bank. Cet e-mail et les informations qu'il contient sont confidentiels. / This email and its contents are confidential.
         </p>
       </td></tr>
     </table>

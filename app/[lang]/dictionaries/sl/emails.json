@@ -45,6 +45,68 @@
     "phaseConfirmed": {
       "title": "Faza {phase}/{total} potrjena",
       "body": "Faza {phase} vašega nakazila {amount} je potrjena. Čakanje na naslednjo fazo."
+    },
+    "admin": {
+      "accountReactivated": {
+        "title": "Račun znova aktiviran",
+        "body": "Vaš račun je bil znova aktiviran. Spet imate dostop do vseh storitev."
+      },
+      "accountRestricted": {
+        "title": "Račun omejen",
+        "body": "Vaš račun je bil omejen. Razlog: {reason}"
+      },
+      "accountBanned": {
+        "title": "Račun blokiran",
+        "body": "Vaš račun je bil blokiran.",
+        "bodyReason": "Vaš račun je bil blokiran. Razlog: {reason}"
+      },
+      "depositsAuthorized": {
+        "title": "Pologi dovoljeni",
+        "body": "Vaši pologi so zdaj dovoljeni."
+      },
+      "depositsSuspended": {
+        "title": "Pologi zadržani",
+        "body": "Vaši pologi so bili zadržani."
+      },
+      "withdrawalsBlocked": {
+        "title": "Dvigi blokirani",
+        "body": "Vaši dvigi so bili blokirani.",
+        "bodyReason": "Vaši dvigi so bili blokirani. Razlog: {reason}"
+      },
+      "withdrawalsUnblocked": {
+        "title": "Dvigi odblokirani",
+        "body": "Vaši dvigi so bili odblokirani."
+      },
+      "transfersBlocked": {
+        "title": "Nakazila blokirana",
+        "body": "Vaša nakazila so bila blokirana.",
+        "bodyReason": "Vaša nakazila so bila blokirana. Razlog: {reason}"
+      },
+      "transfersUnblocked": {
+        "title": "Nakazila odblokirana",
+        "body": "Vaša nakazila so bila odblokirana."
+      },
+      "credited": {
+        "title": "Priliv na račun",
+        "body": "+{amount} — {reason}"
+      },
+      "debited": {
+        "title": "Prilagoditev računa",
+        "body": "−{amount} — {reason}"
+      },
+      "phaseCode": {
+        "title": "{name} — {code}",
+        "body": "Faza {phase}/{total} vašega nakazila {amount}: vaša {name} je {code}. Vnesite jo v svojem uporabniškem območju za potrditev. Koda velja {ttl} minut."
+      },
+      "phaseNames": {
+        "1": "Koda za potrditev povezave",
+        "2": "Koda bančne odobritve",
+        "3": "Koda za aktivacijo nakazila"
+      },
+      "transferRejected": {
+        "title": "Nakazilo zavrnjeno",
+        "body": "Vaše nakazilo {amount} je bilo zavrnjeno. Razlog: {reason}. Sredstva so bila vrnjena na vaš račun."
+      }
     }
   },
   "chrome": {

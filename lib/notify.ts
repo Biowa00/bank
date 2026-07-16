@@ -1,7 +1,8 @@
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sendEmail, renderNotificationEmail } from "@/lib/email";
 import { getRequestLocale } from "@/lib/i18n/server";
-import { getDictionary } from "@/app/[lang]/dictionaries";
+import { isLocale, type Locale } from "@/lib/i18n/config";
+import { getDictionary, type Dictionary } from "@/app/[lang]/dictionaries";
 
 export type NotifyOptions = {
   /**
@@ -13,16 +14,13 @@ export type NotifyOptions = {
   cta?: { label: string; url: string };
 };
 
-/**
- * Crée une notification in-app et, sauf `email: false`, envoie un email
- * transactionnel via l'Edge Function. L'échec d'email n'interrompt jamais
- * l'action métier appelante.
- */
-export async function notify(
+/** Insère la notification in-app puis envoie l'email dans la langue donnée. */
+async function deliver(
   userId: string,
   title: string,
   body: string,
-  opts: NotifyOptions = {},
+  locale: Locale,
+  opts: NotifyOptions,
 ): Promise<void> {
   const admin = createAdminClient();
   await admin.from("notifications").insert({ user_id: userId, title, body });
@@ -37,10 +35,6 @@ export async function notify(
 
   if (!profile?.email) return;
 
-  // Le titre/corps sont déjà rendus dans la langue de l'utilisateur actif ;
-  // on aligne le chrome (en-tête, salutation, pied) et l'attribut <html lang>
-  // sur cette même langue pour un e-mail cohérent.
-  const locale = await getRequestLocale();
   const chrome = (await getDictionary(locale)).emails.chrome;
 
   await sendEmail({
@@ -57,4 +51,51 @@ export async function notify(
     }),
     text: body,
   });
+}
+
+/**
+ * Langue préférée du destinataire : mémorisée dans les métadonnées auth
+ * (posée à l'inscription et rafraîchie à chaque connexion), avec repli sur
+ * la langue de la requête courante.
+ */
+async function getUserLocale(userId: string): Promise<Locale> {
+  const admin = createAdminClient();
+  const { data } = await admin.auth.admin.getUserById(userId);
+  const stored = data?.user?.user_metadata?.locale;
+  return isLocale(stored) ? stored : await getRequestLocale();
+}
+
+/**
+ * Crée une notification in-app et, sauf `email: false`, envoie un email
+ * transactionnel via l'Edge Function. L'échec d'email n'interrompt jamais
+ * l'action métier appelante.
+ *
+ * Le titre/corps fournis sont déjà rendus dans la langue de l'utilisateur
+ * ACTIF : à réserver aux actions déclenchées par le destinataire lui-même.
+ * Pour les actions admin, préférer `notifyUser` (langue du destinataire).
+ */
+export async function notify(
+  userId: string,
+  title: string,
+  body: string,
+  opts: NotifyOptions = {},
+): Promise<void> {
+  const locale = await getRequestLocale();
+  await deliver(userId, title, body, locale, opts);
+}
+
+/**
+ * Variante pour les actions ADMIN : le titre/corps sont construits via le
+ * dictionnaire de la langue du DESTINATAIRE, pas celle de l'admin. `build`
+ * reçoit ce dictionnaire et la locale (pour formater montants/dates).
+ */
+export async function notifyUser(
+  userId: string,
+  build: (dict: Dictionary, locale: Locale) => { title: string; body: string },
+  opts: NotifyOptions = {},
+): Promise<void> {
+  const locale = await getUserLocale(userId);
+  const dict = await getDictionary(locale);
+  const { title, body } = build(dict, locale);
+  await deliver(userId, title, body, locale, opts);
 }

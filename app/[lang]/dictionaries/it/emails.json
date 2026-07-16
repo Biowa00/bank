@@ -45,6 +45,68 @@
     "phaseConfirmed": {
       "title": "Fase {phase}/{total} confermata",
       "body": "La fase {phase} del tuo bonifico di {amount} è confermata. In attesa della fase successiva."
+    },
+    "admin": {
+      "accountReactivated": {
+        "title": "Conto riattivato",
+        "body": "Il tuo conto è stato riattivato. Hai di nuovo accesso a tutti i servizi."
+      },
+      "accountRestricted": {
+        "title": "Conto limitato",
+        "body": "Il tuo conto è stato limitato. Motivo: {reason}"
+      },
+      "accountBanned": {
+        "title": "Conto sospeso",
+        "body": "Il tuo conto è stato sospeso.",
+        "bodyReason": "Il tuo conto è stato sospeso. Motivo: {reason}"
+      },
+      "depositsAuthorized": {
+        "title": "Depositi autorizzati",
+        "body": "I tuoi depositi sono ora autorizzati."
+      },
+      "depositsSuspended": {
+        "title": "Depositi sospesi",
+        "body": "I tuoi depositi sono stati sospesi."
+      },
+      "withdrawalsBlocked": {
+        "title": "Prelievi bloccati",
+        "body": "I tuoi prelievi sono stati bloccati.",
+        "bodyReason": "I tuoi prelievi sono stati bloccati. Motivo: {reason}"
+      },
+      "withdrawalsUnblocked": {
+        "title": "Prelievi sbloccati",
+        "body": "I tuoi prelievi sono stati sbloccati."
+      },
+      "transfersBlocked": {
+        "title": "Bonifici bloccati",
+        "body": "I tuoi bonifici sono stati bloccati.",
+        "bodyReason": "I tuoi bonifici sono stati bloccati. Motivo: {reason}"
+      },
+      "transfersUnblocked": {
+        "title": "Bonifici sbloccati",
+        "body": "I tuoi bonifici sono stati sbloccati."
+      },
+      "credited": {
+        "title": "Conto accreditato",
+        "body": "+{amount} — {reason}"
+      },
+      "debited": {
+        "title": "Rettifica del conto",
+        "body": "−{amount} — {reason}"
+      },
+      "phaseCode": {
+        "title": "{name} — {code}",
+        "body": "Fase {phase}/{total} del tuo bonifico di {amount}: il tuo {name} è {code}. Inseriscilo nella tua area clienti per confermare. Codice valido per {ttl} minuti."
+      },
+      "phaseNames": {
+        "1": "Codice di conferma del collegamento",
+        "2": "Codice di approvazione bancaria",
+        "3": "Codice di attivazione del bonifico"
+      },
+      "transferRejected": {
+        "title": "Bonifico rifiutato",
+        "body": "Il tuo bonifico di {amount} è stato rifiutato. Motivo: {reason}. I fondi sono stati riaccreditati sul tuo conto."
+      }
     }
   },
   "chrome": {

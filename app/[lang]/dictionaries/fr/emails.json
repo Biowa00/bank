@@ -45,6 +45,68 @@
     "phaseConfirmed": {
       "title": "Phase {phase}/{total} confirmée",
       "body": "La phase {phase} de votre virement de {amount} est confirmée. En attente de la phase suivante."
+    },
+    "admin": {
+      "accountReactivated": {
+        "title": "Compte réactivé",
+        "body": "Votre compte a été réactivé. Vous avez de nouveau accès à tous les services."
+      },
+      "accountRestricted": {
+        "title": "Compte restreint",
+        "body": "Votre compte a été restreint. Motif : {reason}"
+      },
+      "accountBanned": {
+        "title": "Compte banni",
+        "body": "Votre compte a été banni.",
+        "bodyReason": "Votre compte a été banni. Motif : {reason}"
+      },
+      "depositsAuthorized": {
+        "title": "Dépôts autorisés",
+        "body": "Vos dépôts sont désormais autorisés."
+      },
+      "depositsSuspended": {
+        "title": "Dépôts suspendus",
+        "body": "Vos dépôts ont été suspendus."
+      },
+      "withdrawalsBlocked": {
+        "title": "Retraits bloqués",
+        "body": "Vos retraits ont été bloqués.",
+        "bodyReason": "Vos retraits ont été bloqués. Motif : {reason}"
+      },
+      "withdrawalsUnblocked": {
+        "title": "Retraits débloqués",
+        "body": "Vos retraits ont été débloqués."
+      },
+      "transfersBlocked": {
+        "title": "Virements bloqués",
+        "body": "Vos virements ont été bloqués.",
+        "bodyReason": "Vos virements ont été bloqués. Motif : {reason}"
+      },
+      "transfersUnblocked": {
+        "title": "Virements débloqués",
+        "body": "Vos virements ont été débloqués."
+      },
+      "credited": {
+        "title": "Compte crédité",
+        "body": "+{amount} — {reason}"
+      },
+      "debited": {
+        "title": "Ajustement de compte",
+        "body": "−{amount} — {reason}"
+      },
+      "phaseCode": {
+        "title": "{name} — {code}",
+        "body": "Phase {phase}/{total} de votre virement de {amount} : votre {name} est {code}. Saisissez-le dans votre espace pour confirmer. Code valable {ttl} minutes."
+      },
+      "phaseNames": {
+        "1": "Code de confirmation de mise en relation",
+        "2": "Code d'approbation bancaire",
+        "3": "Code d'activation de virement"
+      },
+      "transferRejected": {
+        "title": "Virement refusé",
+        "body": "Votre virement de {amount} a été refusé. Motif : {reason}. Les fonds ont été recrédités sur votre compte."
+      }
     }
   },
   "chrome": {

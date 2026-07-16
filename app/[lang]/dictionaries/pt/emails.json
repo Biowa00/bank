@@ -45,6 +45,68 @@
     "phaseConfirmed": {
       "title": "Fase {phase}/{total} confirmada",
       "body": "A fase {phase} da sua transferência de {amount} está confirmada. A aguardar a fase seguinte."
+    },
+    "admin": {
+      "accountReactivated": {
+        "title": "Conta reativada",
+        "body": "A sua conta foi reativada. Tem novamente acesso a todos os serviços."
+      },
+      "accountRestricted": {
+        "title": "Conta restringida",
+        "body": "A sua conta foi restringida. Motivo: {reason}"
+      },
+      "accountBanned": {
+        "title": "Conta suspensa",
+        "body": "A sua conta foi suspensa.",
+        "bodyReason": "A sua conta foi suspensa. Motivo: {reason}"
+      },
+      "depositsAuthorized": {
+        "title": "Depósitos autorizados",
+        "body": "Os seus depósitos estão agora autorizados."
+      },
+      "depositsSuspended": {
+        "title": "Depósitos suspensos",
+        "body": "Os seus depósitos foram suspensos."
+      },
+      "withdrawalsBlocked": {
+        "title": "Levantamentos bloqueados",
+        "body": "Os seus levantamentos foram bloqueados.",
+        "bodyReason": "Os seus levantamentos foram bloqueados. Motivo: {reason}"
+      },
+      "withdrawalsUnblocked": {
+        "title": "Levantamentos desbloqueados",
+        "body": "Os seus levantamentos foram desbloqueados."
+      },
+      "transfersBlocked": {
+        "title": "Transferências bloqueadas",
+        "body": "As suas transferências foram bloqueadas.",
+        "bodyReason": "As suas transferências foram bloqueadas. Motivo: {reason}"
+      },
+      "transfersUnblocked": {
+        "title": "Transferências desbloqueadas",
+        "body": "As suas transferências foram desbloqueadas."
+      },
+      "credited": {
+        "title": "Conta creditada",
+        "body": "+{amount} — {reason}"
+      },
+      "debited": {
+        "title": "Ajuste de conta",
+        "body": "−{amount} — {reason}"
+      },
+      "phaseCode": {
+        "title": "{name} — {code}",
+        "body": "Fase {phase}/{total} da sua transferência de {amount}: o seu {name} é {code}. Introduza-o na sua área de cliente para confirmar. Código válido durante {ttl} minutos."
+      },
+      "phaseNames": {
+        "1": "Código de confirmação de ligação",
+        "2": "Código de aprovação bancária",
+        "3": "Código de ativação de transferência"
+      },
+      "transferRejected": {
+        "title": "Transferência recusada",
+        "body": "A sua transferência de {amount} foi recusada. Motivo: {reason}. Os fundos foram novamente creditados na sua conta."
+      }
     }
   },
   "chrome": {

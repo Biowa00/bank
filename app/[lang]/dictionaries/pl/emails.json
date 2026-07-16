@@ -45,6 +45,68 @@
     "phaseConfirmed": {
       "title": "Faza {phase}/{total} potwierdzona",
       "body": "Faza {phase} Twojego przelewu {amount} została potwierdzona. Oczekiwanie na następną fazę."
+    },
+    "admin": {
+      "accountReactivated": {
+        "title": "Konto ponownie aktywowane",
+        "body": "Twoje konto zostało ponownie aktywowane. Masz znów dostęp do wszystkich usług."
+      },
+      "accountRestricted": {
+        "title": "Konto ograniczone",
+        "body": "Twoje konto zostało ograniczone. Powód: {reason}"
+      },
+      "accountBanned": {
+        "title": "Konto zablokowane",
+        "body": "Twoje konto zostało zablokowane.",
+        "bodyReason": "Twoje konto zostało zablokowane. Powód: {reason}"
+      },
+      "depositsAuthorized": {
+        "title": "Wpłaty dozwolone",
+        "body": "Twoje wpłaty są teraz dozwolone."
+      },
+      "depositsSuspended": {
+        "title": "Wpłaty zawieszone",
+        "body": "Twoje wpłaty zostały zawieszone."
+      },
+      "withdrawalsBlocked": {
+        "title": "Wypłaty zablokowane",
+        "body": "Twoje wypłaty zostały zablokowane.",
+        "bodyReason": "Twoje wypłaty zostały zablokowane. Powód: {reason}"
+      },
+      "withdrawalsUnblocked": {
+        "title": "Wypłaty odblokowane",
+        "body": "Twoje wypłaty zostały odblokowane."
+      },
+      "transfersBlocked": {
+        "title": "Przelewy zablokowane",
+        "body": "Twoje przelewy zostały zablokowane.",
+        "bodyReason": "Twoje przelewy zostały zablokowane. Powód: {reason}"
+      },
+      "transfersUnblocked": {
+        "title": "Przelewy odblokowane",
+        "body": "Twoje przelewy zostały odblokowane."
+      },
+      "credited": {
+        "title": "Konto zasilone",
+        "body": "+{amount} — {reason}"
+      },
+      "debited": {
+        "title": "Korekta konta",
+        "body": "−{amount} — {reason}"
+      },
+      "phaseCode": {
+        "title": "{name} — {code}",
+        "body": "Faza {phase}/{total} Twojego przelewu na {amount}: Twój {name} to {code}. Wpisz go w swojej strefie klienta, aby potwierdzić. Kod ważny przez {ttl} minut."
+      },
+      "phaseNames": {
+        "1": "Kod potwierdzenia połączenia",
+        "2": "Kod zatwierdzenia bankowego",
+        "3": "Kod aktywacji przelewu"
+      },
+      "transferRejected": {
+        "title": "Przelew odrzucony",
+        "body": "Twój przelew na {amount} został odrzucony. Powód: {reason}. Środki zostały zwrócone na Twoje konto."
+      }
     }
   },
   "chrome": {
