@@ -33,7 +33,7 @@ export default function AdminLoginPage() {
           <form action={action} className="mt-6 space-y-4">
             <div>
               <label className="label" htmlFor="email">{t.adminLogin.emailLabel}</label>
-              <input id="email" name="email" type="email" autoComplete="email" required className="input" placeholder="admin@nebula.demo" />
+              <input id="email" name="email" type="email" autoComplete="email" required className="input" placeholder="admin@vantexx.online" />
             </div>
             <div>
               <label className="label" htmlFor="password">{t.fields.password}</label>

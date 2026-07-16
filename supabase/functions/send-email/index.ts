@@ -5,7 +5,7 @@
 //
 //  Secrets à définir (Supabase > Edge Functions > Secrets) :
 //    RESEND_API_KEY  = re_xxx           (clé API Resend)
-//    EMAIL_FROM      = "Nébula Bank <onboarding@resend.dev>"
+//    EMAIL_FROM      = "Vantex Bank <onboarding@resend.dev>"
 //  SUPABASE_SERVICE_ROLE_KEY est injecté automatiquement par Supabase.
 //
 //  Déploiement :
@@ -47,7 +47,7 @@ Deno.serve(async (req: Request) => {
     return json({ error: "Unauthorized" }, 401);
 
   const apiKey = Deno.env.get("RESEND_API_KEY");
-  const from = Deno.env.get("EMAIL_FROM") ?? "Nébula Bank <onboarding@resend.dev>";
+  const from = Deno.env.get("EMAIL_FROM") ?? "Vantex Bank <onboarding@resend.dev>";
   if (!apiKey)
     return json({ error: "RESEND_API_KEY manquant côté fonction" }, 500);
 

@@ -66,7 +66,7 @@ export function renderNotificationEmail(params: {
   const chrome: EmailChrome = params.chrome ?? {
     greeting: "Bonjour {name},",
     greetingNoName: "Bonjour,",
-    header: "Nébula Bank",
+    header: "Vantex Bank",
     footerAuto: "Ceci est un message automatique, merci de ne pas y répondre.",
     footerConfidential: "Cet e-mail et les informations qu'il contient sont confidentiels.",
   };

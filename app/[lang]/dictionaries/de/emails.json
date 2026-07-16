@@ -50,7 +50,7 @@
   "chrome": {
     "greeting": "Hallo {name},",
     "greetingNoName": "Hallo,",
-    "header": "Nébula Bank",
+    "header": "Vantex Bank",
     "footerAuto": "Dies ist eine automatische Nachricht, bitte antworten Sie nicht darauf.",
     "footerConfidential": "Diese E-Mail und die darin enthaltenen Informationen sind vertraulich."
   }

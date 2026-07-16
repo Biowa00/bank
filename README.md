@@ -1,4 +1,4 @@
-# Nébula — Banque simulée (projet pédagogique)
+# Vantex — Banque simulée (projet pédagogique)
 
 > ⚠️ **Application 100 % fictive et pédagogique.** Aucun argent réel, aucun
 > moyen de paiement, aucune donnée bancaire réelle. Les IBAN générés sont
@@ -89,6 +89,6 @@ proxy.ts                   Rafraîchissement de session + gardes de routes
 
 ## Avertissement
 
-Nébula ne fournit aucun service bancaire réel, ne détient aucun agrément et ne
+Vantex ne fournit aucun service bancaire réel, ne détient aucun agrément et ne
 traite aucune valeur réelle. Toute ressemblance avec une banque existante est
 fortuite. Usage strictement pédagogique.

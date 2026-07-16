@@ -50,7 +50,7 @@
   "chrome": {
     "greeting": "Szia {name},",
     "greetingNoName": "Szia,",
-    "header": "Nébula Bank",
+    "header": "Vantex Bank",
     "footerAuto": "Ez egy automatikus üzenet, kérjük, ne válaszoljon rá.",
     "footerConfidential": "Ez az e-mail és a benne foglalt információk bizalmasak."
   }

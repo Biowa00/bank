@@ -23,13 +23,13 @@ export function Logo({
           />
         </svg>
       </span>
-      <span className={`text-lg ${textColor}`}>Nébula</span>
+      <span className={`text-lg ${textColor}`}>Vantex</span>
     </span>
   );
 
   if (href === null) return inner;
   return (
-    <Link href={href} aria-label="Nébula — accueil">
+    <Link href={href} aria-label="Vantex — accueil">
       {inner}
     </Link>
   );
