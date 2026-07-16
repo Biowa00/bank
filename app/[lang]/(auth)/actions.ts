@@ -81,11 +81,15 @@ export async function signUp(
 
   const phone = dialCode ? `${dialCode} ${phoneNumber}` : phoneNumber;
 
+  const origin = await getOrigin();
+  const locale = await getRequestLocale();
   const supabase = await createClient();
   const { data, error } = await supabase.auth.signUp({
     email,
     password,
     options: {
+      // Le lien de confirmation ouvre la session puis mène au dashboard.
+      emailRedirectTo: `${origin}/auth/callback?next=/${locale}/dashboard`,
       data: {
         first_name: firstName,
         last_name: lastName,
