@@ -1,3 +1,4 @@
+import { connection } from "next/server";
 import { LocaleLink as Link } from "@/components/i18n/navigation";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { formatEuro, formatIban, formatDate } from "@/lib/format";
@@ -6,6 +7,7 @@ import { isCodeActive } from "@/lib/transferPhases";
 import type { Profile, Transaction, TransferPhaseCode } from "@/lib/types";
 
 export default async function VirementsPage() {
+  await connection();
   const admin = createAdminClient();
 
   const { data: pending } = await admin

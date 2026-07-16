@@ -1,3 +1,4 @@
+import { connection } from "next/server";
 import { LocaleLink as Link } from "@/components/i18n/navigation";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { formatDate } from "@/lib/format";
@@ -16,6 +17,7 @@ const actionLabels: Record<string, string> = {
 };
 
 export default async function AuditPage() {
+  await connection();
   const admin = createAdminClient();
   const [{ data: logs }, { data: users }] = await Promise.all([
     admin.from("admin_audit_log").select("*").order("created_at", { ascending: false }).limit(300).returns<AuditLog[]>(),

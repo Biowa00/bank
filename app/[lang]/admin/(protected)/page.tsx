@@ -1,3 +1,4 @@
+import { connection } from "next/server";
 import { LocaleLink as Link } from "@/components/i18n/navigation";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { formatEuro, formatDate } from "@/lib/format";
@@ -5,6 +6,7 @@ import { AccountStatusBadge } from "@/components/StatusBadge";
 import type { Profile, AuditLog } from "@/lib/types";
 
 export default async function AdminDashboard() {
+  await connection();
   const admin = createAdminClient();
 
   const [{ data: profiles }, { data: audit }] = await Promise.all([
