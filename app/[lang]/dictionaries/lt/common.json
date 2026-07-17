@@ -1,0 +1,45 @@
+{
+  "brand": "Vantex Bank",
+  "language": "Kalba",
+  "actions": {
+    "login": "Prisijungti",
+    "register": "Sukurti paskyrą",
+    "logout": "Atsijungti",
+    "back": "Atgal",
+    "backToSite": "← Grįžti į svetainę",
+    "home": "Pradžia",
+    "mySpace": "Mano erdvė",
+    "mySpaceAria": "Mano asmeninė erdvė",
+    "seeAll": "Rodyti viską",
+    "cancel": "Atšaukti",
+    "confirm": "Patvirtinti",
+    "save": "Išsaugoti",
+    "send": "Siųsti",
+    "validate": "Patvirtinti",
+    "delete": "Ištrinti",
+    "oneMoment": "Akimirką…"
+  },
+  "account": {
+    "availableBalance": "Disponuojamas likutis",
+    "currentAccount": "Einamoji sąskaita",
+    "iban": "IBAN"
+  },
+  "statuses": {
+    "account": {
+      "active": "Aktyvi",
+      "restricted": "Apribota",
+      "banned": "Užblokuota"
+    },
+    "tx": {
+      "success": "Pavyko",
+      "pending": "Laukiama",
+      "blocked": "Užblokuota",
+      "rejected": "Atmesta"
+    },
+    "code": {
+      "active": "Aktyvus",
+      "used": "Panaudotas",
+      "revoked": "Atšauktas"
+    }
+  }
+}

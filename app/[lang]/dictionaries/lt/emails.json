@@ -1,0 +1,119 @@
+{
+  "notify": {
+    "depositReceived": {
+      "title": "Gautas įnašas",
+      "body": "{amount} įskaityta į jūsų sąskaitą."
+    },
+    "transferRejected": {
+      "title": "Pervedimas atmestas",
+      "fallbackBody": "Pervedimai negalimi."
+    },
+    "transferPending": {
+      "title": "Pervedimas laukia patvirtinimo",
+      "body": "Jūsų pervedimas {amount} į {iban} pateiktas. Lėšos rezervuotos, kol konsultantas patvirtins."
+    },
+    "withdrawalRejected": {
+      "title": "Išėmimas atmestas",
+      "fallbackBody": "Išėmimai negalimi.",
+      "invalidCode": "Pateiktas išėmimo kodas neteisingas, pasibaigęs arba jau panaudotas."
+    },
+    "withdrawalDone": {
+      "title": "Išėmimas atliktas",
+      "body": "{amount} išimta į {iban}."
+    },
+    "cardFrozen": {
+      "title": "Kortelė užšaldyta",
+      "body": "Jūsų kortelė užšaldyta. Operacijos laikinai blokuojamos."
+    },
+    "cardUnfrozen": {
+      "title": "Kortelė vėl aktyvi",
+      "body": "Jūsų kortelė vėl aktyvuota. Galite vėl atlikti operacijas."
+    },
+    "progressUpdated": {
+      "title": "Išėmimo eiga atnaujinta",
+      "body": "Jūsų išėmimo skalė paaugo +{pct} % (dabar {progress} %)."
+    },
+    "transferReceived": {
+      "title": "Gautas pervedimas",
+      "body": "Gavote {amount}{from}.",
+      "fromName": " iš {name}"
+    },
+    "transferExecuted": {
+      "title": "Pervedimas atrakintas ir įvykdytas",
+      "body": "Visi 3 etapai patvirtinti. Jūsų pervedimas {amount} įvykdytas."
+    },
+    "phaseConfirmed": {
+      "title": "Etapas {phase}/{total} patvirtintas",
+      "body": "Jūsų pervedimo {amount} etapas {phase} patvirtintas. Laukiama kito etapo."
+    },
+    "admin": {
+      "accountReactivated": {
+        "title": "Paskyra vėl aktyvuota",
+        "body": "Jūsų paskyra vėl aktyvuota. Vėl turite prieigą prie visų paslaugų."
+      },
+      "accountRestricted": {
+        "title": "Paskyra apribota",
+        "body": "Jūsų paskyra apribota. Priežastis: {reason}"
+      },
+      "accountBanned": {
+        "title": "Paskyra užblokuota",
+        "body": "Jūsų paskyra užblokuota.",
+        "bodyReason": "Jūsų paskyra užblokuota. Priežastis: {reason}"
+      },
+      "depositsAuthorized": {
+        "title": "Įnašai leidžiami",
+        "body": "Jūsų įnašai dabar leidžiami."
+      },
+      "depositsSuspended": {
+        "title": "Įnašai sustabdyti",
+        "body": "Jūsų įnašai sustabdyti."
+      },
+      "withdrawalsBlocked": {
+        "title": "Išėmimai užblokuoti",
+        "body": "Jūsų išėmimai užblokuoti.",
+        "bodyReason": "Jūsų išėmimai užblokuoti. Priežastis: {reason}"
+      },
+      "withdrawalsUnblocked": {
+        "title": "Išėmimai atblokuoti",
+        "body": "Jūsų išėmimai atblokuoti."
+      },
+      "transfersBlocked": {
+        "title": "Pervedimai užblokuoti",
+        "body": "Jūsų pervedimai užblokuoti.",
+        "bodyReason": "Jūsų pervedimai užblokuoti. Priežastis: {reason}"
+      },
+      "transfersUnblocked": {
+        "title": "Pervedimai atblokuoti",
+        "body": "Jūsų pervedimai atblokuoti."
+      },
+      "credited": {
+        "title": "Sąskaita papildyta",
+        "body": "+{amount} — {reason}"
+      },
+      "debited": {
+        "title": "Sąskaitos korekcija",
+        "body": "−{amount} — {reason}"
+      },
+      "phaseCode": {
+        "title": "{name} — {code}",
+        "body": "Jūsų pervedimo {amount} etapas {phase}/{total}: jūsų {name} yra {code}. Įveskite jį savo kliento erdvėje patvirtinimui. Kodas galioja {ttl} min."
+      },
+      "phaseNames": {
+        "1": "Ryšio patvirtinimo kodas",
+        "2": "Banko patvirtinimo kodas",
+        "3": "Pervedimo aktyvavimo kodas"
+      },
+      "transferRejected": {
+        "title": "Pervedimas atmestas",
+        "body": "Jūsų pervedimas {amount} atmestas. Priežastis: {reason}. Lėšos grąžintos į jūsų sąskaitą."
+      }
+    }
+  },
+  "chrome": {
+    "greeting": "Sveiki, {name},",
+    "greetingNoName": "Sveiki,",
+    "header": "Vantex Bank",
+    "footerAuto": "Tai automatinis pranešimas, neatsakykite į jį.",
+    "footerConfidential": "Šis el. laiškas ir jame esanti informacija yra konfidencialūs."
+  }
+}

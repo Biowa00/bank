@@ -1,0 +1,156 @@
+{
+  "layout": {
+    "bannedTitle": "Tili estetty",
+    "bannedText": "Tilisi on estetty ja pääsy palveluihin on keskeytetty.",
+    "restrictedTitle": "Tili rajoitettu.",
+    "restrictedDefault": "Jotkin toiminnot (tilisiirrot, nostot) eivät ole käytettävissä.",
+    "reason": "Syy:",
+    "defaultFirstName": "sinä"
+  },
+  "home": {
+    "greeting": "Hei",
+    "subtitle": "Tässä on Vantex Bank ‑tilisi tilanne.",
+    "quickDeposit": "Talleta",
+    "quickTransfer": "Siirrä",
+    "quickWithdraw": "Nosta",
+    "recentTransactions": "Viimeisimmät tapahtumat",
+    "emptyRecent": "Ei tapahtumia vielä. Tee ensimmäinen talletuksesi!"
+  },
+  "balanceCard": {
+    "holder": "Tilinomistaja",
+    "copyIban": "Kopioi IBAN",
+    "copied": "Kopioitu ✓"
+  },
+  "bankCard": {
+    "paymentCard": "Maksukortti",
+    "frozen": "Jäädytetty",
+    "holder": "Haltija",
+    "exp": "Voim.",
+    "cvv": "CVV",
+    "showInfo": "Näytä tiedot",
+    "hideInfo": "Piilota tiedot",
+    "freezeTitle": "Jäädytä kortti",
+    "freezeDescFrozen": "Toiminnot on estetty niin kauan kuin kortti on jäädytetty.",
+    "freezeDescActive": "Estää väliaikaisesti kaikki kortin toiminnot.",
+    "freezeToggleAria": "Jäädytä tai vapauta kortti"
+  },
+  "deposit": {
+    "title": "Talleta varoja",
+    "subtitle": "Hyvitä saldosi välittömästi.",
+    "amountLabel": "Talletettava summa (€)",
+    "pending": "Talletetaan…",
+    "submit": "Talleta varat",
+    "note": "Saldosi hyvitetään heti vahvistuksen jälkeen."
+  },
+  "transfer": {
+    "title": "Tee tilisiirto",
+    "subtitle": "Lähetä rahaa valitsemallesi IBAN-tilille.",
+    "ibanLabel": "Saajan IBAN",
+    "amountLabel": "Summa (€)",
+    "availableBalance": "Käytettävissä oleva saldo:",
+    "descriptionLabel": "Viesti (valinnainen)",
+    "descriptionPlaceholder": "Vuokra, takaisinmaksu…",
+    "pending": "Lähetetään…",
+    "submit": "Lähetä tilisiirto",
+    "note": "Tilisiirto edellyttää neuvojan hyväksyntää. Varat varataan heti lähetyksen yhteydessä; jos siirto hylätään, ne palautetaan kokonaisuudessaan."
+  },
+  "withdraw": {
+    "title": "Nosta varoja",
+    "subtitle": "Nosto vaatii ylläpitäjän antaman koodin.",
+    "newWithdrawal": "Uusi nosto",
+    "savedIbansTitle": "Tallennetut kohde-IBANit",
+    "savedIbansDesc": "Hallinnoi tilejä, joille voit nostaa.",
+    "noAccounts": "Tallenna ensin kohde-IBAN alle voidaksesi tehdä noston.",
+    "destLabel": "Kohde-IBAN",
+    "amountLabel": "Summa (€)",
+    "availableBalance": "Käytettävissä oleva saldo:",
+    "codeLabel": "Nostokoodi",
+    "codePlaceholder": "Ylläpitäjän antama koodi",
+    "codeHint": "Toiminnon vahvistamiseen tarvitaan ylläpitäjän luoma voimassa oleva nostokoodi.",
+    "pending": "Vahvistetaan…",
+    "submit": "Vahvista nosto"
+  },
+  "withdrawalAccounts": {
+    "labelLabel": "Nimike (valinnainen)",
+    "labelPlaceholder": "Toinen tilini",
+    "ibanLabel": "Kohde-IBAN",
+    "pending": "Lisätään…",
+    "submit": "Tallenna tämä IBAN"
+  },
+  "withdrawalProgress": {
+    "title": "Nostosi eteneminen",
+    "complete": "Mittarisi on täynnä.",
+    "hint": "Syötä neuvojaltasi saamasi koodit edistääksesi mittaria.",
+    "pending": "…",
+    "submit": "Vahvista"
+  },
+  "transferPhases": {
+    "title": "Vahvistusta odottavat tilisiirrot",
+    "intro": "Tilisiirtosi vapautuu {total} vaiheessa. Syötä jokainen saamasi koodi siirtyäksesi seuraavaan.",
+    "transferOf": "Tilisiirto {amount}",
+    "toIban": "tilille {iban}",
+    "pending": "…",
+    "confirm": "Vahvista",
+    "awaiting": "Odotetaan, että neuvojasi hyväksyy vaiheen {phase}. Saat koodin sähköpostitse.",
+    "names": {
+      "1": "Yhteyden vahvistuskoodi",
+      "2": "Pankin hyväksyntäkoodi",
+      "3": "Tilisiirron aktivointikoodi"
+    }
+  },
+  "transactions": {
+    "title": "Tapahtumahistoria",
+    "subtitle": "Suodata tyypin ja tilan mukaan.",
+    "emptyFiltered": "Mikään tapahtuma ei vastaa näitä suodattimia.",
+    "typeFilters": {
+      "all": "Kaikki",
+      "deposit": "Talletukset",
+      "transfer": "Tilisiirrot",
+      "withdrawal": "Nostot"
+    },
+    "statusFilters": {
+      "all": "Kaikki tilat",
+      "success": "Onnistui",
+      "pending": "Odottaa",
+      "rejected": "Hylätty",
+      "blocked": "Estetty"
+    }
+  },
+  "transactionItem": {
+    "types": {
+      "deposit": "Talletus",
+      "transfer": "Tilisiirto",
+      "withdrawal": "Nosto",
+      "admin_credit": "Hallinnollinen hyvitys"
+    },
+    "declineReason": "Hylkäys:"
+  },
+  "notifications": {
+    "title": "Ilmoitukset",
+    "subtitle": "Kaikki tilisi tapahtumat.",
+    "markAllRead": "Merkitse kaikki luetuiksi",
+    "empty": "Ei ilmoituksia."
+  },
+  "profile": {
+    "title": "Profiili",
+    "subtitle": "Henkilötietosi ja tilisi.",
+    "accountStatus": "Tilin tila",
+    "reason": "Syy:",
+    "createdOn": "Tili luotu {date}",
+    "infoSection": "Tiedot",
+    "fullName": "Koko nimi",
+    "email": "Sähköpostiosoite",
+    "emailHint": "Jos haluat muuttaa sähköpostiosoitettasi, ota yhteyttä neuvojaasi.",
+    "pending": "Tallennetaan…",
+    "submit": "Tallenna"
+  },
+  "permissions": {
+    "frozen": "Korttisi on jäädytetty. Vapauta se hallintapaneelista tehdäksesi toimintoja.",
+    "banned": "Tili estetty.",
+    "depositNotAuthorized": "Talletuksia ei ole vielä sallittu tililläsi. Ota yhteyttä neuvojaasi.",
+    "transferRestricted": "Tili rajoitettu: tilisiirrot eivät käytettävissä.",
+    "transfersBlocked": "Tilisiirrot on estetty tililläsi.",
+    "withdrawRestricted": "Tili rajoitettu: nostot eivät käytettävissä.",
+    "withdrawalsBlocked": "Nostot on estetty tililläsi."
+  }
+}

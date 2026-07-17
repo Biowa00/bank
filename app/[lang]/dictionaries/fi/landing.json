@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "features": "Ominaisuudet",
+    "security": "Turvallisuus",
+    "howItWorks": "Miten se toimii"
+  },
+  "hero": {
+    "badge": "Uuden sukupolven verkkopankki",
+    "titleLead": "Pankki, joka pitää rahasi",
+    "titleHighlight": "liikkeessä",
+    "description": "Avaa tili 2 minuutissa, saa oma IBAN, tee talletuksia ja tilisiirtoja ja seuraa kaikkea toimintaasi reaaliajassa.",
+    "ctaPrimary": "Luo ilmainen tili",
+    "ctaSecondary": "Kirjaudu sisään",
+    "guarantee": "Ilmainen avaus · Ei sitoutumista",
+    "cardTier": "Premium"
+  },
+  "logoStrip": {
+    "sepa": "SEPA-tilisiirrot",
+    "instantIban": "Välitön IBAN",
+    "realtimeNotifications": "Reaaliaikaiset ilmoitukset",
+    "fullHistory": "Täydellinen historia"
+  },
+  "features": {
+    "title": "Kaikki mitä modernin pankin pitää osata",
+    "subtitle": "Sujuva ja kattava kokemus arkeasi varten.",
+    "items": {
+      "transfers": {
+        "title": "Välittömät tilisiirrot",
+        "desc": "Lähetä rahaa mille tahansa IBAN-tilille, sisäisesti tai ulkopuolelle, täydellisellä historialla."
+      },
+      "card": {
+        "title": "Kortti & IBAN",
+        "desc": "IBAN myönnetään sinulle automaattisesti tilin avauksen yhteydessä, valmiina vastaanottamaan ja lähettämään."
+      },
+      "notifications": {
+        "title": "Ilmoitukset",
+        "desc": "Jokainen talletus, tilisiirto tai muutos tililläsi luo välittömän ilmoituksen."
+      },
+      "deposits": {
+        "title": "Talletukset yhdellä napsautuksella",
+        "desc": "Lisää varoja tilillesi sekunneissa ja seuraa saldosi kehitystä reaaliajassa."
+      }
+    }
+  },
+  "showcase": {
+    "badge": "Hallintapaneeli",
+    "title": "Hallitse tiliäsi yhdellä silmäyksellä",
+    "description": "Reaaliaikainen saldo, suodatettava historia, talletukset, tilisiirrot ja nostot — kaikki yhdessä selkeässä ja responsiivisessa näkymässä.",
+    "points": [
+      "Saldo päivittyy välittömästi",
+      "Historia suodatettavissa tyypin ja tilan mukaan",
+      "Nostot suojattu vahvistuskoodilla"
+    ],
+    "sampleDeposit": "Talletus",
+    "sampleTransfer": "Tilisiirto — FR76…4021",
+    "sampleToday": "Tänään",
+    "sampleYesterday": "Eilen"
+  },
+  "steps": {
+    "title": "Kolme vaihetta, ja olet valmis",
+    "items": [
+      {
+        "title": "Luo tilisi",
+        "desc": "Rekisteröityminen 2 minuutissa sähköpostilla. IBANisi luodaan automaattisesti."
+      },
+      {
+        "title": "Lisää varoja saldollesi",
+        "desc": "Lisää varoja yhdellä napsautuksella hallintapaneelistasi."
+      },
+      {
+        "title": "Lähetä & seuraa",
+        "desc": "Tee tilisiirtoja ja nostoja, vastaanota ilmoituksia, selaa historiaa."
+      }
+    ]
+  },
+  "security": {
+    "badge": "Turvallisuus",
+    "title": "Tietosi hyvissä käsissä",
+    "description": "Salattu todennus ja suojatut istunnot suojaavat tiliäsi joka hetki.",
+    "cards": [
+      { "title": "Istuntojen salaus", "desc": "Allekirjoitetut tunnisteet & httpOnly-evästeet" },
+      { "title": "Petossuojaus", "desc": "Toimintoja valvotaan jatkuvasti" },
+      { "title": "Auditointiloki", "desc": "Jokainen arkaluonteinen toiminto jäljitetään" },
+      { "title": "Suojatut tiedot", "desc": "Yksityisyys oletuksena" }
+    ]
+  },
+  "stats": {
+    "accounts": "avattua tiliä",
+    "satisfaction": "tyytyväisyysarvosana",
+    "free": "ilmainen ja turvallinen"
+  },
+  "testimonials": {
+    "title": "He luottavat meihin",
+    "items": [
+      { "quote": "Vihdoinkin yksinkertainen ja nopea verkkopankki ilman turhaa paperityötä.", "author": "Sarah M." },
+      { "quote": "Käyttöliittymä on selkeä ja sujuva, juuri sitä mitä tarvitsen arjessa.", "author": "Karim B." },
+      { "quote": "Tilisiirrot ja historia ovat todellinen ilo käyttää.", "author": "Léa D." }
+    ]
+  },
+  "finalCta": {
+    "title": "Valmis avaamaan tilisi?",
+    "description": "Luo tilisi 2 minuutissa. Ilmainen ja ilman sitoutumista.",
+    "ctaPrimary": "Luo tili",
+    "ctaSecondary": "Kirjaudu sisään"
+  },
+  "footer": {
+    "tagline": "Uuden sukupolven verkkopankki. Yksinkertainen, nopea, turvallinen.",
+    "columns": {
+      "product": {
+        "title": "Tuote",
+        "links": ["Ominaisuudet", "Turvallisuus", "Hallintapaneeli"]
+      },
+      "account": {
+        "title": "Tili",
+        "links": ["Luo tili", "Kirjaudu sisään"]
+      },
+      "legal": {
+        "title": "Oikeudelliset",
+        "links": ["Oikeudelliset tiedot", "Tietosuoja"]
+      }
+    },
+    "rights": "Kaikki oikeudet pidätetään."
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "brand": "Vantex Bank",
+  "language": "Kieli",
+  "actions": {
+    "login": "Kirjaudu sisään",
+    "register": "Luo tili",
+    "logout": "Kirjaudu ulos",
+    "back": "Takaisin",
+    "backToSite": "← Takaisin sivustolle",
+    "home": "Etusivu",
+    "mySpace": "Oma tila",
+    "mySpaceAria": "Oma henkilökohtainen tila",
+    "seeAll": "Näytä kaikki",
+    "cancel": "Peruuta",
+    "confirm": "Vahvista",
+    "save": "Tallenna",
+    "send": "Lähetä",
+    "validate": "Hyväksy",
+    "delete": "Poista",
+    "oneMoment": "Hetki…"
+  },
+  "account": {
+    "availableBalance": "Käytettävissä oleva saldo",
+    "currentAccount": "Käyttötili",
+    "iban": "IBAN"
+  },
+  "statuses": {
+    "account": {
+      "active": "Aktiivinen",
+      "restricted": "Rajoitettu",
+      "banned": "Estetty"
+    },
+    "tx": {
+      "success": "Onnistui",
+      "pending": "Odottaa",
+      "blocked": "Estetty",
+      "rejected": "Hylätty"
+    },
+    "code": {
+      "active": "Aktiivinen",
+      "used": "Käytetty",
+      "revoked": "Peruutettu"
+    }
+  }
+}

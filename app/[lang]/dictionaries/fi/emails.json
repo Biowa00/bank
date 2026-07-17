@@ -1,0 +1,119 @@
+{
+  "notify": {
+    "depositReceived": {
+      "title": "Talletus vastaanotettu",
+      "body": "{amount} on hyvitetty tilillesi."
+    },
+    "transferRejected": {
+      "title": "Tilisiirto hylätty",
+      "fallbackBody": "Tilisiirrot eivät ole käytettävissä."
+    },
+    "transferPending": {
+      "title": "Tilisiirto odottaa hyväksyntää",
+      "body": "Tilisiirtosi {amount} tilille {iban} on lähetetty. Varat on varattu, kunnes neuvoja hyväksyy siirron."
+    },
+    "withdrawalRejected": {
+      "title": "Nosto hylätty",
+      "fallbackBody": "Nostot eivät ole käytettävissä.",
+      "invalidCode": "Annettu nostokoodi on virheellinen, vanhentunut tai jo käytetty."
+    },
+    "withdrawalDone": {
+      "title": "Nosto suoritettu",
+      "body": "{amount} nostettu tilille {iban}."
+    },
+    "cardFrozen": {
+      "title": "Kortti jäädytetty",
+      "body": "Korttisi on jäädytetty. Toiminnot on väliaikaisesti estetty."
+    },
+    "cardUnfrozen": {
+      "title": "Kortti aktivoitu uudelleen",
+      "body": "Korttisi on aktivoitu uudelleen. Voit taas tehdä toimintoja."
+    },
+    "progressUpdated": {
+      "title": "Noston eteneminen päivitetty",
+      "body": "Nostomittarisi eteni +{pct} % (nyt {progress} %)."
+    },
+    "transferReceived": {
+      "title": "Tilisiirto vastaanotettu",
+      "body": "Olet vastaanottanut {amount}{from}.",
+      "fromName": " lähettäjältä {name}"
+    },
+    "transferExecuted": {
+      "title": "Tilisiirto vapautettu ja suoritettu",
+      "body": "Kaikki 3 vaihetta on vahvistettu. Tilisiirtosi {amount} on suoritettu."
+    },
+    "phaseConfirmed": {
+      "title": "Vaihe {phase}/{total} vahvistettu",
+      "body": "Tilisiirtosi {amount} vaihe {phase} on vahvistettu. Odotetaan seuraavaa vaihetta."
+    },
+    "admin": {
+      "accountReactivated": {
+        "title": "Tili aktivoitu uudelleen",
+        "body": "Tilisi on aktivoitu uudelleen. Sinulla on jälleen pääsy kaikkiin palveluihin."
+      },
+      "accountRestricted": {
+        "title": "Tili rajoitettu",
+        "body": "Tiliäsi on rajoitettu. Syy: {reason}"
+      },
+      "accountBanned": {
+        "title": "Tili estetty",
+        "body": "Tilisi on estetty.",
+        "bodyReason": "Tilisi on estetty. Syy: {reason}"
+      },
+      "depositsAuthorized": {
+        "title": "Talletukset sallittu",
+        "body": "Talletuksesi on nyt sallittu."
+      },
+      "depositsSuspended": {
+        "title": "Talletukset keskeytetty",
+        "body": "Talletuksesi on keskeytetty."
+      },
+      "withdrawalsBlocked": {
+        "title": "Nostot estetty",
+        "body": "Nostosi on estetty.",
+        "bodyReason": "Nostosi on estetty. Syy: {reason}"
+      },
+      "withdrawalsUnblocked": {
+        "title": "Nostot sallittu",
+        "body": "Nostosi on jälleen sallittu."
+      },
+      "transfersBlocked": {
+        "title": "Tilisiirrot estetty",
+        "body": "Tilisiirtosi on estetty.",
+        "bodyReason": "Tilisiirtosi on estetty. Syy: {reason}"
+      },
+      "transfersUnblocked": {
+        "title": "Tilisiirrot sallittu",
+        "body": "Tilisiirtosi on jälleen sallittu."
+      },
+      "credited": {
+        "title": "Tiliä hyvitetty",
+        "body": "+{amount} — {reason}"
+      },
+      "debited": {
+        "title": "Tilin oikaisu",
+        "body": "−{amount} — {reason}"
+      },
+      "phaseCode": {
+        "title": "{name} — {code}",
+        "body": "Tilisiirtosi {amount} vaihe {phase}/{total}: koodisi ({name}) on {code}. Syötä se asiakastilassasi vahvistaaksesi. Koodi on voimassa {ttl} minuuttia."
+      },
+      "phaseNames": {
+        "1": "Yhteyden vahvistuskoodi",
+        "2": "Pankin hyväksyntäkoodi",
+        "3": "Tilisiirron aktivointikoodi"
+      },
+      "transferRejected": {
+        "title": "Tilisiirto hylätty",
+        "body": "Tilisiirtosi {amount} on hylätty. Syy: {reason}. Varat on palautettu tilillesi."
+      }
+    }
+  },
+  "chrome": {
+    "greeting": "Hei {name},",
+    "greetingNoName": "Hei,",
+    "header": "Vantex Bank",
+    "footerAuto": "Tämä on automaattinen viesti, ethän vastaa siihen.",
+    "footerConfidential": "Tämä sähköposti ja sen sisältämät tiedot ovat luottamuksellisia."
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "features": "Funkcijos",
+    "security": "Saugumas",
+    "howItWorks": "Kaip tai veikia"
+  },
+  "hero": {
+    "badge": "Naujos kartos neobankas",
+    "titleLead": "Bankas, kuris judina jūsų",
+    "titleHighlight": "pinigus",
+    "description": "Atidarykite sąskaitą per 2 minutes, gaukite IBAN, atlikite įnašus bei pervedimus ir stebėkite visą veiklą realiuoju laiku.",
+    "ctaPrimary": "Sukurti nemokamą paskyrą",
+    "ctaSecondary": "Prisijungti",
+    "guarantee": "Nemokamas atidarymas · Be įsipareigojimų",
+    "cardTier": "Premium"
+  },
+  "logoStrip": {
+    "sepa": "SEPA pervedimai",
+    "instantIban": "IBAN akimirksniu",
+    "realtimeNotifications": "Pranešimai realiuoju laiku",
+    "fullHistory": "Visa istorija"
+  },
+  "features": {
+    "title": "Viskas, ką turi mokėti šiuolaikinis bankas",
+    "subtitle": "Sklandi ir išsami patirtis jūsų kasdienybei.",
+    "items": {
+      "transfers": {
+        "title": "Momentiniai pervedimai",
+        "desc": "Siųskite pinigus į bet kurį IBAN, viduje ar išorėje, su visa istorija."
+      },
+      "card": {
+        "title": "Kortelė ir IBAN",
+        "desc": "IBAN jums priskiriamas automatiškai atidarius sąskaitą — pasiruošęs gauti ir siųsti."
+      },
+      "notifications": {
+        "title": "Pranešimai",
+        "desc": "Kiekvienas įnašas, pervedimas ar pakeitimas jūsų sąskaitoje sukuria momentinį pranešimą."
+      },
+      "deposits": {
+        "title": "Įnašai vienu paspaudimu",
+        "desc": "Papildykite sąskaitą per kelias sekundes ir stebėkite, kaip likutis kinta realiuoju laiku."
+      }
+    }
+  },
+  "showcase": {
+    "badge": "Valdymo skydas",
+    "title": "Valdykite sąskaitą vienu žvilgsniu",
+    "description": "Likutis realiuoju laiku, filtruojama istorija, įnašai, pervedimai ir išėmimai — viskas vienoje aiškioje ir prisitaikančioje erdvėje.",
+    "points": [
+      "Likutis atnaujinamas akimirksniu",
+      "Istorija filtruojama pagal tipą ir būseną",
+      "Išėmimai apsaugoti patvirtinimo kodu"
+    ],
+    "sampleDeposit": "Įnašas",
+    "sampleTransfer": "Pervedimas — FR76…4021",
+    "sampleToday": "Šiandien",
+    "sampleYesterday": "Vakar"
+  },
+  "steps": {
+    "title": "Trys žingsniai — ir pirmyn",
+    "items": [
+      {
+        "title": "Sukurkite paskyrą",
+        "desc": "Registracija per 2 minutes su el. paštu. IBAN sugeneruojamas automatiškai."
+      },
+      {
+        "title": "Papildykite likutį",
+        "desc": "Pridėkite lėšų vienu paspaudimu iš valdymo skydo."
+      },
+      {
+        "title": "Siųskite ir stebėkite",
+        "desc": "Atlikite pervedimus bei išėmimus, gaukite pranešimus, peržiūrėkite istoriją."
+      }
+    ]
+  },
+  "security": {
+    "badge": "Saugumas",
+    "title": "Jūsų duomenys — gerose rankose",
+    "description": "Šifruota autentifikacija ir saugios sesijos saugo jūsų paskyrą kiekvieną akimirką.",
+    "cards": [
+      { "title": "Sesijų šifravimas", "desc": "Pasirašyti žetonai ir httpOnly slapukai" },
+      { "title": "Apsauga nuo sukčiavimo", "desc": "Operacijos nuolat stebimos" },
+      { "title": "Audito žurnalas", "desc": "Kiekvienas jautrus veiksmas fiksuojamas" },
+      { "title": "Apsaugoti duomenys", "desc": "Privatumas pagal numatymą" }
+    ]
+  },
+  "stats": {
+    "accounts": "atidarytų sąskaitų",
+    "satisfaction": "pasitenkinimo įvertinimas",
+    "free": "nemokama ir saugu"
+  },
+  "testimonials": {
+    "title": "Jie mumis pasitiki",
+    "items": [
+      { "quote": "Pagaliau paprastas ir greitas internetinis bankas be nereikalingo popierizmo.", "author": "Sarah M." },
+      { "quote": "Sąsaja aiški ir sklandi — būtent to man reikia kasdien.", "author": "Karim B." },
+      { "quote": "Pervedimais ir istorija naudotis — vienas malonumas.", "author": "Léa D." }
+    ]
+  },
+  "finalCta": {
+    "title": "Pasiruošę atidaryti sąskaitą?",
+    "description": "Sukurkite paskyrą per 2 minutes. Nemokama ir be įsipareigojimų.",
+    "ctaPrimary": "Sukurti paskyrą",
+    "ctaSecondary": "Prisijungti"
+  },
+  "footer": {
+    "tagline": "Naujos kartos neobankas. Paprasta, greita, saugu.",
+    "columns": {
+      "product": {
+        "title": "Produktas",
+        "links": ["Funkcijos", "Saugumas", "Valdymo skydas"]
+      },
+      "account": {
+        "title": "Paskyra",
+        "links": ["Sukurti paskyrą", "Prisijungti"]
+      },
+      "legal": {
+        "title": "Teisinė informacija",
+        "links": ["Teisinės nuostatos", "Privatumas"]
+      }
+    },
+    "rights": "Visos teisės saugomos."
+  }
+}

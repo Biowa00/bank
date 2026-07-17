@@ -1,0 +1,89 @@
+{
+  "auth": {
+    "lastNameRequired": "Pavardė privaloma.",
+    "firstNameRequired": "Vardas privalomas.",
+    "cityRequired": "Miestas privalomas.",
+    "professionRequired": "Profesija privaloma.",
+    "addressRequired": "Visas adresas privalomas.",
+    "phoneRequired": "Telefono numeris privalomas.",
+    "emailRequired": "El. pašto adresas privalomas.",
+    "passwordMinLength": "Slaptažodį turi sudaryti bent 8 simboliai.",
+    "passwordUppercase": "Slaptažodyje turi būti bent viena didžioji raidė.",
+    "passwordDigit": "Slaptažodyje turi būti bent vienas skaitmuo.",
+    "passwordsMismatch": "Slaptažodžiai nesutampa.",
+    "cguRequired": "Turite sutikti su bendrosiomis sąlygomis ir privatumo politika.",
+    "idRequired": "Asmens dokumentas (nuotrauka) privalomas.",
+    "idFormat": "Netinkamas asmens dokumento formatas (JPG, PNG arba PDF).",
+    "idTooLarge": "Asmens dokumentas viršija 5 MB.",
+    "accountCreatedConfirm": "Paskyra sukurta. Patikrinkite el. paštą, patvirtinkite adresą ir prisijunkite.",
+    "credentialsRequired": "Reikalingas el. paštas ir slaptažodis.",
+    "notAdmin": "Ši paskyra neturi administratoriaus teisių.",
+    "emailRequiredShort": "Privalomas el. pašto adresas.",
+    "resetEmailSent": "Jei su šiuo adresu susieta paskyra, ką tik išsiųstas laiškas su atkūrimo nuoroda. Patikrinkite ir šlamštą.",
+    "passwordCriteria": "Slaptažodis neatitinka saugumo reikalavimų.",
+    "resetLinkInvalid": "Neteisinga arba pasibaigusi nuoroda. Pateikite naują atkūrimo užklausą.",
+    "supabase": {
+      "invalidLogin": "Neteisingas el. paštas arba slaptažodis.",
+      "alreadyRegistered": "Su šiuo el. paštu paskyra jau egzistuoja.",
+      "emailNotConfirmed": "El. paštas nepatvirtintas. Patikrinkite pašto dėžutę.",
+      "rateLimit": "Per daug bandymų. Bandykite po akimirkos.",
+      "generic": "Įvyko klaida. Bandykite dar kartą."
+    },
+    "selfieRequired": "Asmenukė privaloma."
+  },
+  "amount": {
+    "invalid": "Neteisinga suma.",
+    "max": "Didžiausia suma: 1 000 000 €."
+  },
+  "deposit": {
+    "failed": "Įnašas nepavyko. Bandykite dar kartą."
+  },
+  "transfer": {
+    "ibanInvalid": "Neteisingas gavėjo IBAN.",
+    "ownAccount": "Negalima pervesti į savo paties sąskaitą.",
+    "insufficient": "Nepakanka lėšų šiam pervedimui.",
+    "failed": "Pervedimas nepavyko. Bandykite dar kartą.",
+    "unavailable": "Pervedimai negalimi."
+  },
+  "withdrawalAccount": {
+    "ibanInvalid": "Neteisingas IBAN.",
+    "saveFailed": "Nepavyko išsaugoti šio IBAN."
+  },
+  "withdraw": {
+    "chooseIban": "Pasirinkite paskirties IBAN.",
+    "codeRequired": "Reikalingas išėmimo kodas.",
+    "ibanNotFound": "Paskirties IBAN nerastas.",
+    "insufficient": "Nepakanka lėšų šiam išėmimui.",
+    "codeInvalid": "Išėmimo kodas neteisingas, pasibaigęs arba jau panaudotas.",
+    "unavailable": "Išėmimai negalimi."
+  },
+  "redeem": {
+    "enterCode": "Įveskite kodą.",
+    "codeInvalid": "Kodas neteisingas, pasibaigęs arba jau panaudotas.",
+    "updateFailed": "Atnaujinti nepavyko."
+  },
+  "phase": {
+    "codeRequired": "Reikalingas kodas.",
+    "notFound": "Pervedimas nerastas arba jau apdorotas.",
+    "allConfirmed": "Visi etapai jau patvirtinti.",
+    "noCode": "Šiam pervedimui nėra laukiančio kodo. Kreipkitės į savo konsultantą.",
+    "expired": "Šis kodas pasibaigė. Konsultantas turi sugeneruoti naują kodą.",
+    "tooManyAttempts": "Per daug bandymų. Reikia sugeneruoti naują kodą.",
+    "incorrectExhausted": "Neteisingas kodas. Per daug bandymų: reikia sugeneruoti naują kodą.",
+    "incorrectRemaining": "Neteisingas kodas. Liko bandymų: {n}.",
+    "updateFailed": "Etapo atnaujinti nepavyko."
+  },
+  "profile": {
+    "nameEmpty": "Vardas negali būti tuščias."
+  },
+  "success": {
+    "deposit": "Įnašas {amount} atliktas.",
+    "transferSubmitted": "Pervedimas {amount} pateiktas — laukiama patvirtinimo.",
+    "ibanSaved": "Išėmimo IBAN išsaugotas.",
+    "withdraw": "Išėmimas {amount} atliktas.",
+    "redeem": "+{pct} % pritaikyta. Eiga: {progress} %.",
+    "phaseConfirmed": "Etapas {phase} patvirtintas.",
+    "transferUnlocked": "Pervedimas atrakintas ir įvykdytas.",
+    "profileUpdated": "Profilis atnaujintas."
+  }
+}

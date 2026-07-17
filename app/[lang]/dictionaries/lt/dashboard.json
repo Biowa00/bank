@@ -1,0 +1,156 @@
+{
+  "layout": {
+    "bannedTitle": "Paskyra užblokuota",
+    "bannedText": "Jūsų paskyra užblokuota, prieiga prie paslaugų sustabdyta.",
+    "restrictedTitle": "Paskyra apribota.",
+    "restrictedDefault": "Kai kurios operacijos (pervedimai, išėmimai) negalimos.",
+    "reason": "Priežastis:",
+    "defaultFirstName": "jūs"
+  },
+  "home": {
+    "greeting": "Sveiki",
+    "subtitle": "Štai jūsų Vantex Bank sąskaitos būsena.",
+    "quickDeposit": "Įnešti",
+    "quickTransfer": "Pervesti",
+    "quickWithdraw": "Išsiimti",
+    "recentTransactions": "Naujausios operacijos",
+    "emptyRecent": "Kol kas operacijų nėra. Atlikite pirmąjį įnašą!"
+  },
+  "balanceCard": {
+    "holder": "Savininkas",
+    "copyIban": "Kopijuoti IBAN",
+    "copied": "Nukopijuota ✓"
+  },
+  "bankCard": {
+    "paymentCard": "Mokėjimo kortelė",
+    "frozen": "Užšaldyta",
+    "holder": "Savininkas",
+    "exp": "Gal.",
+    "cvv": "CVV",
+    "showInfo": "Rodyti informaciją",
+    "hideInfo": "Slėpti informaciją",
+    "freezeTitle": "Užšaldyti kortelę",
+    "freezeDescFrozen": "Kol kortelė užšaldyta, operacijos blokuojamos.",
+    "freezeDescActive": "Laikinai blokuoja visas kortelės operacijas.",
+    "freezeToggleAria": "Užšaldyti arba atšildyti kortelę"
+  },
+  "deposit": {
+    "title": "Įnešti lėšų",
+    "subtitle": "Papildykite likutį akimirksniu.",
+    "amountLabel": "Įnešama suma (€)",
+    "pending": "Įnešama…",
+    "submit": "Įnešti lėšas",
+    "note": "Jūsų likutis papildomas iškart po patvirtinimo."
+  },
+  "transfer": {
+    "title": "Atlikti pervedimą",
+    "subtitle": "Siųskite pinigus į pasirinktą IBAN.",
+    "ibanLabel": "Gavėjo IBAN",
+    "amountLabel": "Suma (€)",
+    "availableBalance": "Disponuojamas likutis:",
+    "descriptionLabel": "Paskirtis (neprivaloma)",
+    "descriptionPlaceholder": "Nuoma, grąžinimas…",
+    "pending": "Siunčiama…",
+    "submit": "Pateikti pervedimą",
+    "note": "Pervedimą turi patvirtinti konsultantas. Lėšos rezervuojamos iškart išsiuntus; atmetus jos visiškai grąžinamos."
+  },
+  "withdraw": {
+    "title": "Išsiimti lėšų",
+    "subtitle": "Išėmimui reikalingas administratoriaus pateiktas kodas.",
+    "newWithdrawal": "Naujas išėmimas",
+    "savedIbansTitle": "Išsaugoti paskirties IBAN",
+    "savedIbansDesc": "Tvarkykite sąskaitas, į kurias galite išsiimti.",
+    "noAccounts": "Pirmiausia žemiau išsaugokite paskirties IBAN, kad galėtumėte atlikti išėmimą.",
+    "destLabel": "Paskirties IBAN",
+    "amountLabel": "Suma (€)",
+    "availableBalance": "Disponuojamas likutis:",
+    "codeLabel": "Išėmimo kodas",
+    "codePlaceholder": "Administratoriaus pateiktas kodas",
+    "codeHint": "Operacijai patvirtinti reikalingas galiojantis administratoriaus sugeneruotas išėmimo kodas.",
+    "pending": "Tvirtinama…",
+    "submit": "Patvirtinti išėmimą"
+  },
+  "withdrawalAccounts": {
+    "labelLabel": "Pavadinimas (neprivaloma)",
+    "labelPlaceholder": "Kita mano sąskaita",
+    "ibanLabel": "Paskirties IBAN",
+    "pending": "Pridedama…",
+    "submit": "Išsaugoti šį IBAN"
+  },
+  "withdrawalProgress": {
+    "title": "Jūsų išėmimo eiga",
+    "complete": "Jūsų skalė užpildyta.",
+    "hint": "Įveskite konsultanto pateiktus kodus, kad skalė augtų.",
+    "pending": "…",
+    "submit": "Patvirtinti"
+  },
+  "transferPhases": {
+    "title": "Patvirtinimo laukiantys pervedimai",
+    "intro": "Jūsų pervedimas atrakinamas per {total} etapus. Įveskite kiekvieną gautą kodą, kad pereitumėte prie kito.",
+    "transferOf": "Pervedimas {amount}",
+    "toIban": "į {iban}",
+    "pending": "…",
+    "confirm": "Patvirtinti",
+    "awaiting": "Laukiama, kol konsultantas patvirtins {phase} etapą. Kodą gausite el. paštu.",
+    "names": {
+      "1": "Ryšio patvirtinimo kodas",
+      "2": "Banko patvirtinimo kodas",
+      "3": "Pervedimo aktyvavimo kodas"
+    }
+  },
+  "transactions": {
+    "title": "Operacijų istorija",
+    "subtitle": "Filtruokite pagal tipą ir būseną.",
+    "emptyFiltered": "Nė viena operacija neatitinka šių filtrų.",
+    "typeFilters": {
+      "all": "Visos",
+      "deposit": "Įnašai",
+      "transfer": "Pervedimai",
+      "withdrawal": "Išėmimai"
+    },
+    "statusFilters": {
+      "all": "Visos būsenos",
+      "success": "Pavyko",
+      "pending": "Laukiama",
+      "rejected": "Atmesta",
+      "blocked": "Užblokuota"
+    }
+  },
+  "transactionItem": {
+    "types": {
+      "deposit": "Įnašas",
+      "transfer": "Pervedimas",
+      "withdrawal": "Išėmimas",
+      "admin_credit": "Administracinis kreditas"
+    },
+    "declineReason": "Atmetimas:"
+  },
+  "notifications": {
+    "title": "Pranešimai",
+    "subtitle": "Visi jūsų sąskaitos įvykiai.",
+    "markAllRead": "Pažymėti visus kaip skaitytus",
+    "empty": "Pranešimų nėra."
+  },
+  "profile": {
+    "title": "Profilis",
+    "subtitle": "Jūsų asmeniniai duomenys ir sąskaita.",
+    "accountStatus": "Paskyros būsena",
+    "reason": "Priežastis:",
+    "createdOn": "Paskyra sukurta {date}",
+    "infoSection": "Informacija",
+    "fullName": "Vardas ir pavardė",
+    "email": "El. pašto adresas",
+    "emailHint": "Norėdami pakeisti el. pašto adresą, kreipkitės į savo konsultantą.",
+    "pending": "Saugoma…",
+    "submit": "Išsaugoti"
+  },
+  "permissions": {
+    "frozen": "Jūsų kortelė užšaldyta. Atšildykite ją valdymo skyde, kad galėtumėte atlikti operacijas.",
+    "banned": "Paskyra užblokuota.",
+    "depositNotAuthorized": "Įnašai jūsų sąskaitoje dar neleidžiami. Kreipkitės į savo konsultantą.",
+    "transferRestricted": "Paskyra apribota: pervedimai negalimi.",
+    "transfersBlocked": "Pervedimai jūsų sąskaitoje užblokuoti.",
+    "withdrawRestricted": "Paskyra apribota: išėmimai negalimi.",
+    "withdrawalsBlocked": "Išėmimai jūsų sąskaitoje užblokuoti."
+  }
+}

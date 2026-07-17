@@ -6,7 +6,7 @@
  * `server-only` ni de dépendance serveur.
  */
 
-/** Les 13 langues cibles. `fr` est la langue source et le repli. */
+/** Les 16 langues cibles. `fr` est la langue source et le repli. */
 export const locales = [
   "fr",
   "de",
@@ -21,6 +21,9 @@ export const locales = [
   "cs",
   "el",
   "hu",
+  "fi",
+  "kk",
+  "lt",
 ] as const;
 
 export type Locale = (typeof locales)[number];
@@ -67,6 +70,9 @@ export const localeNames: Record<Locale, string> = {
   cs: "Čeština",
   el: "Ελληνικά",
   hu: "Magyar",
+  fi: "Suomi",
+  kk: "Қазақша",
+  lt: "Lietuvių",
 };
 
 /**
@@ -86,6 +92,9 @@ export const intlLocale: Record<Locale, string> = {
   cs: "cs-CZ",
   el: "el-GR",
   hu: "hu-HU",
+  fi: "fi-FI",
+  kk: "kk-KZ",
+  lt: "lt-LT",
 };
 
 /**
@@ -128,4 +137,10 @@ export const COUNTRY_TO_LOCALE: Record<string, Locale> = {
   CY: "el",
   // Hongrois
   HU: "hu",
+  // Finnois
+  FI: "fi",
+  // Kazakh
+  KZ: "kk",
+  // Lituanien
+  LT: "lt",
 };

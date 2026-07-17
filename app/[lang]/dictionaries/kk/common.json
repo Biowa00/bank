@@ -1,0 +1,45 @@
+{
+  "brand": "Vantex Bank",
+  "language": "Тіл",
+  "actions": {
+    "login": "Кіру",
+    "register": "Тіркелгі құру",
+    "logout": "Шығу",
+    "back": "Артқа",
+    "backToSite": "← Сайтқа оралу",
+    "home": "Басты бет",
+    "mySpace": "Менің кеңістігім",
+    "mySpaceAria": "Менің жеке кеңістігім",
+    "seeAll": "Барлығын көру",
+    "cancel": "Бас тарту",
+    "confirm": "Растау",
+    "save": "Сақтау",
+    "send": "Жіберу",
+    "validate": "Растау",
+    "delete": "Жою",
+    "oneMoment": "Бір сәт…"
+  },
+  "account": {
+    "availableBalance": "Қолжетімді қалдық",
+    "currentAccount": "Ағымдағы шот",
+    "iban": "IBAN"
+  },
+  "statuses": {
+    "account": {
+      "active": "Белсенді",
+      "restricted": "Шектелген",
+      "banned": "Бұғатталған"
+    },
+    "tx": {
+      "success": "Сәтті",
+      "pending": "Күтуде",
+      "blocked": "Бұғатталған",
+      "rejected": "Қабылданбады"
+    },
+    "code": {
+      "active": "Белсенді",
+      "used": "Пайдаланылған",
+      "revoked": "Кері қайтарылған"
+    }
+  }
+}

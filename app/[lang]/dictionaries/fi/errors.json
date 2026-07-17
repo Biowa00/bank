@@ -1,0 +1,89 @@
+{
+  "auth": {
+    "lastNameRequired": "Sukunimi vaaditaan.",
+    "firstNameRequired": "Etunimi vaaditaan.",
+    "cityRequired": "Kaupunki vaaditaan.",
+    "professionRequired": "Ammatti vaaditaan.",
+    "addressRequired": "Täydellinen osoite vaaditaan.",
+    "phoneRequired": "Puhelinnumero vaaditaan.",
+    "emailRequired": "Sähköpostiosoite vaaditaan.",
+    "passwordMinLength": "Salasanassa on oltava vähintään 8 merkkiä.",
+    "passwordUppercase": "Salasanassa on oltava vähintään yksi iso kirjain.",
+    "passwordDigit": "Salasanassa on oltava vähintään yksi numero.",
+    "passwordsMismatch": "Salasanat eivät täsmää.",
+    "cguRequired": "Sinun on hyväksyttävä yleiset ehdot ja tietosuojakäytäntö.",
+    "idRequired": "Henkilöllisyystodistus (kuva) vaaditaan.",
+    "idFormat": "Henkilöllisyystodistuksen muoto on virheellinen (JPG, PNG tai PDF).",
+    "idTooLarge": "Henkilöllisyystodistus ylittää 5 Mt.",
+    "accountCreatedConfirm": "Tili luotu. Tarkista sähköpostisi vahvistaaksesi osoitteesi ja kirjaudu sitten sisään.",
+    "credentialsRequired": "Sähköposti ja salasana vaaditaan.",
+    "notAdmin": "Tällä tilillä ei ole ylläpito-oikeuksia.",
+    "emailRequiredShort": "Sähköpostiosoite vaaditaan.",
+    "resetEmailSent": "Jos tähän osoitteeseen liittyy tili, palautuslinkin sisältävä sähköposti on juuri lähetetty. Tarkista myös roskaposti.",
+    "passwordCriteria": "Salasana ei täytä turvallisuusvaatimuksia.",
+    "resetLinkInvalid": "Virheellinen tai vanhentunut linkki. Tee uusi palautuspyyntö.",
+    "supabase": {
+      "invalidLogin": "Virheellinen sähköposti tai salasana.",
+      "alreadyRegistered": "Tällä sähköpostilla on jo tili.",
+      "emailNotConfirmed": "Sähköpostia ei ole vahvistettu. Tarkista postilaatikkosi.",
+      "rateLimit": "Liikaa yrityksiä. Yritä hetken kuluttua uudelleen.",
+      "generic": "Tapahtui virhe. Yritä uudelleen."
+    },
+    "selfieRequired": "Selfie vaaditaan."
+  },
+  "amount": {
+    "invalid": "Virheellinen summa.",
+    "max": "Enimmäissumma: 1 000 000 €."
+  },
+  "deposit": {
+    "failed": "Talletus epäonnistui. Yritä uudelleen."
+  },
+  "transfer": {
+    "ibanInvalid": "Saajan IBAN on virheellinen.",
+    "ownAccount": "Et voi siirtää omalle tilillesi.",
+    "insufficient": "Saldo ei riitä tähän tilisiirtoon.",
+    "failed": "Tilisiirto epäonnistui. Yritä uudelleen.",
+    "unavailable": "Tilisiirrot eivät ole käytettävissä."
+  },
+  "withdrawalAccount": {
+    "ibanInvalid": "Virheellinen IBAN.",
+    "saveFailed": "IBANin tallennus epäonnistui."
+  },
+  "withdraw": {
+    "chooseIban": "Valitse kohde-IBAN.",
+    "codeRequired": "Nostokoodi vaaditaan.",
+    "ibanNotFound": "Kohde-IBANia ei löytynyt.",
+    "insufficient": "Saldo ei riitä tähän nostoon.",
+    "codeInvalid": "Nostokoodi on virheellinen, vanhentunut tai jo käytetty.",
+    "unavailable": "Nostot eivät ole käytettävissä."
+  },
+  "redeem": {
+    "enterCode": "Syötä koodi.",
+    "codeInvalid": "Koodi on virheellinen, vanhentunut tai jo käytetty.",
+    "updateFailed": "Päivitys epäonnistui."
+  },
+  "phase": {
+    "codeRequired": "Koodi vaaditaan.",
+    "notFound": "Tilisiirtoa ei löytynyt tai se on jo käsitelty.",
+    "allConfirmed": "Kaikki vaiheet on jo vahvistettu.",
+    "noCode": "Tälle tilisiirrolle ei ole odottavaa koodia. Ota yhteyttä neuvojaasi.",
+    "expired": "Tämä koodi on vanhentunut. Neuvojasi on luotava uusi koodi.",
+    "tooManyAttempts": "Liikaa yrityksiä. Uusi koodi on luotava.",
+    "incorrectExhausted": "Väärä koodi. Liikaa yrityksiä: uusi koodi on luotava.",
+    "incorrectRemaining": "Väärä koodi. {n} yritystä jäljellä.",
+    "updateFailed": "Vaiheen päivitys epäonnistui."
+  },
+  "profile": {
+    "nameEmpty": "Nimi ei voi olla tyhjä."
+  },
+  "success": {
+    "deposit": "Talletus {amount} tehty.",
+    "transferSubmitted": "Tilisiirto {amount} lähetetty — odottaa hyväksyntää.",
+    "ibanSaved": "Nosto-IBAN tallennettu.",
+    "withdraw": "Nosto {amount} tehty.",
+    "redeem": "+{pct} % lisätty. Eteneminen: {progress} %.",
+    "phaseConfirmed": "Vaihe {phase} vahvistettu.",
+    "transferUnlocked": "Tilisiirto vapautettu ja suoritettu.",
+    "profileUpdated": "Profiili päivitetty."
+  }
+}
