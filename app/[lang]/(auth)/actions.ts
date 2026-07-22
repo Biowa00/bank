@@ -144,8 +144,10 @@ export async function signUp(
   }
 
   // Email de confirmation activé côté Supabase → pas de session immédiate.
+  // Redirection vers une page dédiée plutôt qu'un message sur le formulaire
+  // (qui resterait affiché, rempli, sous la confirmation).
   if (!data.session) {
-    return { info: E.accountCreatedConfirm };
+    return localizedRedirect("/compte-cree");
   }
 
   return localizedRedirect("/dashboard");

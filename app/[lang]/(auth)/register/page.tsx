@@ -33,12 +33,6 @@ export default function RegisterPage() {
           {state.error}
         </p>
       )}
-      {state.info && (
-        <p className="mt-5 rounded-xl border border-brand-200 bg-brand-50 px-4 py-3 text-sm text-brand-700">
-          {state.info}
-        </p>
-      )}
-
       <form action={action} className="mt-6 space-y-4">
         <div className="grid grid-cols-2 gap-3">
           <div>
