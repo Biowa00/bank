@@ -10,7 +10,7 @@
     },
     "transferPending": {
       "title": "Prevod čaká na potvrdenie",
-      "body": "Váš prevod {amount} na {iban} bol odoslaný. Prostriedky sú rezervované do potvrdenia poradcom."
+      "body": "Váš prevod {amount} na {iban} bol odoslaný. Suma bude z vášho účtu odpísaná až po potvrdení 3 fáz overenia poradcom."
     },
     "withdrawalRejected": {
       "title": "Výber zamietnutý",
@@ -105,14 +105,14 @@
       },
       "transferRejected": {
         "title": "Prevod zamietnutý",
-        "body": "Váš prevod {amount} bol zamietnutý. Dôvod: {reason}. Prostriedky boli vrátené na váš účet."
+        "body": "Váš prevod {amount} bol zamietnutý. Dôvod: {reason}. Z vášho účtu nebola odpísaná žiadna suma."
       }
     }
   },
   "chrome": {
     "greeting": "Ahoj {name},",
     "greetingNoName": "Ahoj,",
-    "header": "Vantex Bank",
+    "header": "Vantex Bank S.A",
     "footerAuto": "Toto je automatická správa, prosím, neodpovedajte na ňu.",
     "footerConfidential": "Tento e-mail a informácie v ňom obsiahnuté sú dôverné."
   }

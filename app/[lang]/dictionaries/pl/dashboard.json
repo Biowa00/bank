@@ -9,7 +9,7 @@
   },
   "home": {
     "greeting": "Cześć",
-    "subtitle": "Oto stan Twojego konta Vantex Bank.",
+    "subtitle": "Oto stan Twojego konta Vantex Bank S.A.",
     "quickDeposit": "Wpłać",
     "quickTransfer": "Przelej",
     "quickWithdraw": "Wypłać",
@@ -52,7 +52,7 @@
     "descriptionPlaceholder": "Czynsz, zwrot…",
     "pending": "Wysyłanie…",
     "submit": "Wyślij przelew",
-    "note": "Przelew podlega zatwierdzeniu przez doradcę. Środki są rezerwowane w momencie wysłania; w razie odmowy są w całości zwracane."
+    "note": "Przelew podlega zatwierdzeniu przez doradcę, w 3 fazach. Kwota zostanie pobrana z Twojego konta dopiero po potwierdzeniu wszystkich 3 faz."
   },
   "withdraw": {
     "title": "Wypłać środki",

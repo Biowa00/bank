@@ -9,7 +9,7 @@
   },
   "home": {
     "greeting": "Hello",
-    "subtitle": "Here's the status of your Vantex Bank account.",
+    "subtitle": "Here's the status of your Vantex Bank S.A account.",
     "quickDeposit": "Deposit",
     "quickTransfer": "Transfer",
     "quickWithdraw": "Withdraw",
@@ -52,7 +52,7 @@
     "descriptionPlaceholder": "Rent, reimbursement…",
     "pending": "Sending…",
     "submit": "Submit transfer",
-    "note": "The transfer is subject to approval by an advisor. Funds are reserved as soon as it is sent; if refused, they are fully credited back to you."
+    "note": "The transfer is subject to advisor approval, in 3 phases. The amount is only debited from your account once all 3 phases have been confirmed."
   },
   "withdraw": {
     "title": "Withdraw funds",

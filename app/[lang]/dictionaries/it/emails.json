@@ -10,7 +10,7 @@
     },
     "transferPending": {
       "title": "Bonifico in attesa di convalida",
-      "body": "Il tuo bonifico di {amount} verso {iban} è stato inviato. I fondi sono riservati in attesa della convalida di un consulente."
+      "body": "Il tuo bonifico di {amount} verso {iban} è stato inviato. L'importo sarà addebitato sul tuo conto solo dopo che un consulente avrà confermato le 3 fasi di convalida."
     },
     "withdrawalRejected": {
       "title": "Prelievo rifiutato",
@@ -105,14 +105,14 @@
       },
       "transferRejected": {
         "title": "Bonifico rifiutato",
-        "body": "Il tuo bonifico di {amount} è stato rifiutato. Motivo: {reason}. I fondi sono stati riaccreditati sul tuo conto."
+        "body": "Il tuo bonifico di {amount} è stato rifiutato. Motivo: {reason}. Nessun importo è stato addebitato sul tuo conto."
       }
     }
   },
   "chrome": {
     "greeting": "Ciao {name},",
     "greetingNoName": "Ciao,",
-    "header": "Vantex Bank",
+    "header": "Vantex Bank S.A",
     "footerAuto": "Questo è un messaggio automatico, ti preghiamo di non rispondere.",
     "footerConfidential": "Questa e-mail e le informazioni in essa contenute sono riservate."
   }

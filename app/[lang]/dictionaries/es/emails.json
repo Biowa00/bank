@@ -10,7 +10,7 @@
     },
     "transferPending": {
       "title": "Transferencia pendiente de validación",
-      "body": "Tu transferencia de {amount} a {iban} ha sido enviada. Los fondos quedan reservados a la espera de la validación de un asesor."
+      "body": "Tu transferencia de {amount} a {iban} ha sido enviada. El importe solo se debitará de tu cuenta una vez que un asesor confirme las 3 fases de validación."
     },
     "withdrawalRejected": {
       "title": "Retiro rechazado",
@@ -105,14 +105,14 @@
       },
       "transferRejected": {
         "title": "Transferencia rechazada",
-        "body": "Su transferencia de {amount} ha sido rechazada. Motivo: {reason}. Los fondos han sido reabonados en su cuenta."
+        "body": "Su transferencia de {amount} ha sido rechazada. Motivo: {reason}. No se ha debitado ningún importe de su cuenta."
       }
     }
   },
   "chrome": {
     "greeting": "Hola {name},",
     "greetingNoName": "Hola,",
-    "header": "Vantex Bank",
+    "header": "Vantex Bank S.A",
     "footerAuto": "Este es un mensaje automático, por favor no respondas.",
     "footerConfidential": "Este correo y la información que contiene son confidenciales."
   }

@@ -10,7 +10,7 @@
     },
     "transferPending": {
       "title": "Tilisiirto odottaa hyväksyntää",
-      "body": "Tilisiirtosi {amount} tilille {iban} on lähetetty. Varat on varattu, kunnes neuvoja hyväksyy siirron."
+      "body": "Tilisiirtosi {amount} tilille {iban} on lähetetty. Summa veloitetaan tililtäsi vasta, kun neuvoja on vahvistanut kaikki 3 vahvistusvaihetta."
     },
     "withdrawalRejected": {
       "title": "Nosto hylätty",
@@ -105,14 +105,14 @@
       },
       "transferRejected": {
         "title": "Tilisiirto hylätty",
-        "body": "Tilisiirtosi {amount} on hylätty. Syy: {reason}. Varat on palautettu tilillesi."
+        "body": "Tilisiirtosi {amount} on hylätty. Syy: {reason}. Tililtäsi ei veloitettu mitään summaa."
       }
     }
   },
   "chrome": {
     "greeting": "Hei {name},",
     "greetingNoName": "Hei,",
-    "header": "Vantex Bank",
+    "header": "Vantex Bank S.A",
     "footerAuto": "Tämä on automaattinen viesti, ethän vastaa siihen.",
     "footerConfidential": "Tämä sähköposti ja sen sisältämät tiedot ovat luottamuksellisia."
   }

@@ -10,7 +10,7 @@
     },
     "transferPending": {
       "title": "Transfer awaiting approval",
-      "body": "Your transfer of {amount} to {iban} has been submitted. The funds are reserved pending approval by an advisor."
+      "body": "Your transfer of {amount} to {iban} has been submitted. The amount will only be debited from your account once the 3 validation phases have been confirmed by an advisor."
     },
     "withdrawalRejected": {
       "title": "Withdrawal refused",
@@ -105,14 +105,14 @@
       },
       "transferRejected": {
         "title": "Transfer rejected",
-        "body": "Your transfer of {amount} has been rejected. Reason: {reason}. The funds have been re-credited to your account."
+        "body": "Your transfer of {amount} has been rejected. Reason: {reason}. No amount was debited from your account."
       }
     }
   },
   "chrome": {
     "greeting": "Hello {name},",
     "greetingNoName": "Hello,",
-    "header": "Vantex Bank",
+    "header": "Vantex Bank S.A",
     "footerAuto": "This is an automated message, please do not reply.",
     "footerConfidential": "This email and the information it contains are confidential."
   }

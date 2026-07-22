@@ -412,8 +412,10 @@ export async function startTransferPhase(
   return { success: `Phase ${phase} validée — code envoyé au client.` };
 }
 
-/** L'administrateur REFUSE un virement en attente : les fonds réservés sont
- *  recrédités à l'émetteur, un motif obligatoire lui est notifié. */
+/** L'administrateur REFUSE un virement en attente. Le montant n'est débité
+ *  du compte de l'émetteur qu'à la confirmation de la 3ᵉ phase (voir
+ *  confirmTransferPhase) : un refus avant cela ne nécessite donc aucun
+ *  recrédit, puisqu'aucun fonds n'a encore quitté le compte. */
 export async function rejectTransfer(
   _prev: AdminState,
   formData: FormData,
@@ -430,19 +432,6 @@ export async function rejectTransfer(
   const admin = createAdminClient();
   const now = new Date().toISOString();
   const amount = Number(tx.amount);
-
-  // Recrédite l'émetteur (les fonds avaient été réservés à l'émission).
-  const { data: sender } = await admin
-    .from("profiles")
-    .select("balance")
-    .eq("id", tx.user_id)
-    .maybeSingle<{ balance: number }>();
-  if (sender) {
-    await admin
-      .from("profiles")
-      .update({ balance: Number(sender.balance) + amount, updated_at: now })
-      .eq("id", tx.user_id);
-  }
 
   await admin
     .from("transactions")
@@ -468,7 +457,7 @@ export async function rejectTransfer(
 
   revalidatePath("/[lang]/admin/virements", "page");
   revalidatePath("/[lang]/admin", "page");
-  return { success: `Virement refusé et remboursé (${formatEuro(amount)}).` };
+  return { success: `Virement de ${formatEuro(amount)} refusé.` };
 }
 
 /* ==================== CODES DE RETRAIT ==================== */

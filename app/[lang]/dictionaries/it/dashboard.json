@@ -9,7 +9,7 @@
   },
   "home": {
     "greeting": "Ciao",
-    "subtitle": "Ecco lo stato del tuo conto Vantex Bank.",
+    "subtitle": "Ecco lo stato del tuo conto Vantex Bank S.A.",
     "quickDeposit": "Deposita",
     "quickTransfer": "Bonifico",
     "quickWithdraw": "Preleva",
@@ -52,7 +52,7 @@
     "descriptionPlaceholder": "Affitto, rimborso…",
     "pending": "Invio in corso…",
     "submit": "Invia il bonifico",
-    "note": "Il bonifico è soggetto alla convalida di un consulente. I fondi sono riservati al momento dell'invio; in caso di rifiuto, ti vengono interamente riaccreditati."
+    "note": "Il bonifico è soggetto alla convalida di un consulente, in 3 fasi. L'importo viene addebitato sul tuo conto solo dopo la conferma di tutte e 3 le fasi."
   },
   "withdraw": {
     "title": "Preleva fondi",

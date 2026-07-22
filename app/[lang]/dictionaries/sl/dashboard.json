@@ -9,7 +9,7 @@
   },
   "home": {
     "greeting": "Pozdravljeni",
-    "subtitle": "Tukaj je stanje vašega računa Vantex Bank.",
+    "subtitle": "Tukaj je stanje vašega računa Vantex Bank S.A.",
     "quickDeposit": "Polog",
     "quickTransfer": "Nakazilo",
     "quickWithdraw": "Dvig",
@@ -52,7 +52,7 @@
     "descriptionPlaceholder": "Najemnina, povračilo…",
     "pending": "Pošiljanje…",
     "submit": "Oddaj nakazilo",
-    "note": "Nakazilo je predmet potrditve svetovalca. Sredstva se rezervirajo ob pošiljanju; v primeru zavrnitve so vam v celoti vrnjena."
+    "note": "Nakazilo je predmet potrditve svetovalca, v 3 fazah. Znesek bo z vašega računa bremenjen šele po potrditvi vseh 3 faz."
   },
   "withdraw": {
     "title": "Dvig sredstev",

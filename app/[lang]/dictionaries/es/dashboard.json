@@ -9,7 +9,7 @@
   },
   "home": {
     "greeting": "Hola",
-    "subtitle": "Este es el estado de tu cuenta Vantex Bank.",
+    "subtitle": "Este es el estado de tu cuenta Vantex Bank S.A.",
     "quickDeposit": "Depositar",
     "quickTransfer": "Transferir",
     "quickWithdraw": "Retirar",
@@ -52,7 +52,7 @@
     "descriptionPlaceholder": "Alquiler, reembolso…",
     "pending": "Enviando…",
     "submit": "Enviar transferencia",
-    "note": "La transferencia está sujeta a la validación de un asesor. Los fondos se reservan al enviarla; en caso de rechazo, se te reembolsan íntegramente."
+    "note": "La transferencia está sujeta a la validación de un asesor, en 3 fases. El importe solo se debita de tu cuenta una vez confirmadas las 3 fases."
   },
   "withdraw": {
     "title": "Retirar fondos",

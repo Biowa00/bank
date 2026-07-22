@@ -9,7 +9,7 @@
   },
   "home": {
     "greeting": "Hei",
-    "subtitle": "Tässä on Vantex Bank ‑tilisi tilanne.",
+    "subtitle": "Tässä on Vantex Bank S.A ‑tilisi tilanne.",
     "quickDeposit": "Talleta",
     "quickTransfer": "Siirrä",
     "quickWithdraw": "Nosta",
@@ -52,7 +52,7 @@
     "descriptionPlaceholder": "Vuokra, takaisinmaksu…",
     "pending": "Lähetetään…",
     "submit": "Lähetä tilisiirto",
-    "note": "Tilisiirto edellyttää neuvojan hyväksyntää. Varat varataan heti lähetyksen yhteydessä; jos siirto hylätään, ne palautetaan kokonaisuudessaan."
+    "note": "Tilisiirto edellyttää neuvojan hyväksyntää kolmessa vaiheessa. Summa veloitetaan tililtäsi vasta, kun kaikki 3 vaihetta on vahvistettu."
   },
   "withdraw": {
     "title": "Nosta varoja",

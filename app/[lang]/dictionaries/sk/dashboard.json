@@ -9,7 +9,7 @@
   },
   "home": {
     "greeting": "Ahoj",
-    "subtitle": "Tu je stav vášho účtu Vantex Bank.",
+    "subtitle": "Tu je stav vášho účtu Vantex Bank S.A.",
     "quickDeposit": "Vložiť",
     "quickTransfer": "Previesť",
     "quickWithdraw": "Vybrať",
@@ -52,7 +52,7 @@
     "descriptionPlaceholder": "Nájomné, náhrada…",
     "pending": "Odosielanie…",
     "submit": "Odoslať prevod",
-    "note": "Prevod podlieha schváleniu poradcom. Prostriedky sú rezervované pri odoslaní; v prípade zamietnutia sú vám v plnej výške vrátené."
+    "note": "Prevod podlieha schváleniu poradcom, v 3 fázach. Suma bude z vášho účtu odpísaná až po potvrdení všetkých 3 fáz."
   },
   "withdraw": {
     "title": "Výber prostriedkov",

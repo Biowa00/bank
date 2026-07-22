@@ -9,7 +9,7 @@
   },
   "home": {
     "greeting": "Hallo",
-    "subtitle": "Hier ist der Status Ihres Vantex Bank-Kontos.",
+    "subtitle": "Hier ist der Status Ihres Vantex Bank S.A-Kontos.",
     "quickDeposit": "Einzahlen",
     "quickTransfer": "Überweisen",
     "quickWithdraw": "Abheben",
@@ -52,7 +52,7 @@
     "descriptionPlaceholder": "Miete, Rückzahlung…",
     "pending": "Wird gesendet…",
     "submit": "Überweisung absenden",
-    "note": "Die Überweisung unterliegt der Freigabe durch einen Berater. Die Mittel werden ab dem Absenden reserviert; bei Ablehnung werden sie Ihnen vollständig zurückerstattet."
+    "note": "Die Überweisung unterliegt der Freigabe durch einen Berater, in 3 Phasen. Der Betrag wird erst nach Bestätigung aller 3 Phasen von Ihrem Konto abgebucht."
   },
   "withdraw": {
     "title": "Geld abheben",

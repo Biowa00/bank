@@ -9,7 +9,7 @@
   },
   "home": {
     "greeting": "Sveiki",
-    "subtitle": "Štai jūsų Vantex Bank sąskaitos būsena.",
+    "subtitle": "Štai jūsų Vantex Bank S.A sąskaitos būsena.",
     "quickDeposit": "Įnešti",
     "quickTransfer": "Pervesti",
     "quickWithdraw": "Išsiimti",
@@ -52,7 +52,7 @@
     "descriptionPlaceholder": "Nuoma, grąžinimas…",
     "pending": "Siunčiama…",
     "submit": "Pateikti pervedimą",
-    "note": "Pervedimą turi patvirtinti konsultantas. Lėšos rezervuojamos iškart išsiuntus; atmetus jos visiškai grąžinamos."
+    "note": "Pervedimą turi patvirtinti konsultantas per 3 etapus. Suma iš jūsų sąskaitos bus nurašyta tik patvirtinus visus 3 etapus."
   },
   "withdraw": {
     "title": "Išsiimti lėšų",

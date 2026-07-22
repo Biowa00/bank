@@ -88,8 +88,11 @@ export async function signUp(
     email,
     password,
     options: {
-      // Le lien de confirmation ouvre la session puis mène au dashboard.
-      emailRedirectTo: `${origin}/auth/callback?next=/${locale}/dashboard`,
+      // Page intermédiaire à clic requis (voir app/auth/confirm) : évite que
+      // le pré-chargement des liens par certains clients mail (Apple Mail/
+      // Safari Link Tracking Protection) ne consomme le lien à usage unique
+      // avant le vrai clic de l'utilisateur.
+      emailRedirectTo: `${origin}/auth/confirm?next=/${locale}/dashboard`,
       data: {
         first_name: firstName,
         last_name: lastName,
@@ -220,10 +223,10 @@ export async function requestPasswordReset(
   const origin = await getOrigin();
   const locale = await getRequestLocale();
   const supabase = await createClient();
-  // redirectTo pointe vers notre route d'échange, qui ouvre la session de
-  // récupération puis renvoie vers la page de nouveau mot de passe (préfixée).
+  // Page intermédiaire à clic requis (voir app/auth/confirm), pour la même
+  // raison que pour la confirmation d'inscription (pré-chargement des liens).
   await supabase.auth.resetPasswordForEmail(email, {
-    redirectTo: `${origin}/auth/callback?next=/${locale}/reinitialiser-mot-de-passe`,
+    redirectTo: `${origin}/auth/confirm?next=/${locale}/reinitialiser-mot-de-passe`,
   });
 
   // Réponse volontairement générique (ne révèle pas si le compte existe).

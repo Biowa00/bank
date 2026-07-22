@@ -23,13 +23,13 @@ export function Logo({
           />
         </svg>
       </span>
-      <span className={`text-lg ${textColor}`}>Vantex Bank</span>
+      <span className={`text-lg ${textColor}`}>Vantex Bank S.A</span>
     </span>
   );
 
   if (href === null) return inner;
   return (
-    <Link href={href} aria-label="Vantex Bank — accueil">
+    <Link href={href} aria-label="Vantex Bank S.A — accueil">
       {inner}
     </Link>
   );

@@ -10,7 +10,7 @@
     },
     "transferPending": {
       "title": "Nakazilo čaka na potrditev",
-      "body": "Vaše nakazilo {amount} na {iban} je bilo oddano. Sredstva so rezervirana do potrditve svetovalca."
+      "body": "Vaše nakazilo {amount} na {iban} je bilo oddano. Znesek bo z vašega računa bremenjen šele, ko svetovalec potrdi vse 3 faze."
     },
     "withdrawalRejected": {
       "title": "Dvig zavrnjen",
@@ -105,14 +105,14 @@
       },
       "transferRejected": {
         "title": "Nakazilo zavrnjeno",
-        "body": "Vaše nakazilo {amount} je bilo zavrnjeno. Razlog: {reason}. Sredstva so bila vrnjena na vaš račun."
+        "body": "Vaše nakazilo {amount} je bilo zavrnjeno. Razlog: {reason}. Z vašega računa ni bil bremenjen noben znesek."
       }
     }
   },
   "chrome": {
     "greeting": "Pozdravljeni, {name},",
     "greetingNoName": "Pozdravljeni,",
-    "header": "Vantex Bank",
+    "header": "Vantex Bank S.A",
     "footerAuto": "To je samodejno sporočilo, prosimo, ne odgovarjajte nanj.",
     "footerConfidential": "To e-poštno sporočilo in informacije v njem so zaupni."
   }

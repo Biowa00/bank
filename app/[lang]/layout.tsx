@@ -21,9 +21,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vantex Bank — Banque en ligne",
+  title: "Vantex Bank S.A — Banque en ligne",
   description:
-    "Vantex Bank, la néobanque nouvelle génération : compte, IBAN, virements et suivi en temps réel.",
+    "Vantex Bank S.A, la néobanque nouvelle génération : compte, IBAN, virements et suivi en temps réel.",
 };
 
 /** Pré-génère une route statique par langue supportée. */

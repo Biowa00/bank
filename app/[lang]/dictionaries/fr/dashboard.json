@@ -9,7 +9,7 @@
   },
   "home": {
     "greeting": "Bonjour",
-    "subtitle": "Voici l'état de votre compte Vantex Bank.",
+    "subtitle": "Voici l'état de votre compte Vantex Bank S.A.",
     "quickDeposit": "Déposer",
     "quickTransfer": "Virer",
     "quickWithdraw": "Retirer",
@@ -52,7 +52,7 @@
     "descriptionPlaceholder": "Loyer, remboursement…",
     "pending": "Envoi…",
     "submit": "Soumettre le virement",
-    "note": "Le virement est soumis à validation par un conseiller. Les fonds sont réservés dès l'envoi ; en cas de refus, ils vous sont intégralement recrédités."
+    "note": "Le virement est soumis à validation par un conseiller, en 3 phases. Le montant n'est débité de votre compte qu'une fois les 3 phases confirmées."
   },
   "withdraw": {
     "title": "Retirer des fonds",

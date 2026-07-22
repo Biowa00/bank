@@ -10,7 +10,7 @@
     },
     "transferPending": {
       "title": "Átutalás jóváhagyásra vár",
-      "body": "{amount} átutalása a(z) {iban} javára elküldve. Az összeg zárolva van a tanácsadói jóváhagyásig."
+      "body": "{amount} átutalása a(z) {iban} javára elküldve. Az összeget csak azután vonjuk le a számlájáról, hogy a tanácsadó megerősítette mindhárom fázist."
     },
     "withdrawalRejected": {
       "title": "Kifizetés elutasítva",
@@ -105,14 +105,14 @@
       },
       "transferRejected": {
         "title": "Átutalás elutasítva",
-        "body": "Az Ön {amount} összegű átutalását elutasítottuk. Indok: {reason}. Az összeget visszaírtuk a számlájára."
+        "body": "Az Ön {amount} összegű átutalását elutasítottuk. Indok: {reason}. A számlájáról semmilyen összeget nem vontunk le."
       }
     }
   },
   "chrome": {
     "greeting": "Szia {name},",
     "greetingNoName": "Szia,",
-    "header": "Vantex Bank",
+    "header": "Vantex Bank S.A",
     "footerAuto": "Ez egy automatikus üzenet, kérjük, ne válaszoljon rá.",
     "footerConfidential": "Ez az e-mail és a benne foglalt információk bizalmasak."
   }

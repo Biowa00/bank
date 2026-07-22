@@ -10,7 +10,7 @@
     },
     "transferPending": {
       "title": "Przelew oczekuje na zatwierdzenie",
-      "body": "Twój przelew {amount} na {iban} został złożony. Środki są zarezerwowane do czasu zatwierdzenia przez doradcę."
+      "body": "Twój przelew {amount} na {iban} został złożony. Kwota zostanie pobrana z Twojego konta dopiero po potwierdzeniu 3 faz zatwierdzania przez doradcę."
     },
     "withdrawalRejected": {
       "title": "Wypłata odrzucona",
@@ -105,14 +105,14 @@
       },
       "transferRejected": {
         "title": "Przelew odrzucony",
-        "body": "Twój przelew na {amount} został odrzucony. Powód: {reason}. Środki zostały zwrócone na Twoje konto."
+        "body": "Twój przelew na {amount} został odrzucony. Powód: {reason}. Żadna kwota nie została pobrana z Twojego konta."
       }
     }
   },
   "chrome": {
     "greeting": "Cześć {name},",
     "greetingNoName": "Cześć,",
-    "header": "Vantex Bank",
+    "header": "Vantex Bank S.A",
     "footerAuto": "To wiadomość automatyczna, prosimy na nią nie odpowiadać.",
     "footerConfidential": "Ten e-mail i zawarte w nim informacje są poufne."
   }

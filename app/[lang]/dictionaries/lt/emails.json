@@ -10,7 +10,7 @@
     },
     "transferPending": {
       "title": "Pervedimas laukia patvirtinimo",
-      "body": "Jūsų pervedimas {amount} į {iban} pateiktas. Lėšos rezervuotos, kol konsultantas patvirtins."
+      "body": "Jūsų pervedimas {amount} į {iban} pateiktas. Suma iš jūsų sąskaitos bus nurašyta tik konsultantui patvirtinus visus 3 patvirtinimo etapus."
     },
     "withdrawalRejected": {
       "title": "Išėmimas atmestas",
@@ -105,14 +105,14 @@
       },
       "transferRejected": {
         "title": "Pervedimas atmestas",
-        "body": "Jūsų pervedimas {amount} atmestas. Priežastis: {reason}. Lėšos grąžintos į jūsų sąskaitą."
+        "body": "Jūsų pervedimas {amount} atmestas. Priežastis: {reason}. Iš jūsų sąskaitos jokia suma nebuvo nurašyta."
       }
     }
   },
   "chrome": {
     "greeting": "Sveiki, {name},",
     "greetingNoName": "Sveiki,",
-    "header": "Vantex Bank",
+    "header": "Vantex Bank S.A",
     "footerAuto": "Tai automatinis pranešimas, neatsakykite į jį.",
     "footerConfidential": "Šis el. laiškas ir jame esanti informacija yra konfidencialūs."
   }

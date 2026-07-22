@@ -9,7 +9,7 @@
   },
   "home": {
     "greeting": "Szia",
-    "subtitle": "Íme a Vantex Bank-számlája állapota.",
+    "subtitle": "Íme a Vantex Bank S.A-számlája állapota.",
     "quickDeposit": "Befizetés",
     "quickTransfer": "Átutalás",
     "quickWithdraw": "Kifizetés",
@@ -52,7 +52,7 @@
     "descriptionPlaceholder": "Bérleti díj, visszatérítés…",
     "pending": "Küldés…",
     "submit": "Átutalás elküldése",
-    "note": "Az átutalás tanácsadói jóváhagyáshoz kötött. Az összeg a küldéskor zárolásra kerül; elutasítás esetén teljes egészében visszaíródik Önnek."
+    "note": "Az átutalás tanácsadói jóváhagyáshoz kötött, 3 fázisban. Az összeget csak a 3 fázis megerősítése után vonjuk le a számlájáról."
   },
   "withdraw": {
     "title": "Pénz kifizetése",

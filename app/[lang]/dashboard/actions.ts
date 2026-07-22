@@ -116,16 +116,11 @@ export async function transfer(
     .neq("role", "admin")
     .maybeSingle<{ full_name: string | null }>();
 
-  // Les fonds sont RÉSERVÉS immédiatement (débit) puis le virement reste
-  // « en attente » jusqu'à la décision de l'administrateur. En cas de refus,
-  // les fonds sont recrédités.
-  const senderBalance = Number(profile.balance) - amount;
-  const { error: upErr } = await admin
-    .from("profiles")
-    .update({ balance: senderBalance, updated_at: new Date().toISOString() })
-    .eq("id", userId);
-  if (upErr) return { error: E.transfer.failed };
-
+  // Le solde n'est PAS débité à la soumission : le virement reste « en
+  // attente » et le montant n'est prélevé qu'à la confirmation de la 3ᵉ et
+  // dernière phase par le client (voir confirmTransferPhase). Le contrôle de
+  // solde suffisant ci-dessus n'est qu'indicatif ; il est revérifié à
+  // l'exécution, au cas où le solde aurait changé entre-temps.
   await admin.from("transactions").insert({
     user_id: userId,
     type: "transfer",
@@ -490,8 +485,40 @@ export async function confirmTransferPhase(
 
   const amount = Number(tx.amount);
 
-  // 3ᵉ phase confirmée → exécution effective du virement.
+  // 3ᵉ phase confirmée → exécution effective du virement. C'est ICI, et
+  // seulement ici, que le montant quitte le compte de l'émetteur : le solde
+  // n'a jamais été touché avant la confirmation des 3 phases.
   if (currentPhase === PHASE_TOTAL) {
+    const { data: senderRow } = await admin
+      .from("profiles")
+      .select("balance")
+      .eq("id", userId)
+      .maybeSingle<{ balance: number }>();
+    const senderBalance = Number(senderRow?.balance ?? 0);
+
+    // Solde insuffisant au moment de l'exécution (a pu changer depuis la
+    // soumission, puisque les fonds n'étaient pas réservés) → le virement
+    // échoue, sans qu'aucun montant n'ait été débité.
+    if (senderBalance < amount) {
+      await admin
+        .from("transactions")
+        .update({
+          status: "rejected",
+          decline_reason: "Solde insuffisant au moment de l'exécution du virement.",
+          reviewed_at: nowIso,
+        })
+        .eq("id", tx.id);
+      await notify(userId, dict.emails.notify.transferRejected.title, E.transfer.insufficient);
+      revalidatePath("/[lang]/dashboard", "layout");
+      revalidatePath("/[lang]/admin/virements", "page");
+      return { error: E.transfer.insufficient, phase: currentPhase };
+    }
+
+    await admin
+      .from("profiles")
+      .update({ balance: senderBalance - amount, updated_at: nowIso })
+      .eq("id", userId);
+
     if (tx.counterparty_iban) {
       const { data: recipient } = await admin
         .from("profiles")

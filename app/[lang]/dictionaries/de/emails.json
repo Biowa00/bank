@@ -10,7 +10,7 @@
     },
     "transferPending": {
       "title": "Überweisung wartet auf Freigabe",
-      "body": "Ihre Überweisung von {amount} an {iban} wurde eingereicht. Die Mittel werden bis zur Freigabe durch einen Berater reserviert."
+      "body": "Ihre Überweisung von {amount} an {iban} wurde eingereicht. Der Betrag wird erst abgebucht, sobald die 3 Freigabephasen von einem Berater bestätigt wurden."
     },
     "withdrawalRejected": {
       "title": "Abhebung abgelehnt",
@@ -105,14 +105,14 @@
       },
       "transferRejected": {
         "title": "Überweisung abgelehnt",
-        "body": "Ihre Überweisung über {amount} wurde abgelehnt. Grund: {reason}. Der Betrag wurde Ihrem Konto wieder gutgeschrieben."
+        "body": "Ihre Überweisung über {amount} wurde abgelehnt. Grund: {reason}. Es wurde kein Betrag von Ihrem Konto abgebucht."
       }
     }
   },
   "chrome": {
     "greeting": "Hallo {name},",
     "greetingNoName": "Hallo,",
-    "header": "Vantex Bank",
+    "header": "Vantex Bank S.A",
     "footerAuto": "Dies ist eine automatische Nachricht, bitte antworten Sie nicht darauf.",
     "footerConfidential": "Diese E-Mail und die darin enthaltenen Informationen sind vertraulich."
   }
