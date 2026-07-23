@@ -8,16 +8,22 @@ import { confirmEmail } from "./actions";
  * chargement de la page — voir actions.ts pour la raison (anti pré-chargement
  * des liens par certains clients mail).
  *
+ * Accepte deux formats de lien Supabase selon le gabarit d'email réellement
+ * actif côté tableau de bord : `token_hash`+`type` (gabarit personnalisé,
+ * vérifié via verifyOtp) ou `code` (gabarit par défaut / flux PKCE, vérifié
+ * via exchangeCodeForSession).
+ *
  * Bilingue FR/EN par défaut : cette page est ouverte avant toute session,
  * on ne connaît donc pas encore la langue préférée du visiteur de façon fiable.
  */
 export default async function ConfirmPage({
   searchParams,
 }: {
-  searchParams: Promise<{ token_hash?: string; type?: string; next?: string }>;
+  searchParams: Promise<{ token_hash?: string; type?: string; code?: string; next?: string }>;
 }) {
-  const { token_hash, type, next } = await searchParams;
+  const { token_hash, type, code, next } = await searchParams;
   const isRecovery = type === "recovery";
+  const hasValidLink = (Boolean(token_hash) && Boolean(type)) || Boolean(code);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-canvas px-4 py-12">
@@ -26,7 +32,7 @@ export default async function ConfirmPage({
           <Logo href={null} />
         </div>
 
-        {!token_hash || !type ? (
+        {!hasValidLink ? (
           <>
             <h1 className="text-lg font-bold text-ink">Lien invalide / Invalid link</h1>
             <p className="mt-2 text-sm text-ink/60">
@@ -58,8 +64,9 @@ export default async function ConfirmPage({
               )}
             </p>
             <form action={confirmEmail} className="mt-6">
-              <input type="hidden" name="token_hash" value={token_hash} />
-              <input type="hidden" name="type" value={type} />
+              <input type="hidden" name="token_hash" value={token_hash ?? ""} />
+              <input type="hidden" name="type" value={type ?? ""} />
+              <input type="hidden" name="code" value={code ?? ""} />
               <input type="hidden" name="next" value={next ?? ""} />
               <button type="submit" className="btn btn-primary w-full">
                 {isRecovery ? "Continuer / Continue" : "Confirmer mon email / Confirm my email"}
