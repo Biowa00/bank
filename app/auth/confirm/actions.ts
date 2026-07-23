@@ -3,6 +3,7 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { defaultLocale, isLocale, LOCALE_COOKIE } from "@/lib/i18n/config";
+import { safeNextPath } from "@/lib/safeRedirect";
 import { headers } from "next/headers";
 
 /**
@@ -44,6 +45,5 @@ export async function confirmEmail(formData: FormData): Promise<void> {
     redirect(`/${locale}/login?error=lien-invalide`);
   }
 
-  const safeNext = next && next.startsWith("/") ? next : `/${locale}/dashboard`;
-  redirect(safeNext);
+  redirect(safeNextPath(next, `/${locale}/dashboard`));
 }

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { defaultLocale, isLocale, LOCALE_COOKIE } from "@/lib/i18n/config";
+import { safeNextPath } from "@/lib/safeRedirect";
 
 /**
  * Échange le `code` reçu par email (récupération de mot de passe, confirmation)
@@ -21,8 +22,7 @@ export async function GET(request: Request) {
     const supabase = await createClient();
     const { error } = await supabase.auth.exchangeCodeForSession(code);
     if (!error) {
-      const safeNext =
-        next && next.startsWith("/") ? next : `/${locale}/dashboard`;
+      const safeNext = safeNextPath(next, `/${locale}/dashboard`);
       return NextResponse.redirect(`${origin}${safeNext}`);
     }
   }

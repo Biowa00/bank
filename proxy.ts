@@ -4,6 +4,20 @@ import { getLocale, localeFromPathname } from "@/lib/i18n/detect";
 import { LOCALE_COOKIE, LOCALE_COOKIE_MAX_AGE } from "@/lib/i18n/config";
 
 /**
+ * Fichiers système/SEO servis à la racine, sans préfixe de langue. Sans cette
+ * exemption, le proxy redirigerait p.ex. `/robots.txt` → `/fr/robots.txt`
+ * (inexistant → 404) alors que les moteurs de recherche les attendent à la
+ * racine.
+ */
+const ROOT_SYSTEM_FILES = new Set([
+  "/robots.txt",
+  "/sitemap.xml",
+  "/manifest.webmanifest",
+  "/icon",
+  "/apple-icon",
+]);
+
+/**
  * Chemins servis tels quels, sans préfixe de langue : endpoints machine
  * (callback/confirmation d'auth, icônes générées) qui ne rendent pas d'UI
  * localisée. `/auth/confirm` reste bilingue FR/EN volontairement (page
@@ -13,8 +27,8 @@ function isExemptPath(pathname: string): boolean {
   return (
     pathname.startsWith("/auth/") ||
     pathname.startsWith("/api") ||
-    pathname === "/icon" ||
-    pathname === "/apple-icon"
+    pathname.startsWith("/.well-known/") ||
+    ROOT_SYSTEM_FILES.has(pathname)
   );
 }
 

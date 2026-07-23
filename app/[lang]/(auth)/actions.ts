@@ -6,6 +6,7 @@ import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { isPasswordValid } from "@/lib/password";
 import { getRequestLocale, localizedRedirect } from "@/lib/i18n/server";
+import { safeNextPath } from "@/lib/safeRedirect";
 import { getDictionary, type Dictionary } from "../dictionaries";
 
 export type AuthState = {
@@ -164,7 +165,7 @@ export async function signIn(
 ): Promise<AuthState> {
   const email = String(formData.get("email") ?? "").trim().toLowerCase();
   const password = String(formData.get("password") ?? "");
-  const next = String(formData.get("next") ?? "/dashboard");
+  const nextRaw = String(formData.get("next") ?? "");
 
   const E = await authErrors();
   if (!email || !password) return { error: E.credentialsRequired };
@@ -178,9 +179,9 @@ export async function signIn(
   const locale = await getRequestLocale();
   await supabase.auth.updateUser({ data: { locale } }).catch(() => {});
 
-  // `next` est déjà préfixé de la langue (posé par le proxy) ; sinon repli.
-  if (next.startsWith("/")) redirect(next);
-  return localizedRedirect("/dashboard");
+  // `next` est déjà préfixé de la langue (posé par le proxy) ; validé pour
+  // empêcher toute redirection ouverte (`//evil.com`), repli sur le dashboard.
+  redirect(safeNextPath(nextRaw, `/${locale}/dashboard`));
 }
 
 /** Connexion admin : vérifie le rôle après authentification. */
