@@ -150,7 +150,7 @@ function HeroCard({ t, c }: { t: L; c: C }) {
           <p className="mt-1 text-4xl font-bold tracking-tight">4 250,00 €</p>
         </div>
         <div className="mt-8 font-mono text-sm tracking-widest text-white/80">
-          FR76 3000 4021 8850 0100
+          DE89 3704 0044 0532 0130 00
         </div>
         <div className="mt-2 flex items-center justify-between text-xs text-white/50">
           <span>{c.brand.toUpperCase()}</span>

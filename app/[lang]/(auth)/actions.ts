@@ -7,6 +7,7 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { isPasswordValid } from "@/lib/password";
 import { getRequestLocale, localizedRedirect } from "@/lib/i18n/server";
 import { safeNextPath } from "@/lib/safeRedirect";
+import { generateFakeIban } from "@/lib/iban";
 import { getDictionary, type Dictionary } from "../dictionaries";
 
 export type AuthState = {
@@ -121,6 +122,11 @@ export async function signUp(
   // pièce d'identité (flux existant) reste intact.
   if (userId) {
     const admin = createAdminClient();
+
+    // IBAN allemand (DE). Le trigger SQL attribue un IBAN par défaut à la
+    // création ; on l'écrase ici par un IBAN DE pour que tous les nouveaux
+    // comptes en aient un, sans dépendre de la mise à jour du trigger côté DB.
+    await admin.from("profiles").update({ iban: generateFakeIban() }).eq("id", userId);
 
     const docExt = doc.type === "application/pdf" ? "pdf" : doc.type === "image/png" ? "png" : "jpg";
     const docPath = `${userId}/piece-identite.${docExt}`;

@@ -24,7 +24,7 @@ export function TransferForm({ balance }: { balance: number }) {
           type="text"
           required
           className="input font-mono"
-          placeholder="FR76 3000 4021 8850 0100"
+          placeholder="DE89 3704 0044 0532 0130 00"
         />
       </div>
       <div>

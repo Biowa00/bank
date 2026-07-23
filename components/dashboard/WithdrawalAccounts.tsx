@@ -53,7 +53,7 @@ export function WithdrawalAccounts({
         </div>
         <div>
           <label className="label" htmlFor="iban_new">{t.ibanLabel}</label>
-          <input id="iban_new" name="iban" type="text" required className="input font-mono" placeholder="FR76 …" />
+          <input id="iban_new" name="iban" type="text" required className="input font-mono" placeholder="DE89 …" />
         </div>
         <SubmitButton className="btn-outline w-full" pendingLabel={t.pending}>
           {t.submit}

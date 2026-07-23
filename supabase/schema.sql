@@ -212,11 +212,12 @@ declare
   bban text := '';
   i int;
 begin
-  -- IBAN FR simulé : FR76 + 21 chiffres (format valide en longueur, NON routable).
-  for i in 1..21 loop
+  -- IBAN DE simulé : DE + 20 chiffres = 22 caractères (longueur d'un IBAN
+  -- allemand réel, format valide en longueur mais NON routable).
+  for i in 1..20 loop
     bban := bban || floor(random()*10)::int::text;
   end loop;
-  return 'FR76' || bban;
+  return 'DE' || bban;
 end $$;
 
 create or replace function public.handle_new_user()
