@@ -152,5 +152,18 @@
     "transfersBlocked": "Nakazila na vašem računu so blokirana.",
     "withdrawRestricted": "Račun omejen: dvigi niso na voljo.",
     "withdrawalsBlocked": "Dvigi na vašem računu so blokirani."
+  },
+  "nav": {
+    "overview": "Pregled",
+    "home": "Domov",
+    "deposit": "Polog",
+    "transfer": "Nakazilo",
+    "withdraw": "Dvig",
+    "history": "Zgodovina",
+    "notifications": "Obvestila",
+    "notificationsShort": "Obvestila",
+    "profile": "Profil",
+    "more": "Več",
+    "moreOptions": "Več možnosti"
   }
 }

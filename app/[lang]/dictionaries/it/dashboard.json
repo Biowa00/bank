@@ -152,5 +152,18 @@
     "transfersBlocked": "I bonifici sono bloccati sul tuo conto.",
     "withdrawRestricted": "Conto limitato: prelievi non disponibili.",
     "withdrawalsBlocked": "I prelievi sono bloccati sul tuo conto."
+  },
+  "nav": {
+    "overview": "Panoramica",
+    "home": "Home",
+    "deposit": "Deposito",
+    "transfer": "Bonifico",
+    "withdraw": "Prelievo",
+    "history": "Storico",
+    "notifications": "Notifiche",
+    "notificationsShort": "Avvisi",
+    "profile": "Profilo",
+    "more": "Altro",
+    "moreOptions": "Altre opzioni"
   }
 }

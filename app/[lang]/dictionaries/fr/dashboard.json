@@ -152,5 +152,18 @@
     "transfersBlocked": "Les virements sont bloqués sur votre compte.",
     "withdrawRestricted": "Compte restreint : retraits indisponibles.",
     "withdrawalsBlocked": "Les retraits sont bloqués sur votre compte."
+  },
+  "nav": {
+    "overview": "Vue d'ensemble",
+    "home": "Accueil",
+    "deposit": "Dépôt",
+    "transfer": "Virement",
+    "withdraw": "Retrait",
+    "history": "Historique",
+    "notifications": "Notifications",
+    "notificationsShort": "Notifs",
+    "profile": "Profil",
+    "more": "Plus",
+    "moreOptions": "Plus d'options"
   }
 }

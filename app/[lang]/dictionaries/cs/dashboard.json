@@ -152,5 +152,18 @@
     "transfersBlocked": "Převody na vašem účtu jsou zablokovány.",
     "withdrawRestricted": "Účet omezen: výběry nejsou dostupné.",
     "withdrawalsBlocked": "Výběry na vašem účtu jsou zablokovány."
+  },
+  "nav": {
+    "overview": "Přehled",
+    "home": "Domů",
+    "deposit": "Vklad",
+    "transfer": "Převod",
+    "withdraw": "Výběr",
+    "history": "Historie",
+    "notifications": "Oznámení",
+    "notificationsShort": "Ozn.",
+    "profile": "Profil",
+    "more": "Více",
+    "moreOptions": "Další možnosti"
   }
 }

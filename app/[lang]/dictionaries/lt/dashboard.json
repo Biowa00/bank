@@ -152,5 +152,18 @@
     "transfersBlocked": "Pervedimai jūsų sąskaitoje užblokuoti.",
     "withdrawRestricted": "Paskyra apribota: išėmimai negalimi.",
     "withdrawalsBlocked": "Išėmimai jūsų sąskaitoje užblokuoti."
+  },
+  "nav": {
+    "overview": "Apžvalga",
+    "home": "Pradžia",
+    "deposit": "Įnašas",
+    "transfer": "Pervedimas",
+    "withdraw": "Išėmimas",
+    "history": "Istorija",
+    "notifications": "Pranešimai",
+    "notificationsShort": "Prane.",
+    "profile": "Profilis",
+    "more": "Daugiau",
+    "moreOptions": "Daugiau parinkčių"
   }
 }

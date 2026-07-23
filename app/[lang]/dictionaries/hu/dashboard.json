@@ -152,5 +152,18 @@
     "transfersBlocked": "Az átutalások le vannak tiltva a számláján.",
     "withdrawRestricted": "Fiók korlátozva: a kifizetések nem érhetők el.",
     "withdrawalsBlocked": "A kifizetések le vannak tiltva a számláján."
+  },
+  "nav": {
+    "overview": "Áttekintés",
+    "home": "Kezdőlap",
+    "deposit": "Befizetés",
+    "transfer": "Átutalás",
+    "withdraw": "Pénzfelvétel",
+    "history": "Előzmények",
+    "notifications": "Értesítések",
+    "notificationsShort": "Értes.",
+    "profile": "Profil",
+    "more": "Több",
+    "moreOptions": "További lehetőségek"
   }
 }

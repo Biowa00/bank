@@ -152,5 +152,18 @@
     "transfersBlocked": "Las transferencias están bloqueadas en tu cuenta.",
     "withdrawRestricted": "Cuenta restringida: retiros no disponibles.",
     "withdrawalsBlocked": "Los retiros están bloqueados en tu cuenta."
+  },
+  "nav": {
+    "overview": "Resumen",
+    "home": "Inicio",
+    "deposit": "Depósito",
+    "transfer": "Transferencia",
+    "withdraw": "Retirada",
+    "history": "Historial",
+    "notifications": "Notificaciones",
+    "notificationsShort": "Avisos",
+    "profile": "Perfil",
+    "more": "Más",
+    "moreOptions": "Más opciones"
   }
 }

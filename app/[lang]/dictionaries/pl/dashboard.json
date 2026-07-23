@@ -152,5 +152,18 @@
     "transfersBlocked": "Przelewy są zablokowane na Twoim koncie.",
     "withdrawRestricted": "Konto ograniczone: wypłaty niedostępne.",
     "withdrawalsBlocked": "Wypłaty są zablokowane na Twoim koncie."
+  },
+  "nav": {
+    "overview": "Przegląd",
+    "home": "Start",
+    "deposit": "Wpłata",
+    "transfer": "Przelew",
+    "withdraw": "Wypłata",
+    "history": "Historia",
+    "notifications": "Powiadomienia",
+    "notificationsShort": "Alerty",
+    "profile": "Profil",
+    "more": "Więcej",
+    "moreOptions": "Więcej opcji"
   }
 }

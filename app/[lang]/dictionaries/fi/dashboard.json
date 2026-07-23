@@ -152,5 +152,18 @@
     "transfersBlocked": "Tilisiirrot on estetty tililläsi.",
     "withdrawRestricted": "Tili rajoitettu: nostot eivät käytettävissä.",
     "withdrawalsBlocked": "Nostot on estetty tililläsi."
+  },
+  "nav": {
+    "overview": "Yleiskatsaus",
+    "home": "Etusivu",
+    "deposit": "Talletus",
+    "transfer": "Tilisiirto",
+    "withdraw": "Nosto",
+    "history": "Historia",
+    "notifications": "Ilmoitukset",
+    "notificationsShort": "Ilm.",
+    "profile": "Profiili",
+    "more": "Lisää",
+    "moreOptions": "Lisää vaihtoehtoja"
   }
 }

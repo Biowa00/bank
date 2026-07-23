@@ -152,5 +152,18 @@
     "transfersBlocked": "Transfers are blocked on your account.",
     "withdrawRestricted": "Account restricted: withdrawals unavailable.",
     "withdrawalsBlocked": "Withdrawals are blocked on your account."
+  },
+  "nav": {
+    "overview": "Overview",
+    "home": "Home",
+    "deposit": "Deposit",
+    "transfer": "Transfer",
+    "withdraw": "Withdraw",
+    "history": "History",
+    "notifications": "Notifications",
+    "notificationsShort": "Alerts",
+    "profile": "Profile",
+    "more": "More",
+    "moreOptions": "More options"
   }
 }

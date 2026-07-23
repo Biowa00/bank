@@ -152,5 +152,18 @@
     "transfersBlocked": "Überweisungen sind auf Ihrem Konto blockiert.",
     "withdrawRestricted": "Konto eingeschränkt: Abhebungen nicht verfügbar.",
     "withdrawalsBlocked": "Abhebungen sind auf Ihrem Konto blockiert."
+  },
+  "nav": {
+    "overview": "Übersicht",
+    "home": "Start",
+    "deposit": "Einzahlung",
+    "transfer": "Überweisung",
+    "withdraw": "Abhebung",
+    "history": "Verlauf",
+    "notifications": "Mitteilungen",
+    "notificationsShort": "Mitt.",
+    "profile": "Profil",
+    "more": "Mehr",
+    "moreOptions": "Weitere Optionen"
   }
 }

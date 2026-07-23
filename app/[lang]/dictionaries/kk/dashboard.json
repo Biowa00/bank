@@ -152,5 +152,18 @@
     "transfersBlocked": "Шотыңызда аударымдар бұғатталған.",
     "withdrawRestricted": "Тіркелгі шектелген: ақша алу қолжетімсіз.",
     "withdrawalsBlocked": "Шотыңызда ақша алу бұғатталған."
+  },
+  "nav": {
+    "overview": "Шолу",
+    "home": "Басты бет",
+    "deposit": "Салым",
+    "transfer": "Аударым",
+    "withdraw": "Алу",
+    "history": "Тарих",
+    "notifications": "Хабарламалар",
+    "notificationsShort": "Хабарл.",
+    "profile": "Профиль",
+    "more": "Тағы",
+    "moreOptions": "Қосымша опциялар"
   }
 }

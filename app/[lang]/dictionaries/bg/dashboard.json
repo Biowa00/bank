@@ -152,5 +152,18 @@
     "transfersBlocked": "Преводите по вашата сметка са блокирани.",
     "withdrawRestricted": "Ограничена сметка: тегленията не са налични.",
     "withdrawalsBlocked": "Тегленията по вашата сметка са блокирани."
+  },
+  "nav": {
+    "overview": "Преглед",
+    "home": "Начало",
+    "deposit": "Депозит",
+    "transfer": "Превод",
+    "withdraw": "Теглене",
+    "history": "История",
+    "notifications": "Известия",
+    "notificationsShort": "Известия",
+    "profile": "Профил",
+    "more": "Още",
+    "moreOptions": "Още опции"
   }
 }
