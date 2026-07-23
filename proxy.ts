@@ -5,10 +5,17 @@ import { LOCALE_COOKIE, LOCALE_COOKIE_MAX_AGE } from "@/lib/i18n/config";
 
 /**
  * Chemins servis tels quels, sans préfixe de langue : endpoints machine
- * (callback d'auth) qui ne rendent pas d'UI.
+ * (callback/confirmation d'auth, icônes générées) qui ne rendent pas d'UI
+ * localisée. `/auth/confirm` reste bilingue FR/EN volontairement (page
+ * ouverte avant toute session, langue pas encore fiable).
  */
 function isExemptPath(pathname: string): boolean {
-  return pathname.startsWith("/auth/callback") || pathname.startsWith("/api");
+  return (
+    pathname.startsWith("/auth/") ||
+    pathname.startsWith("/api") ||
+    pathname === "/icon" ||
+    pathname === "/apple-icon"
+  );
 }
 
 export async function proxy(request: NextRequest) {
