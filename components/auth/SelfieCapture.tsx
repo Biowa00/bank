@@ -61,8 +61,17 @@ export function SelfieCapture() {
     const canvas = canvasRef.current;
     if (!video || !canvas) return;
 
-    const w = video.videoWidth || 640;
-    const h = video.videoHeight || 480;
+    // Plafonne la résolution de capture : une webcam de PC filme souvent en
+    // bien plus haute définition qu'une caméra de téléphone, ce qui peut faire
+    // dépasser à la requête la limite de taille acceptée par le serveur une
+    // fois combinée à la pièce d'identité. 1280px de côté suffit largement
+    // pour une vérification d'identité.
+    const MAX_DIM = 1280;
+    const nativeW = video.videoWidth || 640;
+    const nativeH = video.videoHeight || 480;
+    const scale = Math.min(1, MAX_DIM / Math.max(nativeW, nativeH));
+    const w = Math.round(nativeW * scale);
+    const h = Math.round(nativeH * scale);
     canvas.width = w;
     canvas.height = h;
     const ctx = canvas.getContext("2d");
@@ -82,7 +91,7 @@ export function SelfieCapture() {
         stopStream();
       },
       "image/jpeg",
-      0.9,
+      0.85,
     );
   }
 

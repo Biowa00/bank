@@ -29,7 +29,11 @@ async function getOrigin(): Promise<string> {
 
 const ALLOWED_DOC_TYPES = ["image/jpeg", "image/png", "application/pdf"];
 const ALLOWED_SELFIE_TYPES = ["image/jpeg", "image/png"];
-const MAX_DOC_SIZE = 5 * 1024 * 1024; // 5 Mo
+// Les fonctions serverless Vercel refusent (413) les requêtes dont le corps
+// dépasse ~4,5 Mo ; on plafonne chaque fichier bien en-dessous pour que la
+// pièce d'identité (non compressible côté client si PDF) et le selfie
+// combinés ne s'approchent jamais de cette limite.
+const MAX_DOC_SIZE = 3 * 1024 * 1024; // 3 Mo
 
 /** Inscription client. Le profil + IBAN sont créés par un trigger SQL. */
 export async function signUp(

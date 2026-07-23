@@ -7,11 +7,13 @@ import { SubmitButton } from "@/components/SubmitButton";
 import { PasswordChecklist } from "@/components/auth/PasswordChecklist";
 import { SelfieCapture } from "@/components/auth/SelfieCapture";
 import { phoneFormats, formatPhone, phonePlaceholder, isPhoneComplete } from "@/lib/phone";
+import { compressImageFile } from "@/lib/compressImage";
 import { useZone } from "@/components/i18n/DictionaryProvider";
 
 export function RegisterForm() {
   const [state, action] = useActionState<AuthState, FormData>(signUp, {});
   const [fileName, setFileName] = useState<string>("");
+  const [compressing, setCompressing] = useState(false);
   const [dialCode, setDialCode] = useState<string>("+33");
   const [phone, setPhone] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -118,7 +120,7 @@ export function RegisterForm() {
               </svg>
             </span>
             <span className="min-w-0 flex-1 truncate text-ink/70">
-              {fileName || t.register.chooseFile}
+              {compressing ? "…" : fileName || t.register.chooseFile}
             </span>
           </label>
           <input
@@ -128,7 +130,27 @@ export function RegisterForm() {
             required
             accept="image/jpeg,image/png,application/pdf"
             className="sr-only"
-            onChange={(e) => setFileName(e.target.files?.[0]?.name ?? "")}
+            onChange={async (e) => {
+              const input = e.target;
+              const file = input.files?.[0];
+              if (!file) return setFileName("");
+              setFileName(file.name);
+
+              // Recompresse les photos (pas les PDF) : une image issue d'un
+              // appareil photo ou d'un scanner peut, combinée au selfie,
+              // dépasser la limite de taille de requête du serveur.
+              if (file.type === "image/jpeg" || file.type === "image/png") {
+                setCompressing(true);
+                const compressed = await compressImageFile(file);
+                setCompressing(false);
+                if (compressed !== file) {
+                  const dt = new DataTransfer();
+                  dt.items.add(compressed);
+                  input.files = dt.files;
+                }
+                setFileName(compressed.name);
+              }
+            }}
           />
           <p className="mt-1 text-xs text-ink/40">{t.register.acceptedFormats}</p>
         </div>
