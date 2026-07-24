@@ -8,7 +8,7 @@ import { useZone } from "@/components/i18n/DictionaryProvider";
 import { useLocale } from "@/components/i18n/navigation";
 import { formatEuro } from "@/lib/format";
 import { validateIban, cleanIban, type IbanValidation } from "@/lib/ibanValidate";
-import { detectBankLocal, fetchBankFromOpenIban, type BankInfo } from "@/lib/banks";
+import { detectBankLocal, fetchBankFromOpenIban } from "@/lib/banks";
 import { interpolate } from "@/lib/i18n/config";
 
 const CURRENCIES = ["EUR", "USD", "GBP", "CHF"];
@@ -21,36 +21,31 @@ export function TransferForm({ balance }: { balance: number }) {
 
   const [iban, setIban] = useState("");
   const [ibanCheck, setIbanCheck] = useState<IbanValidation | null>(null);
-  const [bank, setBank] = useState<BankInfo | null>(null);
   const [bic, setBic] = useState("");
+  const [bankName, setBankName] = useState(""); // saisissable ; pré-rempli si détecté
   const [detecting, setDetecting] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
 
-  // Validation locale (format → longueur → mod-97) à chaque frappe.
+  // Validation locale (format → longueur → mod-97) à chaque frappe, + tentative
+  // de détection de banque. La détection NE FAIT QUE PRÉ-REMPLIR : elle
+  // n'efface jamais une saisie manuelle du client.
   useEffect(() => {
     const clean = cleanIban(iban);
     if (!clean) {
       setIbanCheck(null);
-      setBank(null);
-      setBic("");
       return;
     }
     const res = validateIban(clean);
     setIbanCheck(res);
+    if (!res.valid) return;
 
-    // Détection banque uniquement si l'IBAN est structurellement valide.
-    if (!res.valid) {
-      setBank(null);
-      setBic("");
-      return;
-    }
     const local = detectBankLocal(clean);
     if (local) {
-      setBank(local);
-      setBic(local.bic ?? "");
+      setBankName(local.name);
+      if (local.bic) setBic(local.bic);
       return;
     }
-    // Sinon, tentative via API externe (best-effort, annulable).
+    // Sinon, tentative via API externe (best-effort, annulable, non bloquante).
     abortRef.current?.abort();
     const ctrl = new AbortController();
     abortRef.current = ctrl;
@@ -60,7 +55,7 @@ export function TransferForm({ balance }: { balance: number }) {
       if (!ctrl.signal.aborted) {
         setDetecting(false);
         if (remote) {
-          setBank(remote);
+          if (remote.name && remote.name !== "—") setBankName(remote.name);
           if (remote.bic) setBic(remote.bic);
         }
       }
@@ -72,7 +67,6 @@ export function TransferForm({ balance }: { balance: number }) {
     };
   }, [iban]);
 
-  // Message d'erreur IBAN précis selon le type d'échec.
   const ibanError =
     ibanCheck && !ibanCheck.valid
       ? ibanCheck.error === "format"
@@ -153,11 +147,14 @@ export function TransferForm({ balance }: { balance: number }) {
               id="bank_name"
               name="bank_name"
               type="text"
-              value={detecting ? t.bankDetecting : (bank?.name ?? "")}
-              readOnly
-              className="input bg-black/[.02] text-ink/70"
-              placeholder="—"
+              value={bankName}
+              onChange={(e) => setBankName(e.target.value)}
+              maxLength={80}
+              className="input"
+              placeholder="Ex : BNP Paribas"
+              autoComplete="off"
             />
+            {detecting && <p className="mt-1 text-xs text-ink/40">{t.bankDetecting}</p>}
           </div>
         </div>
 
