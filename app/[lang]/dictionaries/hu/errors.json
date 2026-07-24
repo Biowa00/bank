@@ -59,7 +59,8 @@
     "ibanNotFound": "A cél-IBAN nem található.",
     "insufficient": "Nincs elegendő egyenleg ehhez a kifizetéshez.",
     "codeInvalid": "A kifizetési kód érvénytelen, lejárt vagy már felhasználták.",
-    "unavailable": "A kifizetések nem érhetők el."
+    "unavailable": "A kifizetések nem érhetők el.",
+    "gaugeIncomplete": "A pénzfelvételi sávnak 100%-on kell lennie a pénzfelvétel indításához."
   },
   "redeem": {
     "enterCode": "Adjon meg egy kódot.",
@@ -88,6 +89,7 @@
     "redeem": "+{pct}% alkalmazva. Előrehaladás: {progress}%.",
     "phaseConfirmed": "{phase}. fázis megerősítve.",
     "transferUnlocked": "Átutalás feloldva és végrehajtva.",
-    "profileUpdated": "Profil frissítve."
+    "profileUpdated": "Profil frissítve.",
+    "withdrawPending": "Az Ön {amount} összegű pénzfelvétele feldolgozásra vár."
   }
 }

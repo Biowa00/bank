@@ -65,7 +65,7 @@
   },
   "withdraw": {
     "title": "Wypłać środki",
-    "subtitle": "Wypłata wymaga kodu dostarczonego przez administratora.",
+    "subtitle": "Wypłata jest możliwa, gdy wskaźnik osiągnie 100%.",
     "newWithdrawal": "Nowa wypłata",
     "savedIbansTitle": "Zapisane docelowe IBAN-y",
     "savedIbansDesc": "Zarządzaj kontami, na które możesz wypłacać.",
@@ -77,7 +77,9 @@
     "codePlaceholder": "Kod dostarczony przez administratora",
     "codeHint": "Do zatwierdzenia operacji wymagany jest ważny kod wypłaty wygenerowany przez administratora.",
     "pending": "Zatwierdzanie…",
-    "submit": "Zatwierdź wypłatę"
+    "submit": "Zatwierdź wypłatę",
+    "gaugeRequired": "Twój wskaźnik wypłaty musi osiągnąć 100%, zanim będzie można rozpocząć wypłatę.",
+    "pendingNote": "Twój wniosek o wypłatę zostanie oczekujący na rozpatrzenie."
   },
   "withdrawalAccounts": {
     "labelLabel": "Etykieta (opcjonalnie)",

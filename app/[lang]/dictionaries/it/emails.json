@@ -112,6 +112,10 @@
         "body": "Il tuo codice di prelievo «{name}» è {code}. Inseriscilo nella tua area per validare il prelievo.",
         "reasonSuffix": " Motivo: {reason}"
       }
+    },
+    "withdrawalPending": {
+      "title": "Prelievo in attesa",
+      "body": "La tua richiesta di prelievo di {amount} verso {iban} è stata ricevuta. È in attesa di elaborazione."
     }
   },
   "chrome": {

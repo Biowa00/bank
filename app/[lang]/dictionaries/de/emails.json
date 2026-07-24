@@ -112,6 +112,10 @@
         "body": "Ihr Auszahlungscode „{name}“ lautet {code}. Geben Sie ihn in Ihrem Konto ein, um Ihre Auszahlung zu bestätigen.",
         "reasonSuffix": " Grund: {reason}"
       }
+    },
+    "withdrawalPending": {
+      "title": "Auszahlung ausstehend",
+      "body": "Ihr Auszahlungsantrag über {amount} an {iban} ist eingegangen. Er wird bearbeitet."
     }
   },
   "chrome": {

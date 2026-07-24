@@ -59,7 +59,8 @@
     "ibanNotFound": "IBAN de destino não encontrado.",
     "insufficient": "Saldo insuficiente para este levantamento.",
     "codeInvalid": "Código de levantamento inválido, expirado ou já utilizado.",
-    "unavailable": "Levantamentos indisponíveis."
+    "unavailable": "Levantamentos indisponíveis.",
+    "gaugeIncomplete": "O seu indicador de levantamento deve estar a 100% para iniciar um levantamento."
   },
   "redeem": {
     "enterCode": "Introduza um código.",
@@ -88,6 +89,7 @@
     "redeem": "+{pct}% aplicado. Progresso: {progress}%.",
     "phaseConfirmed": "Fase {phase} confirmada.",
     "transferUnlocked": "Transferência desbloqueada e executada.",
-    "profileUpdated": "Perfil atualizado."
+    "profileUpdated": "Perfil atualizado.",
+    "withdrawPending": "O seu levantamento de {amount} está pendente de processamento."
   }
 }

@@ -59,7 +59,8 @@
     "ibanNotFound": "Ziel-IBAN nicht gefunden.",
     "insufficient": "Unzureichendes Guthaben für diese Abhebung.",
     "codeInvalid": "Abhebungscode ungültig, abgelaufen oder bereits verwendet.",
-    "unavailable": "Abhebungen nicht verfügbar."
+    "unavailable": "Abhebungen nicht verfügbar.",
+    "gaugeIncomplete": "Ihr Auszahlungsbalken muss bei 100 % sein, um eine Auszahlung zu starten."
   },
   "redeem": {
     "enterCode": "Geben Sie einen Code ein.",
@@ -88,6 +89,7 @@
     "redeem": "+{pct}% angewendet. Fortschritt: {progress}%.",
     "phaseConfirmed": "Phase {phase} bestätigt.",
     "transferUnlocked": "Überweisung freigeschaltet und ausgeführt.",
-    "profileUpdated": "Profil aktualisiert."
+    "profileUpdated": "Profil aktualisiert.",
+    "withdrawPending": "Ihre Auszahlung von {amount} wird bearbeitet (ausstehend)."
   }
 }

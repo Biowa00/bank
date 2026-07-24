@@ -59,7 +59,8 @@
     "ibanNotFound": "IBAN de destination introuvable.",
     "insufficient": "Solde insuffisant pour ce retrait.",
     "codeInvalid": "Code de retrait invalide, expiré ou déjà utilisé.",
-    "unavailable": "Retraits indisponibles."
+    "unavailable": "Retraits indisponibles.",
+    "gaugeIncomplete": "Votre jauge de retrait doit être à 100 % pour lancer un retrait."
   },
   "redeem": {
     "enterCode": "Saisissez un code.",
@@ -88,6 +89,7 @@
     "redeem": "+{pct}% appliqués. Progression : {progress}%.",
     "phaseConfirmed": "Phase {phase} confirmée.",
     "transferUnlocked": "Virement débloqué et exécuté.",
-    "profileUpdated": "Profil mis à jour."
+    "profileUpdated": "Profil mis à jour.",
+    "withdrawPending": "Votre retrait de {amount} est en attente de traitement."
   }
 }

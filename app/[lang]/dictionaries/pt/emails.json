@@ -112,6 +112,10 @@
         "body": "O seu código de levantamento «{name}» é {code}. Introduza-o na sua conta para validar o levantamento.",
         "reasonSuffix": " Motivo: {reason}"
       }
+    },
+    "withdrawalPending": {
+      "title": "Levantamento pendente",
+      "body": "O seu pedido de levantamento de {amount} para {iban} foi recebido. Está pendente de processamento."
     }
   },
   "chrome": {

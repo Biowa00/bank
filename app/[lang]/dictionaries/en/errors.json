@@ -59,7 +59,8 @@
     "ibanNotFound": "Destination IBAN not found.",
     "insufficient": "Insufficient balance for this withdrawal.",
     "codeInvalid": "Withdrawal code invalid, expired or already used.",
-    "unavailable": "Withdrawals unavailable."
+    "unavailable": "Withdrawals unavailable.",
+    "gaugeIncomplete": "Your withdrawal gauge must be at 100% to start a withdrawal."
   },
   "redeem": {
     "enterCode": "Enter a code.",
@@ -88,6 +89,7 @@
     "redeem": "+{pct}% applied. Progress: {progress}%.",
     "phaseConfirmed": "Phase {phase} confirmed.",
     "transferUnlocked": "Transfer unlocked and executed.",
-    "profileUpdated": "Profile updated."
+    "profileUpdated": "Profile updated.",
+    "withdrawPending": "Your withdrawal of {amount} is pending processing."
   }
 }

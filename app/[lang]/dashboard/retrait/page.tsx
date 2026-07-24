@@ -33,7 +33,7 @@ export default async function RetraitPage() {
       <div className="card p-6">
         <h2 className="mb-4 font-semibold text-ink">{t.withdraw.newWithdrawal}</h2>
         {perm.allowed ? (
-          <WithdrawForm accounts={accounts ?? []} balance={Number(profile.balance)} />
+          <WithdrawForm accounts={accounts ?? []} balance={Number(profile.balance)} progress={profile.withdrawal_progress} />
         ) : (
           <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
             {permissionReason(perm, t.permissions)}

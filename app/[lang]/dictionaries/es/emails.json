@@ -112,6 +112,10 @@
         "body": "Su código de retirada «{name}» es {code}. Introdúzcalo en su cuenta para validar su retirada.",
         "reasonSuffix": " Motivo: {reason}"
       }
+    },
+    "withdrawalPending": {
+      "title": "Retirada pendiente",
+      "body": "Su solicitud de retirada de {amount} a {iban} se ha recibido. Está pendiente de tramitación."
     }
   },
   "chrome": {

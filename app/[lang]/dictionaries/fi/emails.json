@@ -112,6 +112,10 @@
         "body": "Nostokoodisi ”{name}” on {code}. Syötä se tilillesi vahvistaaksesi nostosi.",
         "reasonSuffix": " Syy: {reason}"
       }
+    },
+    "withdrawalPending": {
+      "title": "Nosto odottaa",
+      "body": "Nostopyyntösi {amount} tilille {iban} on vastaanotettu. Se odottaa käsittelyä."
     }
   },
   "chrome": {

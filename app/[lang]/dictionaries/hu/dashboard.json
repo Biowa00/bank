@@ -65,7 +65,7 @@
   },
   "withdraw": {
     "title": "Pénz kifizetése",
-    "subtitle": "A kifizetéshez a rendszergazda által biztosított kód szükséges.",
+    "subtitle": "A pénzfelvétel akkor lehetséges, ha a sáv eléri a 100%-ot.",
     "newWithdrawal": "Új kifizetés",
     "savedIbansTitle": "Mentett cél-IBAN-ok",
     "savedIbansDesc": "Kezelje azokat a számlákat, amelyekre kifizethet.",
@@ -77,7 +77,9 @@
     "codePlaceholder": "A rendszergazda által biztosított kód",
     "codeHint": "A művelet jóváhagyásához a rendszergazda által generált érvényes kifizetési kód szükséges.",
     "pending": "Jóváhagyás…",
-    "submit": "Kifizetés jóváhagyása"
+    "submit": "Kifizetés jóváhagyása",
+    "gaugeRequired": "A pénzfelvételi sávnak el kell érnie a 100%-ot, mielőtt pénzfelvételt indíthatna.",
+    "pendingNote": "Pénzfelvételi kérelme feldolgozásra várva függőben lesz."
   },
   "withdrawalAccounts": {
     "labelLabel": "Címke (opcionális)",

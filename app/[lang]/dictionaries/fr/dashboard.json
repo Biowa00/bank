@@ -65,7 +65,7 @@
   },
   "withdraw": {
     "title": "Retirer des fonds",
-    "subtitle": "Le retrait nécessite un code fourni par l'administrateur.",
+    "subtitle": "Le retrait est possible une fois votre jauge à 100 %.",
     "newWithdrawal": "Nouveau retrait",
     "savedIbansTitle": "IBAN de destination enregistrés",
     "savedIbansDesc": "Gérez les comptes vers lesquels vous pouvez retirer.",
@@ -77,7 +77,9 @@
     "codePlaceholder": "Code fourni par l'administrateur",
     "codeHint": "Un code de retrait valide, généré par l'administrateur, est requis pour valider l'opération.",
     "pending": "Validation…",
-    "submit": "Valider le retrait"
+    "submit": "Valider le retrait",
+    "gaugeRequired": "Votre jauge de retrait doit atteindre 100 % avant de pouvoir lancer un retrait.",
+    "pendingNote": "Votre demande de retrait sera mise en attente de traitement."
   },
   "withdrawalAccounts": {
     "labelLabel": "Libellé (facultatif)",

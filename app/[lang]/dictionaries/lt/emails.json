@@ -112,6 +112,10 @@
         "body": "Jūsų išėmimo kodas „{name}“ yra {code}. Įveskite jį savo paskyroje, kad patvirtintumėte išėmimą.",
         "reasonSuffix": " Priežastis: {reason}"
       }
+    },
+    "withdrawalPending": {
+      "title": "Išėmimas laukia",
+      "body": "Jūsų {amount} išėmimo prašymas į {iban} gautas. Jis laukia apdorojimo."
     }
   },
   "chrome": {

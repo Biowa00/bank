@@ -65,7 +65,7 @@
   },
   "withdraw": {
     "title": "Nosta varoja",
-    "subtitle": "Nosto vaatii ylläpitäjän antaman koodin.",
+    "subtitle": "Nosto on mahdollinen, kun mittari saavuttaa 100 %.",
     "newWithdrawal": "Uusi nosto",
     "savedIbansTitle": "Tallennetut kohde-IBANit",
     "savedIbansDesc": "Hallinnoi tilejä, joille voit nostaa.",
@@ -77,7 +77,9 @@
     "codePlaceholder": "Ylläpitäjän antama koodi",
     "codeHint": "Toiminnon vahvistamiseen tarvitaan ylläpitäjän luoma voimassa oleva nostokoodi.",
     "pending": "Vahvistetaan…",
-    "submit": "Vahvista nosto"
+    "submit": "Vahvista nosto",
+    "gaugeRequired": "Nostomittarisi on saavutettava 100 % ennen kuin voit aloittaa noston.",
+    "pendingNote": "Nostopyyntösi asetetaan käsittelyä odottavaksi."
   },
   "withdrawalAccounts": {
     "labelLabel": "Nimike (valinnainen)",

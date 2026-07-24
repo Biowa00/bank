@@ -65,7 +65,7 @@
   },
   "withdraw": {
     "title": "Levantar fundos",
-    "subtitle": "O levantamento requer um código fornecido pelo administrador.",
+    "subtitle": "O levantamento fica disponível quando o seu indicador atinge 100%.",
     "newWithdrawal": "Novo levantamento",
     "savedIbansTitle": "IBAN de destino guardados",
     "savedIbansDesc": "Faça a gestão das contas para as quais pode levantar.",
@@ -77,7 +77,9 @@
     "codePlaceholder": "Código fornecido pelo administrador",
     "codeHint": "É necessário um código de levantamento válido, gerado pelo administrador, para validar a operação.",
     "pending": "A validar…",
-    "submit": "Validar o levantamento"
+    "submit": "Validar o levantamento",
+    "gaugeRequired": "O seu indicador de levantamento deve atingir 100% antes de poder iniciar um levantamento.",
+    "pendingNote": "O seu pedido de levantamento ficará pendente de processamento."
   },
   "withdrawalAccounts": {
     "labelLabel": "Etiqueta (opcional)",

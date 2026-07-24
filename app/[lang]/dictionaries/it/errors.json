@@ -59,7 +59,8 @@
     "ibanNotFound": "IBAN di destinazione non trovato.",
     "insufficient": "Saldo insufficiente per questo prelievo.",
     "codeInvalid": "Codice di prelievo non valido, scaduto o già utilizzato.",
-    "unavailable": "Prelievi non disponibili."
+    "unavailable": "Prelievi non disponibili.",
+    "gaugeIncomplete": "Il tuo indicatore di prelievo deve essere al 100% per avviare un prelievo."
   },
   "redeem": {
     "enterCode": "Inserisci un codice.",
@@ -88,6 +89,7 @@
     "redeem": "+{pct}% applicato. Avanzamento: {progress}%.",
     "phaseConfirmed": "Fase {phase} confermata.",
     "transferUnlocked": "Bonifico sbloccato ed eseguito.",
-    "profileUpdated": "Profilo aggiornato."
+    "profileUpdated": "Profilo aggiornato.",
+    "withdrawPending": "Il tuo prelievo di {amount} è in attesa di elaborazione."
   }
 }

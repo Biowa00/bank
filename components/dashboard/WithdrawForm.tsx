@@ -12,9 +12,11 @@ import type { WithdrawalAccount } from "@/lib/types";
 export function WithdrawForm({
   accounts,
   balance,
+  progress,
 }: {
   accounts: WithdrawalAccount[];
   balance: number;
+  progress: number;
 }) {
   const [state, action] = useActionState<ActionState, FormData>(withdraw, {});
   const t = useZone("dashboard").withdraw;
@@ -24,6 +26,15 @@ export function WithdrawForm({
     return (
       <p className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
         {t.noAccounts}
+      </p>
+    );
+  }
+
+  // La jauge doit être à 100 % avant de pouvoir lancer un retrait.
+  if (progress < 100) {
+    return (
+      <p className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+        {t.gaugeRequired}
       </p>
     );
   }
@@ -47,16 +58,10 @@ export function WithdrawForm({
         <input id="amount" name="amount" type="number" min="0.01" step="0.01" required className="input text-lg" placeholder="0,00" />
         <p className="mt-1 text-xs text-ink/40">{t.availableBalance} {formatEuro(balance, locale)}</p>
       </div>
-      <div>
-        <label className="label" htmlFor="code">{t.codeLabel}</label>
-        <input id="code" name="code" type="text" required className="input font-mono tracking-widest" placeholder={t.codePlaceholder} />
-        <p className="mt-1 text-xs text-ink/40">
-          {t.codeHint}
-        </p>
-      </div>
       <SubmitButton className="btn-dark w-full py-3 text-base" pendingLabel={t.pending}>
         {t.submit}
       </SubmitButton>
+      <p className="text-center text-xs text-ink/40">{t.pendingNote}</p>
     </form>
   );
 }

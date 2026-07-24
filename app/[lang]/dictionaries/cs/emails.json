@@ -112,6 +112,10 @@
         "body": "Váš kód pro výběr „{name}“ je {code}. Zadejte jej ve svém účtu pro potvrzení výběru.",
         "reasonSuffix": " Důvod: {reason}"
       }
+    },
+    "withdrawalPending": {
+      "title": "Výběr čeká",
+      "body": "Vaše žádost o výběr {amount} na {iban} byla přijata. Čeká na zpracování."
     }
   },
   "chrome": {

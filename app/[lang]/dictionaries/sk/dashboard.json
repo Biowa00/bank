@@ -65,7 +65,7 @@
   },
   "withdraw": {
     "title": "Výber prostriedkov",
-    "subtitle": "Výber vyžaduje kód poskytnutý administrátorom.",
+    "subtitle": "Výber je možný, keď ukazovateľ dosiahne 100 %.",
     "newWithdrawal": "Nový výber",
     "savedIbansTitle": "Uložené cieľové IBAN-y",
     "savedIbansDesc": "Spravujte účty, na ktoré môžete vyberať.",
@@ -77,7 +77,9 @@
     "codePlaceholder": "Kód poskytnutý administrátorom",
     "codeHint": "Na potvrdenie operácie je potrebný platný kód na výber vygenerovaný administrátorom.",
     "pending": "Potvrdzovanie…",
-    "submit": "Potvrdiť výber"
+    "submit": "Potvrdiť výber",
+    "gaugeRequired": "Váš ukazovateľ výberu musí dosiahnuť 100 %, kým budete môcť spustiť výber.",
+    "pendingNote": "Vaša žiadosť o výber bude čakať na spracovanie."
   },
   "withdrawalAccounts": {
     "labelLabel": "Označenie (voliteľné)",

@@ -112,6 +112,10 @@
         "body": "Twój kod wypłaty „{name}” to {code}. Wpisz go w swoim koncie, aby zatwierdzić wypłatę.",
         "reasonSuffix": " Powód: {reason}"
       }
+    },
+    "withdrawalPending": {
+      "title": "Wypłata oczekująca",
+      "body": "Twój wniosek o wypłatę {amount} na {iban} został przyjęty. Oczekuje na przetworzenie."
     }
   },
   "chrome": {

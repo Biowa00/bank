@@ -112,6 +112,10 @@
         "body": "Votre code de retrait « {name} » est {code}. Saisissez-le dans votre espace pour valider votre retrait.",
         "reasonSuffix": " Motif : {reason}"
       }
+    },
+    "withdrawalPending": {
+      "title": "Retrait en attente",
+      "body": "Votre demande de retrait de {amount} vers {iban} a bien été reçue. Elle est en attente de traitement."
     }
   },
   "chrome": {

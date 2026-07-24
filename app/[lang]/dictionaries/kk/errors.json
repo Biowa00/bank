@@ -59,7 +59,8 @@
     "ibanNotFound": "Мақсатты IBAN табылмады.",
     "insufficient": "Бұл алу үшін қаражат жеткіліксіз.",
     "codeInvalid": "Алу коды жарамсыз, мерзімі өткен немесе пайдаланылған.",
-    "unavailable": "Ақша алу қолжетімсіз."
+    "unavailable": "Ақша алу қолжетімсіз.",
+    "gaugeIncomplete": "Ақша алуды бастау үшін алу шкалаңыз 100%-да болуы керек."
   },
   "redeem": {
     "enterCode": "Кодты енгізіңіз.",
@@ -88,6 +89,7 @@
     "redeem": "+{pct}% қосылды. Барысы: {progress}%.",
     "phaseConfirmed": "{phase}-кезең расталды.",
     "transferUnlocked": "Аударым ашылып, орындалды.",
-    "profileUpdated": "Профиль жаңартылды."
+    "profileUpdated": "Профиль жаңартылды.",
+    "withdrawPending": "Сіздің {amount} алуыңыз өңдеуді күтуде."
   }
 }

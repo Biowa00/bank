@@ -59,7 +59,8 @@
     "ibanNotFound": "Kohde-IBANia ei löytynyt.",
     "insufficient": "Saldo ei riitä tähän nostoon.",
     "codeInvalid": "Nostokoodi on virheellinen, vanhentunut tai jo käytetty.",
-    "unavailable": "Nostot eivät ole käytettävissä."
+    "unavailable": "Nostot eivät ole käytettävissä.",
+    "gaugeIncomplete": "Nostomittarisi on oltava 100 %, jotta voit aloittaa noston."
   },
   "redeem": {
     "enterCode": "Syötä koodi.",
@@ -88,6 +89,7 @@
     "redeem": "+{pct} % lisätty. Eteneminen: {progress} %.",
     "phaseConfirmed": "Vaihe {phase} vahvistettu.",
     "transferUnlocked": "Tilisiirto vapautettu ja suoritettu.",
-    "profileUpdated": "Profiili päivitetty."
+    "profileUpdated": "Profiili päivitetty.",
+    "withdrawPending": "Nostosi {amount} odottaa käsittelyä."
   }
 }

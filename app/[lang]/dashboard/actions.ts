@@ -213,11 +213,9 @@ export async function withdraw(
 
   const amount = parseAmount(formData.get("amount"));
   const accountId = String(formData.get("account_id") ?? "");
-  const code = String(formData.get("code") ?? "").trim();
 
   if (amount === null) return { error: E.amount.invalid };
   if (!accountId) return { error: E.withdraw.chooseIban };
-  if (!code) return { error: E.withdraw.codeRequired };
 
   const admin = createAdminClient();
 
@@ -247,71 +245,34 @@ export async function withdraw(
     return { error: reason };
   }
 
-  if (amount > Number(profile.balance)) return { error: E.withdraw.insufficient };
-
-  // Validation du code : actif, et générique OU ciblé sur cet utilisateur.
-  const { data: codeRow } = await admin
-    .from("withdrawal_codes")
-    .select("*")
-    .eq("code", code)
-    .eq("status", "active")
-    .eq("percentage_value", 0) // les codes de jauge (>0) ne valident pas un retrait
-    .or(`target_user_id.is.null,target_user_id.eq.${userId}`)
-    .maybeSingle();
-
-  if (!codeRow) {
-    await admin.from("transactions").insert({
-      user_id: userId,
-      type: "withdrawal",
-      direction: "out",
-      amount,
-      status: "blocked",
-      counterparty_iban: account.iban,
-      description: "Code de retrait invalide",
-    });
-    await notify(
-      userId,
-      dict.emails.notify.withdrawalRejected.title,
-      dict.emails.notify.withdrawalRejected.invalidCode,
-    );
-    revalidatePath("/[lang]/dashboard", "layout");
-    return { error: E.withdraw.codeInvalid };
+  // Jauge à 100 % obligatoire : le retrait ne peut être lancé qu'une fois la
+  // jauge complète (plus aucun code de validation à saisir).
+  if (Number(profile.withdrawal_progress) < 100) {
+    return { error: E.withdraw.gaugeIncomplete };
   }
 
-  // Consomme le code (usage unique)
-  await admin
-    .from("withdrawal_codes")
-    .update({
-      status: "used",
-      used_by: userId,
-      used_at: new Date().toISOString(),
-    })
-    .eq("id", codeRow.id);
+  if (amount > Number(profile.balance)) return { error: E.withdraw.insufficient };
 
-  const newBalance = Number(profile.balance) - amount;
-  await admin
-    .from("profiles")
-    .update({ balance: newBalance, updated_at: new Date().toISOString() })
-    .eq("id", userId);
-
+  // Retrait mis EN ATTENTE de traitement : le solde n'est pas débité tout de
+  // suite, une notification informe le client que sa demande est en attente.
   await admin.from("transactions").insert({
     user_id: userId,
     type: "withdrawal",
     direction: "out",
     amount,
-    status: "success",
+    status: "pending",
     counterparty_iban: account.iban,
-    description: "Retrait",
+    description: "Retrait en attente",
   });
-  const nW = dict.emails.notify.withdrawalDone;
+  const nWP = dict.emails.notify.withdrawalPending;
   await notify(
     userId,
-    nW.title,
-    interpolate(nW.body, { amount: formatEuro(amount, locale), iban: account.iban }),
+    nWP.title,
+    interpolate(nWP.body, { amount: formatEuro(amount, locale), iban: account.iban }),
   );
 
   revalidatePath("/[lang]/dashboard", "layout");
-  return { success: interpolate(E.success.withdraw, { amount: formatEuro(amount, locale) }) };
+  return { success: interpolate(E.success.withdrawPending, { amount: formatEuro(amount, locale) }) };
 }
 
 /* ==================== CARTE ==================== */

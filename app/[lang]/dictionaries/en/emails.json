@@ -112,6 +112,10 @@
         "body": "Your withdrawal code \"{name}\" is {code}. Enter it in your account to validate your withdrawal.",
         "reasonSuffix": " Reason: {reason}"
       }
+    },
+    "withdrawalPending": {
+      "title": "Withdrawal pending",
+      "body": "Your withdrawal request of {amount} to {iban} has been received. It is pending processing."
     }
   },
   "chrome": {

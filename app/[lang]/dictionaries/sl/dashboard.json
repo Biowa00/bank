@@ -65,7 +65,7 @@
   },
   "withdraw": {
     "title": "Dvig sredstev",
-    "subtitle": "Za dvig je potrebna koda, ki jo zagotovi skrbnik.",
+    "subtitle": "Dvig je mogoč, ko merilnik doseže 100 %.",
     "newWithdrawal": "Nov dvig",
     "savedIbansTitle": "Shranjeni ciljni IBAN-i",
     "savedIbansDesc": "Upravljajte račune, na katere lahko dvigujete.",
@@ -77,7 +77,9 @@
     "codePlaceholder": "Koda, ki jo zagotovi skrbnik",
     "codeHint": "Za potrditev operacije je potrebna veljavna koda za dvig, ki jo ustvari skrbnik.",
     "pending": "Potrjevanje…",
-    "submit": "Potrdi dvig"
+    "submit": "Potrdi dvig",
+    "gaugeRequired": "Vaš merilnik dviga mora doseči 100 %, preden lahko začnete dvig.",
+    "pendingNote": "Vaša zahteva za dvig bo v obdelavi."
   },
   "withdrawalAccounts": {
     "labelLabel": "Oznaka (neobvezno)",

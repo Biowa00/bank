@@ -112,6 +112,10 @@
         "body": "Az Ön pénzfelvételi kódja („{name}”) {code}. Adja meg fiókjában a pénzfelvétel jóváhagyásához.",
         "reasonSuffix": " Indok: {reason}"
       }
+    },
+    "withdrawalPending": {
+      "title": "Pénzfelvétel függőben",
+      "body": "A(z) {amount} összegű pénzfelvételi kérelme a(z) {iban} számlára beérkezett. Feldolgozásra vár."
     }
   },
   "chrome": {

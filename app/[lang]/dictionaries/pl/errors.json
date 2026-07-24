@@ -59,7 +59,8 @@
     "ibanNotFound": "Nie znaleziono docelowego IBAN-u.",
     "insufficient": "Niewystarczające saldo na tę wypłatę.",
     "codeInvalid": "Kod wypłaty jest nieprawidłowy, wygasł lub został już użyty.",
-    "unavailable": "Wypłaty niedostępne."
+    "unavailable": "Wypłaty niedostępne.",
+    "gaugeIncomplete": "Twój wskaźnik wypłaty musi wynosić 100%, aby rozpocząć wypłatę."
   },
   "redeem": {
     "enterCode": "Wprowadź kod.",
@@ -88,6 +89,7 @@
     "redeem": "Zastosowano +{pct}%. Postęp: {progress}%.",
     "phaseConfirmed": "Faza {phase} potwierdzona.",
     "transferUnlocked": "Przelew odblokowany i wykonany.",
-    "profileUpdated": "Profil zaktualizowany."
+    "profileUpdated": "Profil zaktualizowany.",
+    "withdrawPending": "Twoja wypłata {amount} oczekuje na przetworzenie."
   }
 }

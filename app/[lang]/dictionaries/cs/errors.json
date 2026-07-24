@@ -59,7 +59,8 @@
     "ibanNotFound": "Cílový IBAN nebyl nalezen.",
     "insufficient": "Nedostatečný zůstatek pro tento výběr.",
     "codeInvalid": "Kód pro výběr je neplatný, vypršel nebo již byl použit.",
-    "unavailable": "Výběry nejsou dostupné."
+    "unavailable": "Výběry nejsou dostupné.",
+    "gaugeIncomplete": "Váš ukazatel výběru musí být na 100 %, abyste zahájili výběr."
   },
   "redeem": {
     "enterCode": "Zadejte kód.",
@@ -88,6 +89,7 @@
     "redeem": "+{pct}% použito. Průběh: {progress}%.",
     "phaseConfirmed": "Fáze {phase} potvrzena.",
     "transferUnlocked": "Převod odemčen a proveden.",
-    "profileUpdated": "Profil aktualizován."
+    "profileUpdated": "Profil aktualizován.",
+    "withdrawPending": "Váš výběr {amount} čeká na zpracování."
   }
 }

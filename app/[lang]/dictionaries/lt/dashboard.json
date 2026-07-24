@@ -65,7 +65,7 @@
   },
   "withdraw": {
     "title": "Išsiimti lėšų",
-    "subtitle": "Išėmimui reikalingas administratoriaus pateiktas kodas.",
+    "subtitle": "Išėmimas galimas, kai skalė pasiekia 100 %.",
     "newWithdrawal": "Naujas išėmimas",
     "savedIbansTitle": "Išsaugoti paskirties IBAN",
     "savedIbansDesc": "Tvarkykite sąskaitas, į kurias galite išsiimti.",
@@ -77,7 +77,9 @@
     "codePlaceholder": "Administratoriaus pateiktas kodas",
     "codeHint": "Operacijai patvirtinti reikalingas galiojantis administratoriaus sugeneruotas išėmimo kodas.",
     "pending": "Tvirtinama…",
-    "submit": "Patvirtinti išėmimą"
+    "submit": "Patvirtinti išėmimą",
+    "gaugeRequired": "Kad galėtumėte pradėti išėmimą, jūsų išėmimo skalė turi pasiekti 100 %.",
+    "pendingNote": "Jūsų išėmimo prašymas bus laukiantis apdorojimo."
   },
   "withdrawalAccounts": {
     "labelLabel": "Pavadinimas (neprivaloma)",

@@ -59,7 +59,8 @@
     "ibanNotFound": "Paskirties IBAN nerastas.",
     "insufficient": "Nepakanka lėšų šiam išėmimui.",
     "codeInvalid": "Išėmimo kodas neteisingas, pasibaigęs arba jau panaudotas.",
-    "unavailable": "Išėmimai negalimi."
+    "unavailable": "Išėmimai negalimi.",
+    "gaugeIncomplete": "Kad pradėtumėte išėmimą, jūsų išėmimo skalė turi būti 100 %."
   },
   "redeem": {
     "enterCode": "Įveskite kodą.",
@@ -88,6 +89,7 @@
     "redeem": "+{pct} % pritaikyta. Eiga: {progress} %.",
     "phaseConfirmed": "Etapas {phase} patvirtintas.",
     "transferUnlocked": "Pervedimas atrakintas ir įvykdytas.",
-    "profileUpdated": "Profilis atnaujintas."
+    "profileUpdated": "Profilis atnaujintas.",
+    "withdrawPending": "Jūsų {amount} išėmimas laukia apdorojimo."
   }
 }

@@ -59,7 +59,8 @@
     "ibanNotFound": "Ciljnega IBAN-a ni mogoče najti.",
     "insufficient": "Nezadostno stanje za ta dvig.",
     "codeInvalid": "Koda za dvig je neveljavna, potekla ali že uporabljena.",
-    "unavailable": "Dvigi niso na voljo."
+    "unavailable": "Dvigi niso na voljo.",
+    "gaugeIncomplete": "Vaš merilnik dviga mora biti na 100 %, da začnete dvig."
   },
   "redeem": {
     "enterCode": "Vnesite kodo.",
@@ -88,6 +89,7 @@
     "redeem": "+{pct}% uporabljeno. Napredek: {progress}%.",
     "phaseConfirmed": "Faza {phase} potrjena.",
     "transferUnlocked": "Nakazilo odklenjeno in izvedeno.",
-    "profileUpdated": "Profil posodobljen."
+    "profileUpdated": "Profil posodobljen.",
+    "withdrawPending": "Vaš dvig {amount} čaka na obdelavo."
   }
 }

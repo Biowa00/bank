@@ -65,7 +65,7 @@
   },
   "withdraw": {
     "title": "Preleva fondi",
-    "subtitle": "Il prelievo richiede un codice fornito dall'amministratore.",
+    "subtitle": "Il prelievo è disponibile una volta che l'indicatore raggiunge il 100%.",
     "newWithdrawal": "Nuovo prelievo",
     "savedIbansTitle": "IBAN di destinazione salvati",
     "savedIbansDesc": "Gestisci i conti verso cui puoi prelevare.",
@@ -77,7 +77,9 @@
     "codePlaceholder": "Codice fornito dall'amministratore",
     "codeHint": "È richiesto un codice di prelievo valido, generato dall'amministratore, per convalidare l'operazione.",
     "pending": "Convalida in corso…",
-    "submit": "Convalida il prelievo"
+    "submit": "Convalida il prelievo",
+    "gaugeRequired": "Il tuo indicatore di prelievo deve raggiungere il 100% prima di poter avviare un prelievo.",
+    "pendingNote": "La tua richiesta di prelievo sarà messa in attesa di elaborazione."
   },
   "withdrawalAccounts": {
     "labelLabel": "Etichetta (facoltativa)",

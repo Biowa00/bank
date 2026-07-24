@@ -112,6 +112,10 @@
         "body": "Vaša koda za dvig «{name}» je {code}. Vnesite jo v svojem računu za potrditev dviga.",
         "reasonSuffix": " Razlog: {reason}"
       }
+    },
+    "withdrawalPending": {
+      "title": "Dvig v obdelavi",
+      "body": "Vaša zahteva za dvig {amount} na {iban} je prejeta. Čaka na obdelavo."
     }
   },
   "chrome": {
