@@ -43,7 +43,11 @@
     "ownAccount": "Nem utalhat a saját számlájára.",
     "insufficient": "Nincs elegendő egyenleg ehhez az átutaláshoz.",
     "failed": "Az átutalás sikertelen. Próbálja újra.",
-    "unavailable": "Az átutalások nem érhetők el."
+    "unavailable": "Az átutalások nem érhetők el.",
+    "ibanFormat": "Érvénytelen IBAN-formátum.",
+    "ibanLength": "Helytelen IBAN-hossz ehhez az országhoz ({expected} karakter várható).",
+    "ibanChecksum": "Érvénytelen IBAN-ellenőrzőszám.",
+    "beneficiaryRequired": "A kedvezményezett neve kötelező."
   },
   "withdrawalAccount": {
     "ibanInvalid": "Érvénytelen IBAN.",

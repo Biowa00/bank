@@ -1,14 +1,17 @@
+import { computeCheckDigits } from "@/lib/ibanValidate";
+
 /**
- * Génère un IBAN allemand SIMULÉ (format valide en longueur, NON routable) :
- * `DE` + 20 chiffres = 22 caractères, qui est exactement la longueur d'un IBAN
- * allemand réel. Utilisé pour attribuer un IBAN au compte client à
- * l'inscription. Aucune garantie de clé de contrôle : ce n'est pas un vrai
- * compte bancaire, uniquement un identifiant d'affichage cohérent.
+ * Génère un IBAN allemand SIMULÉ mais VALIDE au sens mod-97 (ISO 7064) :
+ * `DE` + 2 chiffres de clé calculés + 18 chiffres de BBAN = 22 caractères
+ * (longueur d'un IBAN allemand réel). La clé étant correcte, ces IBAN sont
+ * acceptés par la validation des virements internes entre comptes Vantex.
+ * Non routable pour autant : ce n'est pas un vrai compte bancaire.
  */
 export function generateFakeIban(): string {
-  let digits = "";
-  for (let i = 0; i < 20; i++) {
-    digits += Math.floor(Math.random() * 10).toString();
+  let bban = "";
+  for (let i = 0; i < 18; i++) {
+    bban += Math.floor(Math.random() * 10).toString();
   }
-  return `DE${digits}`;
+  const check = computeCheckDigits("DE", bban);
+  return `DE${check}${bban}`;
 }

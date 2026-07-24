@@ -52,7 +52,16 @@
     "descriptionPlaceholder": "Rent, reimbursement…",
     "pending": "Sending…",
     "submit": "Submit transfer",
-    "note": "The transfer is subject to advisor approval, in 3 phases. The amount is only debited from your account once all 3 phases have been confirmed."
+    "note": "The transfer is subject to advisor approval, in 3 phases. The amount is only debited from your account once all 3 phases have been confirmed.",
+    "beneficiaryLabel": "Beneficiary name",
+    "beneficiaryPlaceholder": "John Smith",
+    "bicLabel": "SWIFT / BIC code",
+    "bankLabel": "Bank",
+    "bankDetecting": "Detecting bank…",
+    "accountLabel": "Account number (optional)",
+    "currencyLabel": "Currency",
+    "ibanValidLabel": "Valid IBAN",
+    "ibanChecking": "Checking…"
   },
   "withdraw": {
     "title": "Withdraw funds",

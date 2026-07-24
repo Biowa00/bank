@@ -52,7 +52,16 @@
     "descriptionPlaceholder": "Najemnina, povračilo…",
     "pending": "Pošiljanje…",
     "submit": "Oddaj nakazilo",
-    "note": "Nakazilo je predmet potrditve svetovalca, v 3 fazah. Znesek bo z vašega računa bremenjen šele po potrditvi vseh 3 faz."
+    "note": "Nakazilo je predmet potrditve svetovalca, v 3 fazah. Znesek bo z vašega računa bremenjen šele po potrditvi vseh 3 faz.",
+    "beneficiaryLabel": "Ime prejemnika",
+    "beneficiaryPlaceholder": "Janez Novak",
+    "bicLabel": "Koda SWIFT / BIC",
+    "bankLabel": "Banka",
+    "bankDetecting": "Zaznavanje banke…",
+    "accountLabel": "Številka računa (neobvezno)",
+    "currencyLabel": "Valuta",
+    "ibanValidLabel": "IBAN veljaven",
+    "ibanChecking": "Preverjanje…"
   },
   "withdraw": {
     "title": "Dvig sredstev",

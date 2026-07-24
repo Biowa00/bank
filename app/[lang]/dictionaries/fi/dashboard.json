@@ -52,7 +52,16 @@
     "descriptionPlaceholder": "Vuokra, takaisinmaksu…",
     "pending": "Lähetetään…",
     "submit": "Lähetä tilisiirto",
-    "note": "Tilisiirto edellyttää neuvojan hyväksyntää kolmessa vaiheessa. Summa veloitetaan tililtäsi vasta, kun kaikki 3 vaihetta on vahvistettu."
+    "note": "Tilisiirto edellyttää neuvojan hyväksyntää kolmessa vaiheessa. Summa veloitetaan tililtäsi vasta, kun kaikki 3 vaihetta on vahvistettu.",
+    "beneficiaryLabel": "Saajan nimi",
+    "beneficiaryPlaceholder": "Matti Meikäläinen",
+    "bicLabel": "SWIFT / BIC-koodi",
+    "bankLabel": "Pankki",
+    "bankDetecting": "Tunnistetaan pankkia…",
+    "accountLabel": "Tilinumero (valinnainen)",
+    "currencyLabel": "Valuutta",
+    "ibanValidLabel": "Kelvollinen IBAN",
+    "ibanChecking": "Tarkistetaan…"
   },
   "withdraw": {
     "title": "Nosta varoja",

@@ -3,6 +3,7 @@
 import { useActionState, useState } from "react";
 import { createWithdrawalCode, type AdminState } from "@/app/[lang]/admin/actions";
 import { SubmitButton } from "@/components/SubmitButton";
+import { ClientCombobox } from "@/components/admin/ClientCombobox";
 
 type UserOpt = { id: string; label: string };
 
@@ -64,13 +65,16 @@ export function CreateCodeForm({
       </div>
 
       <div>
-        <label className="label" htmlFor="target_user_id">Compte cible</label>
-        <select id="target_user_id" name="target_user_id" defaultValue={defaultTarget ?? ""} className="input">
-          <option value="">Générique (utilisable par n&apos;importe quel compte)</option>
-          {users.map((u) => (
-            <option key={u.id} value={u.id}>{u.label}</option>
-          ))}
-        </select>
+        <span className="label">Compte cible</span>
+        <ClientCombobox
+          name="target_user_id"
+          users={users}
+          defaultValue={defaultTarget ?? ""}
+          genericLabel="Générique (utilisable par n'importe quel compte)"
+        />
+        <p className="mt-1 text-xs text-ink/40">
+          Le client ciblé — ou tous les clients si générique — reçoit une notification et un e-mail avec le code.
+        </p>
       </div>
 
       <div>

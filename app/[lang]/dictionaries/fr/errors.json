@@ -43,7 +43,11 @@
     "ownAccount": "Impossible de virer vers votre propre compte.",
     "insufficient": "Solde insuffisant pour ce virement.",
     "failed": "Échec du virement. Réessayez.",
-    "unavailable": "Virements indisponibles."
+    "unavailable": "Virements indisponibles.",
+    "ibanFormat": "Format d'IBAN incorrect.",
+    "ibanLength": "Longueur d'IBAN incorrecte pour ce pays ({expected} caractères attendus).",
+    "ibanChecksum": "Clé de contrôle IBAN invalide.",
+    "beneficiaryRequired": "Le nom du bénéficiaire est requis."
   },
   "withdrawalAccount": {
     "ibanInvalid": "IBAN invalide.",

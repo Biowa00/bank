@@ -8,6 +8,7 @@ import { TransactionItem } from "@/components/dashboard/TransactionItem";
 import { RestrictionToggles } from "@/components/admin/RestrictionToggles";
 import { AdminCreditForm } from "@/components/admin/AdminCreditForm";
 import { GaugeCodeGenerator } from "@/components/admin/GaugeCodeGenerator";
+import { DeleteUserButton } from "@/components/admin/DeleteUserButton";
 import type { Profile, Transaction, WithdrawalCode } from "@/lib/types";
 
 export default async function UserDetailPage({
@@ -214,6 +215,15 @@ export default async function UserDetailPage({
             <p className="py-8 text-center text-sm text-ink/50">Aucune transaction.</p>
           )}
         </div>
+      </div>
+
+      {/* Zone danger — suppression du profil */}
+      <div className="card border-red-200 bg-red-50/40 p-6">
+        <h2 className="mb-1 font-semibold text-red-700">Zone danger</h2>
+        <p className="mb-4 text-sm text-ink/60">
+          Supprime définitivement ce compte client et toutes ses données.
+        </p>
+        <DeleteUserButton userId={user.id} name={user.full_name || user.email} />
       </div>
     </div>
   );

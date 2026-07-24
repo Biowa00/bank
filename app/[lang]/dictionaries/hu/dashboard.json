@@ -52,7 +52,16 @@
     "descriptionPlaceholder": "Bérleti díj, visszatérítés…",
     "pending": "Küldés…",
     "submit": "Átutalás elküldése",
-    "note": "Az átutalás tanácsadói jóváhagyáshoz kötött, 3 fázisban. Az összeget csak a 3 fázis megerősítése után vonjuk le a számlájáról."
+    "note": "Az átutalás tanácsadói jóváhagyáshoz kötött, 3 fázisban. Az összeget csak a 3 fázis megerősítése után vonjuk le a számlájáról.",
+    "beneficiaryLabel": "Kedvezményezett neve",
+    "beneficiaryPlaceholder": "Kovács János",
+    "bicLabel": "SWIFT / BIC kód",
+    "bankLabel": "Bank",
+    "bankDetecting": "Bank felismerése…",
+    "accountLabel": "Számlaszám (nem kötelező)",
+    "currencyLabel": "Pénznem",
+    "ibanValidLabel": "Érvényes IBAN",
+    "ibanChecking": "Ellenőrzés…"
   },
   "withdraw": {
     "title": "Pénz kifizetése",

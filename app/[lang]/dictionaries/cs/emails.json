@@ -106,6 +106,11 @@
       "transferRejected": {
         "title": "Převod zamítnut",
         "body": "Váš převod {amount} byl zamítnut. Důvod: {reason}. Z vašeho účtu nebyla odepsána žádná částka."
+      },
+      "withdrawalCode": {
+        "title": "Nový kód pro výběr",
+        "body": "Váš kód pro výběr „{name}“ je {code}. Zadejte jej ve svém účtu pro potvrzení výběru.",
+        "reasonSuffix": " Důvod: {reason}"
       }
     }
   },

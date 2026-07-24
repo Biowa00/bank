@@ -43,7 +43,11 @@
     "ownAccount": "Non puoi effettuare un bonifico verso il tuo stesso conto.",
     "insufficient": "Saldo insufficiente per questo bonifico.",
     "failed": "Bonifico non riuscito. Riprova.",
-    "unavailable": "Bonifici non disponibili."
+    "unavailable": "Bonifici non disponibili.",
+    "ibanFormat": "Formato IBAN non valido.",
+    "ibanLength": "Lunghezza IBAN errata per questo paese (attesi {expected} caratteri).",
+    "ibanChecksum": "Cifre di controllo IBAN non valide.",
+    "beneficiaryRequired": "Il nome del beneficiario è obbligatorio."
   },
   "withdrawalAccount": {
     "ibanInvalid": "IBAN non valido.",

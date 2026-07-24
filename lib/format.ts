@@ -1,4 +1,5 @@
 import { defaultLocale, intlLocale, type Locale } from "@/lib/i18n/config";
+import { isValidIban } from "@/lib/ibanValidate";
 
 /** Formate un montant en euros dans la locale donnée (défaut : fr). */
 export function formatEuro(amount: number, locale: Locale = defaultLocale): string {
@@ -18,10 +19,13 @@ export function cleanIban(iban: string): string {
   return iban.replace(/\s+/g, "").toUpperCase();
 }
 
-/** Valide grossièrement le format d'un IBAN (FR + longueur). */
+/**
+ * Valide un IBAN de façon stricte : format + longueur par pays + clé mod-97.
+ * Délègue à `isValidIban` (lib/ibanValidate). Conservé sous ce nom pour la
+ * compatibilité des appels existants.
+ */
 export function isPlausibleIban(iban: string): boolean {
-  const clean = cleanIban(iban);
-  return /^[A-Z]{2}\d{2}[A-Z0-9]{10,30}$/.test(clean);
+  return isValidIban(iban);
 }
 
 /** Date + heure lisibles dans la locale donnée. */

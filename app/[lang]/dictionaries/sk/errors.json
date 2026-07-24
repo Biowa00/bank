@@ -43,7 +43,11 @@
     "ownAccount": "Nemôžete previesť na svoj vlastný účet.",
     "insufficient": "Nedostatočný zostatok na tento prevod.",
     "failed": "Prevod zlyhal. Skúste to znova.",
-    "unavailable": "Prevody nie sú dostupné."
+    "unavailable": "Prevody nie sú dostupné.",
+    "ibanFormat": "Nesprávny formát IBAN.",
+    "ibanLength": "Nesprávna dĺžka IBAN pre túto krajinu (očakáva sa {expected} znakov).",
+    "ibanChecksum": "Neplatná kontrolná číslica IBAN.",
+    "beneficiaryRequired": "Meno príjemcu je povinné."
   },
   "withdrawalAccount": {
     "ibanInvalid": "Neplatný IBAN.",

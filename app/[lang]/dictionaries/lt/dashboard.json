@@ -52,7 +52,16 @@
     "descriptionPlaceholder": "Nuoma, grąžinimas…",
     "pending": "Siunčiama…",
     "submit": "Pateikti pervedimą",
-    "note": "Pervedimą turi patvirtinti konsultantas per 3 etapus. Suma iš jūsų sąskaitos bus nurašyta tik patvirtinus visus 3 etapus."
+    "note": "Pervedimą turi patvirtinti konsultantas per 3 etapus. Suma iš jūsų sąskaitos bus nurašyta tik patvirtinus visus 3 etapus.",
+    "beneficiaryLabel": "Gavėjo vardas",
+    "beneficiaryPlaceholder": "Jonas Jonaitis",
+    "bicLabel": "SWIFT / BIC kodas",
+    "bankLabel": "Bankas",
+    "bankDetecting": "Aptinkamas bankas…",
+    "accountLabel": "Sąskaitos numeris (nebūtina)",
+    "currencyLabel": "Valiuta",
+    "ibanValidLabel": "IBAN galioja",
+    "ibanChecking": "Tikrinama…"
   },
   "withdraw": {
     "title": "Išsiimti lėšų",

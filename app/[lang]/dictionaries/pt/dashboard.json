@@ -52,7 +52,16 @@
     "descriptionPlaceholder": "Renda, reembolso…",
     "pending": "A enviar…",
     "submit": "Submeter a transferência",
-    "note": "A transferência está sujeita à validação de um consultor, em 3 fases. O montante só é debitado da sua conta após a confirmação das 3 fases."
+    "note": "A transferência está sujeita à validação de um consultor, em 3 fases. O montante só é debitado da sua conta após a confirmação das 3 fases.",
+    "beneficiaryLabel": "Nome do beneficiário",
+    "beneficiaryPlaceholder": "João Silva",
+    "bicLabel": "Código SWIFT / BIC",
+    "bankLabel": "Banco",
+    "bankDetecting": "A detetar o banco…",
+    "accountLabel": "Número de conta (opcional)",
+    "currencyLabel": "Moeda",
+    "ibanValidLabel": "IBAN válido",
+    "ibanChecking": "A verificar…"
   },
   "withdraw": {
     "title": "Levantar fundos",

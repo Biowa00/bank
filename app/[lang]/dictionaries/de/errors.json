@@ -43,7 +43,11 @@
     "ownAccount": "Sie können nicht auf Ihr eigenes Konto überweisen.",
     "insufficient": "Unzureichendes Guthaben für diese Überweisung.",
     "failed": "Überweisung fehlgeschlagen. Bitte erneut versuchen.",
-    "unavailable": "Überweisungen nicht verfügbar."
+    "unavailable": "Überweisungen nicht verfügbar.",
+    "ibanFormat": "Ungültiges IBAN-Format.",
+    "ibanLength": "Falsche IBAN-Länge für dieses Land ({expected} Zeichen erwartet).",
+    "ibanChecksum": "Ungültige IBAN-Prüfziffer.",
+    "beneficiaryRequired": "Name des Empfängers ist erforderlich."
   },
   "withdrawalAccount": {
     "ibanInvalid": "Ungültige IBAN.",

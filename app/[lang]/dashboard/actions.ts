@@ -7,6 +7,7 @@ import { getVerifiedProfile } from "@/lib/auth";
 import { notify } from "@/lib/notify";
 import { canDeposit, canTransfer, canWithdraw, permissionReason } from "@/lib/permissions";
 import { cleanIban, isPlausibleIban, formatEuro } from "@/lib/format";
+import { validateIban } from "@/lib/ibanValidate";
 import { PHASE_MAX_ATTEMPTS, PHASE_TOTAL } from "@/lib/transferPhases";
 import { getRequestLocale } from "@/lib/i18n/server";
 import { getDictionary } from "../dictionaries";
@@ -81,9 +82,25 @@ export async function transfer(
   const amount = parseAmount(formData.get("amount"));
   const iban = cleanIban(String(formData.get("iban") ?? ""));
   const description = String(formData.get("description") ?? "").trim() || null;
+  const beneficiaryName = String(formData.get("beneficiary_name") ?? "").trim();
+  const bic = String(formData.get("bic") ?? "").trim().toUpperCase() || null;
+  const bankName = String(formData.get("bank_name") ?? "").trim() || null;
+  const currencyRaw = String(formData.get("currency") ?? "EUR").trim().toUpperCase();
+  const currency = /^[A-Z]{3}$/.test(currencyRaw) ? currencyRaw : "EUR";
 
   if (amount === null) return { error: E.amount.invalid };
-  if (!isPlausibleIban(iban)) return { error: E.transfer.ibanInvalid };
+  if (!beneficiaryName) return { error: E.transfer.beneficiaryRequired };
+
+  // Validation IBAN stricte (format → longueur pays → clé mod-97), avec un
+  // message précis selon le type d'échec. Le mod-97 garantit la cohérence du
+  // numéro, pas l'existence réelle du compte.
+  const iv = validateIban(iban);
+  if (!iv.valid) {
+    if (iv.error === "format") return { error: E.transfer.ibanFormat };
+    if (iv.error === "length")
+      return { error: interpolate(E.transfer.ibanLength, { expected: iv.expectedLength ?? "?" }) };
+    return { error: E.transfer.ibanChecksum };
+  }
   if (iban === profile.iban) return { error: E.transfer.ownAccount };
 
   const admin = createAdminClient();
@@ -107,30 +124,36 @@ export async function transfer(
 
   if (amount > Number(profile.balance)) return { error: E.transfer.insufficient };
 
-  // Bénéficiaire interne éventuel (pour l'affichage ; le crédit n'a lieu qu'à
-  // la validation par l'administrateur). Les comptes admin sont exclus.
-  const { data: recipient } = await admin
-    .from("profiles")
-    .select("full_name")
-    .eq("iban", iban)
-    .neq("role", "admin")
-    .maybeSingle<{ full_name: string | null }>();
-
   // Le solde n'est PAS débité à la soumission : le virement reste « en
   // attente » et le montant n'est prélevé qu'à la confirmation de la 3ᵉ et
   // dernière phase par le client (voir confirmTransferPhase). Le contrôle de
   // solde suffisant ci-dessus n'est qu'indicatif ; il est revérifié à
   // l'exécution, au cas où le solde aurait changé entre-temps.
-  await admin.from("transactions").insert({
-    user_id: userId,
-    type: "transfer",
-    direction: "out",
-    amount,
-    status: "pending",
-    counterparty_iban: iban,
-    counterparty_name: recipient?.full_name ?? null,
-    description,
-  });
+  const { data: inserted } = await admin
+    .from("transactions")
+    .insert({
+      user_id: userId,
+      type: "transfer",
+      direction: "out",
+      amount,
+      status: "pending",
+      counterparty_iban: iban,
+      counterparty_name: beneficiaryName, // nom saisi par l'émetteur
+      description,
+    })
+    .select("id")
+    .single<{ id: string }>();
+
+  // Champs additionnels (BIC, banque, devise) : mise à jour « best-effort »
+  // — ignorée silencieusement si les colonnes n'existent pas encore côté DB
+  // (voir migration 0003). Le virement reste valide sans elles.
+  if (inserted?.id) {
+    await admin
+      .from("transactions")
+      .update({ counterparty_bic: bic, counterparty_bank: bankName, currency })
+      .eq("id", inserted.id)
+      .then(undefined, () => {});
+  }
   const nP = dict.emails.notify.transferPending;
   await notify(
     userId,

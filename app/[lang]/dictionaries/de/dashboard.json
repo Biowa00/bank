@@ -52,7 +52,16 @@
     "descriptionPlaceholder": "Miete, Rückzahlung…",
     "pending": "Wird gesendet…",
     "submit": "Überweisung absenden",
-    "note": "Die Überweisung unterliegt der Freigabe durch einen Berater, in 3 Phasen. Der Betrag wird erst nach Bestätigung aller 3 Phasen von Ihrem Konto abgebucht."
+    "note": "Die Überweisung unterliegt der Freigabe durch einen Berater, in 3 Phasen. Der Betrag wird erst nach Bestätigung aller 3 Phasen von Ihrem Konto abgebucht.",
+    "beneficiaryLabel": "Name des Empfängers",
+    "beneficiaryPlaceholder": "Max Mustermann",
+    "bicLabel": "SWIFT / BIC-Code",
+    "bankLabel": "Bank",
+    "bankDetecting": "Bank wird erkannt…",
+    "accountLabel": "Kontonummer (optional)",
+    "currencyLabel": "Währung",
+    "ibanValidLabel": "IBAN gültig",
+    "ibanChecking": "Prüfung…"
   },
   "withdraw": {
     "title": "Geld abheben",

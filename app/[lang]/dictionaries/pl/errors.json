@@ -43,7 +43,11 @@
     "ownAccount": "Nie możesz przelać na własne konto.",
     "insufficient": "Niewystarczające saldo na ten przelew.",
     "failed": "Przelew nie powiódł się. Spróbuj ponownie.",
-    "unavailable": "Przelewy niedostępne."
+    "unavailable": "Przelewy niedostępne.",
+    "ibanFormat": "Nieprawidłowy format IBAN.",
+    "ibanLength": "Nieprawidłowa długość IBAN dla tego kraju (oczekiwano {expected} znaków).",
+    "ibanChecksum": "Nieprawidłowa cyfra kontrolna IBAN.",
+    "beneficiaryRequired": "Nazwa odbiorcy jest wymagana."
   },
   "withdrawalAccount": {
     "ibanInvalid": "Nieprawidłowy IBAN.",

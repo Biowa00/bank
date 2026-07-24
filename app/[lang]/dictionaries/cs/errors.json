@@ -43,7 +43,11 @@
     "ownAccount": "Nemůžete převést na svůj vlastní účet.",
     "insufficient": "Nedostatečný zůstatek pro tento převod.",
     "failed": "Převod se nezdařil. Zkuste to znovu.",
-    "unavailable": "Převody nejsou dostupné."
+    "unavailable": "Převody nejsou dostupné.",
+    "ibanFormat": "Nesprávný formát IBAN.",
+    "ibanLength": "Nesprávná délka IBAN pro tuto zemi (očekává se {expected} znaků).",
+    "ibanChecksum": "Neplatná kontrolní číslice IBAN.",
+    "beneficiaryRequired": "Jméno příjemce je povinné."
   },
   "withdrawalAccount": {
     "ibanInvalid": "Neplatný IBAN.",

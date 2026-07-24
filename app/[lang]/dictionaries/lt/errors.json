@@ -43,7 +43,11 @@
     "ownAccount": "Negalima pervesti į savo paties sąskaitą.",
     "insufficient": "Nepakanka lėšų šiam pervedimui.",
     "failed": "Pervedimas nepavyko. Bandykite dar kartą.",
-    "unavailable": "Pervedimai negalimi."
+    "unavailable": "Pervedimai negalimi.",
+    "ibanFormat": "Netinkamas IBAN formatas.",
+    "ibanLength": "Netinkamas IBAN ilgis šiai šaliai (laukiama {expected} simbolių).",
+    "ibanChecksum": "Netinkamas IBAN kontrolinis skaitmuo.",
+    "beneficiaryRequired": "Gavėjo vardas privalomas."
   },
   "withdrawalAccount": {
     "ibanInvalid": "Neteisingas IBAN.",

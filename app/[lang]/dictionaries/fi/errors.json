@@ -43,7 +43,11 @@
     "ownAccount": "Et voi siirtää omalle tilillesi.",
     "insufficient": "Saldo ei riitä tähän tilisiirtoon.",
     "failed": "Tilisiirto epäonnistui. Yritä uudelleen.",
-    "unavailable": "Tilisiirrot eivät ole käytettävissä."
+    "unavailable": "Tilisiirrot eivät ole käytettävissä.",
+    "ibanFormat": "Virheellinen IBAN-muoto.",
+    "ibanLength": "Virheellinen IBAN-pituus tälle maalle ({expected} merkkiä odotettu).",
+    "ibanChecksum": "Virheellinen IBAN-tarkistusnumero.",
+    "beneficiaryRequired": "Saajan nimi vaaditaan."
   },
   "withdrawalAccount": {
     "ibanInvalid": "Virheellinen IBAN.",

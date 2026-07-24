@@ -43,7 +43,11 @@
     "ownAccount": "Ne morete nakazati na svoj lastni račun.",
     "insufficient": "Nezadostno stanje za to nakazilo.",
     "failed": "Nakazilo ni uspelo. Poskusite znova.",
-    "unavailable": "Nakazila niso na voljo."
+    "unavailable": "Nakazila niso na voljo.",
+    "ibanFormat": "Neveljavna oblika IBAN.",
+    "ibanLength": "Napačna dolžina IBAN za to državo (pričakovanih {expected} znakov).",
+    "ibanChecksum": "Neveljavna kontrolna številka IBAN.",
+    "beneficiaryRequired": "Ime prejemnika je obvezno."
   },
   "withdrawalAccount": {
     "ibanInvalid": "Neveljaven IBAN.",

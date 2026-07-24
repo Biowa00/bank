@@ -106,6 +106,11 @@
       "transferRejected": {
         "title": "Transferência recusada",
         "body": "A sua transferência de {amount} foi recusada. Motivo: {reason}. Nenhum montante foi debitado da sua conta."
+      },
+      "withdrawalCode": {
+        "title": "Novo código de levantamento",
+        "body": "O seu código de levantamento «{name}» é {code}. Introduza-o na sua conta para validar o levantamento.",
+        "reasonSuffix": " Motivo: {reason}"
       }
     }
   },

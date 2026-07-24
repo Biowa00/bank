@@ -7,15 +7,17 @@ export function SubmitButton({
   children,
   className = "btn-primary w-full py-3 text-base",
   pendingLabel,
+  disabled = false,
 }: {
   children: React.ReactNode;
   className?: string;
   pendingLabel?: string;
+  disabled?: boolean;
 }) {
   const { pending } = useFormStatus();
   const common = useZone("common");
   return (
-    <button type="submit" className={className} disabled={pending} aria-busy={pending}>
+    <button type="submit" className={className} disabled={pending || disabled} aria-busy={pending}>
       {pending ? (
         <>
           <Spinner />

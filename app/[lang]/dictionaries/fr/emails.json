@@ -106,6 +106,11 @@
       "transferRejected": {
         "title": "Virement refusé",
         "body": "Votre virement de {amount} a été refusé. Motif : {reason}. Aucun montant n'a été débité de votre compte."
+      },
+      "withdrawalCode": {
+        "title": "Nouveau code de retrait",
+        "body": "Votre code de retrait « {name} » est {code}. Saisissez-le dans votre espace pour valider votre retrait.",
+        "reasonSuffix": " Motif : {reason}"
       }
     }
   },

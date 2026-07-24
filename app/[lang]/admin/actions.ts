@@ -5,6 +5,7 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { requireAdmin } from "@/lib/auth";
 import { notifyUser } from "@/lib/notify";
 import { formatEuro } from "@/lib/format";
+import { localizedRedirect } from "@/lib/i18n/server";
 import { interpolate } from "@/lib/i18n/config";
 import {
   generatePhaseCode,
@@ -13,6 +14,7 @@ import {
   PHASE_TOTAL,
 } from "@/lib/transferPhases";
 import type { AccountStatus } from "@/lib/types";
+import type { Dictionary } from "../dictionaries";
 
 export type AdminState = { error?: string; success?: string; code?: string };
 
@@ -497,6 +499,33 @@ export async function createWithdrawalCode(
     code,
     percentage,
   });
+
+  // Notification + email dans la langue du destinataire. Message construit via
+  // le dictionnaire de chaque client (nom du code, valeur, motif éventuel).
+  const buildMsg = (dict: Dictionary) => {
+    const k = dict.emails.notify.admin.withdrawalCode;
+    const base = interpolate(k.body, { name, code });
+    return {
+      title: k.title,
+      body: reason ? base + interpolate(k.reasonSuffix, { reason }) : base,
+    };
+  };
+
+  if (target) {
+    // Code ciblé → uniquement ce client.
+    await notifyUser(target, buildMsg);
+  } else {
+    // Code générique (utilisable par n'importe quel compte) → tous les clients.
+    const { data: allUsers } = await admin
+      .from("profiles")
+      .select("id")
+      .eq("role", "user")
+      .returns<{ id: string }[]>();
+    for (const u of allUsers ?? []) {
+      await notifyUser(u.id, buildMsg);
+    }
+  }
+
   revalidatePath("/[lang]/admin/codes", "page");
   if (target) revalidatePath("/[lang]/admin/users/[id]", "page");
   return {
@@ -518,4 +547,70 @@ export async function revokeWithdrawalCode(formData: FormData) {
     .eq("status", "active");
   await logAudit(adminId, email, "code.revoke", null, null, { code_id: id });
   revalidatePath("/[lang]/admin/codes", "page");
+}
+
+/* ==================== SUPPRESSION DE PROFIL CLIENT ==================== */
+/**
+ * Supprime définitivement un compte client : toutes ses données (transactions,
+ * notifications, codes, comptes de retrait, documents KYC), son profil et son
+ * compte d'authentification. Irréversible. Un admin ne peut pas être supprimé.
+ * Confirmation exigée côté formulaire (champ `confirm` = "SUPPRIMER").
+ */
+export async function deleteUser(
+  _prev: AdminState,
+  formData: FormData,
+): Promise<AdminState> {
+  const { userId: adminId, email } = await requireAdmin();
+  const targetId = String(formData.get("user_id") ?? "").trim();
+  const confirm = String(formData.get("confirm") ?? "").trim().toUpperCase();
+
+  if (!targetId) return { error: "Utilisateur invalide." };
+  if (confirm !== "SUPPRIMER")
+    return { error: "Saisissez SUPPRIMER pour confirmer la suppression." };
+
+  const admin = createAdminClient();
+
+  // Garde-fou : on ne supprime jamais un compte admin.
+  const { data: target } = await admin
+    .from("profiles")
+    .select("id, role, id_document_path, selfie_path")
+    .eq("id", targetId)
+    .maybeSingle<{ id: string; role: string; id_document_path: string | null; selfie_path: string | null }>();
+  if (!target) return { error: "Utilisateur introuvable." };
+  if (target.role === "admin") return { error: "Impossible de supprimer un compte administrateur." };
+
+  // Codes de phase liés aux transactions de l'utilisateur.
+  const { data: txs } = await admin
+    .from("transactions")
+    .select("id")
+    .eq("user_id", targetId)
+    .returns<{ id: string }[]>();
+  const txIds = (txs ?? []).map((t) => t.id);
+  if (txIds.length > 0) {
+    await admin.from("transfer_phase_codes").delete().in("transaction_id", txIds);
+  }
+
+  // Données liées, puis profil.
+  await admin.from("notifications").delete().eq("user_id", targetId);
+  await admin.from("transactions").delete().eq("user_id", targetId);
+  await admin.from("withdrawal_accounts").delete().eq("user_id", targetId);
+  await admin.from("withdrawal_codes").delete().eq("target_user_id", targetId);
+
+  // Documents KYC dans le bucket privé (best-effort).
+  const paths = [target.id_document_path, target.selfie_path].filter(
+    (p): p is string => Boolean(p),
+  );
+  if (paths.length > 0) {
+    await admin.storage.from("documents").remove(paths).then(undefined, () => {});
+  }
+
+  await admin.from("profiles").delete().eq("id", targetId);
+
+  // Compte d'authentification (dernier, pour que le trigger ne recrée rien).
+  const { error: authErr } = await admin.auth.admin.deleteUser(targetId);
+  if (authErr) return { error: "Échec de la suppression du compte d'authentification." };
+
+  await logAudit(adminId, email, "account.delete", targetId, null);
+  revalidatePath("/[lang]/admin/users", "page");
+  return localizedRedirect("/admin/users");
 }

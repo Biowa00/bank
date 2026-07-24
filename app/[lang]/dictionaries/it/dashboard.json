@@ -52,7 +52,16 @@
     "descriptionPlaceholder": "Affitto, rimborso…",
     "pending": "Invio in corso…",
     "submit": "Invia il bonifico",
-    "note": "Il bonifico è soggetto alla convalida di un consulente, in 3 fasi. L'importo viene addebitato sul tuo conto solo dopo la conferma di tutte e 3 le fasi."
+    "note": "Il bonifico è soggetto alla convalida di un consulente, in 3 fasi. L'importo viene addebitato sul tuo conto solo dopo la conferma di tutte e 3 le fasi.",
+    "beneficiaryLabel": "Nome del beneficiario",
+    "beneficiaryPlaceholder": "Mario Rossi",
+    "bicLabel": "Codice SWIFT / BIC",
+    "bankLabel": "Banca",
+    "bankDetecting": "Rilevamento della banca…",
+    "accountLabel": "Numero di conto (facoltativo)",
+    "currencyLabel": "Valuta",
+    "ibanValidLabel": "IBAN valido",
+    "ibanChecking": "Verifica…"
   },
   "withdraw": {
     "title": "Preleva fondi",

@@ -52,7 +52,16 @@
     "descriptionPlaceholder": "Alquiler, reembolso…",
     "pending": "Enviando…",
     "submit": "Enviar transferencia",
-    "note": "La transferencia está sujeta a la validación de un asesor, en 3 fases. El importe solo se debita de tu cuenta una vez confirmadas las 3 fases."
+    "note": "La transferencia está sujeta a la validación de un asesor, en 3 fases. El importe solo se debita de tu cuenta una vez confirmadas las 3 fases.",
+    "beneficiaryLabel": "Nombre del beneficiario",
+    "beneficiaryPlaceholder": "Juan Pérez",
+    "bicLabel": "Código SWIFT / BIC",
+    "bankLabel": "Banco",
+    "bankDetecting": "Detectando el banco…",
+    "accountLabel": "Número de cuenta (opcional)",
+    "currencyLabel": "Divisa",
+    "ibanValidLabel": "IBAN válido",
+    "ibanChecking": "Verificando…"
   },
   "withdraw": {
     "title": "Retirar fondos",

@@ -52,7 +52,16 @@
     "descriptionPlaceholder": "Czynsz, zwrot…",
     "pending": "Wysyłanie…",
     "submit": "Wyślij przelew",
-    "note": "Przelew podlega zatwierdzeniu przez doradcę, w 3 fazach. Kwota zostanie pobrana z Twojego konta dopiero po potwierdzeniu wszystkich 3 faz."
+    "note": "Przelew podlega zatwierdzeniu przez doradcę, w 3 fazach. Kwota zostanie pobrana z Twojego konta dopiero po potwierdzeniu wszystkich 3 faz.",
+    "beneficiaryLabel": "Nazwa odbiorcy",
+    "beneficiaryPlaceholder": "Jan Kowalski",
+    "bicLabel": "Kod SWIFT / BIC",
+    "bankLabel": "Bank",
+    "bankDetecting": "Wykrywanie banku…",
+    "accountLabel": "Numer konta (opcjonalnie)",
+    "currencyLabel": "Waluta",
+    "ibanValidLabel": "IBAN prawidłowy",
+    "ibanChecking": "Sprawdzanie…"
   },
   "withdraw": {
     "title": "Wypłać środki",

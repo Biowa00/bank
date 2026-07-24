@@ -43,7 +43,11 @@
     "ownAccount": "You cannot transfer to your own account.",
     "insufficient": "Insufficient balance for this transfer.",
     "failed": "Transfer failed. Please try again.",
-    "unavailable": "Transfers unavailable."
+    "unavailable": "Transfers unavailable.",
+    "ibanFormat": "Invalid IBAN format.",
+    "ibanLength": "Incorrect IBAN length for this country ({expected} characters expected).",
+    "ibanChecksum": "Invalid IBAN check digits.",
+    "beneficiaryRequired": "Beneficiary name is required."
   },
   "withdrawalAccount": {
     "ibanInvalid": "Invalid IBAN.",

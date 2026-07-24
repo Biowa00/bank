@@ -43,7 +43,11 @@
     "ownAccount": "Não pode transferir para a sua própria conta.",
     "insufficient": "Saldo insuficiente para esta transferência.",
     "failed": "Falha na transferência. Tente novamente.",
-    "unavailable": "Transferências indisponíveis."
+    "unavailable": "Transferências indisponíveis.",
+    "ibanFormat": "Formato de IBAN incorreto.",
+    "ibanLength": "Comprimento de IBAN incorreto para este país ({expected} caracteres esperados).",
+    "ibanChecksum": "Dígitos de controlo do IBAN inválidos.",
+    "beneficiaryRequired": "O nome do beneficiário é obrigatório."
   },
   "withdrawalAccount": {
     "ibanInvalid": "IBAN inválido.",

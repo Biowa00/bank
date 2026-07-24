@@ -52,7 +52,16 @@
     "descriptionPlaceholder": "Loyer, remboursement…",
     "pending": "Envoi…",
     "submit": "Soumettre le virement",
-    "note": "Le virement est soumis à validation par un conseiller, en 3 phases. Le montant n'est débité de votre compte qu'une fois les 3 phases confirmées."
+    "note": "Le virement est soumis à validation par un conseiller, en 3 phases. Le montant n'est débité de votre compte qu'une fois les 3 phases confirmées.",
+    "beneficiaryLabel": "Nom du bénéficiaire",
+    "beneficiaryPlaceholder": "Jean Dupont",
+    "bicLabel": "Code SWIFT / BIC",
+    "bankLabel": "Banque",
+    "bankDetecting": "Détection de la banque…",
+    "accountLabel": "Numéro de compte (facultatif)",
+    "currencyLabel": "Devise",
+    "ibanValidLabel": "IBAN valide",
+    "ibanChecking": "Vérification…"
   },
   "withdraw": {
     "title": "Retirer des fonds",

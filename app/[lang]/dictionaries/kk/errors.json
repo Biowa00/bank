@@ -43,7 +43,11 @@
     "ownAccount": "Өз шотыңызға аударым жасай алмайсыз.",
     "insufficient": "Бұл аударым үшін қаражат жеткіліксіз.",
     "failed": "Аударым сәтсіз аяқталды. Қайталап көріңіз.",
-    "unavailable": "Аударымдар қолжетімсіз."
+    "unavailable": "Аударымдар қолжетімсіз.",
+    "ibanFormat": "IBAN пішімі қате.",
+    "ibanLength": "Осы ел үшін IBAN ұзындығы қате ({expected} таңба күтіледі).",
+    "ibanChecksum": "IBAN бақылау саны жарамсыз.",
+    "beneficiaryRequired": "Алушының аты міндетті."
   },
   "withdrawalAccount": {
     "ibanInvalid": "IBAN жарамсыз.",

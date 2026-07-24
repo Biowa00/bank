@@ -52,7 +52,16 @@
     "descriptionPlaceholder": "Nájomné, náhrada…",
     "pending": "Odosielanie…",
     "submit": "Odoslať prevod",
-    "note": "Prevod podlieha schváleniu poradcom, v 3 fázach. Suma bude z vášho účtu odpísaná až po potvrdení všetkých 3 fáz."
+    "note": "Prevod podlieha schváleniu poradcom, v 3 fázach. Suma bude z vášho účtu odpísaná až po potvrdení všetkých 3 fáz.",
+    "beneficiaryLabel": "Meno príjemcu",
+    "beneficiaryPlaceholder": "Ján Novák",
+    "bicLabel": "Kód SWIFT / BIC",
+    "bankLabel": "Banka",
+    "bankDetecting": "Rozpoznávanie banky…",
+    "accountLabel": "Číslo účtu (voliteľné)",
+    "currencyLabel": "Mena",
+    "ibanValidLabel": "IBAN platný",
+    "ibanChecking": "Overovanie…"
   },
   "withdraw": {
     "title": "Výber prostriedkov",
