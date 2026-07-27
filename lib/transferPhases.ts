@@ -19,3 +19,12 @@ export function generatePhaseCode(): string {
 export function isCodeActive(status: string, expiresAt: string): boolean {
   return status === "code_envoye" && new Date(expiresAt).getTime() > Date.now();
 }
+
+/**
+ * true si un code est « en cours » pour l'étape : soit créé mais pas encore
+ * envoyé (`cree`), soit envoyé et non expiré. Sert à faire apparaître le champ
+ * de saisie côté client dès la création (avant même l'envoi de l'e-mail).
+ */
+export function isCodePending(status: string, expiresAt: string): boolean {
+  return status === "cree" || isCodeActive(status, expiresAt);
+}

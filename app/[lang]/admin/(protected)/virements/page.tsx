@@ -6,6 +6,8 @@ import { TransferReview } from "@/components/admin/TransferReview";
 import { isCodeActive } from "@/lib/transferPhases";
 import type { Profile, Transaction, TransferPhaseCode } from "@/lib/types";
 
+type CodeState = "none" | "created" | "sent";
+
 export default async function VirementsPage() {
   await connection();
   const admin = createAdminClient();
@@ -42,11 +44,20 @@ export default async function VirementsPage() {
     codes = data ?? [];
   }
 
-  // Pour un virement : code actif éventuel en attente de confirmation client.
-  const activeCodeFor = (tx: Transaction) =>
-    codes.find(
-      (c) => c.transaction_id === tx.id && c.phase === tx.unlock_phase + 1 && isCodeActive(c.status, c.expires_at),
-    ) ?? null;
+  // Pour un virement : code « en cours » de l'étape (créé non envoyé, ou
+  // envoyé non expiré) + son état pour piloter les boutons de l'admin.
+  const codeStateFor = (tx: Transaction): { state: CodeState; label: string | null } => {
+    const step = tx.unlock_phase + 1;
+    const created = codes.find(
+      (c) => c.transaction_id === tx.id && c.phase === step && c.status === "cree",
+    );
+    if (created) return { state: "created", label: created.label };
+    const sent = codes.find(
+      (c) => c.transaction_id === tx.id && c.phase === step && isCodeActive(c.status, c.expires_at),
+    );
+    if (sent) return { state: "sent", label: sent.label };
+    return { state: "none", label: null };
+  };
 
   return (
     <div className="space-y-6">
@@ -91,13 +102,13 @@ export default async function VirementsPage() {
 
                 <div className="mt-4 border-t border-black/5 pt-4">
                   {(() => {
-                    const active = activeCodeFor(tx);
+                    const { state, label } = codeStateFor(tx);
                     return (
                       <TransferReview
                         txId={tx.id}
                         confirmedCount={tx.unlock_phase}
-                        awaitingCode={Boolean(active)}
-                        activeLabel={active?.label ?? null}
+                        codeState={state}
+                        activeLabel={label}
                       />
                     );
                   })()}

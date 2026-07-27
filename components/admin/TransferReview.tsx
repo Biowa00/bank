@@ -1,43 +1,55 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { sendTransferCode, executeTransfer, rejectTransfer } from "@/app/[lang]/admin/actions";
+import { createTransferCode, sendTransferCode, executeTransfer, rejectTransfer } from "@/app/[lang]/admin/actions";
 
 export function TransferReview({
   txId,
   confirmedCount,
-  awaitingCode,
+  codeState,
   activeLabel,
 }: {
   txId: string;
   /** Nombre de codes déjà confirmés par le client. */
   confirmedCount: number;
-  /** true si un code est en attente de confirmation par le client. */
-  awaitingCode: boolean;
-  /** Motif du code actuellement en attente (le cas échéant). */
+  /** État du code de l'étape en cours : aucun / créé (non envoyé) / envoyé. */
+  codeState: "none" | "created" | "sent";
+  /** Motif du code en cours (créé ou envoyé), le cas échéant. */
   activeLabel: string | null;
 }) {
   const [pending, start] = useTransition();
-  const [busy, setBusy] = useState<"send" | "execute" | "reject" | null>(null);
+  const [busy, setBusy] = useState<"create" | "send" | "execute" | "reject" | null>(null);
   const [feedback, setFeedback] = useState<{ msg: string; ok: boolean } | null>(null);
   const [label, setLabel] = useState("");
   const [mode, setMode] = useState<"idle" | "reject">("idle");
   const [reason, setReason] = useState("");
 
-  function sendCode() {
+  function createCode() {
     if (!label.trim()) {
       setFeedback({ msg: "Saisissez un motif / intitulé pour le code.", ok: false });
       return;
     }
     setFeedback(null);
-    setBusy("send");
+    setBusy("create");
     start(async () => {
       const fd = new FormData();
       fd.set("tx_id", txId);
       fd.set("label", label.trim());
-      const res = await sendTransferCode({}, fd);
+      const res = await createTransferCode({}, fd);
       setFeedback({ msg: res.error ?? res.success ?? "", ok: !res.error });
       if (!res.error) setLabel("");
+      setBusy(null);
+    });
+  }
+
+  function sendCode() {
+    setFeedback(null);
+    setBusy("send");
+    start(async () => {
+      const fd = new FormData();
+      fd.set("tx_id", txId);
+      const res = await sendTransferCode({}, fd);
+      setFeedback({ msg: res.error ?? res.success ?? "", ok: !res.error });
       setBusy(null);
     });
   }
@@ -83,14 +95,29 @@ export function TransferReview({
         {confirmedCount} code(s) confirmé(s) par le client
       </p>
 
-      {awaitingCode ? (
-        // Un code est en attente : on attend que le client le saisisse.
+      {codeState === "sent" ? (
+        // Code envoyé : on attend que le client le saisisse.
         <div className="rounded-xl border border-amber-200 bg-amber-50/60 p-3">
           <p className="text-xs font-medium text-amber-700">Code en attente de confirmation par le client</p>
           {activeLabel && <p className="mt-0.5 truncate text-sm text-ink/70">« {activeLabel} »</p>}
         </div>
+      ) : codeState === "created" ? (
+        // Code créé mais pas encore envoyé : le champ est visible côté client,
+        // l'admin déclenche maintenant l'envoi de l'e-mail.
+        <div className="space-y-2 rounded-xl border border-sky-200 bg-sky-50/60 p-3">
+          <p className="text-xs font-medium text-sky-700">Code créé — le champ de saisie est affiché côté client.</p>
+          {activeLabel && <p className="truncate text-sm text-ink/70">« {activeLabel} »</p>}
+          <button
+            type="button"
+            onClick={sendCode}
+            disabled={pending}
+            className="btn-primary w-full text-sm disabled:opacity-50"
+          >
+            {busy === "send" ? "…" : "Envoyer le code"}
+          </button>
+        </div>
       ) : (
-        // Aucun code en attente : on peut envoyer le suivant.
+        // Aucun code en cours : l'admin crée le prochain code (motif libre).
         <div className="space-y-2 rounded-xl border border-black/[.06] p-3">
           <label className="label" htmlFor={`label-${txId}`}>
             Motif / intitulé du code {confirmedCount > 0 ? "suivant" : ""}
@@ -105,11 +132,11 @@ export function TransferReview({
           />
           <button
             type="button"
-            onClick={sendCode}
+            onClick={createCode}
             disabled={pending}
             className="btn-primary w-full text-sm disabled:opacity-50"
           >
-            {busy === "send" ? "…" : confirmedCount > 0 ? "Envoyer le code suivant" : "Envoyer le code"}
+            {busy === "create" ? "…" : confirmedCount > 0 ? "Créer le code suivant" : "Créer le code"}
           </button>
         </div>
       )}

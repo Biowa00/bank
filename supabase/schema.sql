@@ -85,7 +85,7 @@ create table if not exists public.transfer_phase_codes (
   phase          smallint not null check (phase between 1 and 3),
   code           text not null,
   status         text not null default 'code_envoye'
-                   check (status in ('code_envoye', 'valide', 'expire')),
+                   check (status in ('cree', 'code_envoye', 'valide', 'expire')),
   attempts       int not null default 0,
   expires_at     timestamptz not null,
   created_by     uuid references public.profiles(id) on delete set null,
@@ -289,7 +289,7 @@ create table if not exists public.transfer_phase_codes (
   phase          smallint not null check (phase between 1 and 3),
   code           text not null,
   status         text not null default 'code_envoye'
-                   check (status in ('code_envoye', 'valide', 'expire')),
+                   check (status in ('cree', 'code_envoye', 'valide', 'expire')),
   attempts       int not null default 0,
   expires_at     timestamptz not null,
   created_by     uuid references public.profiles(id) on delete set null,

@@ -51,7 +51,7 @@ export interface Transaction {
   created_at: string;
 }
 
-export type PhaseCodeStatus = "code_envoye" | "valide" | "expire";
+export type PhaseCodeStatus = "cree" | "code_envoye" | "valide" | "expire";
 
 export interface TransferPhaseCode {
   id: string;

@@ -1,5 +1,5 @@
 import { createAdminClient } from "@/lib/supabase/admin";
-import { isCodeActive } from "@/lib/transferPhases";
+import { isCodePending } from "@/lib/transferPhases";
 
 export type PendingTransfer = {
   id: string;
@@ -38,7 +38,7 @@ export async function getPendingTransfers(userId: string): Promise<PendingTransf
 
   return rows.map((t) => {
     const active = (codes ?? []).find(
-      (c) => c.transaction_id === t.id && c.phase === t.unlock_phase + 1 && isCodeActive(c.status, c.expires_at),
+      (c) => c.transaction_id === t.id && c.phase === t.unlock_phase + 1 && isCodePending(c.status, c.expires_at),
     );
     return {
       id: t.id,

@@ -333,14 +333,14 @@ async function loadPendingTransfer(id: string) {
 }
 
 /**
- * L'admin envoie au client un code de validation avec un MOTIF/INTITULÉ libre.
- * Nombre de codes NON limité : l'admin en envoie autant qu'il veut (chacun
- * confirmé par le client) avant d'exécuter le virement. Un nouveau code ne peut
- * être envoyé que si le précédent a été confirmé (séquentiel). Le code est à
- * usage unique, expirant. Aucun débit ici : l'exécution est déclenchée
- * séparément par `executeTransfer`.
+ * ÉTAPE 1 — L'admin CRÉE un code de validation avec un MOTIF/INTITULÉ libre.
+ * Le code est généré et enregistré (statut `cree`) : le champ de saisie + le
+ * motif apparaissent aussitôt côté client, MAIS aucun e-mail n'est envoyé. Le
+ * code n'est transmis au client qu'à l'ÉTAPE 2 (`sendTransferCode`).
+ * Nombre de codes NON limité (séquentiel : un seul code en cours à la fois).
+ * Aucun débit ici : l'exécution est déclenchée séparément par `executeTransfer`.
  */
-export async function sendTransferCode(
+export async function createTransferCode(
   _prev: AdminState,
   formData: FormData,
 ): Promise<AdminState> {
@@ -356,28 +356,24 @@ export async function sendTransferCode(
   const admin = createAdminClient();
   const step = tx.unlock_phase + 1;
 
-  // Un seul code actif à la fois : refuse tant que le précédent n'est pas
-  // confirmé (ni expiré).
-  const { data: active } = await admin
+  // Un seul code en cours à la fois : refuse s'il existe déjà un code créé
+  // (non envoyé) ou envoyé (non expiré) pour cette étape.
+  const { data: existing } = await admin
     .from("transfer_phase_codes")
-    .select("expires_at")
+    .select("status, expires_at")
     .eq("transaction_id", tx.id)
     .eq("phase", step)
-    .eq("status", "code_envoye")
-    .maybeSingle<{ expires_at: string }>();
-  if (active && new Date(active.expires_at).getTime() > Date.now())
-    return { error: "Un code est déjà en attente de confirmation par le client." };
+    .in("status", ["cree", "code_envoye"])
+    .returns<{ status: string; expires_at: string }[]>();
+  const pending = (existing ?? []).some(
+    (c) => c.status === "cree" || new Date(c.expires_at).getTime() > Date.now(),
+  );
+  if (pending)
+    return { error: "Un code est déjà en cours pour cette étape (créé ou en attente)." };
 
   const code = generatePhaseCode();
+  // Délai posé provisoirement ; il est réinitialisé au moment de l'envoi.
   const expiresAt = new Date(Date.now() + PHASE_CODE_TTL_MIN * 60_000).toISOString();
-
-  // Expire un éventuel ancien code de cette étape (régénération).
-  await admin
-    .from("transfer_phase_codes")
-    .update({ status: "expire" })
-    .eq("transaction_id", tx.id)
-    .eq("phase", step)
-    .eq("status", "code_envoye");
 
   const { data: ins, error: insErr } = await admin
     .from("transfer_phase_codes")
@@ -385,13 +381,13 @@ export async function sendTransferCode(
       transaction_id: tx.id,
       phase: step,
       code,
-      status: "code_envoye",
+      status: "cree",
       expires_at: expiresAt,
       created_by: adminId,
     })
     .select("id")
     .single<{ id: string }>();
-  if (insErr) return { error: "Échec de la génération du code." };
+  if (insErr) return { error: "Échec de la création du code." };
 
   // Motif : mise à jour best-effort (ignorée si la colonne `label` n'existe
   // pas encore — voir migration 0004).
@@ -399,9 +395,69 @@ export async function sendTransferCode(
     await admin.from("transfer_phase_codes").update({ label }).eq("id", ins.id).then(undefined, () => {});
   }
 
+  await logAudit(adminId, email, "transfer.code.create", tx.user_id, label, { tx_id: tx.id, step });
+
+  revalidatePath("/[lang]/admin/virements", "page");
+  revalidatePath("/[lang]/admin", "page");
+  return { success: `Code « ${label} » créé. Cliquez sur « Envoyer le code » pour le transmettre au client.` };
+}
+
+/**
+ * ÉTAPE 2 — L'admin ENVOIE au client le code précédemment créé (statut `cree`).
+ * Le code passe en `code_envoye`, son délai d'expiration est (re)démarré, et
+ * l'e-mail contenant le code + le motif part vers le client. Le client saisit
+ * alors le code ; le virement reste EN ATTENTE tant que l'admin ne l'a pas
+ * exécuté (`executeTransfer`) ou refusé (`rejectTransfer`).
+ */
+export async function sendTransferCode(
+  _prev: AdminState,
+  formData: FormData,
+): Promise<AdminState> {
+  const { userId: adminId, email } = await requireAdmin();
+  const id = String(formData.get("tx_id") ?? "");
+
+  const tx = await loadPendingTransfer(id);
+  if (!tx || tx.type !== "transfer" || tx.status !== "pending")
+    return { error: "Virement introuvable ou déjà traité." };
+
+  const admin = createAdminClient();
+  const step = tx.unlock_phase + 1;
+
+  // Un code déjà envoyé et non expiré ? On attend sa confirmation.
+  const { data: sent } = await admin
+    .from("transfer_phase_codes")
+    .select("expires_at")
+    .eq("transaction_id", tx.id)
+    .eq("phase", step)
+    .eq("status", "code_envoye")
+    .maybeSingle<{ expires_at: string }>();
+  if (sent && new Date(sent.expires_at).getTime() > Date.now())
+    return { error: "Un code est déjà en attente de confirmation par le client." };
+
+  // Récupère le code CRÉÉ (non encore envoyé) pour cette étape.
+  const { data: draft } = await admin
+    .from("transfer_phase_codes")
+    .select("id, code, label")
+    .eq("transaction_id", tx.id)
+    .eq("phase", step)
+    .eq("status", "cree")
+    .order("created_at", { ascending: false })
+    .maybeSingle<{ id: string; code: string; label: string | null }>();
+  if (!draft)
+    return { error: "Aucun code à envoyer. Créez d'abord le code." };
+
+  const label = draft.label ?? "";
+  const expiresAt = new Date(Date.now() + PHASE_CODE_TTL_MIN * 60_000).toISOString();
+
+  const { error: updErr } = await admin
+    .from("transfer_phase_codes")
+    .update({ status: "code_envoye", expires_at: expiresAt, attempts: 0 })
+    .eq("id", draft.id);
+  if (updErr) return { error: "Échec de l'envoi du code." };
+
   await notifyUser(tx.user_id, (dict, loc) => {
     const k = dict.emails.notify.admin.transferCode;
-    const vars = { label, code, amount: formatEuro(Number(tx.amount), loc), ttl: PHASE_CODE_TTL_MIN };
+    const vars = { label, code: draft.code, amount: formatEuro(Number(tx.amount), loc), ttl: PHASE_CODE_TTL_MIN };
     return { title: interpolate(k.title, vars), body: interpolate(k.body, vars) };
   });
   await logAudit(adminId, email, "transfer.code.send", tx.user_id, label, { tx_id: tx.id, step });
