@@ -111,11 +111,19 @@
         "title": "Neuer Auszahlungscode",
         "body": "Ihr Auszahlungscode „{name}“ lautet {code}. Geben Sie ihn in Ihrem Konto ein, um Ihre Auszahlung zu bestätigen.",
         "reasonSuffix": " Grund: {reason}"
+      },
+      "transferCode": {
+        "title": "{label}",
+        "body": "Für Ihre Überweisung über {amount} wurde ein Code gesendet. Grund: {label}. Ihr Code lautet {code}. Geben Sie ihn in Ihrem Konto ein. Gültig für {ttl} Minuten."
       }
     },
     "withdrawalPending": {
       "title": "Auszahlung ausstehend",
       "body": "Ihr Auszahlungsantrag über {amount} an {iban} ist eingegangen. Er wird bearbeitet."
+    },
+    "transferStepConfirmed": {
+      "title": "Code bestätigt",
+      "body": "Ihr Code wurde bestätigt. Ihre Überweisung wird fortgesetzt."
     }
   },
   "chrome": {

@@ -107,7 +107,10 @@
       "1": "Connection confirmation code",
       "2": "Bank approval code",
       "3": "Transfer activation code"
-    }
+    },
+    "codeFallback": "Validation code",
+    "codeHint": "Enter the code received by email.",
+    "awaitingProcessing": "Your transfer is pending. You'll be notified when an action is required."
   },
   "transactions": {
     "title": "Transaction history",

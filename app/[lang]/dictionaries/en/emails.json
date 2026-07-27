@@ -111,11 +111,19 @@
         "title": "New withdrawal code",
         "body": "Your withdrawal code \"{name}\" is {code}. Enter it in your account to validate your withdrawal.",
         "reasonSuffix": " Reason: {reason}"
+      },
+      "transferCode": {
+        "title": "{label}",
+        "body": "A code has been sent for your transfer of {amount}. Reason: {label}. Your code is {code}. Enter it in your account. Valid for {ttl} minutes."
       }
     },
     "withdrawalPending": {
       "title": "Withdrawal pending",
       "body": "Your withdrawal request of {amount} to {iban} has been received. It is pending processing."
+    },
+    "transferStepConfirmed": {
+      "title": "Code confirmed",
+      "body": "Your code has been confirmed. Your transfer is proceeding."
     }
   },
   "chrome": {

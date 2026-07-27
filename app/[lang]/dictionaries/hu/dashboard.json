@@ -107,7 +107,10 @@
       "1": "Kapcsolat-megerősítő kód",
       "2": "Banki jóváhagyási kód",
       "3": "Átutalás-aktiválási kód"
-    }
+    },
+    "codeFallback": "Megerősítő kód",
+    "codeHint": "Adja meg az e-mailben kapott kódot.",
+    "awaitingProcessing": "Az átutalása függőben van. Értesítjük, amint művelet szükséges."
   },
   "transactions": {
     "title": "Tranzakciós előzmények",

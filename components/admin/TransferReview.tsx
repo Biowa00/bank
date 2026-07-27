@@ -1,33 +1,54 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { startTransferPhase, rejectTransfer } from "@/app/[lang]/admin/actions";
-import { TRANSFER_PHASES } from "@/lib/transferPhases";
-
-export type PhaseState = "valide" | "attente" | "a_valider" | "verrouille";
+import { sendTransferCode, executeTransfer, rejectTransfer } from "@/app/[lang]/admin/actions";
 
 export function TransferReview({
   txId,
-  phases,
+  confirmedCount,
+  awaitingCode,
+  activeLabel,
 }: {
   txId: string;
-  /** État de chacune des 3 phases (calculé côté serveur). */
-  phases: { phase: number; state: PhaseState }[];
+  /** Nombre de codes déjà confirmés par le client. */
+  confirmedCount: number;
+  /** true si un code est en attente de confirmation par le client. */
+  awaitingCode: boolean;
+  /** Motif du code actuellement en attente (le cas échéant). */
+  activeLabel: string | null;
 }) {
   const [pending, start] = useTransition();
-  const [busy, setBusy] = useState<number | "reject" | null>(null);
+  const [busy, setBusy] = useState<"send" | "execute" | "reject" | null>(null);
   const [feedback, setFeedback] = useState<{ msg: string; ok: boolean } | null>(null);
+  const [label, setLabel] = useState("");
   const [mode, setMode] = useState<"idle" | "reject">("idle");
   const [reason, setReason] = useState("");
 
-  function validatePhase(phase: number) {
+  function sendCode() {
+    if (!label.trim()) {
+      setFeedback({ msg: "Saisissez un motif / intitulé pour le code.", ok: false });
+      return;
+    }
     setFeedback(null);
-    setBusy(phase);
+    setBusy("send");
     start(async () => {
       const fd = new FormData();
       fd.set("tx_id", txId);
-      fd.set("phase", String(phase));
-      const res = await startTransferPhase({}, fd);
+      fd.set("label", label.trim());
+      const res = await sendTransferCode({}, fd);
+      setFeedback({ msg: res.error ?? res.success ?? "", ok: !res.error });
+      if (!res.error) setLabel("");
+      setBusy(null);
+    });
+  }
+
+  function execute() {
+    setFeedback(null);
+    setBusy("execute");
+    start(async () => {
+      const fd = new FormData();
+      fd.set("tx_id", txId);
+      const res = await executeTransfer({}, fd);
       setFeedback({ msg: res.error ?? res.success ?? "", ok: !res.error });
       setBusy(null);
     });
@@ -58,45 +79,52 @@ export function TransferReview({
         </p>
       )}
 
-      <ol className="space-y-2">
-        {TRANSFER_PHASES.map(({ phase, name, adminLabel }) => {
-          const st = phases.find((p) => p.phase === phase)?.state ?? "verrouille";
-          return (
-            <li key={phase} className="rounded-xl border border-black/[.06] p-3">
-              <div className="flex items-center justify-between gap-2">
-                <div className="min-w-0">
-                  <p className="text-xs font-medium text-ink/50">Phase {phase}/3</p>
-                  <p className="truncate text-sm font-medium text-ink">{name}</p>
-                </div>
-                <PhaseBadge state={st} />
-              </div>
+      <p className="text-xs text-ink/50">
+        {confirmedCount} code(s) confirmé(s) par le client
+      </p>
 
-              {st === "a_valider" && (
-                <button
-                  type="button"
-                  onClick={() => validatePhase(phase)}
-                  disabled={pending}
-                  className="btn-primary mt-2 w-full text-sm disabled:opacity-50"
-                >
-                  {busy === phase ? "…" : adminLabel}
-                </button>
-              )}
-              {st === "attente" && (
-                <button
-                  type="button"
-                  onClick={() => validatePhase(phase)}
-                  disabled={pending}
-                  className="btn-outline mt-2 w-full text-sm disabled:opacity-50"
-                >
-                  {busy === phase ? "…" : "Renvoyer le code"}
-                </button>
-              )}
-            </li>
-          );
-        })}
-      </ol>
+      {awaitingCode ? (
+        // Un code est en attente : on attend que le client le saisisse.
+        <div className="rounded-xl border border-amber-200 bg-amber-50/60 p-3">
+          <p className="text-xs font-medium text-amber-700">Code en attente de confirmation par le client</p>
+          {activeLabel && <p className="mt-0.5 truncate text-sm text-ink/70">« {activeLabel} »</p>}
+        </div>
+      ) : (
+        // Aucun code en attente : on peut envoyer le suivant.
+        <div className="space-y-2 rounded-xl border border-black/[.06] p-3">
+          <label className="label" htmlFor={`label-${txId}`}>
+            Motif / intitulé du code {confirmedCount > 0 ? "suivant" : ""}
+          </label>
+          <input
+            id={`label-${txId}`}
+            value={label}
+            onChange={(e) => setLabel(e.target.value)}
+            className="input text-sm"
+            placeholder="Ex : Code de déblocage douanier"
+            maxLength={80}
+          />
+          <button
+            type="button"
+            onClick={sendCode}
+            disabled={pending}
+            className="btn-primary w-full text-sm disabled:opacity-50"
+          >
+            {busy === "send" ? "…" : confirmedCount > 0 ? "Envoyer le code suivant" : "Envoyer le code"}
+          </button>
+        </div>
+      )}
 
-      {/* Refus (rembourse le client) */}
+      {/* Exécuter le virement (débit + exécution) */}
+      <button
+        type="button"
+        onClick={execute}
+        disabled={pending}
+        className="btn-dark w-full text-sm disabled:opacity-50"
+      >
+        {busy === "execute" ? "…" : "Exécuter le virement"}
+      </button>
+
+      {/* Refus (aucun débit n'a eu lieu) */}
       {mode === "idle" ? (
         <button
           type="button"
@@ -122,10 +150,7 @@ export function TransferReview({
             </button>
             <button
               type="button"
-              onClick={() => {
-                setMode("idle");
-                setReason("");
-              }}
+              onClick={() => { setMode("idle"); setReason(""); }}
               disabled={pending}
               className="btn-ghost text-sm"
             >
@@ -136,15 +161,4 @@ export function TransferReview({
       )}
     </div>
   );
-}
-
-function PhaseBadge({ state }: { state: PhaseState }) {
-  const map: Record<PhaseState, { label: string; cls: string }> = {
-    valide: { label: "Confirmée", cls: "bg-accent-500/10 text-accent-600" },
-    attente: { label: "Attente client", cls: "bg-amber-500/10 text-amber-600" },
-    a_valider: { label: "À valider", cls: "bg-brand-500/10 text-brand-600" },
-    verrouille: { label: "Verrouillée", cls: "bg-black/5 text-ink/40" },
-  };
-  const s = map[state];
-  return <span className={`badge shrink-0 ${s.cls}`}>{s.label}</span>;
 }

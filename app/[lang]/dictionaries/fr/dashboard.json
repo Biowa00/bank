@@ -107,7 +107,10 @@
       "1": "Code de confirmation de mise en relation",
       "2": "Code d'approbation bancaire",
       "3": "Code d'activation de virement"
-    }
+    },
+    "codeFallback": "Code de validation",
+    "codeHint": "Saisissez le code reçu par e-mail.",
+    "awaitingProcessing": "Votre virement est en attente. Vous serez notifié dès qu'une action est requise."
   },
   "transactions": {
     "title": "Historique des transactions",

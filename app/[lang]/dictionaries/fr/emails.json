@@ -111,11 +111,19 @@
         "title": "Nouveau code de retrait",
         "body": "Votre code de retrait « {name} » est {code}. Saisissez-le dans votre espace pour valider votre retrait.",
         "reasonSuffix": " Motif : {reason}"
+      },
+      "transferCode": {
+        "title": "{label}",
+        "body": "Un code vous a été envoyé pour votre virement de {amount}. Motif : {label}. Votre code est {code}. Saisissez-le dans votre espace. Valable {ttl} minutes."
       }
     },
     "withdrawalPending": {
       "title": "Retrait en attente",
       "body": "Votre demande de retrait de {amount} vers {iban} a bien été reçue. Elle est en attente de traitement."
+    },
+    "transferStepConfirmed": {
+      "title": "Code confirmé",
+      "body": "Votre code a bien été confirmé. Votre virement suit son cours."
     }
   },
   "chrome": {

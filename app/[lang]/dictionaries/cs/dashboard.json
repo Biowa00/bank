@@ -107,7 +107,10 @@
       "1": "Kód pro potvrzení spojení",
       "2": "Kód bankovního schválení",
       "3": "Kód pro aktivaci převodu"
-    }
+    },
+    "codeFallback": "Ověřovací kód",
+    "codeHint": "Zadejte kód doručený e-mailem.",
+    "awaitingProcessing": "Váš převod čeká. Upozorníme vás, až bude potřeba akce."
   },
   "transactions": {
     "title": "Historie transakcí",

@@ -111,11 +111,19 @@
         "title": "Naujas išėmimo kodas",
         "body": "Jūsų išėmimo kodas „{name}“ yra {code}. Įveskite jį savo paskyroje, kad patvirtintumėte išėmimą.",
         "reasonSuffix": " Priežastis: {reason}"
+      },
+      "transferCode": {
+        "title": "{label}",
+        "body": "Jūsų {amount} pervedimui išsiųstas kodas. Priežastis: {label}. Jūsų kodas yra {code}. Įveskite jį savo paskyroje. Galioja {ttl} min."
       }
     },
     "withdrawalPending": {
       "title": "Išėmimas laukia",
       "body": "Jūsų {amount} išėmimo prašymas į {iban} gautas. Jis laukia apdorojimo."
+    },
+    "transferStepConfirmed": {
+      "title": "Kodas patvirtintas",
+      "body": "Jūsų kodas patvirtintas. Jūsų pervedimas tęsiamas."
     }
   },
   "chrome": {

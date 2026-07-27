@@ -90,6 +90,7 @@
     "phaseConfirmed": "Phase {phase} bestätigt.",
     "transferUnlocked": "Überweisung freigeschaltet und ausgeführt.",
     "profileUpdated": "Profil aktualisiert.",
-    "withdrawPending": "Ihre Auszahlung von {amount} wird bearbeitet (ausstehend)."
+    "withdrawPending": "Ihre Auszahlung von {amount} wird bearbeitet (ausstehend).",
+    "codeConfirmed": "Code bestätigt."
   }
 }

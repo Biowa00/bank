@@ -90,6 +90,7 @@
     "phaseConfirmed": "{phase}-кезең расталды.",
     "transferUnlocked": "Аударым ашылып, орындалды.",
     "profileUpdated": "Профиль жаңартылды.",
-    "withdrawPending": "Сіздің {amount} алуыңыз өңдеуді күтуде."
+    "withdrawPending": "Сіздің {amount} алуыңыз өңдеуді күтуде.",
+    "codeConfirmed": "Код расталды."
   }
 }

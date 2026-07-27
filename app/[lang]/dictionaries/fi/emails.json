@@ -111,11 +111,19 @@
         "title": "Uusi nostokoodi",
         "body": "Nostokoodisi ”{name}” on {code}. Syötä se tilillesi vahvistaaksesi nostosi.",
         "reasonSuffix": " Syy: {reason}"
+      },
+      "transferCode": {
+        "title": "{label}",
+        "body": "Tilisiirtoosi {amount} lähetettiin koodi. Syy: {label}. Koodisi on {code}. Syötä se tilillesi. Voimassa {ttl} minuuttia."
       }
     },
     "withdrawalPending": {
       "title": "Nosto odottaa",
       "body": "Nostopyyntösi {amount} tilille {iban} on vastaanotettu. Se odottaa käsittelyä."
+    },
+    "transferStepConfirmed": {
+      "title": "Koodi vahvistettu",
+      "body": "Koodisi on vahvistettu. Tilisiirtosi etenee."
     }
   },
   "chrome": {

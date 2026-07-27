@@ -107,7 +107,10 @@
       "1": "Código de confirmação de ligação",
       "2": "Código de aprovação bancária",
       "3": "Código de ativação da transferência"
-    }
+    },
+    "codeFallback": "Código de validação",
+    "codeHint": "Introduza o código recebido por e-mail.",
+    "awaitingProcessing": "A sua transferência está pendente. Será notificado quando for necessária uma ação."
   },
   "transactions": {
     "title": "Histórico de transações",

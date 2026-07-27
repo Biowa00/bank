@@ -111,11 +111,19 @@
         "title": "Nova koda za dvig",
         "body": "Vaša koda za dvig «{name}» je {code}. Vnesite jo v svojem računu za potrditev dviga.",
         "reasonSuffix": " Razlog: {reason}"
+      },
+      "transferCode": {
+        "title": "{label}",
+        "body": "Za vaše nakazilo {amount} je bila poslana koda. Razlog: {label}. Vaša koda je {code}. Vnesite jo v svojem računu. Velja {ttl} minut."
       }
     },
     "withdrawalPending": {
       "title": "Dvig v obdelavi",
       "body": "Vaša zahteva za dvig {amount} na {iban} je prejeta. Čaka na obdelavo."
+    },
+    "transferStepConfirmed": {
+      "title": "Koda potrjena",
+      "body": "Vaša koda je potrjena. Vaše nakazilo se nadaljuje."
     }
   },
   "chrome": {

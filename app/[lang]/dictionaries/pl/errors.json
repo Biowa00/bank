@@ -90,6 +90,7 @@
     "phaseConfirmed": "Faza {phase} potwierdzona.",
     "transferUnlocked": "Przelew odblokowany i wykonany.",
     "profileUpdated": "Profil zaktualizowany.",
-    "withdrawPending": "Twoja wypłata {amount} oczekuje na przetworzenie."
+    "withdrawPending": "Twoja wypłata {amount} oczekuje na przetworzenie.",
+    "codeConfirmed": "Kod potwierdzony."
   }
 }

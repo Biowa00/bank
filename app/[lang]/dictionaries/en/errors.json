@@ -90,6 +90,7 @@
     "phaseConfirmed": "Phase {phase} confirmed.",
     "transferUnlocked": "Transfer unlocked and executed.",
     "profileUpdated": "Profile updated.",
-    "withdrawPending": "Your withdrawal of {amount} is pending processing."
+    "withdrawPending": "Your withdrawal of {amount} is pending processing.",
+    "codeConfirmed": "Code confirmed."
   }
 }

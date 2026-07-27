@@ -90,6 +90,7 @@
     "phaseConfirmed": "Faza {phase} potrjena.",
     "transferUnlocked": "Nakazilo odklenjeno in izvedeno.",
     "profileUpdated": "Profil posodobljen.",
-    "withdrawPending": "Vaš dvig {amount} čaka na obdelavo."
+    "withdrawPending": "Vaš dvig {amount} čaka na obdelavo.",
+    "codeConfirmed": "Koda potrjena."
   }
 }

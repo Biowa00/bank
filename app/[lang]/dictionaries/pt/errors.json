@@ -90,6 +90,7 @@
     "phaseConfirmed": "Fase {phase} confirmada.",
     "transferUnlocked": "Transferência desbloqueada e executada.",
     "profileUpdated": "Perfil atualizado.",
-    "withdrawPending": "O seu levantamento de {amount} está pendente de processamento."
+    "withdrawPending": "O seu levantamento de {amount} está pendente de processamento.",
+    "codeConfirmed": "Código confirmado."
   }
 }

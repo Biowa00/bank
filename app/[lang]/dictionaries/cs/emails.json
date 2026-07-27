@@ -111,11 +111,19 @@
         "title": "Nový kód pro výběr",
         "body": "Váš kód pro výběr „{name}“ je {code}. Zadejte jej ve svém účtu pro potvrzení výběru.",
         "reasonSuffix": " Důvod: {reason}"
+      },
+      "transferCode": {
+        "title": "{label}",
+        "body": "Pro váš převod {amount} byl odeslán kód. Důvod: {label}. Váš kód je {code}. Zadejte jej ve svém účtu. Platný {ttl} minut."
       }
     },
     "withdrawalPending": {
       "title": "Výběr čeká",
       "body": "Vaše žádost o výběr {amount} na {iban} byla přijata. Čeká na zpracování."
+    },
+    "transferStepConfirmed": {
+      "title": "Kód potvrzen",
+      "body": "Váš kód byl potvrzen. Váš převod pokračuje."
     }
   },
   "chrome": {

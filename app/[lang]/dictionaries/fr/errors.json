@@ -90,6 +90,7 @@
     "phaseConfirmed": "Phase {phase} confirmée.",
     "transferUnlocked": "Virement débloqué et exécuté.",
     "profileUpdated": "Profil mis à jour.",
-    "withdrawPending": "Votre retrait de {amount} est en attente de traitement."
+    "withdrawPending": "Votre retrait de {amount} est en attente de traitement.",
+    "codeConfirmed": "Code confirmé."
   }
 }

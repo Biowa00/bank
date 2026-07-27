@@ -107,7 +107,10 @@
       "1": "Yhteyden vahvistuskoodi",
       "2": "Pankin hyväksyntäkoodi",
       "3": "Tilisiirron aktivointikoodi"
-    }
+    },
+    "codeFallback": "Vahvistuskoodi",
+    "codeHint": "Syötä sähköpostitse saamasi koodi.",
+    "awaitingProcessing": "Tilisiirtosi odottaa. Saat ilmoituksen, kun toimenpide tarvitaan."
   },
   "transactions": {
     "title": "Tapahtumahistoria",

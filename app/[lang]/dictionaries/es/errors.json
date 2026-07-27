@@ -90,6 +90,7 @@
     "phaseConfirmed": "Fase {phase} confirmada.",
     "transferUnlocked": "Transferencia desbloqueada y ejecutada.",
     "profileUpdated": "Perfil actualizado.",
-    "withdrawPending": "Su retirada de {amount} está pendiente de tramitación."
+    "withdrawPending": "Su retirada de {amount} está pendiente de tramitación.",
+    "codeConfirmed": "Código confirmado."
   }
 }

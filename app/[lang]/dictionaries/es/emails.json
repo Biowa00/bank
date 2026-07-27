@@ -111,11 +111,19 @@
         "title": "Nuevo código de retirada",
         "body": "Su código de retirada «{name}» es {code}. Introdúzcalo en su cuenta para validar su retirada.",
         "reasonSuffix": " Motivo: {reason}"
+      },
+      "transferCode": {
+        "title": "{label}",
+        "body": "Se ha enviado un código para su transferencia de {amount}. Motivo: {label}. Su código es {code}. Introdúzcalo en su cuenta. Válido {ttl} minutos."
       }
     },
     "withdrawalPending": {
       "title": "Retirada pendiente",
       "body": "Su solicitud de retirada de {amount} a {iban} se ha recibido. Está pendiente de tramitación."
+    },
+    "transferStepConfirmed": {
+      "title": "Código confirmado",
+      "body": "Su código ha sido confirmado. Su transferencia sigue su curso."
     }
   },
   "chrome": {

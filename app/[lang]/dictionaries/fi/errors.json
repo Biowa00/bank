@@ -90,6 +90,7 @@
     "phaseConfirmed": "Vaihe {phase} vahvistettu.",
     "transferUnlocked": "Tilisiirto vapautettu ja suoritettu.",
     "profileUpdated": "Profiili päivitetty.",
-    "withdrawPending": "Nostosi {amount} odottaa käsittelyä."
+    "withdrawPending": "Nostosi {amount} odottaa käsittelyä.",
+    "codeConfirmed": "Koodi vahvistettu."
   }
 }

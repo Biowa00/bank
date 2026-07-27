@@ -107,7 +107,10 @@
       "1": "Kod potwierdzenia połączenia",
       "2": "Kod zatwierdzenia bankowego",
       "3": "Kod aktywacji przelewu"
-    }
+    },
+    "codeFallback": "Kod weryfikacyjny",
+    "codeHint": "Wprowadź kod otrzymany e-mailem.",
+    "awaitingProcessing": "Twój przelew oczekuje. Powiadomimy Cię, gdy wymagane będzie działanie."
   },
   "transactions": {
     "title": "Historia transakcji",

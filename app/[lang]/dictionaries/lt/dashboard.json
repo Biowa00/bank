@@ -107,7 +107,10 @@
       "1": "Ryšio patvirtinimo kodas",
       "2": "Banko patvirtinimo kodas",
       "3": "Pervedimo aktyvavimo kodas"
-    }
+    },
+    "codeFallback": "Patvirtinimo kodas",
+    "codeHint": "Įveskite el. paštu gautą kodą.",
+    "awaitingProcessing": "Jūsų pervedimas laukia. Būsite informuoti, kai reikės veiksmo."
   },
   "transactions": {
     "title": "Operacijų istorija",

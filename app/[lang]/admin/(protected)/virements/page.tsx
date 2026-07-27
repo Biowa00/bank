@@ -2,7 +2,7 @@ import { connection } from "next/server";
 import { LocaleLink as Link } from "@/components/i18n/navigation";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { formatEuro, formatIban, formatDate } from "@/lib/format";
-import { TransferReview, type PhaseState } from "@/components/admin/TransferReview";
+import { TransferReview } from "@/components/admin/TransferReview";
 import { isCodeActive } from "@/lib/transferPhases";
 import type { Profile, Transaction, TransferPhaseCode } from "@/lib/types";
 
@@ -42,25 +42,18 @@ export default async function VirementsPage() {
     codes = data ?? [];
   }
 
-  const phasesFor = (tx: Transaction): { phase: number; state: PhaseState }[] =>
-    [1, 2, 3].map((phase) => {
-      let state: PhaseState;
-      if (phase <= tx.unlock_phase) state = "valide";
-      else if (phase === tx.unlock_phase + 1) {
-        const active = codes.find(
-          (c) => c.transaction_id === tx.id && c.phase === phase && isCodeActive(c.status, c.expires_at),
-        );
-        state = active ? "attente" : "a_valider";
-      } else state = "verrouille";
-      return { phase, state };
-    });
+  // Pour un virement : code actif éventuel en attente de confirmation client.
+  const activeCodeFor = (tx: Transaction) =>
+    codes.find(
+      (c) => c.transaction_id === tx.id && c.phase === tx.unlock_phase + 1 && isCodeActive(c.status, c.expires_at),
+    ) ?? null;
 
   return (
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold tracking-tight text-ink">Virements à valider</h1>
         <p className="mt-1 text-ink/60">
-          Déblocage en 3 phases : validez chaque phase, le client confirme le code reçu avant la suivante.
+          Envoyez au client autant de codes que nécessaire (chacun avec son motif) ; il confirme chaque code, puis vous exécutez le virement.
         </p>
       </div>
 
@@ -85,7 +78,7 @@ export default async function VirementsPage() {
                     )}
                     <p className="truncate text-xs text-ink/50">{sender?.email}</p>
                   </div>
-                  <span className="badge shrink-0 bg-amber-500/10 text-amber-600">{tx.unlock_phase}/3 phases</span>
+                  <span className="badge shrink-0 bg-amber-500/10 text-amber-600">{tx.unlock_phase} code(s) ✓</span>
                 </div>
 
                 <div className="mt-4 space-y-1.5 text-sm">
@@ -97,7 +90,17 @@ export default async function VirementsPage() {
                 </div>
 
                 <div className="mt-4 border-t border-black/5 pt-4">
-                  <TransferReview txId={tx.id} phases={phasesFor(tx)} />
+                  {(() => {
+                    const active = activeCodeFor(tx);
+                    return (
+                      <TransferReview
+                        txId={tx.id}
+                        confirmedCount={tx.unlock_phase}
+                        awaitingCode={Boolean(active)}
+                        activeLabel={active?.label ?? null}
+                      />
+                    );
+                  })()}
                 </div>
               </div>
             );

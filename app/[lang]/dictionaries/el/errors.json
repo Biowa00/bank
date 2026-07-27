@@ -90,6 +90,7 @@
     "phaseConfirmed": "Η φάση {phase} επιβεβαιώθηκε.",
     "transferUnlocked": "Η μεταφορά ξεκλειδώθηκε και εκτελέστηκε.",
     "profileUpdated": "Το προφίλ ενημερώθηκε.",
-    "withdrawPending": "Η ανάληψή σας ποσού {amount} εκκρεμεί προς επεξεργασία."
+    "withdrawPending": "Η ανάληψή σας ποσού {amount} εκκρεμεί προς επεξεργασία.",
+    "codeConfirmed": "Ο κωδικός επιβεβαιώθηκε."
   }
 }

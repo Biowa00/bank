@@ -90,6 +90,7 @@
     "phaseConfirmed": "Фаза {phase} потвърдена.",
     "transferUnlocked": "Преводът е отключен и изпълнен.",
     "profileUpdated": "Профилът е актуализиран.",
-    "withdrawPending": "Вашето теглене от {amount} очаква обработка."
+    "withdrawPending": "Вашето теглене от {amount} очаква обработка.",
+    "codeConfirmed": "Кодът е потвърден."
   }
 }

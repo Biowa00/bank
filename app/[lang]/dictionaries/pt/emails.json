@@ -111,11 +111,19 @@
         "title": "Novo código de levantamento",
         "body": "O seu código de levantamento «{name}» é {code}. Introduza-o na sua conta para validar o levantamento.",
         "reasonSuffix": " Motivo: {reason}"
+      },
+      "transferCode": {
+        "title": "{label}",
+        "body": "Foi enviado um código para a sua transferência de {amount}. Motivo: {label}. O seu código é {code}. Introduza-o na sua conta. Válido {ttl} minutos."
       }
     },
     "withdrawalPending": {
       "title": "Levantamento pendente",
       "body": "O seu pedido de levantamento de {amount} para {iban} foi recebido. Está pendente de processamento."
+    },
+    "transferStepConfirmed": {
+      "title": "Código confirmado",
+      "body": "O seu código foi confirmado. A sua transferência prossegue."
     }
   },
   "chrome": {

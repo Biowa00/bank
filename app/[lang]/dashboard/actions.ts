@@ -8,7 +8,7 @@ import { notify } from "@/lib/notify";
 import { canDeposit, canTransfer, canWithdraw, permissionReason } from "@/lib/permissions";
 import { cleanIban, isPlausibleIban, formatEuro } from "@/lib/format";
 import { validateIban } from "@/lib/ibanValidate";
-import { PHASE_MAX_ATTEMPTS, PHASE_TOTAL } from "@/lib/transferPhases";
+import { PHASE_MAX_ATTEMPTS } from "@/lib/transferPhases";
 import { getRequestLocale } from "@/lib/i18n/server";
 import { getDictionary } from "../dictionaries";
 import { interpolate, type Locale } from "@/lib/i18n/config";
@@ -374,7 +374,7 @@ export async function confirmTransferPhase(
   _prev: PhaseState,
   formData: FormData,
 ): Promise<PhaseState> {
-  const { locale, dict } = await ctx();
+  const { dict } = await ctx();
   const E = dict.errors;
   const NT = dict.emails.notify;
   const { userId } = await getVerifiedProfile();
@@ -403,8 +403,6 @@ export async function confirmTransferPhase(
   if (!tx) return { error: E.phase.notFound };
 
   const currentPhase = tx.unlock_phase + 1;
-  if (currentPhase > PHASE_TOTAL)
-    return { error: E.phase.allConfirmed, phase: tx.unlock_phase };
 
   const { data: row } = await admin
     .from("transfer_phase_codes")
@@ -444,137 +442,38 @@ export async function confirmTransferPhase(
     };
   }
 
-  // Code correct → phase confirmée.
+  // Code correct → étape confirmée. AUCUN débit ici : l'exécution du virement
+  // (débit émetteur + crédit bénéficiaire) est déclenchée séparément par
+  // l'admin via `executeTransfer`. Le client ne voit jamais de numéro d'étape.
   const nowIso = new Date().toISOString();
   await admin
     .from("transfer_phase_codes")
     .update({ status: "valide", confirmed_at: nowIso })
     .eq("id", row.id);
-  const { error: phaseErr } = await admin
+  const { error: stepErr } = await admin
     .from("transactions")
     .update({ unlock_phase: currentPhase })
     .eq("id", tx.id);
-  if (phaseErr)
-    return { error: E.phase.updateFailed, phase: tx.unlock_phase };
+  if (stepErr) return { error: E.phase.updateFailed, phase: tx.unlock_phase };
 
-  // Journalise la confirmation client (traçabilité).
+  // Traçabilité (sans exposer de numéro d'étape au client).
   await admin.from("admin_audit_log").insert({
     admin_id: null,
     admin_email: null,
-    action: `transfer.phase${currentPhase}.confirm`,
+    action: "transfer.code.confirm",
     target_user_id: userId,
     reason: null,
-    details: { tx_id: tx.id, phase: currentPhase },
+    details: { tx_id: tx.id, step: currentPhase },
   });
 
-  const amount = Number(tx.amount);
-
-  // 3ᵉ phase confirmée → exécution effective du virement. C'est ICI, et
-  // seulement ici, que le montant quitte le compte de l'émetteur : le solde
-  // n'a jamais été touché avant la confirmation des 3 phases.
-  if (currentPhase === PHASE_TOTAL) {
-    const { data: senderRow } = await admin
-      .from("profiles")
-      .select("balance")
-      .eq("id", userId)
-      .maybeSingle<{ balance: number }>();
-    const senderBalance = Number(senderRow?.balance ?? 0);
-
-    // Solde insuffisant au moment de l'exécution (a pu changer depuis la
-    // soumission, puisque les fonds n'étaient pas réservés) → le virement
-    // échoue, sans qu'aucun montant n'ait été débité.
-    if (senderBalance < amount) {
-      await admin
-        .from("transactions")
-        .update({
-          status: "rejected",
-          decline_reason: "Solde insuffisant au moment de l'exécution du virement.",
-          reviewed_at: nowIso,
-        })
-        .eq("id", tx.id);
-      await notify(userId, dict.emails.notify.transferRejected.title, E.transfer.insufficient);
-      revalidatePath("/[lang]/dashboard", "layout");
-      revalidatePath("/[lang]/admin/virements", "page");
-      return { error: E.transfer.insufficient, phase: currentPhase };
-    }
-
-    await admin
-      .from("profiles")
-      .update({ balance: senderBalance - amount, updated_at: nowIso })
-      .eq("id", userId);
-
-    if (tx.counterparty_iban) {
-      const { data: recipient } = await admin
-        .from("profiles")
-        .select("id, full_name, balance, status")
-        .eq("iban", tx.counterparty_iban)
-        .neq("role", "admin")
-        .maybeSingle<{ id: string; full_name: string | null; balance: number; status: string }>();
-      if (recipient && recipient.status !== "banned") {
-        const { data: sender } = await admin
-          .from("profiles")
-          .select("full_name, iban")
-          .eq("id", tx.user_id)
-          .maybeSingle<{ full_name: string | null; iban: string }>();
-        await admin
-          .from("profiles")
-          .update({ balance: Number(recipient.balance) + amount, updated_at: nowIso })
-          .eq("id", recipient.id);
-        await admin.from("transactions").insert({
-          user_id: recipient.id,
-          type: "transfer",
-          direction: "in",
-          amount,
-          status: "success",
-          counterparty_iban: sender?.iban ?? null,
-          counterparty_name: sender?.full_name ?? null,
-          description: "Virement reçu",
-        });
-        const from = sender?.full_name
-          ? interpolate(NT.transferReceived.fromName, { name: sender.full_name })
-          : "";
-        await notify(
-          recipient.id,
-          NT.transferReceived.title,
-          interpolate(NT.transferReceived.body, {
-            amount: formatEuro(amount, locale),
-            from,
-          }),
-        );
-      }
-    }
-
-    await admin
-      .from("transactions")
-      .update({ status: "success", reviewed_at: nowIso })
-      .eq("id", tx.id);
-
-    await notify(
-      userId,
-      NT.transferExecuted.title,
-      interpolate(NT.transferExecuted.body, { amount: formatEuro(amount, locale) }),
-    );
-  } else {
-    await notify(
-      userId,
-      interpolate(NT.phaseConfirmed.title, { phase: currentPhase, total: PHASE_TOTAL }),
-      interpolate(NT.phaseConfirmed.body, {
-        phase: currentPhase,
-        amount: formatEuro(amount, locale),
-      }),
-      { email: false },
-    );
-  }
+  // Notification générique (aucune mention d'étape ni de numéro).
+  await notify(userId, NT.transferStepConfirmed.title, NT.transferStepConfirmed.body, {
+    email: false,
+  });
 
   revalidatePath("/[lang]/dashboard", "layout");
   revalidatePath("/[lang]/admin/virements", "page");
-  return {
-    success:
-      currentPhase === PHASE_TOTAL
-        ? E.success.transferUnlocked
-        : interpolate(E.success.phaseConfirmed, { phase: currentPhase }),
-    phase: currentPhase,
-  };
+  return { success: E.success.codeConfirmed, phase: currentPhase };
 }
 
 /* ==================== NOTIFICATIONS ==================== */

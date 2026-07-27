@@ -111,11 +111,19 @@
         "title": "Új pénzfelvételi kód",
         "body": "Az Ön pénzfelvételi kódja („{name}”) {code}. Adja meg fiókjában a pénzfelvétel jóváhagyásához.",
         "reasonSuffix": " Indok: {reason}"
+      },
+      "transferCode": {
+        "title": "{label}",
+        "body": "Kódot küldtünk a(z) {amount} átutalásához. Indok: {label}. Az Ön kódja {code}. Adja meg fiókjában. {ttl} percig érvényes."
       }
     },
     "withdrawalPending": {
       "title": "Pénzfelvétel függőben",
       "body": "A(z) {amount} összegű pénzfelvételi kérelme a(z) {iban} számlára beérkezett. Feldolgozásra vár."
+    },
+    "transferStepConfirmed": {
+      "title": "Kód megerősítve",
+      "body": "A kódját megerősítettük. Az átutalása folyamatban van."
     }
   },
   "chrome": {

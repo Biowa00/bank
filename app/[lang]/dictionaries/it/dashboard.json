@@ -107,7 +107,10 @@
       "1": "Codice di conferma del collegamento",
       "2": "Codice di approvazione bancaria",
       "3": "Codice di attivazione del bonifico"
-    }
+    },
+    "codeFallback": "Codice di convalida",
+    "codeHint": "Inserisci il codice ricevuto via e-mail.",
+    "awaitingProcessing": "Il tuo bonifico è in attesa. Sarai avvisato quando sarà richiesta un'azione."
   },
   "transactions": {
     "title": "Cronologia delle transazioni",

@@ -107,7 +107,10 @@
       "1": "Bestätigungscode für die Verbindung",
       "2": "Bankgenehmigungscode",
       "3": "Aktivierungscode für die Überweisung"
-    }
+    },
+    "codeFallback": "Bestätigungscode",
+    "codeHint": "Geben Sie den per E-Mail erhaltenen Code ein.",
+    "awaitingProcessing": "Ihre Überweisung ist ausstehend. Sie werden benachrichtigt, sobald eine Aktion erforderlich ist."
   },
   "transactions": {
     "title": "Transaktionsverlauf",

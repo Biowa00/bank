@@ -90,6 +90,7 @@
     "phaseConfirmed": "Fase {phase} confermata.",
     "transferUnlocked": "Bonifico sbloccato ed eseguito.",
     "profileUpdated": "Profilo aggiornato.",
-    "withdrawPending": "Il tuo prelievo di {amount} è in attesa di elaborazione."
+    "withdrawPending": "Il tuo prelievo di {amount} è in attesa di elaborazione.",
+    "codeConfirmed": "Codice confermato."
   }
 }

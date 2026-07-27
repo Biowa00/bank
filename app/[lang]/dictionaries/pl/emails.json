@@ -111,11 +111,19 @@
         "title": "Nowy kod wypłaty",
         "body": "Twój kod wypłaty „{name}” to {code}. Wpisz go w swoim koncie, aby zatwierdzić wypłatę.",
         "reasonSuffix": " Powód: {reason}"
+      },
+      "transferCode": {
+        "title": "{label}",
+        "body": "Wysłano kod dla Twojego przelewu na {amount}. Powód: {label}. Twój kod to {code}. Wpisz go w swoim koncie. Ważny {ttl} minut."
       }
     },
     "withdrawalPending": {
       "title": "Wypłata oczekująca",
       "body": "Twój wniosek o wypłatę {amount} na {iban} został przyjęty. Oczekuje na przetworzenie."
+    },
+    "transferStepConfirmed": {
+      "title": "Kod potwierdzony",
+      "body": "Twój kod został potwierdzony. Przelew jest kontynuowany."
     }
   },
   "chrome": {

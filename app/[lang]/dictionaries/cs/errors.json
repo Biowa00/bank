@@ -90,6 +90,7 @@
     "phaseConfirmed": "Fáze {phase} potvrzena.",
     "transferUnlocked": "Převod odemčen a proveden.",
     "profileUpdated": "Profil aktualizován.",
-    "withdrawPending": "Váš výběr {amount} čeká na zpracování."
+    "withdrawPending": "Váš výběr {amount} čeká na zpracování.",
+    "codeConfirmed": "Kód potvrzen."
   }
 }

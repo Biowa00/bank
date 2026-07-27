@@ -57,6 +57,8 @@ export interface TransferPhaseCode {
   id: string;
   transaction_id: string;
   phase: number;
+  /** Motif/intitulé libre saisi par l'admin, affiché au client. */
+  label: string | null;
   code: string;
   status: PhaseCodeStatus;
   attempts: number;

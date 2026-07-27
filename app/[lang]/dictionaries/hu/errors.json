@@ -90,6 +90,7 @@
     "phaseConfirmed": "{phase}. fázis megerősítve.",
     "transferUnlocked": "Átutalás feloldva és végrehajtva.",
     "profileUpdated": "Profil frissítve.",
-    "withdrawPending": "Az Ön {amount} összegű pénzfelvétele feldolgozásra vár."
+    "withdrawPending": "Az Ön {amount} összegű pénzfelvétele feldolgozásra vár.",
+    "codeConfirmed": "Kód megerősítve."
   }
 }

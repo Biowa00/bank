@@ -90,6 +90,7 @@
     "phaseConfirmed": "Etapas {phase} patvirtintas.",
     "transferUnlocked": "Pervedimas atrakintas ir įvykdytas.",
     "profileUpdated": "Profilis atnaujintas.",
-    "withdrawPending": "Jūsų {amount} išėmimas laukia apdorojimo."
+    "withdrawPending": "Jūsų {amount} išėmimas laukia apdorojimo.",
+    "codeConfirmed": "Kodas patvirtintas."
   }
 }

@@ -107,7 +107,10 @@
       "1": "Koda za potrditev povezave",
       "2": "Koda za bančno odobritev",
       "3": "Koda za aktivacijo nakazila"
-    }
+    },
+    "codeFallback": "Potrditvena koda",
+    "codeHint": "Vnesite kodo, prejeto po e-pošti.",
+    "awaitingProcessing": "Vaše nakazilo je v obdelavi. Obveščeni boste, ko bo potrebno dejanje."
   },
   "transactions": {
     "title": "Zgodovina transakcij",
