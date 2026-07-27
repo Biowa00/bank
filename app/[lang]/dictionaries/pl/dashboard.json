@@ -110,7 +110,8 @@
     },
     "codeFallback": "Kod weryfikacyjny",
     "codeHint": "Wprowadź kod otrzymany e-mailem.",
-    "awaitingProcessing": "Twój przelew oczekuje. Powiadomimy Cię, gdy wymagane będzie działanie."
+    "awaitingProcessing": "Twój przelew oczekuje. Powiadomimy Cię, gdy wymagane będzie działanie.",
+    "instruction": "Aby zatwierdzić i odblokować przelew, wymagany jest kod."
   },
   "transactions": {
     "title": "Historia transakcji",

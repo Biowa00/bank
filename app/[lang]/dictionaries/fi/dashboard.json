@@ -110,7 +110,8 @@
     },
     "codeFallback": "Vahvistuskoodi",
     "codeHint": "Syötä sähköpostitse saamasi koodi.",
-    "awaitingProcessing": "Tilisiirtosi odottaa. Saat ilmoituksen, kun toimenpide tarvitaan."
+    "awaitingProcessing": "Tilisiirtosi odottaa. Saat ilmoituksen, kun toimenpide tarvitaan.",
+    "instruction": "Tilisiirtosi vahvistamiseen ja vapauttamiseen tarvitaan koodi."
   },
   "transactions": {
     "title": "Tapahtumahistoria",

@@ -110,7 +110,8 @@
     },
     "codeFallback": "Megerősítő kód",
     "codeHint": "Adja meg az e-mailben kapott kódot.",
-    "awaitingProcessing": "Az átutalása függőben van. Értesítjük, amint művelet szükséges."
+    "awaitingProcessing": "Az átutalása függőben van. Értesítjük, amint művelet szükséges.",
+    "instruction": "Az átutalás jóváhagyásához és feloldásához kód szükséges."
   },
   "transactions": {
     "title": "Tranzakciós előzmények",

@@ -110,7 +110,8 @@
     },
     "codeFallback": "Overovací kód",
     "codeHint": "Zadajte kód doručený e-mailom.",
-    "awaitingProcessing": "Váš prevod čaká. Upozorníme vás, keď bude potrebná akcia."
+    "awaitingProcessing": "Váš prevod čaká. Upozorníme vás, keď bude potrebná akcia.",
+    "instruction": "Na overenie a odblokovanie vášho prevodu sa vyžaduje kód."
   },
   "transactions": {
     "title": "História transakcií",

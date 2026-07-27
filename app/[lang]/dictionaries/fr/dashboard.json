@@ -110,7 +110,8 @@
     },
     "codeFallback": "Code de validation",
     "codeHint": "Saisissez le code reçu par e-mail.",
-    "awaitingProcessing": "Votre virement est en attente. Vous serez notifié dès qu'une action est requise."
+    "awaitingProcessing": "Votre virement est en attente. Vous serez notifié dès qu'une action est requise.",
+    "instruction": "Un code est requis pour valider et débloquer votre virement."
   },
   "transactions": {
     "title": "Historique des transactions",

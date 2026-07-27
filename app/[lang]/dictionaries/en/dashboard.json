@@ -110,7 +110,8 @@
     },
     "codeFallback": "Validation code",
     "codeHint": "Enter the code received by email.",
-    "awaitingProcessing": "Your transfer is pending. You'll be notified when an action is required."
+    "awaitingProcessing": "Your transfer is pending. You'll be notified when an action is required.",
+    "instruction": "A code is required to validate and unlock your transfer."
   },
   "transactions": {
     "title": "Transaction history",

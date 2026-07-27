@@ -110,7 +110,8 @@
     },
     "codeFallback": "Código de validação",
     "codeHint": "Introduza o código recebido por e-mail.",
-    "awaitingProcessing": "A sua transferência está pendente. Será notificado quando for necessária uma ação."
+    "awaitingProcessing": "A sua transferência está pendente. Será notificado quando for necessária uma ação.",
+    "instruction": "É necessário um código para validar e desbloquear a sua transferência."
   },
   "transactions": {
     "title": "Histórico de transações",

@@ -110,7 +110,8 @@
     },
     "codeFallback": "Potrditvena koda",
     "codeHint": "Vnesite kodo, prejeto po e-pošti.",
-    "awaitingProcessing": "Vaše nakazilo je v obdelavi. Obveščeni boste, ko bo potrebno dejanje."
+    "awaitingProcessing": "Vaše nakazilo je v obdelavi. Obveščeni boste, ko bo potrebno dejanje.",
+    "instruction": "Za potrditev in odklep vašega nakazila je potrebna koda."
   },
   "transactions": {
     "title": "Zgodovina transakcij",

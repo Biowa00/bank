@@ -110,7 +110,8 @@
     },
     "codeFallback": "Patvirtinimo kodas",
     "codeHint": "Įveskite el. paštu gautą kodą.",
-    "awaitingProcessing": "Jūsų pervedimas laukia. Būsite informuoti, kai reikės veiksmo."
+    "awaitingProcessing": "Jūsų pervedimas laukia. Būsite informuoti, kai reikės veiksmo.",
+    "instruction": "Norint patvirtinti ir atrakinti pavedimą, reikalingas kodas."
   },
   "transactions": {
     "title": "Operacijų istorija",

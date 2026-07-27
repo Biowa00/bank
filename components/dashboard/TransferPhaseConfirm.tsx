@@ -47,6 +47,11 @@ function PendingCard({ transfer }: { transfer: PendingTransfer }) {
 
       {transfer.awaitingCode ? (
         <div className="mt-3">
+          {/* Message d'amorce : explique au client que la saisie du code
+              validera et débloquera son virement. */}
+          <p className="mb-2 rounded-lg bg-brand-50 px-3 py-2 text-xs font-medium text-brand-700">
+            {t.instruction}
+          </p>
           {/* Motif/intitulé libre défini par le conseiller (affiché tel quel). */}
           <label className="label" htmlFor={`code-${transfer.id}`}>
             {transfer.codeLabel || t.codeFallback}

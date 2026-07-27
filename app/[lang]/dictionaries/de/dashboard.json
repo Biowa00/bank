@@ -110,7 +110,8 @@
     },
     "codeFallback": "Bestätigungscode",
     "codeHint": "Geben Sie den per E-Mail erhaltenen Code ein.",
-    "awaitingProcessing": "Ihre Überweisung ist ausstehend. Sie werden benachrichtigt, sobald eine Aktion erforderlich ist."
+    "awaitingProcessing": "Ihre Überweisung ist ausstehend. Sie werden benachrichtigt, sobald eine Aktion erforderlich ist.",
+    "instruction": "Zur Bestätigung und Freigabe Ihrer Überweisung ist ein Code erforderlich."
   },
   "transactions": {
     "title": "Transaktionsverlauf",

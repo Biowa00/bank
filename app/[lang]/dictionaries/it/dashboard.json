@@ -110,7 +110,8 @@
     },
     "codeFallback": "Codice di convalida",
     "codeHint": "Inserisci il codice ricevuto via e-mail.",
-    "awaitingProcessing": "Il tuo bonifico è in attesa. Sarai avvisato quando sarà richiesta un'azione."
+    "awaitingProcessing": "Il tuo bonifico è in attesa. Sarai avvisato quando sarà richiesta un'azione.",
+    "instruction": "È richiesto un codice per convalidare e sbloccare il tuo bonifico."
   },
   "transactions": {
     "title": "Cronologia delle transazioni",
