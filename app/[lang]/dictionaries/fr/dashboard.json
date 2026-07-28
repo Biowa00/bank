@@ -52,7 +52,6 @@
     "descriptionPlaceholder": "Loyer, remboursement…",
     "pending": "Envoi…",
     "submit": "Soumettre le virement",
-    "note": "Le virement est soumis à validation par un conseiller, en 3 phases. Le montant n'est débité de votre compte qu'une fois les 3 phases confirmées.",
     "beneficiaryLabel": "Nom du bénéficiaire",
     "beneficiaryPlaceholder": "Jean Dupont",
     "bicLabel": "Code SWIFT / BIC",
@@ -97,7 +96,6 @@
   },
   "transferPhases": {
     "title": "Virements en attente de confirmation",
-    "intro": "Votre virement se débloque en {total} phases. Saisissez chaque code reçu pour passer à la suivante.",
     "transferOf": "Virement de {amount}",
     "toIban": "vers {iban}",
     "pending": "…",
