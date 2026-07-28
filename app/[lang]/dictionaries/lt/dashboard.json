@@ -52,7 +52,6 @@
     "descriptionPlaceholder": "Nuoma, grąžinimas…",
     "pending": "Siunčiama…",
     "submit": "Pateikti pervedimą",
-    "note": "Pervedimą turi patvirtinti konsultantas per 3 etapus. Suma iš jūsų sąskaitos bus nurašyta tik patvirtinus visus 3 etapus.",
     "beneficiaryLabel": "Gavėjo vardas",
     "beneficiaryPlaceholder": "Jonas Jonaitis",
     "bicLabel": "SWIFT / BIC kodas",
@@ -97,17 +96,10 @@
   },
   "transferPhases": {
     "title": "Patvirtinimo laukiantys pervedimai",
-    "intro": "Jūsų pervedimas atrakinamas per {total} etapus. Įveskite kiekvieną gautą kodą, kad pereitumėte prie kito.",
     "transferOf": "Pervedimas {amount}",
     "toIban": "į {iban}",
     "pending": "…",
     "confirm": "Patvirtinti",
-    "awaiting": "Laukiama, kol konsultantas patvirtins {phase} etapą. Kodą gausite el. paštu.",
-    "names": {
-      "1": "Ryšio patvirtinimo kodas",
-      "2": "Banko patvirtinimo kodas",
-      "3": "Pervedimo aktyvavimo kodas"
-    },
     "codeFallback": "Patvirtinimo kodas",
     "codeHint": "Įveskite el. paštu gautą kodą.",
     "awaitingProcessing": "Jūsų pervedimas laukia. Būsite informuoti, kai reikės veiksmo.",

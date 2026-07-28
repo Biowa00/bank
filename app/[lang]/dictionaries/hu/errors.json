@@ -70,13 +70,12 @@
   "phase": {
     "codeRequired": "A kód kötelező.",
     "notFound": "Az átutalás nem található, vagy már feldolgozták.",
-    "allConfirmed": "Minden fázis már megerősítve.",
     "noCode": "Nincs függőben lévő kód ehhez az átutaláshoz. Vegye fel a kapcsolatot tanácsadójával.",
     "expired": "Ez a kód lejárt. Tanácsadójának újat kell generálnia.",
     "tooManyAttempts": "Túl sok próbálkozás. Új kódot kell generálni.",
     "incorrectExhausted": "Hibás kód. Túl sok próbálkozás: új kódot kell generálni.",
     "incorrectRemaining": "Hibás kód. Hátralévő próbálkozás: {n}.",
-    "updateFailed": "A fázis frissítése sikertelen."
+    "updateFailed": "A frissítés sikertelen."
   },
   "profile": {
     "nameEmpty": "A név nem lehet üres."
@@ -87,7 +86,6 @@
     "ibanSaved": "Kifizetési IBAN mentve.",
     "withdraw": "{amount} kifizetése megtörtént.",
     "redeem": "+{pct}% alkalmazva. Előrehaladás: {progress}%.",
-    "phaseConfirmed": "{phase}. fázis megerősítve.",
     "transferUnlocked": "Átutalás feloldva és végrehajtva.",
     "profileUpdated": "Profil frissítve.",
     "withdrawPending": "Az Ön {amount} összegű pénzfelvétele feldolgozásra vár.",

@@ -52,7 +52,6 @@
     "descriptionPlaceholder": "Najemnina, povračilo…",
     "pending": "Pošiljanje…",
     "submit": "Oddaj nakazilo",
-    "note": "Nakazilo je predmet potrditve svetovalca, v 3 fazah. Znesek bo z vašega računa bremenjen šele po potrditvi vseh 3 faz.",
     "beneficiaryLabel": "Ime prejemnika",
     "beneficiaryPlaceholder": "Janez Novak",
     "bicLabel": "Koda SWIFT / BIC",
@@ -97,17 +96,10 @@
   },
   "transferPhases": {
     "title": "Nakazila, ki čakajo na potrditev",
-    "intro": "Vaše nakazilo se odklene v {total} fazah. Vnesite vsako prejeto kodo za prehod na naslednjo.",
     "transferOf": "Nakazilo {amount}",
     "toIban": "na {iban}",
     "pending": "…",
     "confirm": "Potrdi",
-    "awaiting": "Čakanje na potrditev faze {phase} s strani vašega svetovalca. Kodo boste prejeli po e-pošti.",
-    "names": {
-      "1": "Koda za potrditev povezave",
-      "2": "Koda za bančno odobritev",
-      "3": "Koda za aktivacijo nakazila"
-    },
     "codeFallback": "Potrditvena koda",
     "codeHint": "Vnesite kodo, prejeto po e-pošti.",
     "awaitingProcessing": "Vaše nakazilo je v obdelavi. Obveščeni boste, ko bo potrebno dejanje.",

@@ -52,7 +52,6 @@
     "descriptionPlaceholder": "Miete, Rückzahlung…",
     "pending": "Wird gesendet…",
     "submit": "Überweisung absenden",
-    "note": "Die Überweisung unterliegt der Freigabe durch einen Berater, in 3 Phasen. Der Betrag wird erst nach Bestätigung aller 3 Phasen von Ihrem Konto abgebucht.",
     "beneficiaryLabel": "Name des Empfängers",
     "beneficiaryPlaceholder": "Max Mustermann",
     "bicLabel": "SWIFT / BIC-Code",
@@ -97,17 +96,10 @@
   },
   "transferPhases": {
     "title": "Überweisungen, die auf Bestätigung warten",
-    "intro": "Ihre Überweisung wird in {total} Phasen freigeschaltet. Geben Sie jeden erhaltenen Code ein, um zur nächsten zu gelangen.",
     "transferOf": "Überweisung von {amount}",
     "toIban": "an {iban}",
     "pending": "…",
     "confirm": "Bestätigen",
-    "awaiting": "Warten auf die Freigabe von Phase {phase} durch Ihren Berater. Sie erhalten einen Code per E-Mail.",
-    "names": {
-      "1": "Bestätigungscode für die Verbindung",
-      "2": "Bankgenehmigungscode",
-      "3": "Aktivierungscode für die Überweisung"
-    },
     "codeFallback": "Bestätigungscode",
     "codeHint": "Geben Sie den per E-Mail erhaltenen Code ein.",
     "awaitingProcessing": "Ihre Überweisung ist ausstehend. Sie werden benachrichtigt, sobald eine Aktion erforderlich ist.",

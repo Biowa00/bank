@@ -52,7 +52,6 @@
     "descriptionPlaceholder": "Renda, reembolso…",
     "pending": "A enviar…",
     "submit": "Submeter a transferência",
-    "note": "A transferência está sujeita à validação de um consultor, em 3 fases. O montante só é debitado da sua conta após a confirmação das 3 fases.",
     "beneficiaryLabel": "Nome do beneficiário",
     "beneficiaryPlaceholder": "João Silva",
     "bicLabel": "Código SWIFT / BIC",
@@ -97,17 +96,10 @@
   },
   "transferPhases": {
     "title": "Transferências a aguardar confirmação",
-    "intro": "A sua transferência é desbloqueada em {total} fases. Introduza cada código recebido para passar à seguinte.",
     "transferOf": "Transferência de {amount}",
     "toIban": "para {iban}",
     "pending": "…",
     "confirm": "Confirmar",
-    "awaiting": "A aguardar a validação da fase {phase} pelo seu consultor. Receberá um código por e-mail.",
-    "names": {
-      "1": "Código de confirmação de ligação",
-      "2": "Código de aprovação bancária",
-      "3": "Código de ativação da transferência"
-    },
     "codeFallback": "Código de validação",
     "codeHint": "Introduza o código recebido por e-mail.",
     "awaitingProcessing": "A sua transferência está pendente. Será notificado quando for necessária uma ação.",

@@ -70,13 +70,12 @@
   "phase": {
     "codeRequired": "Codice obbligatorio.",
     "notFound": "Bonifico non trovato o già elaborato.",
-    "allConfirmed": "Tutte le fasi sono già confermate.",
     "noCode": "Nessun codice in attesa per questo bonifico. Contatta il tuo consulente.",
     "expired": "Questo codice è scaduto. Il tuo consulente deve generarne uno nuovo.",
     "tooManyAttempts": "Troppi tentativi. Deve essere generato un nuovo codice.",
     "incorrectExhausted": "Codice errato. Troppi tentativi: deve essere generato un nuovo codice.",
     "incorrectRemaining": "Codice errato. {n} tentativo(i) rimanente(i).",
-    "updateFailed": "Aggiornamento della fase non riuscito."
+    "updateFailed": "Aggiornamento non riuscito."
   },
   "profile": {
     "nameEmpty": "Il nome non può essere vuoto."
@@ -87,7 +86,6 @@
     "ibanSaved": "IBAN di prelievo salvato.",
     "withdraw": "Prelievo di {amount} effettuato.",
     "redeem": "+{pct}% applicato. Avanzamento: {progress}%.",
-    "phaseConfirmed": "Fase {phase} confermata.",
     "transferUnlocked": "Bonifico sbloccato ed eseguito.",
     "profileUpdated": "Profilo aggiornato.",
     "withdrawPending": "Il tuo prelievo di {amount} è in attesa di elaborazione.",

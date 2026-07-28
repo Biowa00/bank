@@ -207,7 +207,6 @@ export function TransferForm({ balance }: { balance: number }) {
       <SubmitButton className="btn-primary w-full py-3 text-base" pendingLabel={t.pending}>
         {t.submit}
       </SubmitButton>
-      <p className="text-center text-xs text-ink/40">{t.note}</p>
     </form>
   );
 }

@@ -10,7 +10,7 @@
     },
     "transferPending": {
       "title": "Przelew oczekuje na zatwierdzenie",
-      "body": "Twój przelew {amount} na {iban} został złożony. Kwota zostanie pobrana z Twojego konta dopiero po potwierdzeniu 3 faz zatwierdzania przez doradcę."
+      "body": "Twój przelew {amount} na {iban} został złożony."
     },
     "withdrawalRejected": {
       "title": "Wypłata odrzucona",
@@ -40,11 +40,7 @@
     },
     "transferExecuted": {
       "title": "Przelew odblokowany i wykonany",
-      "body": "Wszystkie 3 fazy zostały potwierdzone. Twój przelew {amount} został wykonany."
-    },
-    "phaseConfirmed": {
-      "title": "Faza {phase}/{total} potwierdzona",
-      "body": "Faza {phase} Twojego przelewu {amount} została potwierdzona. Oczekiwanie na następną fazę."
+      "body": "Twój przelew na kwotę {amount} został zrealizowany."
     },
     "admin": {
       "accountReactivated": {
@@ -93,15 +89,6 @@
       "debited": {
         "title": "Korekta konta",
         "body": "−{amount} — {reason}"
-      },
-      "phaseCode": {
-        "title": "{name} — {code}",
-        "body": "Faza {phase}/{total} Twojego przelewu na {amount}: Twój {name} to {code}. Wpisz go w swojej strefie klienta, aby potwierdzić. Kod ważny przez {ttl} minut."
-      },
-      "phaseNames": {
-        "1": "Kod potwierdzenia połączenia",
-        "2": "Kod zatwierdzenia bankowego",
-        "3": "Kod aktywacji przelewu"
       },
       "transferRejected": {
         "title": "Przelew odrzucony",

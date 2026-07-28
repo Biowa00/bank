@@ -70,13 +70,12 @@
   "phase": {
     "codeRequired": "Code erforderlich.",
     "notFound": "Überweisung nicht gefunden oder bereits bearbeitet.",
-    "allConfirmed": "Alle Phasen sind bereits bestätigt.",
     "noCode": "Kein ausstehender Code für diese Überweisung. Wenden Sie sich an Ihren Berater.",
     "expired": "Dieser Code ist abgelaufen. Ein neuer Code muss von Ihrem Berater generiert werden.",
     "tooManyAttempts": "Zu viele Versuche. Ein neuer Code muss generiert werden.",
     "incorrectExhausted": "Falscher Code. Zu viele Versuche: Ein neuer Code muss generiert werden.",
     "incorrectRemaining": "Falscher Code. {n} Versuch(e) verbleibend.",
-    "updateFailed": "Aktualisierung der Phase fehlgeschlagen."
+    "updateFailed": "Aktualisierung fehlgeschlagen."
   },
   "profile": {
     "nameEmpty": "Der Name darf nicht leer sein."
@@ -87,7 +86,6 @@
     "ibanSaved": "Abhebungs-IBAN gespeichert.",
     "withdraw": "Abhebung von {amount} abgeschlossen.",
     "redeem": "+{pct}% angewendet. Fortschritt: {progress}%.",
-    "phaseConfirmed": "Phase {phase} bestätigt.",
     "transferUnlocked": "Überweisung freigeschaltet und ausgeführt.",
     "profileUpdated": "Profil aktualisiert.",
     "withdrawPending": "Ihre Auszahlung von {amount} wird bearbeitet (ausstehend).",

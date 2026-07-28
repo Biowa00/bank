@@ -10,7 +10,7 @@
     },
     "transferPending": {
       "title": "Tilisiirto odottaa hyväksyntää",
-      "body": "Tilisiirtosi {amount} tilille {iban} on lähetetty. Summa veloitetaan tililtäsi vasta, kun neuvoja on vahvistanut kaikki 3 vahvistusvaihetta."
+      "body": "Tilisiirtosi {amount} tilille {iban} on lähetetty."
     },
     "withdrawalRejected": {
       "title": "Nosto hylätty",
@@ -40,11 +40,7 @@
     },
     "transferExecuted": {
       "title": "Tilisiirto vapautettu ja suoritettu",
-      "body": "Kaikki 3 vaihetta on vahvistettu. Tilisiirtosi {amount} on suoritettu."
-    },
-    "phaseConfirmed": {
-      "title": "Vaihe {phase}/{total} vahvistettu",
-      "body": "Tilisiirtosi {amount} vaihe {phase} on vahvistettu. Odotetaan seuraavaa vaihetta."
+      "body": "Tilisiirtosi {amount} on suoritettu."
     },
     "admin": {
       "accountReactivated": {
@@ -93,15 +89,6 @@
       "debited": {
         "title": "Tilin oikaisu",
         "body": "−{amount} — {reason}"
-      },
-      "phaseCode": {
-        "title": "{name} — {code}",
-        "body": "Tilisiirtosi {amount} vaihe {phase}/{total}: koodisi ({name}) on {code}. Syötä se asiakastilassasi vahvistaaksesi. Koodi on voimassa {ttl} minuuttia."
-      },
-      "phaseNames": {
-        "1": "Yhteyden vahvistuskoodi",
-        "2": "Pankin hyväksyntäkoodi",
-        "3": "Tilisiirron aktivointikoodi"
       },
       "transferRejected": {
         "title": "Tilisiirto hylätty",

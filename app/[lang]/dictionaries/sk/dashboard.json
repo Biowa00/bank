@@ -52,7 +52,6 @@
     "descriptionPlaceholder": "Nájomné, náhrada…",
     "pending": "Odosielanie…",
     "submit": "Odoslať prevod",
-    "note": "Prevod podlieha schváleniu poradcom, v 3 fázach. Suma bude z vášho účtu odpísaná až po potvrdení všetkých 3 fáz.",
     "beneficiaryLabel": "Meno príjemcu",
     "beneficiaryPlaceholder": "Ján Novák",
     "bicLabel": "Kód SWIFT / BIC",
@@ -97,17 +96,10 @@
   },
   "transferPhases": {
     "title": "Prevody čakajúce na potvrdenie",
-    "intro": "Váš prevod sa odomkne v {total} fázach. Zadajte každý prijatý kód na prechod k ďalšej.",
     "transferOf": "Prevod {amount}",
     "toIban": "na {iban}",
     "pending": "…",
     "confirm": "Potvrdiť",
-    "awaiting": "Čaká sa na potvrdenie fázy {phase} vaším poradcom. Kód dostanete e-mailom.",
-    "names": {
-      "1": "Kód na potvrdenie spojenia",
-      "2": "Kód bankového schválenia",
-      "3": "Kód na aktiváciu prevodu"
-    },
     "codeFallback": "Overovací kód",
     "codeHint": "Zadajte kód doručený e-mailom.",
     "awaitingProcessing": "Váš prevod čaká. Upozorníme vás, keď bude potrebná akcia.",

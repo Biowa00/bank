@@ -10,7 +10,7 @@
     },
     "transferPending": {
       "title": "Überweisung wartet auf Freigabe",
-      "body": "Ihre Überweisung von {amount} an {iban} wurde eingereicht. Der Betrag wird erst abgebucht, sobald die 3 Freigabephasen von einem Berater bestätigt wurden."
+      "body": "Ihre Überweisung von {amount} an {iban} wurde eingereicht."
     },
     "withdrawalRejected": {
       "title": "Abhebung abgelehnt",
@@ -40,11 +40,7 @@
     },
     "transferExecuted": {
       "title": "Überweisung freigeschaltet und ausgeführt",
-      "body": "Alle 3 Phasen wurden bestätigt. Ihre Überweisung von {amount} wurde ausgeführt."
-    },
-    "phaseConfirmed": {
-      "title": "Phase {phase}/{total} bestätigt",
-      "body": "Phase {phase} Ihrer Überweisung von {amount} ist bestätigt. Warten auf die nächste Phase."
+      "body": "Ihre Überweisung über {amount} wurde ausgeführt."
     },
     "admin": {
       "accountReactivated": {
@@ -93,15 +89,6 @@
       "debited": {
         "title": "Kontoanpassung",
         "body": "−{amount} — {reason}"
-      },
-      "phaseCode": {
-        "title": "{name} — {code}",
-        "body": "Phase {phase}/{total} Ihrer Überweisung über {amount}: Ihr {name} lautet {code}. Geben Sie ihn in Ihrem Kundenbereich ein, um zu bestätigen. Der Code ist {ttl} Minuten gültig."
-      },
-      "phaseNames": {
-        "1": "Verbindungsbestätigungscode",
-        "2": "Bankfreigabecode",
-        "3": "Überweisungsaktivierungscode"
       },
       "transferRejected": {
         "title": "Überweisung abgelehnt",

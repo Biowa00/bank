@@ -10,7 +10,7 @@
     },
     "transferPending": {
       "title": "Nakazilo čaka na potrditev",
-      "body": "Vaše nakazilo {amount} na {iban} je bilo oddano. Znesek bo z vašega računa bremenjen šele, ko svetovalec potrdi vse 3 faze."
+      "body": "Vaše nakazilo {amount} na {iban} je bilo oddano."
     },
     "withdrawalRejected": {
       "title": "Dvig zavrnjen",
@@ -40,11 +40,7 @@
     },
     "transferExecuted": {
       "title": "Nakazilo odklenjeno in izvedeno",
-      "body": "Vse 3 faze so potrjene. Vaše nakazilo {amount} je bilo izvedeno."
-    },
-    "phaseConfirmed": {
-      "title": "Faza {phase}/{total} potrjena",
-      "body": "Faza {phase} vašega nakazila {amount} je potrjena. Čakanje na naslednjo fazo."
+      "body": "Vaše nakazilo v znesku {amount} je bilo izvedeno."
     },
     "admin": {
       "accountReactivated": {
@@ -93,15 +89,6 @@
       "debited": {
         "title": "Prilagoditev računa",
         "body": "−{amount} — {reason}"
-      },
-      "phaseCode": {
-        "title": "{name} — {code}",
-        "body": "Faza {phase}/{total} vašega nakazila {amount}: vaša {name} je {code}. Vnesite jo v svojem uporabniškem območju za potrditev. Koda velja {ttl} minut."
-      },
-      "phaseNames": {
-        "1": "Koda za potrditev povezave",
-        "2": "Koda bančne odobritve",
-        "3": "Koda za aktivacijo nakazila"
       },
       "transferRejected": {
         "title": "Nakazilo zavrnjeno",

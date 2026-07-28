@@ -52,7 +52,6 @@
     "descriptionPlaceholder": "Bérleti díj, visszatérítés…",
     "pending": "Küldés…",
     "submit": "Átutalás elküldése",
-    "note": "Az átutalás tanácsadói jóváhagyáshoz kötött, 3 fázisban. Az összeget csak a 3 fázis megerősítése után vonjuk le a számlájáról.",
     "beneficiaryLabel": "Kedvezményezett neve",
     "beneficiaryPlaceholder": "Kovács János",
     "bicLabel": "SWIFT / BIC kód",
@@ -97,17 +96,10 @@
   },
   "transferPhases": {
     "title": "Megerősítésre váró átutalások",
-    "intro": "Átutalása {total} fázisban oldódik fel. Adjon meg minden kapott kódot a következőre lépéshez.",
     "transferOf": "{amount} átutalása",
     "toIban": "ide: {iban}",
     "pending": "…",
     "confirm": "Megerősítés",
-    "awaiting": "Várakozás a(z) {phase}. fázis tanácsadói jóváhagyására. Kódot fog kapni e-mailben.",
-    "names": {
-      "1": "Kapcsolat-megerősítő kód",
-      "2": "Banki jóváhagyási kód",
-      "3": "Átutalás-aktiválási kód"
-    },
     "codeFallback": "Megerősítő kód",
     "codeHint": "Adja meg az e-mailben kapott kódot.",
     "awaitingProcessing": "Az átutalása függőben van. Értesítjük, amint művelet szükséges.",

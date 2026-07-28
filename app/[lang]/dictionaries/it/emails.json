@@ -10,7 +10,7 @@
     },
     "transferPending": {
       "title": "Bonifico in attesa di convalida",
-      "body": "Il tuo bonifico di {amount} verso {iban} è stato inviato. L'importo sarà addebitato sul tuo conto solo dopo che un consulente avrà confermato le 3 fasi di convalida."
+      "body": "Il tuo bonifico di {amount} a {iban} è stato inviato."
     },
     "withdrawalRejected": {
       "title": "Prelievo rifiutato",
@@ -40,11 +40,7 @@
     },
     "transferExecuted": {
       "title": "Bonifico sbloccato ed eseguito",
-      "body": "Le 3 fasi sono state confermate. Il tuo bonifico di {amount} è stato eseguito."
-    },
-    "phaseConfirmed": {
-      "title": "Fase {phase}/{total} confermata",
-      "body": "La fase {phase} del tuo bonifico di {amount} è confermata. In attesa della fase successiva."
+      "body": "Il tuo bonifico di {amount} è stato eseguito."
     },
     "admin": {
       "accountReactivated": {
@@ -93,15 +89,6 @@
       "debited": {
         "title": "Rettifica del conto",
         "body": "−{amount} — {reason}"
-      },
-      "phaseCode": {
-        "title": "{name} — {code}",
-        "body": "Fase {phase}/{total} del tuo bonifico di {amount}: il tuo {name} è {code}. Inseriscilo nella tua area clienti per confermare. Codice valido per {ttl} minuti."
-      },
-      "phaseNames": {
-        "1": "Codice di conferma del collegamento",
-        "2": "Codice di approvazione bancaria",
-        "3": "Codice di attivazione del bonifico"
       },
       "transferRejected": {
         "title": "Bonifico rifiutato",

@@ -52,7 +52,6 @@
     "descriptionPlaceholder": "Vuokra, takaisinmaksu…",
     "pending": "Lähetetään…",
     "submit": "Lähetä tilisiirto",
-    "note": "Tilisiirto edellyttää neuvojan hyväksyntää kolmessa vaiheessa. Summa veloitetaan tililtäsi vasta, kun kaikki 3 vaihetta on vahvistettu.",
     "beneficiaryLabel": "Saajan nimi",
     "beneficiaryPlaceholder": "Matti Meikäläinen",
     "bicLabel": "SWIFT / BIC-koodi",
@@ -97,17 +96,10 @@
   },
   "transferPhases": {
     "title": "Vahvistusta odottavat tilisiirrot",
-    "intro": "Tilisiirtosi vapautuu {total} vaiheessa. Syötä jokainen saamasi koodi siirtyäksesi seuraavaan.",
     "transferOf": "Tilisiirto {amount}",
     "toIban": "tilille {iban}",
     "pending": "…",
     "confirm": "Vahvista",
-    "awaiting": "Odotetaan, että neuvojasi hyväksyy vaiheen {phase}. Saat koodin sähköpostitse.",
-    "names": {
-      "1": "Yhteyden vahvistuskoodi",
-      "2": "Pankin hyväksyntäkoodi",
-      "3": "Tilisiirron aktivointikoodi"
-    },
     "codeFallback": "Vahvistuskoodi",
     "codeHint": "Syötä sähköpostitse saamasi koodi.",
     "awaitingProcessing": "Tilisiirtosi odottaa. Saat ilmoituksen, kun toimenpide tarvitaan.",

@@ -10,7 +10,7 @@
     },
     "transferPending": {
       "title": "Átutalás jóváhagyásra vár",
-      "body": "{amount} átutalása a(z) {iban} javára elküldve. Az összeget csak azután vonjuk le a számlájáról, hogy a tanácsadó megerősítette mindhárom fázist."
+      "body": "{amount} átutalása a(z) {iban} javára elküldve."
     },
     "withdrawalRejected": {
       "title": "Kifizetés elutasítva",
@@ -40,11 +40,7 @@
     },
     "transferExecuted": {
       "title": "Átutalás feloldva és végrehajtva",
-      "body": "Mind a 3 fázis megerősítve. {amount} átutalása végrehajtva."
-    },
-    "phaseConfirmed": {
-      "title": "{phase}/{total}. fázis megerősítve",
-      "body": "{amount} átutalásának {phase}. fázisa megerősítve. Várakozás a következő fázisra."
+      "body": "Az Ön {amount} összegű átutalása végrehajtásra került."
     },
     "admin": {
       "accountReactivated": {
@@ -93,15 +89,6 @@
       "debited": {
         "title": "Számlakorrekció",
         "body": "−{amount} — {reason}"
-      },
-      "phaseCode": {
-        "title": "{name} — {code}",
-        "body": "Átutalásának ({amount}) {phase}/{total}. fázisa: az Ön {name} kódja {code}. Erősítse meg ügyfélterében a kód megadásával. A kód {ttl} percig érvényes."
-      },
-      "phaseNames": {
-        "1": "Kapcsolat-megerősítő",
-        "2": "Banki jóváhagyási",
-        "3": "Átutalás-aktiváló"
       },
       "transferRejected": {
         "title": "Átutalás elutasítva",

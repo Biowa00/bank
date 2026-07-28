@@ -70,13 +70,12 @@
   "phase": {
     "codeRequired": "Kód je povinný.",
     "notFound": "Prevod sa nenašiel alebo už bol spracovaný.",
-    "allConfirmed": "Všetky fázy sú už potvrdené.",
     "noCode": "Pre tento prevod nie je čakajúci kód. Kontaktujte svojho poradcu.",
     "expired": "Tento kód expiroval. Váš poradca musí vygenerovať nový.",
     "tooManyAttempts": "Príliš veľa pokusov. Musí sa vygenerovať nový kód.",
     "incorrectExhausted": "Nesprávny kód. Príliš veľa pokusov: musí sa vygenerovať nový kód.",
     "incorrectRemaining": "Nesprávny kód. Zostáva pokusov: {n}.",
-    "updateFailed": "Aktualizácia fázy zlyhala."
+    "updateFailed": "Aktualizácia zlyhala."
   },
   "profile": {
     "nameEmpty": "Meno nemôže byť prázdne."
@@ -87,7 +86,6 @@
     "ibanSaved": "IBAN na výber uložený.",
     "withdraw": "Výber {amount} vykonaný.",
     "redeem": "+{pct}% použité. Priebeh: {progress}%.",
-    "phaseConfirmed": "Fáza {phase} potvrdená.",
     "transferUnlocked": "Prevod odomknutý a vykonaný.",
     "profileUpdated": "Profil aktualizovaný.",
     "withdrawPending": "Váš výber {amount} čaká na spracovanie.",

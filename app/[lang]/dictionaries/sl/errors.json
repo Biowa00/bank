@@ -70,13 +70,12 @@
   "phase": {
     "codeRequired": "Koda je obvezna.",
     "notFound": "Nakazila ni mogoče najti ali je že obdelano.",
-    "allConfirmed": "Vse faze so že potrjene.",
     "noCode": "Za to nakazilo ni čakajoče kode. Obrnite se na svojega svetovalca.",
     "expired": "Ta koda je potekla. Vaš svetovalec mora ustvariti novo.",
     "tooManyAttempts": "Preveč poskusov. Ustvariti je treba novo kodo.",
     "incorrectExhausted": "Napačna koda. Preveč poskusov: ustvariti je treba novo kodo.",
     "incorrectRemaining": "Napačna koda. Preostali poskusi: {n}.",
-    "updateFailed": "Posodobitev faze ni uspela."
+    "updateFailed": "Posodobitev ni uspela."
   },
   "profile": {
     "nameEmpty": "Ime ne sme biti prazno."
@@ -87,7 +86,6 @@
     "ibanSaved": "IBAN za dvig shranjen.",
     "withdraw": "Dvig {amount} opravljen.",
     "redeem": "+{pct}% uporabljeno. Napredek: {progress}%.",
-    "phaseConfirmed": "Faza {phase} potrjena.",
     "transferUnlocked": "Nakazilo odklenjeno in izvedeno.",
     "profileUpdated": "Profil posodobljen.",
     "withdrawPending": "Vaš dvig {amount} čaka na obdelavo.",

@@ -52,7 +52,6 @@
     "descriptionPlaceholder": "Alquiler, reembolso…",
     "pending": "Enviando…",
     "submit": "Enviar transferencia",
-    "note": "La transferencia está sujeta a la validación de un asesor, en 3 fases. El importe solo se debita de tu cuenta una vez confirmadas las 3 fases.",
     "beneficiaryLabel": "Nombre del beneficiario",
     "beneficiaryPlaceholder": "Juan Pérez",
     "bicLabel": "Código SWIFT / BIC",
@@ -97,17 +96,10 @@
   },
   "transferPhases": {
     "title": "Transferencias pendientes de confirmación",
-    "intro": "Tu transferencia se desbloquea en {total} fases. Introduce cada código recibido para pasar a la siguiente.",
     "transferOf": "Transferencia de {amount}",
     "toIban": "a {iban}",
     "pending": "…",
     "confirm": "Confirmar",
-    "awaiting": "A la espera de la validación de la fase {phase} por tu asesor. Recibirás un código por correo electrónico.",
-    "names": {
-      "1": "Código de confirmación de conexión",
-      "2": "Código de aprobación bancaria",
-      "3": "Código de activación de la transferencia"
-    },
     "codeFallback": "Código de validación",
     "codeHint": "Introduzca el código recibido por correo.",
     "awaitingProcessing": "Su transferencia está pendiente. Se le avisará cuando se requiera una acción.",

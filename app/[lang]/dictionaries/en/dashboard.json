@@ -52,7 +52,6 @@
     "descriptionPlaceholder": "Rent, reimbursement…",
     "pending": "Sending…",
     "submit": "Submit transfer",
-    "note": "The transfer is subject to advisor approval, in 3 phases. The amount is only debited from your account once all 3 phases have been confirmed.",
     "beneficiaryLabel": "Beneficiary name",
     "beneficiaryPlaceholder": "John Smith",
     "bicLabel": "SWIFT / BIC code",
@@ -97,17 +96,10 @@
   },
   "transferPhases": {
     "title": "Transfers awaiting confirmation",
-    "intro": "Your transfer is unlocked in {total} phases. Enter each code received to move to the next.",
     "transferOf": "Transfer of {amount}",
     "toIban": "to {iban}",
     "pending": "…",
     "confirm": "Confirm",
-    "awaiting": "Awaiting validation of phase {phase} by your advisor. You will receive a code by email.",
-    "names": {
-      "1": "Connection confirmation code",
-      "2": "Bank approval code",
-      "3": "Transfer activation code"
-    },
     "codeFallback": "Validation code",
     "codeHint": "Enter the code received by email.",
     "awaitingProcessing": "Your transfer is pending. You'll be notified when an action is required.",

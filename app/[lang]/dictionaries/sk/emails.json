@@ -10,7 +10,7 @@
     },
     "transferPending": {
       "title": "Prevod čaká na potvrdenie",
-      "body": "Váš prevod {amount} na {iban} bol odoslaný. Suma bude z vášho účtu odpísaná až po potvrdení 3 fáz overenia poradcom."
+      "body": "Váš prevod {amount} na {iban} bol odoslaný."
     },
     "withdrawalRejected": {
       "title": "Výber zamietnutý",
@@ -40,11 +40,7 @@
     },
     "transferExecuted": {
       "title": "Prevod odomknutý a vykonaný",
-      "body": "Všetky 3 fázy boli potvrdené. Váš prevod {amount} bol vykonaný."
-    },
-    "phaseConfirmed": {
-      "title": "Fáza {phase}/{total} potvrdená",
-      "body": "Fáza {phase} vášho prevodu {amount} je potvrdená. Čaká sa na ďalšiu fázu."
+      "body": "Váš prevod vo výške {amount} bol vykonaný."
     },
     "admin": {
       "accountReactivated": {
@@ -93,15 +89,6 @@
       "debited": {
         "title": "Úprava účtu",
         "body": "−{amount} — {reason}"
-      },
-      "phaseCode": {
-        "title": "{name} — {code}",
-        "body": "Fáza {phase}/{total} vášho prevodu {amount}: váš {name} je {code}. Zadajte ho vo svojej klientskej zóne na potvrdenie. Kód platí {ttl} minút."
-      },
-      "phaseNames": {
-        "1": "Kód potvrdenia spojenia",
-        "2": "Kód bankového schválenia",
-        "3": "Kód aktivácie prevodu"
       },
       "transferRejected": {
         "title": "Prevod zamietnutý",

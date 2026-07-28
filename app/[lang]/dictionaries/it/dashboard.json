@@ -52,7 +52,6 @@
     "descriptionPlaceholder": "Affitto, rimborso…",
     "pending": "Invio in corso…",
     "submit": "Invia il bonifico",
-    "note": "Il bonifico è soggetto alla convalida di un consulente, in 3 fasi. L'importo viene addebitato sul tuo conto solo dopo la conferma di tutte e 3 le fasi.",
     "beneficiaryLabel": "Nome del beneficiario",
     "beneficiaryPlaceholder": "Mario Rossi",
     "bicLabel": "Codice SWIFT / BIC",
@@ -97,17 +96,10 @@
   },
   "transferPhases": {
     "title": "Bonifici in attesa di conferma",
-    "intro": "Il tuo bonifico si sblocca in {total} fasi. Inserisci ogni codice ricevuto per passare alla successiva.",
     "transferOf": "Bonifico di {amount}",
     "toIban": "verso {iban}",
     "pending": "…",
     "confirm": "Conferma",
-    "awaiting": "In attesa della convalida della fase {phase} da parte del tuo consulente. Riceverai un codice via e-mail.",
-    "names": {
-      "1": "Codice di conferma del collegamento",
-      "2": "Codice di approvazione bancaria",
-      "3": "Codice di attivazione del bonifico"
-    },
     "codeFallback": "Codice di convalida",
     "codeHint": "Inserisci il codice ricevuto via e-mail.",
     "awaitingProcessing": "Il tuo bonifico è in attesa. Sarai avvisato quando sarà richiesta un'azione.",

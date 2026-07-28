@@ -10,7 +10,7 @@
     },
     "transferPending": {
       "title": "Transfer awaiting approval",
-      "body": "Your transfer of {amount} to {iban} has been submitted. The amount will only be debited from your account once the 3 validation phases have been confirmed by an advisor."
+      "body": "Your transfer of {amount} to {iban} has been submitted."
     },
     "withdrawalRejected": {
       "title": "Withdrawal refused",
@@ -40,11 +40,7 @@
     },
     "transferExecuted": {
       "title": "Transfer unlocked and executed",
-      "body": "All 3 phases have been confirmed. Your transfer of {amount} has been executed."
-    },
-    "phaseConfirmed": {
-      "title": "Phase {phase}/{total} confirmed",
-      "body": "Phase {phase} of your transfer of {amount} is confirmed. Awaiting the next phase."
+      "body": "Your transfer of {amount} has been executed."
     },
     "admin": {
       "accountReactivated": {
@@ -93,15 +89,6 @@
       "debited": {
         "title": "Account adjustment",
         "body": "−{amount} — {reason}"
-      },
-      "phaseCode": {
-        "title": "{name} — {code}",
-        "body": "Phase {phase}/{total} of your transfer of {amount}: your {name} is {code}. Enter it in your client area to confirm. Code valid for {ttl} minutes."
-      },
-      "phaseNames": {
-        "1": "Connection confirmation code",
-        "2": "Bank approval code",
-        "3": "Transfer activation code"
       },
       "transferRejected": {
         "title": "Transfer rejected",

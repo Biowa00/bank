@@ -10,7 +10,7 @@
     },
     "transferPending": {
       "title": "Virement en attente de validation",
-      "body": "Votre virement de {amount} vers {iban} a été soumis. Le montant ne sera débité de votre compte qu'une fois les 3 phases de validation confirmées par un conseiller."
+      "body": "Votre virement de {amount} vers {iban} a été soumis."
     },
     "withdrawalRejected": {
       "title": "Retrait refusé",
@@ -40,11 +40,7 @@
     },
     "transferExecuted": {
       "title": "Virement débloqué et exécuté",
-      "body": "Les 3 phases ont été confirmées. Votre virement de {amount} a été exécuté."
-    },
-    "phaseConfirmed": {
-      "title": "Phase {phase}/{total} confirmée",
-      "body": "La phase {phase} de votre virement de {amount} est confirmée. En attente de la phase suivante."
+      "body": "Votre virement de {amount} a été exécuté."
     },
     "admin": {
       "accountReactivated": {
@@ -93,15 +89,6 @@
       "debited": {
         "title": "Ajustement de compte",
         "body": "−{amount} — {reason}"
-      },
-      "phaseCode": {
-        "title": "{name} — {code}",
-        "body": "Phase {phase}/{total} de votre virement de {amount} : votre {name} est {code}. Saisissez-le dans votre espace pour confirmer. Code valable {ttl} minutes."
-      },
-      "phaseNames": {
-        "1": "Code de confirmation de mise en relation",
-        "2": "Code d'approbation bancaire",
-        "3": "Code d'activation de virement"
       },
       "transferRejected": {
         "title": "Virement refusé",

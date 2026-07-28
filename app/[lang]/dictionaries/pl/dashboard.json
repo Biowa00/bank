@@ -52,7 +52,6 @@
     "descriptionPlaceholder": "Czynsz, zwrot…",
     "pending": "Wysyłanie…",
     "submit": "Wyślij przelew",
-    "note": "Przelew podlega zatwierdzeniu przez doradcę, w 3 fazach. Kwota zostanie pobrana z Twojego konta dopiero po potwierdzeniu wszystkich 3 faz.",
     "beneficiaryLabel": "Nazwa odbiorcy",
     "beneficiaryPlaceholder": "Jan Kowalski",
     "bicLabel": "Kod SWIFT / BIC",
@@ -97,17 +96,10 @@
   },
   "transferPhases": {
     "title": "Przelewy oczekujące na potwierdzenie",
-    "intro": "Twój przelew jest odblokowywany w {total} fazach. Wprowadź każdy otrzymany kod, aby przejść do następnej.",
     "transferOf": "Przelew na {amount}",
     "toIban": "na {iban}",
     "pending": "…",
     "confirm": "Potwierdź",
-    "awaiting": "Oczekiwanie na zatwierdzenie fazy {phase} przez doradcę. Otrzymasz kod e-mailem.",
-    "names": {
-      "1": "Kod potwierdzenia połączenia",
-      "2": "Kod zatwierdzenia bankowego",
-      "3": "Kod aktywacji przelewu"
-    },
     "codeFallback": "Kod weryfikacyjny",
     "codeHint": "Wprowadź kod otrzymany e-mailem.",
     "awaitingProcessing": "Twój przelew oczekuje. Powiadomimy Cię, gdy wymagane będzie działanie.",

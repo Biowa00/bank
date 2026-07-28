@@ -70,13 +70,12 @@
   "phase": {
     "codeRequired": "Reikalingas kodas.",
     "notFound": "Pervedimas nerastas arba jau apdorotas.",
-    "allConfirmed": "Visi etapai jau patvirtinti.",
     "noCode": "Šiam pervedimui nėra laukiančio kodo. Kreipkitės į savo konsultantą.",
     "expired": "Šis kodas pasibaigė. Konsultantas turi sugeneruoti naują kodą.",
     "tooManyAttempts": "Per daug bandymų. Reikia sugeneruoti naują kodą.",
     "incorrectExhausted": "Neteisingas kodas. Per daug bandymų: reikia sugeneruoti naują kodą.",
     "incorrectRemaining": "Neteisingas kodas. Liko bandymų: {n}.",
-    "updateFailed": "Etapo atnaujinti nepavyko."
+    "updateFailed": "Atnaujinti nepavyko."
   },
   "profile": {
     "nameEmpty": "Vardas negali būti tuščias."
@@ -87,7 +86,6 @@
     "ibanSaved": "Išėmimo IBAN išsaugotas.",
     "withdraw": "Išėmimas {amount} atliktas.",
     "redeem": "+{pct} % pritaikyta. Eiga: {progress} %.",
-    "phaseConfirmed": "Etapas {phase} patvirtintas.",
     "transferUnlocked": "Pervedimas atrakintas ir įvykdytas.",
     "profileUpdated": "Profilis atnaujintas.",
     "withdrawPending": "Jūsų {amount} išėmimas laukia apdorojimo.",

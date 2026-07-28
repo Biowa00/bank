@@ -10,7 +10,7 @@
     },
     "transferPending": {
       "title": "Transferencia pendiente de validación",
-      "body": "Tu transferencia de {amount} a {iban} ha sido enviada. El importe solo se debitará de tu cuenta una vez que un asesor confirme las 3 fases de validación."
+      "body": "Tu transferencia de {amount} a {iban} ha sido enviada."
     },
     "withdrawalRejected": {
       "title": "Retiro rechazado",
@@ -40,11 +40,7 @@
     },
     "transferExecuted": {
       "title": "Transferencia desbloqueada y ejecutada",
-      "body": "Las 3 fases han sido confirmadas. Tu transferencia de {amount} ha sido ejecutada."
-    },
-    "phaseConfirmed": {
-      "title": "Fase {phase}/{total} confirmada",
-      "body": "La fase {phase} de tu transferencia de {amount} está confirmada. A la espera de la siguiente fase."
+      "body": "Su transferencia de {amount} ha sido ejecutada."
     },
     "admin": {
       "accountReactivated": {
@@ -93,15 +89,6 @@
       "debited": {
         "title": "Ajuste de cuenta",
         "body": "−{amount} — {reason}"
-      },
-      "phaseCode": {
-        "title": "{name} — {code}",
-        "body": "Fase {phase}/{total} de su transferencia de {amount}: su {name} es {code}. Introdúzcalo en su área de cliente para confirmar. Código válido durante {ttl} minutos."
-      },
-      "phaseNames": {
-        "1": "Código de confirmación de conexión",
-        "2": "Código de aprobación bancaria",
-        "3": "Código de activación de transferencia"
       },
       "transferRejected": {
         "title": "Transferencia rechazada",

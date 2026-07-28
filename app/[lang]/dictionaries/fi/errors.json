@@ -70,13 +70,12 @@
   "phase": {
     "codeRequired": "Koodi vaaditaan.",
     "notFound": "Tilisiirtoa ei löytynyt tai se on jo käsitelty.",
-    "allConfirmed": "Kaikki vaiheet on jo vahvistettu.",
     "noCode": "Tälle tilisiirrolle ei ole odottavaa koodia. Ota yhteyttä neuvojaasi.",
     "expired": "Tämä koodi on vanhentunut. Neuvojasi on luotava uusi koodi.",
     "tooManyAttempts": "Liikaa yrityksiä. Uusi koodi on luotava.",
     "incorrectExhausted": "Väärä koodi. Liikaa yrityksiä: uusi koodi on luotava.",
     "incorrectRemaining": "Väärä koodi. {n} yritystä jäljellä.",
-    "updateFailed": "Vaiheen päivitys epäonnistui."
+    "updateFailed": "Päivitys epäonnistui."
   },
   "profile": {
     "nameEmpty": "Nimi ei voi olla tyhjä."
@@ -87,7 +86,6 @@
     "ibanSaved": "Nosto-IBAN tallennettu.",
     "withdraw": "Nosto {amount} tehty.",
     "redeem": "+{pct} % lisätty. Eteneminen: {progress} %.",
-    "phaseConfirmed": "Vaihe {phase} vahvistettu.",
     "transferUnlocked": "Tilisiirto vapautettu ja suoritettu.",
     "profileUpdated": "Profiili päivitetty.",
     "withdrawPending": "Nostosi {amount} odottaa käsittelyä.",

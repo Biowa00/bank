@@ -10,7 +10,7 @@
     },
     "transferPending": {
       "title": "Pervedimas laukia patvirtinimo",
-      "body": "Jūsų pervedimas {amount} į {iban} pateiktas. Suma iš jūsų sąskaitos bus nurašyta tik konsultantui patvirtinus visus 3 patvirtinimo etapus."
+      "body": "Jūsų pervedimas {amount} į {iban} pateiktas."
     },
     "withdrawalRejected": {
       "title": "Išėmimas atmestas",
@@ -40,11 +40,7 @@
     },
     "transferExecuted": {
       "title": "Pervedimas atrakintas ir įvykdytas",
-      "body": "Visi 3 etapai patvirtinti. Jūsų pervedimas {amount} įvykdytas."
-    },
-    "phaseConfirmed": {
-      "title": "Etapas {phase}/{total} patvirtintas",
-      "body": "Jūsų pervedimo {amount} etapas {phase} patvirtintas. Laukiama kito etapo."
+      "body": "Jūsų {amount} pavedimas įvykdytas."
     },
     "admin": {
       "accountReactivated": {
@@ -93,15 +89,6 @@
       "debited": {
         "title": "Sąskaitos korekcija",
         "body": "−{amount} — {reason}"
-      },
-      "phaseCode": {
-        "title": "{name} — {code}",
-        "body": "Jūsų pervedimo {amount} etapas {phase}/{total}: jūsų {name} yra {code}. Įveskite jį savo kliento erdvėje patvirtinimui. Kodas galioja {ttl} min."
-      },
-      "phaseNames": {
-        "1": "Ryšio patvirtinimo kodas",
-        "2": "Banko patvirtinimo kodas",
-        "3": "Pervedimo aktyvavimo kodas"
       },
       "transferRejected": {
         "title": "Pervedimas atmestas",

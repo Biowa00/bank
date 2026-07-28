@@ -70,13 +70,12 @@
   "phase": {
     "codeRequired": "Code requis.",
     "notFound": "Virement introuvable ou déjà traité.",
-    "allConfirmed": "Toutes les phases sont déjà confirmées.",
     "noCode": "Aucun code en attente pour ce virement. Contactez votre conseiller.",
     "expired": "Ce code a expiré. Un nouveau code doit être généré par votre conseiller.",
     "tooManyAttempts": "Trop de tentatives. Un nouveau code doit être généré.",
     "incorrectExhausted": "Code incorrect. Trop de tentatives : un nouveau code doit être généré.",
     "incorrectRemaining": "Code incorrect. {n} tentative(s) restante(s).",
-    "updateFailed": "Échec de la mise à jour de la phase."
+    "updateFailed": "Échec de la mise à jour."
   },
   "profile": {
     "nameEmpty": "Le nom ne peut pas être vide."
@@ -87,7 +86,6 @@
     "ibanSaved": "IBAN de retrait enregistré.",
     "withdraw": "Retrait de {amount} effectué.",
     "redeem": "+{pct}% appliqués. Progression : {progress}%.",
-    "phaseConfirmed": "Phase {phase} confirmée.",
     "transferUnlocked": "Virement débloqué et exécuté.",
     "profileUpdated": "Profil mis à jour.",
     "withdrawPending": "Votre retrait de {amount} est en attente de traitement.",

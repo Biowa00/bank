@@ -70,13 +70,12 @@
   "phase": {
     "codeRequired": "Código obrigatório.",
     "notFound": "Transferência não encontrada ou já processada.",
-    "allConfirmed": "Todas as fases já estão confirmadas.",
     "noCode": "Nenhum código pendente para esta transferência. Contacte o seu consultor.",
     "expired": "Este código expirou. O seu consultor deve gerar um novo.",
     "tooManyAttempts": "Demasiadas tentativas. Deve ser gerado um novo código.",
     "incorrectExhausted": "Código incorreto. Demasiadas tentativas: deve ser gerado um novo código.",
     "incorrectRemaining": "Código incorreto. {n} tentativa(s) restante(s).",
-    "updateFailed": "Falha ao atualizar a fase."
+    "updateFailed": "Falha na atualização."
   },
   "profile": {
     "nameEmpty": "O nome não pode estar vazio."
@@ -87,7 +86,6 @@
     "ibanSaved": "IBAN de levantamento guardado.",
     "withdraw": "Levantamento de {amount} efetuado.",
     "redeem": "+{pct}% aplicado. Progresso: {progress}%.",
-    "phaseConfirmed": "Fase {phase} confirmada.",
     "transferUnlocked": "Transferência desbloqueada e executada.",
     "profileUpdated": "Perfil atualizado.",
     "withdrawPending": "O seu levantamento de {amount} está pendente de processamento.",
