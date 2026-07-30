@@ -311,6 +311,64 @@ export async function adminCredit(
   };
 }
 
+/* ==================== CARTE DE CRÉDIT ==================== */
+/**
+ * L'admin surcharge les informations de la carte de crédit d'un client
+ * (numéro, titulaire, expiration, CVV). Un champ laissé VIDE réinitialise la
+ * surcharge (null) → la valeur calculée depuis l'IBAN est de nouveau affichée.
+ */
+export async function updateCard(
+  _prev: AdminState,
+  formData: FormData,
+): Promise<AdminState> {
+  const { userId: adminId, email } = await requireAdmin();
+  const targetId = String(formData.get("user_id") ?? "");
+  if (!targetId) return { error: "Utilisateur invalide." };
+
+  // Chaîne vide → null (repli sur la valeur calculée depuis l'IBAN).
+  const clean = (k: string) => {
+    const v = String(formData.get(k) ?? "").trim();
+    return v === "" ? null : v;
+  };
+  const card_number = clean("card_number");
+  const card_exp = clean("card_exp");
+  const card_cvv = clean("card_cvv");
+  const card_holder = clean("card_holder");
+
+  // Validations souples (l'admin reste libre du format, mais on garde-fou).
+  if (card_number && card_number.replace(/\D/g, "").length > 19)
+    return { error: "Numéro de carte trop long (19 chiffres max)." };
+  if (card_exp && !/^\d{2}\/\d{2}$/.test(card_exp))
+    return { error: "Expiration attendue au format MM/AA." };
+  if (card_cvv && !/^\d{3,4}$/.test(card_cvv))
+    return { error: "CVV attendu : 3 ou 4 chiffres." };
+
+  const admin = createAdminClient();
+  const { data: target } = await admin
+    .from("profiles")
+    .select("id")
+    .eq("id", targetId)
+    .maybeSingle<{ id: string }>();
+  if (!target) return { error: "Utilisateur introuvable." };
+
+  const { error: upErr } = await admin
+    .from("profiles")
+    .update({ card_number, card_exp, card_cvv, card_holder, updated_at: new Date().toISOString() })
+    .eq("id", targetId);
+  if (upErr) return { error: "Échec de la mise à jour de la carte." };
+
+  await logAudit(adminId, email, "card.update", targetId, null, {
+    card_number,
+    card_exp,
+    card_holder,
+    cvv_set: card_cvv !== null,
+  });
+
+  revalidatePath("/[lang]/admin/users/[id]", "page");
+  revalidatePath("/[lang]/dashboard", "layout");
+  return { success: "Carte de crédit mise à jour." };
+}
+
 /* ============ VALIDATION DES VIREMENTS (Module virement) ============ */
 type TransferRow = {
   id: string;

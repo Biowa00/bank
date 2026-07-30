@@ -48,6 +48,10 @@ export default async function DashboardHome() {
           createdAt={profile.created_at}
           holderName={profile.full_name}
           frozen={profile.card_frozen}
+          cardNumber={profile.card_number}
+          cardExp={profile.card_exp}
+          cardCvv={profile.card_cvv}
+          cardHolder={profile.card_holder}
         />
       </div>
 

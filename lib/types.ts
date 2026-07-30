@@ -17,6 +17,11 @@ export interface Profile {
   id_document_path: string | null;
   selfie_path: string | null;
   card_frozen: boolean;
+  // Carte de crédit surchargée par l'admin (null = valeur calculée depuis l'IBAN).
+  card_number: string | null;
+  card_exp: string | null;
+  card_cvv: string | null;
+  card_holder: string | null;
   iban: string | null; // null pour les comptes admin (pas de compte client)
   balance: number;
   status: AccountStatus;

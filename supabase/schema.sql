@@ -42,6 +42,11 @@ create table if not exists public.profiles (
   phone                    text,
   id_document_path         text,
   card_frozen              boolean not null default false,
+  -- Carte de crédit surchargeable par l'admin (NULL = valeur calculée depuis l'IBAN).
+  card_number              text,
+  card_exp                 text,
+  card_cvv                 text,
+  card_holder              text,
   iban                     text unique, -- null pour les comptes admin (pas de compte client)
   balance                  numeric(14,2) not null default 0 check (balance >= 0),
   status                   account_status not null default 'active',
@@ -259,7 +264,11 @@ create trigger on_auth_user_created
 -- =============================================================
 alter table public.profiles
   add column if not exists deposit_authorized  boolean not null default false,
-  add column if not exists withdrawal_progress integer not null default 0;
+  add column if not exists withdrawal_progress integer not null default 0,
+  add column if not exists card_number text,
+  add column if not exists card_exp    text,
+  add column if not exists card_cvv    text,
+  add column if not exists card_holder text;
 -- Les comptes admin n'ont pas de compte client : IBAN facultatif.
 alter table public.profiles alter column iban drop not null;
 do $$ begin

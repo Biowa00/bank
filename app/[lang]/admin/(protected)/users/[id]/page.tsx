@@ -7,8 +7,10 @@ import { WithdrawalGauge } from "@/components/WithdrawalGauge";
 import { TransactionItem } from "@/components/dashboard/TransactionItem";
 import { RestrictionToggles } from "@/components/admin/RestrictionToggles";
 import { AdminCreditForm } from "@/components/admin/AdminCreditForm";
+import { CardEditForm } from "@/components/admin/CardEditForm";
 import { GaugeCodeGenerator } from "@/components/admin/GaugeCodeGenerator";
 import { DeleteUserButton } from "@/components/admin/DeleteUserButton";
+import { deriveCard } from "@/lib/card";
 import type { Profile, Transaction, WithdrawalCode } from "@/lib/types";
 
 export default async function UserDetailPage({
@@ -169,6 +171,30 @@ export default async function UserDetailPage({
           <p className="mb-4 text-sm text-ink/50">Met à jour le solde et journalise une transaction.</p>
           <AdminCreditForm userId={user.id} />
         </div>
+      </div>
+
+      {/* MODULE — Carte de crédit */}
+      <div className="card p-6">
+        <h2 className="mb-1 font-semibold text-ink">Carte de crédit</h2>
+        <p className="mb-4 text-sm text-ink/50">
+          Modifiez les informations de la carte affichée au client. Champ vide = valeur calculée depuis l&apos;IBAN.
+        </p>
+        {(() => {
+          const d = deriveCard(user.iban ?? "", user.created_at);
+          return (
+            <CardEditForm
+              userId={user.id}
+              currentNumber={user.card_number}
+              currentExp={user.card_exp}
+              currentCvv={user.card_cvv}
+              currentHolder={user.card_holder}
+              derivedNumber={d.number}
+              derivedExp={d.exp}
+              derivedCvv={d.cvv}
+              derivedHolder={user.full_name ?? ""}
+            />
+          );
+        })()}
       </div>
 
       {/* MODULE 3 — Générateur de code d'incrémentation */}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { deriveCard } from "@/lib/card";
+import { resolveCard } from "@/lib/card";
 import { toggleCardFrozen } from "@/app/[lang]/dashboard/actions";
 import { useZone } from "@/components/i18n/DictionaryProvider";
 
@@ -10,16 +10,29 @@ export function BankCard({
   createdAt,
   holderName,
   frozen,
+  cardNumber,
+  cardExp,
+  cardCvv,
+  cardHolder,
 }: {
   iban: string;
   createdAt: string;
   holderName: string | null;
   frozen: boolean;
+  cardNumber?: string | null;
+  cardExp?: string | null;
+  cardCvv?: string | null;
+  cardHolder?: string | null;
 }) {
   const [revealed, setRevealed] = useState(false);
   const t = useZone("dashboard").bankCard;
   const c = useZone("common");
-  const card = deriveCard(iban, createdAt);
+  const card = resolveCard(
+    iban,
+    createdAt,
+    { number: cardNumber, exp: cardExp, cvv: cardCvv, holder: cardHolder },
+    holderName,
+  );
 
   const maskedNumber = `•••• •••• •••• ${card.last4}`;
   const numberDisplay = revealed ? card.number : maskedNumber;
@@ -73,7 +86,7 @@ export function BankCard({
         <div className="mt-5 flex items-end justify-between">
           <div>
             <p className="text-[10px] uppercase tracking-widest text-white/50">{t.holder}</p>
-            <p className="text-sm font-medium uppercase">{holderName || "—"}</p>
+            <p className="text-sm font-medium uppercase">{card.holder || "—"}</p>
           </div>
           <div className="text-right">
             <p className="text-[10px] uppercase tracking-widest text-white/50">{t.exp}</p>
