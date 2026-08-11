@@ -5,6 +5,7 @@ import { createClient } from "@/lib/supabase/server";
 import { Sidebar } from "@/components/dashboard/Sidebar";
 import { MobileBottomNav } from "@/components/dashboard/MobileBottomNav";
 import { LogoutButton } from "@/components/dashboard/LogoutButton";
+import { IdleLogout } from "@/components/IdleLogout";
 import { Logo } from "@/components/Logo";
 import { LanguageSwitcher } from "@/components/i18n/LanguageSwitcher";
 import { getRequestDictionary } from "../dictionaries";
@@ -53,6 +54,7 @@ export default async function DashboardLayout({
 
   return (
     <div className="min-h-screen bg-canvas">
+      <IdleLogout />
       {/* Barre mobile supérieure */}
       <div className="sticky top-0 z-20 flex items-center justify-between border-b border-black/5 bg-canvas/90 px-4 py-3 backdrop-blur lg:hidden">
         <Logo />

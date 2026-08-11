@@ -5,6 +5,7 @@ import { requireAdmin } from "@/lib/auth";
 import { Logo } from "@/components/Logo";
 import { AdminSidebar } from "@/components/admin/AdminSidebar";
 import { LogoutButton } from "@/components/dashboard/LogoutButton";
+import { IdleLogout } from "@/components/IdleLogout";
 import { LanguageSwitcher } from "@/components/i18n/LanguageSwitcher";
 
 export default async function AdminLayout({
@@ -17,6 +18,7 @@ export default async function AdminLayout({
 
   return (
     <div className="min-h-screen bg-canvas lg:flex">
+      <IdleLogout />
       {/* Sidebar sombre */}
       <aside className="shrink-0 bg-ink text-white lg:sticky lg:top-0 lg:h-screen lg:w-64">
         <div className="flex items-center justify-between p-5">

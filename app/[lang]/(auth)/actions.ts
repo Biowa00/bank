@@ -277,6 +277,13 @@ export async function signOut() {
   await localizedRedirect("");
 }
 
+/** Déconnexion déclenchée par inactivité : renvoie vers la page de connexion. */
+export async function signOutInactive() {
+  const supabase = await createClient();
+  await supabase.auth.signOut();
+  await localizedRedirect("/login");
+}
+
 function traduireErreur(msg: string, E: Dictionary["errors"]["auth"]): string {
   const m = msg.toLowerCase();
   if (m.includes("invalid login")) return E.supabase.invalidLogin;
