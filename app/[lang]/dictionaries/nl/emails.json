@@ -1,0 +1,123 @@
+{
+  "notify": {
+    "depositReceived": {
+      "title": "Storting ontvangen",
+      "body": "{amount} is op uw rekening bijgeschreven."
+    },
+    "transferRejected": {
+      "title": "Overschrijving geweigerd",
+      "fallbackBody": "Overschrijvingen niet beschikbaar."
+    },
+    "transferPending": {
+      "title": "Overschrijving in afwachting van validatie",
+      "body": "Uw overschrijving van {amount} naar {iban} is ingediend."
+    },
+    "withdrawalRejected": {
+      "title": "Opname geweigerd",
+      "fallbackBody": "Opnames niet beschikbaar.",
+      "invalidCode": "De opgegeven opnamecode is ongeldig, verlopen of al gebruikt."
+    },
+    "withdrawalDone": {
+      "title": "Opname uitgevoerd",
+      "body": "{amount} opgenomen naar {iban}."
+    },
+    "cardFrozen": {
+      "title": "Kaart bevroren",
+      "body": "Uw kaart is bevroren. Handelingen zijn tijdelijk geblokkeerd."
+    },
+    "cardUnfrozen": {
+      "title": "Kaart heractiveerd",
+      "body": "Uw kaart is opnieuw geactiveerd. U kunt weer handelingen verrichten."
+    },
+    "progressUpdated": {
+      "title": "Opnamevoortgang bijgewerkt",
+      "body": "Uw opnamemeter is gestegen met +{pct}% (nu {progress}%)."
+    },
+    "transferReceived": {
+      "title": "Overschrijving ontvangen",
+      "body": "U heeft {amount}{from} ontvangen.",
+      "fromName": " van {name}"
+    },
+    "transferExecuted": {
+      "title": "Overschrijving vrijgegeven en uitgevoerd",
+      "body": "Uw overschrijving van {amount} is uitgevoerd."
+    },
+    "admin": {
+      "accountReactivated": {
+        "title": "Account heractiveerd",
+        "body": "Uw account is opnieuw geactiveerd. U heeft weer toegang tot alle diensten."
+      },
+      "accountRestricted": {
+        "title": "Account beperkt",
+        "body": "Uw account is beperkt. Reden: {reason}"
+      },
+      "accountBanned": {
+        "title": "Account geblokkeerd",
+        "body": "Uw account is geblokkeerd.",
+        "bodyReason": "Uw account is geblokkeerd. Reden: {reason}"
+      },
+      "depositsAuthorized": {
+        "title": "Stortingen toegestaan",
+        "body": "Uw stortingen zijn nu toegestaan."
+      },
+      "depositsSuspended": {
+        "title": "Stortingen opgeschort",
+        "body": "Uw stortingen zijn opgeschort."
+      },
+      "withdrawalsBlocked": {
+        "title": "Opnames geblokkeerd",
+        "body": "Uw opnames zijn geblokkeerd.",
+        "bodyReason": "Uw opnames zijn geblokkeerd. Reden: {reason}"
+      },
+      "withdrawalsUnblocked": {
+        "title": "Opnames gedeblokkeerd",
+        "body": "Uw opnames zijn gedeblokkeerd."
+      },
+      "transfersBlocked": {
+        "title": "Overschrijvingen geblokkeerd",
+        "body": "Uw overschrijvingen zijn geblokkeerd.",
+        "bodyReason": "Uw overschrijvingen zijn geblokkeerd. Reden: {reason}"
+      },
+      "transfersUnblocked": {
+        "title": "Overschrijvingen gedeblokkeerd",
+        "body": "Uw overschrijvingen zijn gedeblokkeerd."
+      },
+      "credited": {
+        "title": "Rekening gecrediteerd",
+        "body": "+{amount} — {reason}"
+      },
+      "debited": {
+        "title": "Rekeningaanpassing",
+        "body": "−{amount} — {reason}"
+      },
+      "transferRejected": {
+        "title": "Overschrijving geweigerd",
+        "body": "Uw overschrijving van {amount} is geweigerd. Reden: {reason}. Er is geen bedrag van uw rekening afgeschreven."
+      },
+      "withdrawalCode": {
+        "title": "Nieuwe opnamecode",
+        "body": "Uw opnamecode « {name} » is {code}. Voer deze in uw ruimte in om uw opname te valideren.",
+        "reasonSuffix": " Reden: {reason}"
+      },
+      "transferCode": {
+        "title": "{label}",
+        "body": "Er is een code verzonden voor uw overschrijving van {amount}. Reden: {label}. Uw code is {code}. Voer deze in uw ruimte in. Geldig gedurende {ttl} minuten."
+      }
+    },
+    "withdrawalPending": {
+      "title": "Opname in afwachting",
+      "body": "Uw opnameverzoek van {amount} naar {iban} is goed ontvangen. Het is in afwachting van verwerking."
+    },
+    "transferStepConfirmed": {
+      "title": "Code bevestigd",
+      "body": "Uw code is bevestigd. Uw overschrijving is in behandeling."
+    }
+  },
+  "chrome": {
+    "greeting": "Hallo {name},",
+    "greetingNoName": "Hallo,",
+    "header": "Vantex Bank S.A",
+    "footerAuto": "Dit is een automatisch bericht, gelieve niet te antwoorden.",
+    "footerConfidential": "Deze e-mail en de informatie die deze bevat zijn vertrouwelijk."
+  }
+}

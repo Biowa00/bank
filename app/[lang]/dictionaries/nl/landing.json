@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "features": "Functies",
+    "security": "Beveiliging",
+    "howItWorks": "Hoe het werkt"
+  },
+  "hero": {
+    "badge": "Neobank van de nieuwe generatie",
+    "titleLead": "De bank die uw geld",
+    "titleHighlight": "in beweging",
+    "description": "Open in 2 minuten een rekening, ontvang uw IBAN, doe stortingen en overschrijvingen, en volg al uw activiteit in realtime.",
+    "ctaPrimary": "Gratis account aanmaken",
+    "ctaSecondary": "Inloggen",
+    "guarantee": "Gratis openen · Vrijblijvend",
+    "cardTier": "Premium"
+  },
+  "logoStrip": {
+    "sepa": "SEPA-overschrijvingen",
+    "instantIban": "Directe IBAN",
+    "realtimeNotifications": "Realtime meldingen",
+    "fullHistory": "Volledige geschiedenis"
+  },
+  "features": {
+    "title": "Alles wat een moderne bank moet doen",
+    "subtitle": "Een vlotte en complete ervaring, gemaakt voor uw dagelijks leven.",
+    "items": {
+      "transfers": {
+        "title": "Directe overschrijvingen",
+        "desc": "Stuur geld naar elke IBAN, intern of extern, met een volledige geschiedenis."
+      },
+      "card": {
+        "title": "Kaart & IBAN",
+        "desc": "Bij het openen van uw rekening krijgt u automatisch een IBAN, klaar om te ontvangen en te verzenden."
+      },
+      "notifications": {
+        "title": "Meldingen",
+        "desc": "Elke storting, overschrijving of wijziging op uw rekening genereert een directe melding."
+      },
+      "deposits": {
+        "title": "Storten met één klik",
+        "desc": "Vul uw rekening in enkele seconden aan en volg uw saldo in realtime."
+      }
+    }
+  },
+  "showcase": {
+    "badge": "Dashboard",
+    "title": "Bestuur uw rekening in één oogopslag",
+    "description": "Realtime saldo, filterbare geschiedenis, stortingen, overschrijvingen en opnames — alles samen in een heldere en responsieve ruimte.",
+    "points": [
+      "Saldo direct bijgewerkt",
+      "Geschiedenis filterbaar op type en status",
+      "Opnames beveiligd met een validatiecode"
+    ],
+    "sampleDeposit": "Storting",
+    "sampleTransfer": "Overschrijving — FR76…4021",
+    "sampleToday": "Vandaag",
+    "sampleYesterday": "Gisteren"
+  },
+  "steps": {
+    "title": "Drie stappen en klaar",
+    "items": [
+      {
+        "title": "Maak uw account aan",
+        "desc": "Registratie in 2 minuten met een e-mail. Uw IBAN wordt automatisch gegenereerd."
+      },
+      {
+        "title": "Vul uw saldo aan",
+        "desc": "Voeg met één klik geld toe vanaf uw dashboard."
+      },
+      {
+        "title": "Verzend & volg",
+        "desc": "Doe overschrijvingen en opnames, ontvang meldingen, bekijk de geschiedenis."
+      }
+    ]
+  },
+  "security": {
+    "badge": "Beveiliging",
+    "title": "Uw gegevens in goede handen",
+    "description": "Versleutelde authenticatie en beveiligde sessies beschermen uw account op elk moment.",
+    "cards": [
+      { "title": "Sessieversleuteling", "desc": "Ondertekende tokens & httpOnly-cookies" },
+      { "title": "Fraudebescherming", "desc": "Handelingen continu bewaakt" },
+      { "title": "Auditlogboek", "desc": "Elke gevoelige actie wordt geregistreerd" },
+      { "title": "Beschermde gegevens", "desc": "Privacy standaard" }
+    ]
+  },
+  "stats": {
+    "accounts": "geopende rekeningen",
+    "satisfaction": "tevredenheidsscore",
+    "free": "gratis en veilig"
+  },
+  "testimonials": {
+    "title": "Zij vertrouwen ons",
+    "items": [
+      { "quote": "Eindelijk een eenvoudige en snelle online bank, zonder onnodig papierwerk.", "author": "Sarah M." },
+      { "quote": "De interface is helder en vlot, precies wat ik dagelijks nodig heb.", "author": "Karim B." },
+      { "quote": "Overschrijvingen en de geschiedenis zijn een waar plezier om te gebruiken.", "author": "Léa D." }
+    ]
+  },
+  "finalCta": {
+    "title": "Klaar om uw rekening te openen?",
+    "description": "Maak uw account aan in 2 minuten. Gratis en vrijblijvend.",
+    "ctaPrimary": "Account aanmaken",
+    "ctaSecondary": "Inloggen"
+  },
+  "footer": {
+    "tagline": "Neobank van de nieuwe generatie. Eenvoudig, snel, veilig.",
+    "columns": {
+      "product": {
+        "title": "Product",
+        "links": ["Functies", "Beveiliging", "Dashboard"]
+      },
+      "account": {
+        "title": "Account",
+        "links": ["Account aanmaken", "Inloggen"]
+      },
+      "legal": {
+        "title": "Juridisch",
+        "links": ["Wettelijke vermeldingen", "Privacy"]
+      }
+    },
+    "rights": "Alle rechten voorbehouden."
+  }
+}

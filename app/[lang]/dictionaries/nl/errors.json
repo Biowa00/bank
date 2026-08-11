@@ -1,0 +1,94 @@
+{
+  "auth": {
+    "lastNameRequired": "De achternaam is verplicht.",
+    "firstNameRequired": "De voornaam is verplicht.",
+    "cityRequired": "De woonplaats is verplicht.",
+    "professionRequired": "Het beroep is verplicht.",
+    "addressRequired": "Het volledige adres is verplicht.",
+    "phoneRequired": "Het telefoonnummer is verplicht.",
+    "emailRequired": "Het e-mailadres is verplicht.",
+    "passwordMinLength": "Het wachtwoord moet minstens 8 tekens bevatten.",
+    "passwordUppercase": "Het wachtwoord moet minstens één hoofdletter bevatten.",
+    "passwordDigit": "Het wachtwoord moet minstens één cijfer bevatten.",
+    "passwordsMismatch": "De wachtwoorden komen niet overeen.",
+    "cguRequired": "U moet de algemene voorwaarden en het privacybeleid accepteren.",
+    "idRequired": "Het identiteitsbewijs (foto) is verplicht.",
+    "idFormat": "Ongeldig formaat identiteitsbewijs (JPG, PNG of PDF).",
+    "idTooLarge": "Het identiteitsbewijs is groter dan 5 MB.",
+    "accountCreatedConfirm": "Account aangemaakt. Controleer uw mailbox om uw adres te bevestigen en log daarna in.",
+    "credentialsRequired": "E-mail en wachtwoord vereist.",
+    "notAdmin": "Dit account heeft geen beheerdersrechten.",
+    "emailRequiredShort": "E-mailadres vereist.",
+    "resetEmailSent": "Als er een account aan dit adres is gekoppeld, is er zojuist een e-mail met een herstellink verzonden. Controleer ook uw spam.",
+    "passwordCriteria": "Het wachtwoord voldoet niet aan de beveiligingscriteria.",
+    "resetLinkInvalid": "Ongeldige of verlopen link. Vraag een nieuwe herstelaanvraag aan.",
+    "supabase": {
+      "invalidLogin": "Onjuist e-mailadres of wachtwoord.",
+      "alreadyRegistered": "Er bestaat al een account met dit e-mailadres.",
+      "emailNotConfirmed": "E-mail niet bevestigd. Controleer uw mailbox.",
+      "rateLimit": "Te veel pogingen. Probeer het zo opnieuw.",
+      "generic": "Er is een fout opgetreden. Probeer opnieuw."
+    },
+    "selfieRequired": "De selfie is verplicht."
+  },
+  "amount": {
+    "invalid": "Ongeldig bedrag.",
+    "max": "Maximaal bedrag: € 1.000.000."
+  },
+  "deposit": {
+    "failed": "Storting mislukt. Probeer opnieuw."
+  },
+  "transfer": {
+    "ibanInvalid": "Ongeldige IBAN van de begunstigde.",
+    "ownAccount": "U kunt niet naar uw eigen rekening overschrijven.",
+    "insufficient": "Onvoldoende saldo voor deze overschrijving.",
+    "failed": "Overschrijving mislukt. Probeer opnieuw.",
+    "unavailable": "Overschrijvingen niet beschikbaar.",
+    "ibanFormat": "Onjuist IBAN-formaat.",
+    "ibanLength": "Onjuiste IBAN-lengte voor dit land ({expected} tekens verwacht).",
+    "ibanChecksum": "Ongeldig IBAN-controlegetal.",
+    "beneficiaryRequired": "De naam van de begunstigde is verplicht."
+  },
+  "withdrawalAccount": {
+    "ibanInvalid": "Ongeldige IBAN.",
+    "saveFailed": "Kan deze IBAN niet opslaan."
+  },
+  "withdraw": {
+    "chooseIban": "Kies een bestemmings-IBAN.",
+    "codeRequired": "De opnamecode is verplicht.",
+    "ibanNotFound": "Bestemmings-IBAN niet gevonden.",
+    "insufficient": "Onvoldoende saldo voor deze opname.",
+    "codeInvalid": "Opnamecode ongeldig, verlopen of al gebruikt.",
+    "unavailable": "Opnames niet beschikbaar.",
+    "gaugeIncomplete": "Uw opnamemeter moet op 100% staan om een opname te starten."
+  },
+  "redeem": {
+    "enterCode": "Voer een code in.",
+    "codeInvalid": "Code ongeldig, verlopen of al gebruikt.",
+    "updateFailed": "Bijwerken mislukt."
+  },
+  "phase": {
+    "codeRequired": "Code vereist.",
+    "notFound": "Overschrijving niet gevonden of al verwerkt.",
+    "noCode": "Geen code in afwachting voor deze overschrijving. Neem contact op met uw adviseur.",
+    "expired": "Deze code is verlopen. Uw adviseur moet een nieuwe code genereren.",
+    "tooManyAttempts": "Te veel pogingen. Er moet een nieuwe code worden gegenereerd.",
+    "incorrectExhausted": "Onjuiste code. Te veel pogingen: er moet een nieuwe code worden gegenereerd.",
+    "incorrectRemaining": "Onjuiste code. {n} poging(en) resterend.",
+    "updateFailed": "Bijwerken mislukt."
+  },
+  "profile": {
+    "nameEmpty": "De naam mag niet leeg zijn."
+  },
+  "success": {
+    "deposit": "Storting van {amount} uitgevoerd.",
+    "transferSubmitted": "Overschrijving van {amount} ingediend — in afwachting van validatie.",
+    "ibanSaved": "Opname-IBAN opgeslagen.",
+    "withdraw": "Opname van {amount} uitgevoerd.",
+    "redeem": "+{pct}% toegepast. Voortgang: {progress}%.",
+    "transferUnlocked": "Overschrijving vrijgegeven en uitgevoerd.",
+    "profileUpdated": "Profiel bijgewerkt.",
+    "withdrawPending": "Uw opname van {amount} is in afwachting van verwerking.",
+    "codeConfirmed": "Code bevestigd."
+  }
+}

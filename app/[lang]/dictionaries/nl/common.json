@@ -1,0 +1,45 @@
+{
+  "brand": "Vantex Bank S.A",
+  "language": "Taal",
+  "actions": {
+    "login": "Inloggen",
+    "register": "Account aanmaken",
+    "logout": "Uitloggen",
+    "back": "Terug",
+    "backToSite": "← Terug naar de site",
+    "home": "Home",
+    "mySpace": "Mijn ruimte",
+    "mySpaceAria": "Mijn persoonlijke ruimte",
+    "seeAll": "Alles bekijken",
+    "cancel": "Annuleren",
+    "confirm": "Bevestigen",
+    "save": "Opslaan",
+    "send": "Verzenden",
+    "validate": "Valideren",
+    "delete": "Verwijderen",
+    "oneMoment": "Een ogenblik…"
+  },
+  "account": {
+    "availableBalance": "Beschikbaar saldo",
+    "currentAccount": "Betaalrekening",
+    "iban": "IBAN"
+  },
+  "statuses": {
+    "account": {
+      "active": "Actief",
+      "restricted": "Beperkt",
+      "banned": "Geblokkeerd"
+    },
+    "tx": {
+      "success": "Geslaagd",
+      "pending": "In afwachting",
+      "blocked": "Geblokkeerd",
+      "rejected": "Geweigerd"
+    },
+    "code": {
+      "active": "Actief",
+      "used": "Gebruikt",
+      "revoked": "Ingetrokken"
+    }
+  }
+}

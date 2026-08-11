@@ -1,0 +1,176 @@
+{
+  "layout": {
+    "bannedTitle": "Account geblokkeerd",
+    "bannedText": "Uw account is geblokkeerd en de toegang tot uw diensten is opgeschort.",
+    "restrictedTitle": "Account beperkt.",
+    "restrictedDefault": "Sommige handelingen (overschrijvingen, opnames) zijn niet beschikbaar.",
+    "reason": "Reden:",
+    "defaultFirstName": "u"
+  },
+  "home": {
+    "greeting": "Hallo",
+    "subtitle": "Hier is de status van uw Vantex Bank S.A-rekening.",
+    "quickDeposit": "Storten",
+    "quickTransfer": "Overschrijven",
+    "quickWithdraw": "Opnemen",
+    "recentTransactions": "Recente transacties",
+    "emptyRecent": "Nog geen transacties. Doe uw eerste storting!"
+  },
+  "balanceCard": {
+    "holder": "Rekeninghouder",
+    "copyIban": "IBAN kopiëren",
+    "copied": "Gekopieerd ✓"
+  },
+  "bankCard": {
+    "paymentCard": "Creditcard",
+    "frozen": "Bevroren",
+    "holder": "Kaarthouder",
+    "exp": "Verv.",
+    "cvv": "CVV",
+    "showInfo": "Gegevens tonen",
+    "hideInfo": "Gegevens verbergen",
+    "freezeTitle": "Kaart bevriezen",
+    "freezeDescFrozen": "Handelingen zijn geblokkeerd zolang de kaart bevroren is.",
+    "freezeDescActive": "Blokkeert tijdelijk alle kaarthandelingen.",
+    "freezeToggleAria": "Kaart bevriezen of ontdooien"
+  },
+  "deposit": {
+    "title": "Geld storten",
+    "subtitle": "Vul uw saldo direct aan.",
+    "amountLabel": "Te storten bedrag (€)",
+    "pending": "Storten…",
+    "submit": "Geld storten",
+    "note": "Uw saldo wordt onmiddellijk na validatie bijgeschreven."
+  },
+  "transfer": {
+    "title": "Een overschrijving doen",
+    "subtitle": "Stuur geld naar een IBAN naar keuze.",
+    "ibanLabel": "IBAN van de begunstigde",
+    "amountLabel": "Bedrag (€)",
+    "availableBalance": "Beschikbaar saldo:",
+    "descriptionLabel": "Omschrijving (optioneel)",
+    "descriptionPlaceholder": "Huur, terugbetaling…",
+    "pending": "Verzenden…",
+    "submit": "Overschrijving indienen",
+    "beneficiaryLabel": "Naam van de begunstigde",
+    "beneficiaryPlaceholder": "Jan Jansen",
+    "bicLabel": "SWIFT / BIC-code",
+    "bankLabel": "Bank",
+    "bankDetecting": "Bank detecteren…",
+    "accountLabel": "Rekeningnummer (optioneel)",
+    "currencyLabel": "Valuta",
+    "ibanValidLabel": "Geldige IBAN",
+    "ibanChecking": "Controleren…"
+  },
+  "withdraw": {
+    "title": "Geld opnemen",
+    "subtitle": "Opnemen kan zodra uw meter op 100% staat.",
+    "newWithdrawal": "Nieuwe opname",
+    "savedIbansTitle": "Opgeslagen bestemmings-IBAN's",
+    "savedIbansDesc": "Beheer de rekeningen waarnaar u kunt opnemen.",
+    "noAccounts": "Sla eerst hieronder een bestemmings-IBAN op om een opname te kunnen doen.",
+    "destLabel": "Bestemmings-IBAN",
+    "amountLabel": "Bedrag (€)",
+    "availableBalance": "Beschikbaar saldo:",
+    "codeLabel": "Opnamecode",
+    "codePlaceholder": "Code verstrekt door de beheerder",
+    "codeHint": "Een geldige opnamecode, gegenereerd door de beheerder, is vereist om de handeling te valideren.",
+    "pending": "Valideren…",
+    "submit": "Opname valideren",
+    "gaugeRequired": "Uw opnamemeter moet 100% bereiken voordat u een opname kunt starten.",
+    "pendingNote": "Uw opnameverzoek wordt in afwachting van verwerking geplaatst."
+  },
+  "withdrawalAccounts": {
+    "labelLabel": "Label (optioneel)",
+    "labelPlaceholder": "Mijn andere rekening",
+    "ibanLabel": "Bestemmings-IBAN",
+    "pending": "Toevoegen…",
+    "submit": "Deze IBAN opslaan"
+  },
+  "withdrawalProgress": {
+    "title": "Voortgang van uw opname",
+    "complete": "Uw meter is volledig.",
+    "hint": "Voer de codes van uw adviseur in om uw meter te laten stijgen.",
+    "pending": "…",
+    "submit": "Valideren"
+  },
+  "transferPhases": {
+    "title": "Overschrijvingen in afwachting van bevestiging",
+    "transferOf": "Overschrijving van {amount}",
+    "toIban": "naar {iban}",
+    "pending": "…",
+    "confirm": "Bevestigen",
+    "codeFallback": "Validatiecode",
+    "codeHint": "Voer de per e-mail ontvangen code in.",
+    "awaitingProcessing": "Uw overschrijving is in afwachting. U wordt op de hoogte gebracht zodra actie vereist is.",
+    "instruction": "Er is een code vereist om uw overschrijving te valideren en vrij te geven."
+  },
+  "transactions": {
+    "title": "Transactieoverzicht",
+    "subtitle": "Filter op type en status.",
+    "emptyFiltered": "Geen transacties komen overeen met deze filters.",
+    "typeFilters": {
+      "all": "Alles",
+      "deposit": "Stortingen",
+      "transfer": "Overschrijvingen",
+      "withdrawal": "Opnames"
+    },
+    "statusFilters": {
+      "all": "Alle statussen",
+      "success": "Geslaagd",
+      "pending": "In afwachting",
+      "rejected": "Geweigerd",
+      "blocked": "Geblokkeerd"
+    }
+  },
+  "transactionItem": {
+    "types": {
+      "deposit": "Storting",
+      "transfer": "Overschrijving",
+      "withdrawal": "Opname",
+      "admin_credit": "Administratieve creditering"
+    },
+    "declineReason": "Weigering:"
+  },
+  "notifications": {
+    "title": "Meldingen",
+    "subtitle": "Alle gebeurtenissen van uw account.",
+    "markAllRead": "Alles als gelezen markeren",
+    "empty": "Geen meldingen."
+  },
+  "profile": {
+    "title": "Profiel",
+    "subtitle": "Uw persoonlijke gegevens en uw account.",
+    "accountStatus": "Accountstatus",
+    "reason": "Reden:",
+    "createdOn": "Account aangemaakt op {date}",
+    "infoSection": "Gegevens",
+    "fullName": "Volledige naam",
+    "email": "E-mailadres",
+    "emailHint": "Neem contact op met uw adviseur om uw e-mailadres te wijzigen.",
+    "pending": "Opslaan…",
+    "submit": "Opslaan"
+  },
+  "permissions": {
+    "frozen": "Uw kaart is bevroren. Ontdooi deze via uw dashboard om handelingen te verrichten.",
+    "banned": "Account geblokkeerd.",
+    "depositNotAuthorized": "Stortingen zijn nog niet toegestaan op uw account. Neem contact op met uw adviseur.",
+    "transferRestricted": "Account beperkt: overschrijvingen niet beschikbaar.",
+    "transfersBlocked": "Overschrijvingen zijn geblokkeerd op uw account.",
+    "withdrawRestricted": "Account beperkt: opnames niet beschikbaar.",
+    "withdrawalsBlocked": "Opnames zijn geblokkeerd op uw account."
+  },
+  "nav": {
+    "overview": "Overzicht",
+    "home": "Home",
+    "deposit": "Storten",
+    "transfer": "Overschrijven",
+    "withdraw": "Opnemen",
+    "history": "Geschiedenis",
+    "notifications": "Meldingen",
+    "notificationsShort": "Meld.",
+    "profile": "Profiel",
+    "more": "Meer",
+    "moreOptions": "Meer opties"
+  }
+}
