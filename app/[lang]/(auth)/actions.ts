@@ -267,7 +267,16 @@ export async function updatePassword(
   const { error } = await supabase.auth.updateUser({ password });
   if (error) return { error: traduireErreur(error.message, E) };
 
-  return localizedRedirect("/dashboard");
+  // Redirection selon le rôle : un admin retourne à son back-office, un client
+  // à son espace (évite le détour /dashboard → /admin pour les admins).
+  const admin = createAdminClient();
+  const { data: profile } = await admin
+    .from("profiles")
+    .select("role")
+    .eq("id", user.id)
+    .single<{ role: string }>();
+
+  return localizedRedirect(profile?.role === "admin" ? "/admin" : "/dashboard");
 }
 
 export async function signOut() {

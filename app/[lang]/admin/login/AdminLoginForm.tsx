@@ -43,6 +43,12 @@ export function AdminLoginForm() {
               {t.adminLogin.submit}
             </SubmitButton>
           </form>
+
+          <p className="mt-5 text-center">
+            <Link href="/mot-de-passe-oublie" className="text-xs font-medium text-brand-600 hover:text-brand-700">
+              {t.login.forgotPassword}
+            </Link>
+          </p>
         </div>
 
         <p className="mt-6 text-center text-sm text-white/40">
