@@ -47,7 +47,16 @@
     "ibanFormat": "Netinkamas IBAN formatas.",
     "ibanLength": "Netinkamas IBAN ilgis šiai šaliai (laukiama {expected} simbolių).",
     "ibanChecksum": "Netinkamas IBAN kontrolinis skaitmuo.",
-    "beneficiaryRequired": "Gavėjo vardas privalomas."
+    "beneficiaryRequired": "Gavėjo vardas privalomas.",
+    "countryUnsupported": "Ši šalis nepalaikoma pervedimams pagal sąskaitos numerį. Naudokite IBAN.",
+    "accountFormat": "Netinkamas sąskaitos numeris šiai šaliai.",
+    "accountIsIban": "Šis numeris yra IBAN: pasirinkite IBAN parinktį.",
+    "clabeChecksum": "Netinkamas CLABE kontrolinis skaitmuo.",
+    "routingFormat": "Netinkamas nacionalinis banko kodas šiai šaliai.",
+    "routingChecksum": "Netinkamas ABA maršruto numerio kontrolinis skaitmuo.",
+    "bicFormat": "Netinkamas SWIFT / BIC kodas (8 arba 11 simbolių).",
+    "bicCountry": "SWIFT / BIC kodas neatitinka banko šalies.",
+    "bankRequired": "Banko pavadinimas privalomas."
   },
   "withdrawalAccount": {
     "ibanInvalid": "Neteisingas IBAN.",

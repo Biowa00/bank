@@ -8,6 +8,13 @@ import type { Profile, Transaction, TransferPhaseCode } from "@/lib/types";
 
 type CodeState = "none" | "created" | "sent";
 
+const ROUTING_LABELS: Record<string, string> = {
+  aba: "Routage ABA",
+  transit: "Transit + institution",
+  sort_code: "Sort code",
+  bsb: "BSB",
+};
+
 export default async function VirementsPage() {
   await connection();
   const admin = createAdminClient();
@@ -94,7 +101,22 @@ export default async function VirementsPage() {
 
                 <div className="mt-4 space-y-1.5 text-sm">
                   <Row label="Montant" value={<span className="font-semibold text-ink">{formatEuro(Number(tx.amount))}</span>} />
-                  <Row label="Vers (IBAN)" value={<span className="font-mono text-xs">{tx.counterparty_iban ? formatIban(tx.counterparty_iban) : "—"}</span>} />
+                  {tx.transfer_method === "account" ? (
+                    <>
+                      <Row label="Vers (n° de compte)" value={<span className="font-mono text-xs">{tx.counterparty_account_number ?? "—"}</span>} />
+                      {tx.counterparty_country && <Row label="Pays" value={tx.counterparty_country} />}
+                      {tx.counterparty_routing_code && (
+                        <Row
+                          label={ROUTING_LABELS[tx.counterparty_routing_type ?? ""] ?? "Code bancaire"}
+                          value={<span className="font-mono text-xs">{tx.counterparty_routing_code}</span>}
+                        />
+                      )}
+                    </>
+                  ) : (
+                    <Row label="Vers (IBAN)" value={<span className="font-mono text-xs">{tx.counterparty_iban ? formatIban(tx.counterparty_iban) : "—"}</span>} />
+                  )}
+                  {tx.counterparty_bic && <Row label="SWIFT / BIC" value={<span className="font-mono text-xs">{tx.counterparty_bic}</span>} />}
+                  {tx.counterparty_bank && <Row label="Banque" value={tx.counterparty_bank} />}
                   {tx.counterparty_name && <Row label="Bénéficiaire" value={tx.counterparty_name} />}
                   {tx.description && <Row label="Motif" value={tx.description} />}
                   <Row label="Soumis le" value={<span className="text-ink/60">{formatDate(tx.created_at)}</span>} />

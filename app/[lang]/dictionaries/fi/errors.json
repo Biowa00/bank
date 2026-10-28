@@ -47,7 +47,16 @@
     "ibanFormat": "Virheellinen IBAN-muoto.",
     "ibanLength": "Virheellinen IBAN-pituus tälle maalle ({expected} merkkiä odotettu).",
     "ibanChecksum": "Virheellinen IBAN-tarkistusnumero.",
-    "beneficiaryRequired": "Saajan nimi vaaditaan."
+    "beneficiaryRequired": "Saajan nimi vaaditaan.",
+    "countryUnsupported": "Tätä maata ei tueta tilinumerolla tehtäviin siirtoihin. Käytä IBAN-numeroa.",
+    "accountFormat": "Virheellinen tilinumero tälle maalle.",
+    "accountIsIban": "Tämä numero on IBAN: valitse IBAN-vaihtoehto.",
+    "clabeChecksum": "Virheellinen CLABE-tarkiste.",
+    "routingFormat": "Virheellinen kansallinen pankkikoodi tälle maalle.",
+    "routingChecksum": "Virheellinen ABA-reititysnumeron tarkiste.",
+    "bicFormat": "Virheellinen SWIFT / BIC -koodi (8 tai 11 merkkiä).",
+    "bicCountry": "SWIFT / BIC -koodi ei vastaa pankin maata.",
+    "bankRequired": "Pankin nimi on pakollinen."
   },
   "withdrawalAccount": {
     "ibanInvalid": "Virheellinen IBAN.",

@@ -624,9 +624,8 @@ export async function executeTransfer(
 }
 
 /** L'administrateur REFUSE un virement en attente. Le montant n'est débité
- *  du compte de l'émetteur qu'à la confirmation de la 3ᵉ phase (voir
- *  confirmTransferPhase) : un refus avant cela ne nécessite donc aucun
- *  recrédit, puisqu'aucun fonds n'a encore quitté le compte. */
+ *  du compte de l'émetteur qu'à l'exécution (voir executeTransfer) : un refus
+ *  ne nécessite donc aucun recrédit, puisqu'aucun fonds n'a quitté le compte. */
 export async function rejectTransfer(
   _prev: AdminState,
   formData: FormData,

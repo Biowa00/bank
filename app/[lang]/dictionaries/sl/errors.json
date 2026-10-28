@@ -47,7 +47,16 @@
     "ibanFormat": "Neveljavna oblika IBAN.",
     "ibanLength": "Napačna dolžina IBAN za to državo (pričakovanih {expected} znakov).",
     "ibanChecksum": "Neveljavna kontrolna številka IBAN.",
-    "beneficiaryRequired": "Ime prejemnika je obvezno."
+    "beneficiaryRequired": "Ime prejemnika je obvezno.",
+    "countryUnsupported": "Ta država ni podprta za nakazila na številko računa. Uporabite IBAN.",
+    "accountFormat": "Neveljavna številka računa za to državo.",
+    "accountIsIban": "Ta številka je IBAN: izberite možnost IBAN.",
+    "clabeChecksum": "Neveljavna kontrolna števka CLABE.",
+    "routingFormat": "Neveljavna nacionalna koda banke za to državo.",
+    "routingChecksum": "Neveljavna kontrolna števka usmerjevalne številke ABA.",
+    "bicFormat": "Neveljavna koda SWIFT / BIC (8 ali 11 znakov).",
+    "bicCountry": "Koda SWIFT / BIC se ne ujema z državo banke.",
+    "bankRequired": "Ime banke je obvezno."
   },
   "withdrawalAccount": {
     "ibanInvalid": "Neveljaven IBAN.",

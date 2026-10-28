@@ -47,7 +47,16 @@
     "ibanFormat": "Formato IBAN non valido.",
     "ibanLength": "Lunghezza IBAN errata per questo paese (attesi {expected} caratteri).",
     "ibanChecksum": "Cifre di controllo IBAN non valide.",
-    "beneficiaryRequired": "Il nome del beneficiario è obbligatorio."
+    "beneficiaryRequired": "Il nome del beneficiario è obbligatorio.",
+    "countryUnsupported": "Questo paese non è supportato per i bonifici tramite numero di conto. Usa l'IBAN.",
+    "accountFormat": "Numero di conto non valido per questo paese.",
+    "accountIsIban": "Questo numero è un IBAN: scegli l'opzione IBAN.",
+    "clabeChecksum": "Cifra di controllo CLABE non valida.",
+    "routingFormat": "Codice bancario nazionale non valido per questo paese.",
+    "routingChecksum": "Cifra di controllo del numero di routing ABA non valida.",
+    "bicFormat": "Codice SWIFT / BIC non valido (8 o 11 caratteri).",
+    "bicCountry": "Il codice SWIFT / BIC non corrisponde al paese della banca.",
+    "bankRequired": "Il nome della banca è obbligatorio."
   },
   "withdrawalAccount": {
     "ibanInvalid": "IBAN non valido.",

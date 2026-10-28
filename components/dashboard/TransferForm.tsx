@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useEffect, useRef, useState } from "react";
+import { useActionState, useEffect, useMemo, useRef, useState } from "react";
 import { transfer, type ActionState } from "@/app/[lang]/dashboard/actions";
 import { SubmitButton } from "@/components/SubmitButton";
 import { FormFeedback } from "./FormFeedback";
@@ -9,15 +9,62 @@ import { useLocale } from "@/components/i18n/navigation";
 import { formatEuro } from "@/lib/format";
 import { validateIban, cleanIban, type IbanValidation } from "@/lib/ibanValidate";
 import { detectBankLocal, fetchBankFromOpenIban } from "@/lib/banks";
-import { interpolate } from "@/lib/i18n/config";
+import { interpolate, intlLocale } from "@/lib/i18n/config";
+import {
+  ACCOUNT_COUNTRIES,
+  routingTypeFor,
+  validateAccountNumber,
+  validateRoutingCode,
+  validateBic,
+  type RoutingType,
+} from "@/lib/accountTransfer";
 
 const CURRENCIES = ["EUR", "USD", "GBP", "CHF"];
+
+type Method = "iban" | "account";
 
 export function TransferForm({ balance }: { balance: number }) {
   const [state, action] = useActionState<ActionState, FormData>(transfer, {});
   const t = useZone("dashboard").transfer;
   const E = useZone("errors").transfer;
   const locale = useLocale();
+
+  const [method, setMethod] = useState<Method>("iban");
+  const [country, setCountry] = useState("");
+  const [accountNumber, setAccountNumber] = useState("");
+  const [routingCode, setRoutingCode] = useState("");
+
+  // Pays du mode « numéro de compte », nommés dans la langue de l'interface.
+  const countries = useMemo(() => {
+    const names = new Intl.DisplayNames([intlLocale[locale]], { type: "region" });
+    return Object.keys(ACCOUNT_COUNTRIES)
+      .map((code) => ({ code, name: names.of(code) ?? code }))
+      .sort((a, b) => a.name.localeCompare(b.name, intlLocale[locale]));
+  }, [locale]);
+
+  const routingType = routingTypeFor(country);
+  const routingLabels: Record<RoutingType, string> = {
+    aba: t.routingAba,
+    transit: t.routingTransit,
+    sort_code: t.routingSortCode,
+    bsb: t.routingBsb,
+  };
+  const routingPlaceholders: Record<RoutingType, string> = {
+    aba: "021000021",
+    transit: "12345-678",
+    sort_code: "12-34-56",
+    bsb: "123-456",
+  };
+
+  // Validation locale du mode compte (affichée dès qu'un champ est rempli).
+  const accountError =
+    method === "account" && country && accountNumber.trim()
+      ? validateAccountNumber(country, accountNumber).error
+      : undefined;
+  const routingError =
+    method === "account" && routingType && routingCode.trim()
+      ? validateRoutingCode(routingType, routingCode).error
+      : undefined;
 
   const [iban, setIban] = useState("");
   const [ibanCheck, setIbanCheck] = useState<IbanValidation | null>(null);
@@ -30,7 +77,7 @@ export function TransferForm({ balance }: { balance: number }) {
   // de détection de banque. La détection NE FAIT QUE PRÉ-REMPLIR : elle
   // n'efface jamais une saisie manuelle du client.
   useEffect(() => {
-    const clean = cleanIban(iban);
+    const clean = method === "iban" ? cleanIban(iban) : "";
     if (!clean) {
       setIbanCheck(null);
       return;
@@ -65,7 +112,10 @@ export function TransferForm({ balance }: { balance: number }) {
       ctrl.abort();
       setDetecting(false);
     };
-  }, [iban]);
+  }, [iban, method]);
+
+  const bicError =
+    method === "account" && country && bic.trim() ? validateBic(country, bic).error : undefined;
 
   const ibanError =
     ibanCheck && !ibanCheck.valid
@@ -95,36 +145,126 @@ export function TransferForm({ balance }: { balance: number }) {
           />
         </div>
 
+        {/* ---- Méthode : IBAN ou numéro de compte + SWIFT ---- */}
         <div>
-          <label className="label" htmlFor="iban">{t.ibanLabel}</label>
-          <input
-            id="iban"
-            name="iban"
-            type="text"
-            required
-            value={iban}
-            onChange={(e) => setIban(e.target.value)}
-            className={`input font-mono ${
-              ibanCheck && !ibanCheck.valid
-                ? "border-red-300 focus:border-red-400 focus:ring-red-500/10"
-                : ibanCheck?.valid
-                  ? "border-accent-500/40 focus:border-accent-500 focus:ring-accent-500/10"
-                  : ""
-            }`}
-            placeholder="DE89 3704 0044 0532 0130 00"
-            autoComplete="off"
-            spellCheck={false}
-          />
-          {ibanError && <p className="mt-1 text-xs text-red-600">{ibanError}</p>}
-          {ibanCheck?.valid && (
-            <p className="mt-1 flex items-center gap-1.5 text-xs text-accent-600">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
-                <path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              {t.ibanValidLabel}
-            </p>
-          )}
+          <span className="label">{t.methodLabel}</span>
+          <input type="hidden" name="method" value={method} />
+          <div role="radiogroup" className="grid grid-cols-2 gap-1 rounded-xl bg-black/[.04] p-1">
+            {(["iban", "account"] as const).map((m) => (
+              <button
+                key={m}
+                type="button"
+                role="radio"
+                aria-checked={method === m}
+                onClick={() => setMethod(m)}
+                className={`rounded-lg px-3 py-2 text-sm font-medium transition ${
+                  method === m ? "bg-white text-ink shadow-sm" : "text-ink/60 hover:text-ink"
+                }`}
+              >
+                {m === "iban" ? t.methodIban : t.methodAccount}
+              </button>
+            ))}
+          </div>
         </div>
+
+        {method === "iban" ? (
+          <div>
+            <label className="label" htmlFor="iban">{t.ibanLabel}</label>
+            <input
+              id="iban"
+              name="iban"
+              type="text"
+              required
+              value={iban}
+              onChange={(e) => setIban(e.target.value)}
+              className={`input font-mono ${
+                ibanCheck && !ibanCheck.valid
+                  ? "border-red-300 focus:border-red-400 focus:ring-red-500/10"
+                  : ibanCheck?.valid
+                    ? "border-accent-500/40 focus:border-accent-500 focus:ring-accent-500/10"
+                    : ""
+              }`}
+              placeholder="DE89 3704 0044 0532 0130 00"
+              autoComplete="off"
+              spellCheck={false}
+            />
+            {ibanError && <p className="mt-1 text-xs text-red-600">{ibanError}</p>}
+            {ibanCheck?.valid && (
+              <p className="mt-1 flex items-center gap-1.5 text-xs text-accent-600">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
+                  <path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                {t.ibanValidLabel}
+              </p>
+            )}
+          </div>
+        ) : (
+          <>
+            {/* Seuls les pays hors zone IBAN sont proposés (voir lib/accountTransfer). */}
+            <p className="rounded-xl bg-brand-50 px-3 py-2 text-xs text-brand-700">{t.accountModeHint}</p>
+
+            <div>
+              <label className="label" htmlFor="country">{t.countryLabel}</label>
+              <select
+                id="country"
+                name="country"
+                required
+                value={country}
+                onChange={(e) => {
+                  setCountry(e.target.value);
+                  setRoutingCode("");
+                }}
+                className="input"
+              >
+                <option value="" disabled>{t.countryPlaceholder}</option>
+                {countries.map((c) => (
+                  <option key={c.code} value={c.code}>{c.name}</option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label className="label" htmlFor="account_number">
+                {country === "MX" ? t.clabeLabel : t.accountLabel}
+              </label>
+              <input
+                id="account_number"
+                name="account_number"
+                type="text"
+                required
+                value={accountNumber}
+                onChange={(e) => setAccountNumber(e.target.value)}
+                maxLength={40}
+                className={`input font-mono ${accountError ? "border-red-300 focus:border-red-400 focus:ring-red-500/10" : ""}`}
+                placeholder={country === "MX" ? "002010077777777771" : "—"}
+                autoComplete="off"
+                spellCheck={false}
+              />
+              {accountError && <p className="mt-1 text-xs text-red-600">{E[accountError]}</p>}
+            </div>
+
+            {routingType && (
+              <div>
+                <label className="label" htmlFor="routing_code">{routingLabels[routingType]}</label>
+                <input
+                  id="routing_code"
+                  name="routing_code"
+                  type="text"
+                  inputMode="numeric"
+                  required
+                  value={routingCode}
+                  onChange={(e) => setRoutingCode(e.target.value)}
+                  maxLength={12}
+                  className={`input font-mono ${routingError ? "border-red-300 focus:border-red-400 focus:ring-red-500/10" : ""}`}
+                  placeholder={routingPlaceholders[routingType]}
+                  autoComplete="off"
+                  spellCheck={false}
+                />
+                {routingError && <p className="mt-1 text-xs text-red-600">{E[routingError]}</p>}
+              </div>
+            )}
+          </>
+        )}
 
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
@@ -133,13 +273,15 @@ export function TransferForm({ balance }: { balance: number }) {
               id="bic"
               name="bic"
               type="text"
+              required={method === "account"}
               value={bic}
               onChange={(e) => setBic(e.target.value.toUpperCase())}
-              className="input font-mono uppercase"
-              placeholder="BNPAFRPP"
+              className={`input font-mono uppercase ${bicError ? "border-red-300 focus:border-red-400 focus:ring-red-500/10" : ""}`}
+              placeholder={method === "account" ? "CHASUS33" : "BNPAFRPP"}
               autoComplete="off"
               spellCheck={false}
             />
+            {bicError && <p className="mt-1 text-xs text-red-600">{E[bicError]}</p>}
           </div>
           <div>
             <label className="label" htmlFor="bank_name">{t.bankLabel}</label>
@@ -147,6 +289,7 @@ export function TransferForm({ balance }: { balance: number }) {
               id="bank_name"
               name="bank_name"
               type="text"
+              required={method === "account"}
               value={bankName}
               onChange={(e) => setBankName(e.target.value)}
               maxLength={80}
@@ -156,19 +299,6 @@ export function TransferForm({ balance }: { balance: number }) {
             />
             {detecting && <p className="mt-1 text-xs text-ink/40">{t.bankDetecting}</p>}
           </div>
-        </div>
-
-        <div>
-          <label className="label" htmlFor="account_number">{t.accountLabel}</label>
-          <input
-            id="account_number"
-            name="account_number"
-            type="text"
-            maxLength={34}
-            className="input font-mono"
-            placeholder="—"
-            autoComplete="off"
-          />
         </div>
       </div>
 

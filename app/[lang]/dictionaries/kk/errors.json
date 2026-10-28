@@ -47,7 +47,16 @@
     "ibanFormat": "IBAN пішімі қате.",
     "ibanLength": "Осы ел үшін IBAN ұзындығы қате ({expected} таңба күтіледі).",
     "ibanChecksum": "IBAN бақылау саны жарамсыз.",
-    "beneficiaryRequired": "Алушының аты міндетті."
+    "beneficiaryRequired": "Алушының аты міндетті.",
+    "countryUnsupported": "Бұл ел шот нөмірі бойынша аударымдарға қолдау көрсетпейді. IBAN пайдаланыңыз.",
+    "accountFormat": "Бұл ел үшін шот нөмірі жарамсыз.",
+    "accountIsIban": "Бұл нөмір — IBAN: IBAN нұсқасын таңдаңыз.",
+    "clabeChecksum": "CLABE бақылау саны жарамсыз.",
+    "routingFormat": "Бұл ел үшін ұлттық банк коды жарамсыз.",
+    "routingChecksum": "ABA маршруттау нөмірінің бақылау саны жарамсыз.",
+    "bicFormat": "SWIFT / BIC коды жарамсыз (8 немесе 11 таңба).",
+    "bicCountry": "SWIFT / BIC коды банк еліне сәйкес келмейді.",
+    "bankRequired": "Банк атауы міндетті."
   },
   "withdrawalAccount": {
     "ibanInvalid": "IBAN жарамсыз.",

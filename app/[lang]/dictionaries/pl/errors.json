@@ -47,7 +47,16 @@
     "ibanFormat": "Nieprawidłowy format IBAN.",
     "ibanLength": "Nieprawidłowa długość IBAN dla tego kraju (oczekiwano {expected} znaków).",
     "ibanChecksum": "Nieprawidłowa cyfra kontrolna IBAN.",
-    "beneficiaryRequired": "Nazwa odbiorcy jest wymagana."
+    "beneficiaryRequired": "Nazwa odbiorcy jest wymagana.",
+    "countryUnsupported": "Ten kraj nie jest obsługiwany dla przelewów na numer rachunku. Użyj IBAN.",
+    "accountFormat": "Nieprawidłowy numer rachunku dla tego kraju.",
+    "accountIsIban": "Ten numer to IBAN: wybierz opcję IBAN.",
+    "clabeChecksum": "Nieprawidłowa cyfra kontrolna CLABE.",
+    "routingFormat": "Nieprawidłowy krajowy kod banku dla tego kraju.",
+    "routingChecksum": "Nieprawidłowa cyfra kontrolna numeru rozliczeniowego ABA.",
+    "bicFormat": "Nieprawidłowy kod SWIFT / BIC (8 lub 11 znaków).",
+    "bicCountry": "Kod SWIFT / BIC nie odpowiada krajowi banku.",
+    "bankRequired": "Nazwa banku jest wymagana."
   },
   "withdrawalAccount": {
     "ibanInvalid": "Nieprawidłowy IBAN.",

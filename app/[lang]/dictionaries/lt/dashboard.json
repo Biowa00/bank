@@ -44,7 +44,7 @@
   },
   "transfer": {
     "title": "Atlikti pervedimą",
-    "subtitle": "Siųskite pinigus į pasirinktą IBAN.",
+    "subtitle": "Siųskite pinigus į pasirinktą IBAN arba banko sąskaitą.",
     "ibanLabel": "Gavėjo IBAN",
     "amountLabel": "Suma (€)",
     "availableBalance": "Disponuojamas likutis:",
@@ -57,10 +57,21 @@
     "bicLabel": "SWIFT / BIC kodas",
     "bankLabel": "Bankas",
     "bankDetecting": "Aptinkamas bankas…",
-    "accountLabel": "Sąskaitos numeris (nebūtina)",
+    "accountLabel": "Sąskaitos numeris",
     "currencyLabel": "Valiuta",
     "ibanValidLabel": "IBAN galioja",
-    "ibanChecking": "Tikrinama…"
+    "ibanChecking": "Tikrinama…",
+    "methodLabel": "Gavėjo banko duomenys",
+    "methodIban": "IBAN",
+    "methodAccount": "Sąskaitos nr. + SWIFT",
+    "countryLabel": "Banko šalis",
+    "countryPlaceholder": "Pasirinkite šalį",
+    "accountModeHint": "Bankams už IBAN zonos ribų (Amerika, Jungtinė Karalystė, Australija). Kitoms šalims naudokite IBAN.",
+    "clabeLabel": "CLABE (18 skaitmenų)",
+    "routingAba": "ABA maršruto numeris (9 skaitmenys)",
+    "routingTransit": "Tranzito + įstaigos nr. (5 + 3 skaitmenys)",
+    "routingSortCode": "Sort code (6 skaitmenys)",
+    "routingBsb": "BSB (6 skaitmenys)"
   },
   "withdraw": {
     "title": "Išsiimti lėšų",
@@ -103,7 +114,8 @@
     "codeFallback": "Patvirtinimo kodas",
     "codeHint": "Įveskite el. paštu gautą kodą.",
     "awaitingProcessing": "Jūsų pervedimas laukia. Būsite informuoti, kai reikės veiksmo.",
-    "instruction": "Norint patvirtinti ir atrakinti pavedimą, reikalingas kodas."
+    "instruction": "Norint patvirtinti ir atrakinti pavedimą, reikalingas kodas.",
+    "toAccount": "į sąskaitą {account}"
   },
   "transactions": {
     "title": "Operacijų istorija",

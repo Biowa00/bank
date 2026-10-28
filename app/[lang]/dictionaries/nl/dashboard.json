@@ -44,7 +44,7 @@
   },
   "transfer": {
     "title": "Een overschrijving doen",
-    "subtitle": "Stuur geld naar een IBAN naar keuze.",
+    "subtitle": "Stuur geld naar een IBAN of een bankrekening naar keuze.",
     "ibanLabel": "IBAN van de begunstigde",
     "amountLabel": "Bedrag (€)",
     "availableBalance": "Beschikbaar saldo:",
@@ -57,10 +57,21 @@
     "bicLabel": "SWIFT / BIC-code",
     "bankLabel": "Bank",
     "bankDetecting": "Bank detecteren…",
-    "accountLabel": "Rekeningnummer (optioneel)",
+    "accountLabel": "Rekeningnummer",
     "currencyLabel": "Valuta",
     "ibanValidLabel": "Geldige IBAN",
-    "ibanChecking": "Controleren…"
+    "ibanChecking": "Controleren…",
+    "methodLabel": "Bankgegevens van de begunstigde",
+    "methodIban": "IBAN",
+    "methodAccount": "Rekeningnr. + SWIFT",
+    "countryLabel": "Land van de bank",
+    "countryPlaceholder": "Selecteer een land",
+    "accountModeHint": "Voor banken buiten de IBAN-zone (Amerika, Verenigd Koninkrijk, Australië). Gebruik voor andere landen de IBAN.",
+    "clabeLabel": "CLABE (18 cijfers)",
+    "routingAba": "ABA-routingnummer (9 cijfers)",
+    "routingTransit": "Transit- + instellingsnr. (5 + 3 cijfers)",
+    "routingSortCode": "Sort code (6 cijfers)",
+    "routingBsb": "BSB (6 cijfers)"
   },
   "withdraw": {
     "title": "Geld opnemen",
@@ -103,7 +114,8 @@
     "codeFallback": "Validatiecode",
     "codeHint": "Voer de per e-mail ontvangen code in.",
     "awaitingProcessing": "Uw overschrijving is in afwachting. U wordt op de hoogte gebracht zodra actie vereist is.",
-    "instruction": "Er is een code vereist om uw overschrijving te valideren en vrij te geven."
+    "instruction": "Er is een code vereist om uw overschrijving te valideren en vrij te geven.",
+    "toAccount": "naar rekening {account}"
   },
   "transactions": {
     "title": "Transactieoverzicht",

@@ -44,7 +44,7 @@
   },
   "transfer": {
     "title": "Überweisung tätigen",
-    "subtitle": "Senden Sie Geld an eine IBAN Ihrer Wahl.",
+    "subtitle": "Senden Sie Geld an eine IBAN oder ein Bankkonto Ihrer Wahl.",
     "ibanLabel": "IBAN des Empfängers",
     "amountLabel": "Betrag (€)",
     "availableBalance": "Verfügbares Guthaben:",
@@ -57,10 +57,21 @@
     "bicLabel": "SWIFT / BIC-Code",
     "bankLabel": "Bank",
     "bankDetecting": "Bank wird erkannt…",
-    "accountLabel": "Kontonummer (optional)",
+    "accountLabel": "Kontonummer",
     "currencyLabel": "Währung",
     "ibanValidLabel": "IBAN gültig",
-    "ibanChecking": "Prüfung…"
+    "ibanChecking": "Prüfung…",
+    "methodLabel": "Bankverbindung des Empfängers",
+    "methodIban": "IBAN",
+    "methodAccount": "Kontonr. + SWIFT",
+    "countryLabel": "Land der Bank",
+    "countryPlaceholder": "Land auswählen",
+    "accountModeHint": "Für Banken außerhalb des IBAN-Raums (Amerika, Vereinigtes Königreich, Australien). Für andere Länder verwenden Sie die IBAN.",
+    "clabeLabel": "CLABE (18 Ziffern)",
+    "routingAba": "ABA-Routing-Nummer (9 Ziffern)",
+    "routingTransit": "Transit- + Institutsnr. (5 + 3 Ziffern)",
+    "routingSortCode": "Sort Code (6 Ziffern)",
+    "routingBsb": "BSB (6 Ziffern)"
   },
   "withdraw": {
     "title": "Geld abheben",
@@ -103,7 +114,8 @@
     "codeFallback": "Bestätigungscode",
     "codeHint": "Geben Sie den per E-Mail erhaltenen Code ein.",
     "awaitingProcessing": "Ihre Überweisung ist ausstehend. Sie werden benachrichtigt, sobald eine Aktion erforderlich ist.",
-    "instruction": "Zur Bestätigung und Freigabe Ihrer Überweisung ist ein Code erforderlich."
+    "instruction": "Zur Bestätigung und Freigabe Ihrer Überweisung ist ein Code erforderlich.",
+    "toAccount": "an Konto {account}"
   },
   "transactions": {
     "title": "Transaktionsverlauf",

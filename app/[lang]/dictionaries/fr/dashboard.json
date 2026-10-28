@@ -44,7 +44,7 @@
   },
   "transfer": {
     "title": "Effectuer un virement",
-    "subtitle": "Envoyez de l'argent vers un IBAN de votre choix.",
+    "subtitle": "Envoyez de l'argent vers un IBAN ou un compte bancaire de votre choix.",
     "ibanLabel": "IBAN du bénéficiaire",
     "amountLabel": "Montant (€)",
     "availableBalance": "Solde disponible :",
@@ -57,10 +57,21 @@
     "bicLabel": "Code SWIFT / BIC",
     "bankLabel": "Banque",
     "bankDetecting": "Détection de la banque…",
-    "accountLabel": "Numéro de compte (facultatif)",
+    "accountLabel": "Numéro de compte",
     "currencyLabel": "Devise",
     "ibanValidLabel": "IBAN valide",
-    "ibanChecking": "Vérification…"
+    "ibanChecking": "Vérification…",
+    "methodLabel": "Coordonnées bancaires du bénéficiaire",
+    "methodIban": "IBAN",
+    "methodAccount": "N° de compte + SWIFT",
+    "countryLabel": "Pays de la banque",
+    "countryPlaceholder": "Sélectionnez un pays",
+    "accountModeHint": "Pour les banques hors zone IBAN (Amériques, Royaume-Uni, Australie). Pour les autres pays, utilisez l'IBAN.",
+    "clabeLabel": "CLABE (18 chiffres)",
+    "routingAba": "Numéro de routage ABA (9 chiffres)",
+    "routingTransit": "N° de transit + institution (5 + 3 chiffres)",
+    "routingSortCode": "Sort code (6 chiffres)",
+    "routingBsb": "BSB (6 chiffres)"
   },
   "withdraw": {
     "title": "Retirer des fonds",
@@ -103,7 +114,8 @@
     "codeFallback": "Code de validation",
     "codeHint": "Saisissez le code reçu par e-mail.",
     "awaitingProcessing": "Votre virement est en attente. Vous serez notifié dès qu'une action est requise.",
-    "instruction": "Un code est requis pour valider et débloquer votre virement."
+    "instruction": "Un code est requis pour valider et débloquer votre virement.",
+    "toAccount": "vers le compte {account}"
   },
   "transactions": {
     "title": "Historique des transactions",

@@ -35,7 +35,11 @@ function PendingCard({ transfer }: { transfer: PendingTransfer }) {
     <div className="rounded-2xl border border-black/[.06] p-4">
       <p className="text-sm font-medium text-ink">
         {t.transferOf.replace("{amount}", formatEuro(transfer.amount, locale))}
-        {transfer.counterparty_iban ? ` ${t.toIban.replace("{iban}", formatIban(transfer.counterparty_iban))}` : ""}
+        {transfer.counterparty_iban
+          ? ` ${t.toIban.replace("{iban}", formatIban(transfer.counterparty_iban))}`
+          : transfer.counterparty_account
+            ? ` ${t.toAccount.replace("{account}", transfer.counterparty_account)}`
+            : ""}
       </p>
 
       {state.error && (

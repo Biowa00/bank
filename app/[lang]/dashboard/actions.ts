@@ -8,6 +8,11 @@ import { notify } from "@/lib/notify";
 import { canDeposit, canTransfer, canWithdraw, permissionReason } from "@/lib/permissions";
 import { cleanIban, isPlausibleIban, formatEuro } from "@/lib/format";
 import { validateIban } from "@/lib/ibanValidate";
+import {
+  validateAccountDestination,
+  formatAccountDestination,
+  type AccountDestination,
+} from "@/lib/accountTransfer";
 import { PHASE_MAX_ATTEMPTS } from "@/lib/transferPhases";
 import { getRequestLocale } from "@/lib/i18n/server";
 import { getDictionary } from "../dictionaries";
@@ -80,10 +85,10 @@ export async function transfer(
 
   const perm = canTransfer(profile);
   const amount = parseAmount(formData.get("amount"));
-  const iban = cleanIban(String(formData.get("iban") ?? ""));
+  const method = String(formData.get("method") ?? "iban") === "account" ? "account" : "iban";
   const description = String(formData.get("description") ?? "").trim() || null;
   const beneficiaryName = String(formData.get("beneficiary_name") ?? "").trim();
-  const bic = String(formData.get("bic") ?? "").trim().toUpperCase() || null;
+  let bic = String(formData.get("bic") ?? "").trim().toUpperCase() || null;
   const bankName = String(formData.get("bank_name") ?? "").trim() || null;
   const currencyRaw = String(formData.get("currency") ?? "EUR").trim().toUpperCase();
   const currency = /^[A-Z]{3}$/.test(currencyRaw) ? currencyRaw : "EUR";
@@ -91,17 +96,56 @@ export async function transfer(
   if (amount === null) return { error: E.amount.invalid };
   if (!beneficiaryName) return { error: E.transfer.beneficiaryRequired };
 
-  // Validation IBAN stricte (format → longueur pays → clé mod-97), avec un
-  // message précis selon le type d'échec. Le mod-97 garantit la cohérence du
-  // numéro, pas l'existence réelle du compte.
-  const iv = validateIban(iban);
-  if (!iv.valid) {
-    if (iv.error === "format") return { error: E.transfer.ibanFormat };
-    if (iv.error === "length")
-      return { error: interpolate(E.transfer.ibanLength, { expected: iv.expectedLength ?? "?" }) };
-    return { error: E.transfer.ibanChecksum };
+  // Destination : IBAN, ou numéro de compte + SWIFT/BIC (banques hors zone
+  // IBAN). `destination` est le libellé lisible utilisé dans les notifications.
+  let iban: string | null = null;
+  let account: AccountDestination | null = null;
+  let destination: string;
+
+  if (method === "iban") {
+    // Validation IBAN stricte (format → longueur pays → clé mod-97), avec un
+    // message précis selon le type d'échec. Le mod-97 garantit la cohérence du
+    // numéro, pas l'existence réelle du compte.
+    iban = cleanIban(String(formData.get("iban") ?? ""));
+    const iv = validateIban(iban);
+    if (!iv.valid) {
+      if (iv.error === "format") return { error: E.transfer.ibanFormat };
+      if (iv.error === "length")
+        return { error: interpolate(E.transfer.ibanLength, { expected: iv.expectedLength ?? "?" }) };
+      return { error: E.transfer.ibanChecksum };
+    }
+    if (iban === profile.iban) return { error: E.transfer.ownAccount };
+    destination = iban;
+  } else {
+    // Seule une sélection de pays hors zone IBAN est acceptée (voir
+    // lib/accountTransfer) ; les pays IBAN sont refusés.
+    const av = validateAccountDestination({
+      country: String(formData.get("country") ?? ""),
+      accountNumber: String(formData.get("account_number") ?? ""),
+      routingCode: String(formData.get("routing_code") ?? ""),
+      bic: bic ?? "",
+    });
+    if (!av.ok) return { error: E.transfer[av.error] };
+    if (!bankName) return { error: E.transfer.bankRequired };
+    account = av.data;
+    bic = account.bic;
+    destination = formatAccountDestination(account.accountNumber, account.bic);
   }
-  if (iban === profile.iban) return { error: E.transfer.ownAccount };
+
+  // Colonnes de destination communes aux insertions (bloquée ou en attente).
+  // Le mode compte exige la migration 0007 ; le mode IBAN n'en dépend pas.
+  const destinationCols = account
+    ? {
+        transfer_method: "account",
+        counterparty_account_number: account.accountNumber,
+        counterparty_country: account.country,
+        counterparty_routing_type: account.routingType,
+        counterparty_routing_code: account.routingCode,
+        counterparty_bic: account.bic,
+        counterparty_bank: bankName,
+        currency,
+      }
+    : { counterparty_iban: iban };
 
   const admin = createAdminClient();
 
@@ -114,7 +158,7 @@ export async function transfer(
       direction: "out",
       amount,
       status: "blocked",
-      counterparty_iban: iban,
+      ...destinationCols,
       description: description ?? "Virement refusé",
     });
     await notify(userId, dict.emails.notify.transferRejected.title, reason);
@@ -125,11 +169,11 @@ export async function transfer(
   if (amount > Number(profile.balance)) return { error: E.transfer.insufficient };
 
   // Le solde n'est PAS débité à la soumission : le virement reste « en
-  // attente » et le montant n'est prélevé qu'à la confirmation de la 3ᵉ et
-  // dernière phase par le client (voir confirmTransferPhase). Le contrôle de
-  // solde suffisant ci-dessus n'est qu'indicatif ; il est revérifié à
+  // attente » (validation par codes envoyés par l'admin) et le montant n'est
+  // prélevé qu'à l'exécution par l'admin (voir executeTransfer). Le contrôle
+  // de solde suffisant ci-dessus n'est qu'indicatif ; il est revérifié à
   // l'exécution, au cas où le solde aurait changé entre-temps.
-  const { data: inserted } = await admin
+  const { data: inserted, error: insErr } = await admin
     .from("transactions")
     .insert({
       user_id: userId,
@@ -137,17 +181,18 @@ export async function transfer(
       direction: "out",
       amount,
       status: "pending",
-      counterparty_iban: iban,
+      ...destinationCols,
       counterparty_name: beneficiaryName, // nom saisi par l'émetteur
       description,
     })
     .select("id")
     .single<{ id: string }>();
+  if (insErr || !inserted) return { error: E.transfer.failed };
 
-  // Champs additionnels (BIC, banque, devise) : mise à jour « best-effort »
-  // — ignorée silencieusement si les colonnes n'existent pas encore côté DB
-  // (voir migration 0003). Le virement reste valide sans elles.
-  if (inserted?.id) {
+  // Mode IBAN — champs additionnels (BIC, banque, devise) : mise à jour
+  // « best-effort », ignorée silencieusement si les colonnes n'existent pas
+  // encore côté DB (voir migration 0003). Le virement reste valide sans elles.
+  if (!account) {
     await admin
       .from("transactions")
       .update({ counterparty_bic: bic, counterparty_bank: bankName, currency })
@@ -158,7 +203,7 @@ export async function transfer(
   await notify(
     userId,
     nP.title,
-    interpolate(nP.body, { amount: formatEuro(amount, locale), iban }),
+    interpolate(nP.body, { amount: formatEuro(amount, locale), iban: destination }),
   );
 
   revalidatePath("/[lang]/dashboard", "layout");

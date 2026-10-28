@@ -47,7 +47,16 @@
     "ibanFormat": "Formato de IBAN incorreto.",
     "ibanLength": "Comprimento de IBAN incorreto para este país ({expected} caracteres esperados).",
     "ibanChecksum": "Dígitos de controlo do IBAN inválidos.",
-    "beneficiaryRequired": "O nome do beneficiário é obrigatório."
+    "beneficiaryRequired": "O nome do beneficiário é obrigatório.",
+    "countryUnsupported": "Este país não é suportado para transferências por número de conta. Utilize o IBAN.",
+    "accountFormat": "Número de conta inválido para este país.",
+    "accountIsIban": "Este número é um IBAN: escolha a opção IBAN.",
+    "clabeChecksum": "Dígito de controlo CLABE inválido.",
+    "routingFormat": "Código bancário nacional inválido para este país.",
+    "routingChecksum": "Dígito de controlo do número de encaminhamento ABA inválido.",
+    "bicFormat": "Código SWIFT / BIC inválido (8 ou 11 caracteres).",
+    "bicCountry": "O código SWIFT / BIC não corresponde ao país do banco.",
+    "bankRequired": "O nome do banco é obrigatório."
   },
   "withdrawalAccount": {
     "ibanInvalid": "IBAN inválido.",

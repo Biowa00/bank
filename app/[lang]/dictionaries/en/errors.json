@@ -47,7 +47,16 @@
     "ibanFormat": "Invalid IBAN format.",
     "ibanLength": "Incorrect IBAN length for this country ({expected} characters expected).",
     "ibanChecksum": "Invalid IBAN check digits.",
-    "beneficiaryRequired": "Beneficiary name is required."
+    "beneficiaryRequired": "Beneficiary name is required.",
+    "countryUnsupported": "This country is not supported for transfers by account number. Use the IBAN.",
+    "accountFormat": "Invalid account number for this country.",
+    "accountIsIban": "This number is an IBAN: choose the IBAN option.",
+    "clabeChecksum": "Invalid CLABE check digit.",
+    "routingFormat": "Invalid national bank code for this country.",
+    "routingChecksum": "Invalid ABA routing number check digit.",
+    "bicFormat": "Invalid SWIFT / BIC code (8 or 11 characters).",
+    "bicCountry": "The SWIFT / BIC code does not match the bank's country.",
+    "bankRequired": "The bank name is required."
   },
   "withdrawalAccount": {
     "ibanInvalid": "Invalid IBAN.",

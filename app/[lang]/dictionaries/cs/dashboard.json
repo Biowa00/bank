@@ -44,7 +44,7 @@
   },
   "transfer": {
     "title": "Provést převod",
-    "subtitle": "Pošlete peníze na IBAN dle vašeho výběru.",
+    "subtitle": "Pošlete peníze na IBAN nebo bankovní účet dle vašeho výběru.",
     "ibanLabel": "IBAN příjemce",
     "amountLabel": "Částka (€)",
     "availableBalance": "Dostupný zůstatek:",
@@ -57,10 +57,21 @@
     "bicLabel": "Kód SWIFT / BIC",
     "bankLabel": "Banka",
     "bankDetecting": "Rozpoznávání banky…",
-    "accountLabel": "Číslo účtu (nepovinné)",
+    "accountLabel": "Číslo účtu",
     "currencyLabel": "Měna",
     "ibanValidLabel": "IBAN platný",
-    "ibanChecking": "Ověřování…"
+    "ibanChecking": "Ověřování…",
+    "methodLabel": "Bankovní údaje příjemce",
+    "methodIban": "IBAN",
+    "methodAccount": "Č. účtu + SWIFT",
+    "countryLabel": "Země banky",
+    "countryPlaceholder": "Vyberte zemi",
+    "accountModeHint": "Pro banky mimo oblast IBAN (Amerika, Spojené království, Austrálie). Pro ostatní země použijte IBAN.",
+    "clabeLabel": "CLABE (18 číslic)",
+    "routingAba": "Směrovací číslo ABA (9 číslic)",
+    "routingTransit": "Č. tranzitu + instituce (5 + 3 číslice)",
+    "routingSortCode": "Sort code (6 číslic)",
+    "routingBsb": "BSB (6 číslic)"
   },
   "withdraw": {
     "title": "Výběr prostředků",
@@ -103,7 +114,8 @@
     "codeFallback": "Ověřovací kód",
     "codeHint": "Zadejte kód doručený e-mailem.",
     "awaitingProcessing": "Váš převod čeká. Upozorníme vás, až bude potřeba akce.",
-    "instruction": "K ověření a odblokování vašeho převodu je vyžadován kód."
+    "instruction": "K ověření a odblokování vašeho převodu je vyžadován kód.",
+    "toAccount": "na účet {account}"
   },
   "transactions": {
     "title": "Historie transakcí",

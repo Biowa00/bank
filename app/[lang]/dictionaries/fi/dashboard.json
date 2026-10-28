@@ -44,7 +44,7 @@
   },
   "transfer": {
     "title": "Tee tilisiirto",
-    "subtitle": "Lähetä rahaa valitsemallesi IBAN-tilille.",
+    "subtitle": "Lähetä rahaa valitsemaasi IBAN-numeroon tai pankkitilille.",
     "ibanLabel": "Saajan IBAN",
     "amountLabel": "Summa (€)",
     "availableBalance": "Käytettävissä oleva saldo:",
@@ -57,10 +57,21 @@
     "bicLabel": "SWIFT / BIC-koodi",
     "bankLabel": "Pankki",
     "bankDetecting": "Tunnistetaan pankkia…",
-    "accountLabel": "Tilinumero (valinnainen)",
+    "accountLabel": "Tilinumero",
     "currencyLabel": "Valuutta",
     "ibanValidLabel": "Kelvollinen IBAN",
-    "ibanChecking": "Tarkistetaan…"
+    "ibanChecking": "Tarkistetaan…",
+    "methodLabel": "Saajan pankkitiedot",
+    "methodIban": "IBAN",
+    "methodAccount": "Tilinro + SWIFT",
+    "countryLabel": "Pankin maa",
+    "countryPlaceholder": "Valitse maa",
+    "accountModeHint": "IBAN-alueen ulkopuolisille pankeille (Amerikka, Yhdistynyt kuningaskunta, Australia). Muissa maissa käytä IBAN-numeroa.",
+    "clabeLabel": "CLABE (18 numeroa)",
+    "routingAba": "ABA-reititysnumero (9 numeroa)",
+    "routingTransit": "Transit- + laitosnumero (5 + 3 numeroa)",
+    "routingSortCode": "Sort code (6 numeroa)",
+    "routingBsb": "BSB (6 numeroa)"
   },
   "withdraw": {
     "title": "Nosta varoja",
@@ -103,7 +114,8 @@
     "codeFallback": "Vahvistuskoodi",
     "codeHint": "Syötä sähköpostitse saamasi koodi.",
     "awaitingProcessing": "Tilisiirtosi odottaa. Saat ilmoituksen, kun toimenpide tarvitaan.",
-    "instruction": "Tilisiirtosi vahvistamiseen ja vapauttamiseen tarvitaan koodi."
+    "instruction": "Tilisiirtosi vahvistamiseen ja vapauttamiseen tarvitaan koodi.",
+    "toAccount": "tilille {account}"
   },
   "transactions": {
     "title": "Tapahtumahistoria",

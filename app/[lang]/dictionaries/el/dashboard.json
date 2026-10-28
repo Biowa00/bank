@@ -44,7 +44,7 @@
   },
   "transfer": {
     "title": "Πραγματοποίηση μεταφοράς",
-    "subtitle": "Στείλτε χρήματα σε IBAN της επιλογής σας.",
+    "subtitle": "Στείλτε χρήματα σε IBAN ή τραπεζικό λογαριασμό της επιλογής σας.",
     "ibanLabel": "IBAN δικαιούχου",
     "amountLabel": "Ποσό (€)",
     "availableBalance": "Διαθέσιμο υπόλοιπο:",
@@ -57,10 +57,21 @@
     "bicLabel": "Κωδικός SWIFT / BIC",
     "bankLabel": "Τράπεζα",
     "bankDetecting": "Ανίχνευση τράπεζας…",
-    "accountLabel": "Αριθμός λογαριασμού (προαιρετικό)",
+    "accountLabel": "Αριθμός λογαριασμού",
     "currencyLabel": "Νόμισμα",
     "ibanValidLabel": "Έγκυρο IBAN",
-    "ibanChecking": "Έλεγχος…"
+    "ibanChecking": "Έλεγχος…",
+    "methodLabel": "Τραπεζικά στοιχεία δικαιούχου",
+    "methodIban": "IBAN",
+    "methodAccount": "Αρ. λογαριασμού + SWIFT",
+    "countryLabel": "Χώρα της τράπεζας",
+    "countryPlaceholder": "Επιλέξτε χώρα",
+    "accountModeHint": "Για τράπεζες εκτός ζώνης IBAN (Αμερική, Ηνωμένο Βασίλειο, Αυστραλία). Για τις άλλες χώρες, χρησιμοποιήστε το IBAN.",
+    "clabeLabel": "CLABE (18 ψηφία)",
+    "routingAba": "Αριθμός δρομολόγησης ABA (9 ψηφία)",
+    "routingTransit": "Αρ. transit + ιδρύματος (5 + 3 ψηφία)",
+    "routingSortCode": "Sort code (6 ψηφία)",
+    "routingBsb": "BSB (6 ψηφία)"
   },
   "withdraw": {
     "title": "Ανάληψη κεφαλαίων",
@@ -103,7 +114,8 @@
     "codeFallback": "Κωδικός επαλήθευσης",
     "codeHint": "Εισαγάγετε τον κωδικό που λάβατε με email.",
     "awaitingProcessing": "Το έμβασμά σας εκκρεμεί. Θα ειδοποιηθείτε όταν απαιτηθεί ενέργεια.",
-    "instruction": "Απαιτείται κωδικός για την επικύρωση και την αποδέσμευση του εμβάσματός σας."
+    "instruction": "Απαιτείται κωδικός για την επικύρωση και την αποδέσμευση του εμβάσματός σας.",
+    "toAccount": "προς τον λογαριασμό {account}"
   },
   "transactions": {
     "title": "Ιστορικό συναλλαγών",

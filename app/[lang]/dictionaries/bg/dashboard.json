@@ -44,7 +44,7 @@
   },
   "transfer": {
     "title": "Извършете превод",
-    "subtitle": "Изпратете пари към IBAN по ваш избор.",
+    "subtitle": "Изпратете пари към IBAN или банкова сметка по ваш избор.",
     "ibanLabel": "IBAN на получателя",
     "amountLabel": "Сума (€)",
     "availableBalance": "Наличен баланс:",
@@ -57,10 +57,21 @@
     "bicLabel": "SWIFT / BIC код",
     "bankLabel": "Банка",
     "bankDetecting": "Разпознаване на банката…",
-    "accountLabel": "Номер на сметка (по избор)",
+    "accountLabel": "Номер на сметка",
     "currencyLabel": "Валута",
     "ibanValidLabel": "Валиден IBAN",
-    "ibanChecking": "Проверка…"
+    "ibanChecking": "Проверка…",
+    "methodLabel": "Банкови данни на получателя",
+    "methodIban": "IBAN",
+    "methodAccount": "Номер на сметка + SWIFT",
+    "countryLabel": "Държава на банката",
+    "countryPlaceholder": "Изберете държава",
+    "accountModeHint": "За банки извън зоната IBAN (Америка, Обединеното кралство, Австралия). За другите държави използвайте IBAN.",
+    "clabeLabel": "CLABE (18 цифри)",
+    "routingAba": "Маршрутен номер ABA (9 цифри)",
+    "routingTransit": "Транзитен номер + номер на институция (5 + 3 цифри)",
+    "routingSortCode": "Sort code (6 цифри)",
+    "routingBsb": "BSB (6 цифри)"
   },
   "withdraw": {
     "title": "Теглене на средства",
@@ -103,7 +114,8 @@
     "codeFallback": "Код за потвърждение",
     "codeHint": "Въведете кода, получен по имейл.",
     "awaitingProcessing": "Вашият превод е в изчакване. Ще бъдете уведомени, когато е необходимо действие.",
-    "instruction": "Необходим е код за потвърждаване и разблокиране на вашия превод."
+    "instruction": "Необходим е код за потвърждаване и разблокиране на вашия превод.",
+    "toAccount": "към сметка {account}"
   },
   "transactions": {
     "title": "История на транзакциите",

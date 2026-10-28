@@ -44,7 +44,7 @@
   },
   "transfer": {
     "title": "Аударым жасау",
-    "subtitle": "Қалаған IBAN-ға ақша жіберіңіз.",
+    "subtitle": "Таңдаған IBAN-ға немесе банк шотына ақша жіберіңіз.",
     "ibanLabel": "Алушының IBAN-ы",
     "amountLabel": "Сома (€)",
     "availableBalance": "Қолжетімді қалдық:",
@@ -57,10 +57,21 @@
     "bicLabel": "SWIFT / BIC коды",
     "bankLabel": "Банк",
     "bankDetecting": "Банк анықталуда…",
-    "accountLabel": "Шот нөмірі (міндетті емес)",
+    "accountLabel": "Шот нөмірі",
     "currencyLabel": "Валюта",
     "ibanValidLabel": "IBAN жарамды",
-    "ibanChecking": "Тексерілуде…"
+    "ibanChecking": "Тексерілуде…",
+    "methodLabel": "Алушының банктік деректемелері",
+    "methodIban": "IBAN",
+    "methodAccount": "Шот нөмірі + SWIFT",
+    "countryLabel": "Банк елі",
+    "countryPlaceholder": "Елді таңдаңыз",
+    "accountModeHint": "IBAN аймағынан тыс банктер үшін (Америка, Ұлыбритания, Австралия). Басқа елдер үшін IBAN пайдаланыңыз.",
+    "clabeLabel": "CLABE (18 сан)",
+    "routingAba": "ABA маршруттау нөмірі (9 сан)",
+    "routingTransit": "Транзит + мекеме нөмірі (5 + 3 сан)",
+    "routingSortCode": "Sort code (6 сан)",
+    "routingBsb": "BSB (6 сан)"
   },
   "withdraw": {
     "title": "Қаражат алу",
@@ -103,7 +114,8 @@
     "codeFallback": "Растау коды",
     "codeHint": "Электрондық поштаға келген кодты енгізіңіз.",
     "awaitingProcessing": "Аударымыңыз күтуде. Әрекет қажет болғанда хабарланасыз.",
-    "instruction": "Аударымыңызды растау және блоктан шығару үшін код қажет."
+    "instruction": "Аударымыңызды растау және блоктан шығару үшін код қажет.",
+    "toAccount": "{account} шотына"
   },
   "transactions": {
     "title": "Операциялар тарихы",

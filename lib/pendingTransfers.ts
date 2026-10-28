@@ -1,10 +1,14 @@
 import { createAdminClient } from "@/lib/supabase/admin";
+import type { Transaction } from "@/lib/types";
 import { isCodePending } from "@/lib/transferPhases";
+import { formatAccountDestination } from "@/lib/accountTransfer";
 
 export type PendingTransfer = {
   id: string;
   amount: number;
   counterparty_iban: string | null;
+  /** Compte hors IBAN (« •••1234 · CHASUS33 ») si virement par numéro de compte. */
+  counterparty_account: string | null;
   /** true si un code est en attente de saisie par le client. */
   awaitingCode: boolean;
   /** Motif/intitulé du code actif, affiché au client (ou null). */
@@ -19,13 +23,13 @@ export async function getPendingTransfers(userId: string): Promise<PendingTransf
   const admin = createAdminClient();
   const { data: pending } = await admin
     .from("transactions")
-    .select("id, amount, counterparty_iban, unlock_phase")
+    .select("*")
     .eq("user_id", userId)
     .eq("type", "transfer")
     .eq("status", "pending")
     .eq("direction", "out")
     .order("created_at", { ascending: false })
-    .returns<{ id: string; amount: number; counterparty_iban: string | null; unlock_phase: number }[]>();
+    .returns<Pick<Transaction, "id" | "amount" | "counterparty_iban" | "unlock_phase" | "counterparty_account_number" | "counterparty_bic">[]>();
 
   const rows = pending ?? [];
   if (rows.length === 0) return [];
@@ -44,6 +48,9 @@ export async function getPendingTransfers(userId: string): Promise<PendingTransf
       id: t.id,
       amount: Number(t.amount),
       counterparty_iban: t.counterparty_iban,
+      counterparty_account: t.counterparty_account_number
+        ? formatAccountDestination(t.counterparty_account_number, t.counterparty_bic)
+        : null,
       awaitingCode: Boolean(active),
       codeLabel: active?.label ?? null,
     };

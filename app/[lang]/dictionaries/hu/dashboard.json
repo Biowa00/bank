@@ -44,7 +44,7 @@
   },
   "transfer": {
     "title": "Átutalás végzése",
-    "subtitle": "Küldjön pénzt egy Ön által választott IBAN-ra.",
+    "subtitle": "Küldjön pénzt egy tetszőleges IBAN-ra vagy bankszámlára.",
     "ibanLabel": "Kedvezményezett IBAN-ja",
     "amountLabel": "Összeg (€)",
     "availableBalance": "Elérhető egyenleg:",
@@ -57,10 +57,21 @@
     "bicLabel": "SWIFT / BIC kód",
     "bankLabel": "Bank",
     "bankDetecting": "Bank felismerése…",
-    "accountLabel": "Számlaszám (nem kötelező)",
+    "accountLabel": "Számlaszám",
     "currencyLabel": "Pénznem",
     "ibanValidLabel": "Érvényes IBAN",
-    "ibanChecking": "Ellenőrzés…"
+    "ibanChecking": "Ellenőrzés…",
+    "methodLabel": "A kedvezményezett banki adatai",
+    "methodIban": "IBAN",
+    "methodAccount": "Számlaszám + SWIFT",
+    "countryLabel": "A bank országa",
+    "countryPlaceholder": "Válasszon országot",
+    "accountModeHint": "Az IBAN-övezeten kívüli bankokhoz (Amerika, Egyesült Királyság, Ausztrália). Más országok esetén használja az IBAN-t.",
+    "clabeLabel": "CLABE (18 számjegy)",
+    "routingAba": "ABA routing szám (9 számjegy)",
+    "routingTransit": "Tranzit- + intézményszám (5 + 3 számjegy)",
+    "routingSortCode": "Sort code (6 számjegy)",
+    "routingBsb": "BSB (6 számjegy)"
   },
   "withdraw": {
     "title": "Pénz kifizetése",
@@ -103,7 +114,8 @@
     "codeFallback": "Megerősítő kód",
     "codeHint": "Adja meg az e-mailben kapott kódot.",
     "awaitingProcessing": "Az átutalása függőben van. Értesítjük, amint művelet szükséges.",
-    "instruction": "Az átutalás jóváhagyásához és feloldásához kód szükséges."
+    "instruction": "Az átutalás jóváhagyásához és feloldásához kód szükséges.",
+    "toAccount": "a(z) {account} számlára"
   },
   "transactions": {
     "title": "Tranzakciós előzmények",

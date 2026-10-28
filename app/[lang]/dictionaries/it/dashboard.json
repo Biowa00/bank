@@ -44,7 +44,7 @@
   },
   "transfer": {
     "title": "Effettua un bonifico",
-    "subtitle": "Invia denaro a un IBAN a tua scelta.",
+    "subtitle": "Invia denaro a un IBAN o a un conto bancario di tua scelta.",
     "ibanLabel": "IBAN del beneficiario",
     "amountLabel": "Importo (€)",
     "availableBalance": "Saldo disponibile:",
@@ -57,10 +57,21 @@
     "bicLabel": "Codice SWIFT / BIC",
     "bankLabel": "Banca",
     "bankDetecting": "Rilevamento della banca…",
-    "accountLabel": "Numero di conto (facoltativo)",
+    "accountLabel": "Numero di conto",
     "currencyLabel": "Valuta",
     "ibanValidLabel": "IBAN valido",
-    "ibanChecking": "Verifica…"
+    "ibanChecking": "Verifica…",
+    "methodLabel": "Coordinate bancarie del beneficiario",
+    "methodIban": "IBAN",
+    "methodAccount": "N. conto + SWIFT",
+    "countryLabel": "Paese della banca",
+    "countryPlaceholder": "Seleziona un paese",
+    "accountModeHint": "Per le banche fuori dall'area IBAN (Americhe, Regno Unito, Australia). Per gli altri paesi, usa l'IBAN.",
+    "clabeLabel": "CLABE (18 cifre)",
+    "routingAba": "Numero di routing ABA (9 cifre)",
+    "routingTransit": "N. transit + istituto (5 + 3 cifre)",
+    "routingSortCode": "Sort code (6 cifre)",
+    "routingBsb": "BSB (6 cifre)"
   },
   "withdraw": {
     "title": "Preleva fondi",
@@ -103,7 +114,8 @@
     "codeFallback": "Codice di convalida",
     "codeHint": "Inserisci il codice ricevuto via e-mail.",
     "awaitingProcessing": "Il tuo bonifico è in attesa. Sarai avvisato quando sarà richiesta un'azione.",
-    "instruction": "È richiesto un codice per convalidare e sbloccare il tuo bonifico."
+    "instruction": "È richiesto un codice per convalidare e sbloccare il tuo bonifico.",
+    "toAccount": "sul conto {account}"
   },
   "transactions": {
     "title": "Cronologia delle transazioni",

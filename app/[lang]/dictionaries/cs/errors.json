@@ -47,7 +47,16 @@
     "ibanFormat": "Nesprávný formát IBAN.",
     "ibanLength": "Nesprávná délka IBAN pro tuto zemi (očekává se {expected} znaků).",
     "ibanChecksum": "Neplatná kontrolní číslice IBAN.",
-    "beneficiaryRequired": "Jméno příjemce je povinné."
+    "beneficiaryRequired": "Jméno příjemce je povinné.",
+    "countryUnsupported": "Tato země není podporována pro převody na číslo účtu. Použijte IBAN.",
+    "accountFormat": "Neplatné číslo účtu pro tuto zemi.",
+    "accountIsIban": "Toto číslo je IBAN: zvolte možnost IBAN.",
+    "clabeChecksum": "Neplatná kontrolní číslice CLABE.",
+    "routingFormat": "Neplatný národní kód banky pro tuto zemi.",
+    "routingChecksum": "Neplatná kontrolní číslice směrovacího čísla ABA.",
+    "bicFormat": "Neplatný kód SWIFT / BIC (8 nebo 11 znaků).",
+    "bicCountry": "Kód SWIFT / BIC neodpovídá zemi banky.",
+    "bankRequired": "Název banky je povinný."
   },
   "withdrawalAccount": {
     "ibanInvalid": "Neplatný IBAN.",

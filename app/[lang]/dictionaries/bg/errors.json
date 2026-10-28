@@ -47,7 +47,16 @@
     "ibanFormat": "Невалиден формат на IBAN.",
     "ibanLength": "Неправилна дължина на IBAN за тази държава (очаквани {expected} знака).",
     "ibanChecksum": "Невалидна контролна цифра на IBAN.",
-    "beneficiaryRequired": "Името на получателя е задължително."
+    "beneficiaryRequired": "Името на получателя е задължително.",
+    "countryUnsupported": "Тази държава не се поддържа за преводи по номер на сметка. Използвайте IBAN.",
+    "accountFormat": "Невалиден номер на сметка за тази държава.",
+    "accountIsIban": "Този номер е IBAN: изберете опцията IBAN.",
+    "clabeChecksum": "Невалидна контролна цифра на CLABE.",
+    "routingFormat": "Невалиден национален банков код за тази държава.",
+    "routingChecksum": "Невалидна контролна цифра на маршрутния номер ABA.",
+    "bicFormat": "Невалиден код SWIFT / BIC (8 или 11 знака).",
+    "bicCountry": "Кодът SWIFT / BIC не съответства на държавата на банката.",
+    "bankRequired": "Името на банката е задължително."
   },
   "withdrawalAccount": {
     "ibanInvalid": "Невалиден IBAN.",

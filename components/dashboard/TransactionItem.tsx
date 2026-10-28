@@ -1,6 +1,7 @@
 "use client";
 
 import { formatEuro, formatDate } from "@/lib/format";
+import { formatAccountDestination } from "@/lib/accountTransfer";
 import { TxStatusBadge } from "@/components/StatusBadge";
 import { useZone } from "@/components/i18n/DictionaryProvider";
 import { useLocale } from "@/components/i18n/navigation";
@@ -41,7 +42,13 @@ export function TransactionItem({ tx }: { tx: Transaction }) {
           {tx.counterparty_name
             ? `${tx.counterparty_name} · `
             : ""}
-          {tx.counterparty_iban ?? tx.description ?? "—"} · {formatDate(tx.created_at, locale)}
+          {tx.counterparty_iban ??
+            (tx.counterparty_account_number
+              ? formatAccountDestination(tx.counterparty_account_number, tx.counterparty_bic)
+              : null) ??
+            tx.description ??
+            "—"}{" "}
+          · {formatDate(tx.created_at, locale)}
         </p>
         {tx.status === "rejected" && tx.decline_reason && (
           <p className="mt-0.5 truncate text-xs text-red-600">{t.declineReason} {tx.decline_reason}</p>

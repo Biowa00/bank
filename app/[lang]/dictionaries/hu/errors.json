@@ -47,7 +47,16 @@
     "ibanFormat": "Érvénytelen IBAN-formátum.",
     "ibanLength": "Helytelen IBAN-hossz ehhez az országhoz ({expected} karakter várható).",
     "ibanChecksum": "Érvénytelen IBAN-ellenőrzőszám.",
-    "beneficiaryRequired": "A kedvezményezett neve kötelező."
+    "beneficiaryRequired": "A kedvezményezett neve kötelező.",
+    "countryUnsupported": "Ez az ország nem támogatott számlaszámos utaláshoz. Használja az IBAN-t.",
+    "accountFormat": "Érvénytelen számlaszám ehhez az országhoz.",
+    "accountIsIban": "Ez a szám egy IBAN: válassza az IBAN lehetőséget.",
+    "clabeChecksum": "Érvénytelen CLABE ellenőrző számjegy.",
+    "routingFormat": "Érvénytelen nemzeti bankkód ehhez az országhoz.",
+    "routingChecksum": "Érvénytelen ABA routing szám ellenőrző számjegy.",
+    "bicFormat": "Érvénytelen SWIFT / BIC kód (8 vagy 11 karakter).",
+    "bicCountry": "A SWIFT / BIC kód nem egyezik a bank országával.",
+    "bankRequired": "A bank neve kötelező."
   },
   "withdrawalAccount": {
     "ibanInvalid": "Érvénytelen IBAN.",

@@ -52,8 +52,17 @@ export interface Transaction {
   decline_reason: string | null;
   reviewed_by: string | null;
   reviewed_at: string | null;
-  unlock_phase: number; // 0-3 : nombre de phases confirmées par le client
+  unlock_phase: number; // nombre de codes de validation confirmés par le client
   created_at: string;
+  // Champs ajoutés par migrations (absents tant qu'elles ne sont pas appliquées).
+  counterparty_bic?: string | null;
+  counterparty_bank?: string | null;
+  currency?: string | null;
+  transfer_method?: "iban" | "account" | null;
+  counterparty_account_number?: string | null;
+  counterparty_country?: string | null;
+  counterparty_routing_type?: string | null;
+  counterparty_routing_code?: string | null;
 }
 
 export type PhaseCodeStatus = "cree" | "code_envoye" | "valide" | "expire";

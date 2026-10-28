@@ -47,7 +47,16 @@
     "ibanFormat": "Onjuist IBAN-formaat.",
     "ibanLength": "Onjuiste IBAN-lengte voor dit land ({expected} tekens verwacht).",
     "ibanChecksum": "Ongeldig IBAN-controlegetal.",
-    "beneficiaryRequired": "De naam van de begunstigde is verplicht."
+    "beneficiaryRequired": "De naam van de begunstigde is verplicht.",
+    "countryUnsupported": "Dit land wordt niet ondersteund voor overboekingen per rekeningnummer. Gebruik de IBAN.",
+    "accountFormat": "Ongeldig rekeningnummer voor dit land.",
+    "accountIsIban": "Dit nummer is een IBAN: kies de optie IBAN.",
+    "clabeChecksum": "Ongeldig CLABE-controlecijfer.",
+    "routingFormat": "Ongeldige nationale bankcode voor dit land.",
+    "routingChecksum": "Ongeldig controlecijfer van het ABA-routingnummer.",
+    "bicFormat": "Ongeldige SWIFT-/BIC-code (8 of 11 tekens).",
+    "bicCountry": "De SWIFT-/BIC-code komt niet overeen met het land van de bank.",
+    "bankRequired": "De naam van de bank is verplicht."
   },
   "withdrawalAccount": {
     "ibanInvalid": "Ongeldige IBAN.",

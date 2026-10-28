@@ -44,7 +44,7 @@
   },
   "transfer": {
     "title": "Make a transfer",
-    "subtitle": "Send money to an IBAN of your choice.",
+    "subtitle": "Send money to an IBAN or bank account of your choice.",
     "ibanLabel": "Beneficiary IBAN",
     "amountLabel": "Amount (€)",
     "availableBalance": "Available balance:",
@@ -57,10 +57,21 @@
     "bicLabel": "SWIFT / BIC code",
     "bankLabel": "Bank",
     "bankDetecting": "Detecting bank…",
-    "accountLabel": "Account number (optional)",
+    "accountLabel": "Account number",
     "currencyLabel": "Currency",
     "ibanValidLabel": "Valid IBAN",
-    "ibanChecking": "Checking…"
+    "ibanChecking": "Checking…",
+    "methodLabel": "Beneficiary bank details",
+    "methodIban": "IBAN",
+    "methodAccount": "Account no. + SWIFT",
+    "countryLabel": "Bank country",
+    "countryPlaceholder": "Select a country",
+    "accountModeHint": "For banks outside the IBAN area (Americas, United Kingdom, Australia). For other countries, use the IBAN.",
+    "clabeLabel": "CLABE (18 digits)",
+    "routingAba": "ABA routing number (9 digits)",
+    "routingTransit": "Transit + institution no. (5 + 3 digits)",
+    "routingSortCode": "Sort code (6 digits)",
+    "routingBsb": "BSB (6 digits)"
   },
   "withdraw": {
     "title": "Withdraw funds",
@@ -103,7 +114,8 @@
     "codeFallback": "Validation code",
     "codeHint": "Enter the code received by email.",
     "awaitingProcessing": "Your transfer is pending. You'll be notified when an action is required.",
-    "instruction": "A code is required to validate and unlock your transfer."
+    "instruction": "A code is required to validate and unlock your transfer.",
+    "toAccount": "to account {account}"
   },
   "transactions": {
     "title": "Transaction history",
