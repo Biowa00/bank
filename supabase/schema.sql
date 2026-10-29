@@ -83,11 +83,11 @@ create table if not exists public.transactions (
   created_at        timestamptz not null default now()
 );
 
--- ---------- Table transfer_phase_codes (déblocage virement en 3 phases) ----------
+-- ---------- Table transfer_phase_codes (codes de validation des virements, nombre illimité) ----------
 create table if not exists public.transfer_phase_codes (
   id             uuid primary key default gen_random_uuid(),
   transaction_id uuid not null references public.transactions(id) on delete cascade,
-  phase          smallint not null check (phase between 1 and 3),
+  phase          smallint not null check (phase >= 1),
   code           text not null,
   status         text not null default 'code_envoye'
                    check (status in ('cree', 'code_envoye', 'valide', 'expire')),
@@ -295,7 +295,7 @@ alter table public.transactions
 create table if not exists public.transfer_phase_codes (
   id             uuid primary key default gen_random_uuid(),
   transaction_id uuid not null references public.transactions(id) on delete cascade,
-  phase          smallint not null check (phase between 1 and 3),
+  phase          smallint not null check (phase >= 1),
   code           text not null,
   status         text not null default 'code_envoye'
                    check (status in ('cree', 'code_envoye', 'valide', 'expire')),

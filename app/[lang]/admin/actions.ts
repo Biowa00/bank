@@ -482,14 +482,17 @@ export async function sendTransferCode(
   const step = tx.unlock_phase + 1;
 
   // Un code déjà envoyé et non expiré ? On attend sa confirmation.
+  const nowIso = new Date().toISOString();
   const { data: sent } = await admin
     .from("transfer_phase_codes")
-    .select("expires_at")
+    .select("id")
     .eq("transaction_id", tx.id)
     .eq("phase", step)
     .eq("status", "code_envoye")
-    .maybeSingle<{ expires_at: string }>();
-  if (sent && new Date(sent.expires_at).getTime() > Date.now())
+    .gt("expires_at", nowIso)
+    .limit(1)
+    .maybeSingle<{ id: string }>();
+  if (sent)
     return { error: "Un code est déjà en attente de confirmation par le client." };
 
   // Récupère le code CRÉÉ (non encore envoyé) pour cette étape.
@@ -500,9 +503,19 @@ export async function sendTransferCode(
     .eq("phase", step)
     .eq("status", "cree")
     .order("created_at", { ascending: false })
+    .limit(1)
     .maybeSingle<{ id: string; code: string; label: string | null }>();
   if (!draft)
     return { error: "Aucun code à envoyer. Créez d'abord le code." };
+
+  // Les anciens codes envoyés de l'étape (expirés, jamais saisis) passent en
+  // `expire` : un seul code `code_envoye` doit subsister par étape.
+  await admin
+    .from("transfer_phase_codes")
+    .update({ status: "expire" })
+    .eq("transaction_id", tx.id)
+    .eq("phase", step)
+    .eq("status", "code_envoye");
 
   const label = draft.label ?? "";
   const expiresAt = new Date(Date.now() + PHASE_CODE_TTL_MIN * 60_000).toISOString();

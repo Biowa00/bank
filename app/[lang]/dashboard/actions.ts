@@ -455,7 +455,10 @@ export async function confirmTransferPhase(
     .eq("transaction_id", tx.id)
     .eq("phase", currentPhase)
     .eq("status", "code_envoye")
+    // Le plus récent uniquement : un code expiré non saisi peut rester en
+    // `code_envoye` à côté du nouveau, et `maybeSingle` échoue dès 2 lignes.
     .order("created_at", { ascending: false })
+    .limit(1)
     .maybeSingle<{ id: string; code: string; attempts: number; expires_at: string }>();
 
   if (!row)

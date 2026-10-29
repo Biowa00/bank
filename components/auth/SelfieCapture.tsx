@@ -5,6 +5,24 @@ import { useZone } from "@/components/i18n/DictionaryProvider";
 
 type Phase = "idle" | "streaming" | "captured" | "denied" | "nocam";
 
+/** Délai après le démarrage de la vidéo, le temps que l'exposition se règle
+ *  (les premières images d'une webcam sont souvent très sombres). */
+const WARMUP_MS = 800;
+/** Luminosité moyenne (0-255) en dessous de laquelle une capture est refusée. */
+const MIN_BRIGHTNESS = 35;
+
+/** Luminosité moyenne d'un canvas, échantillonnée (1 pixel sur 16). */
+function averageBrightness(ctx: CanvasRenderingContext2D, w: number, h: number): number {
+  const { data } = ctx.getImageData(0, 0, w, h);
+  let sum = 0;
+  let n = 0;
+  for (let i = 0; i < data.length; i += 64) {
+    sum += 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2];
+    n++;
+  }
+  return n ? sum / n : 0;
+}
+
 /**
  * Capture d'un selfie en direct via la caméra frontale (getUserMedia).
  * L'image capturée est injectée dans un champ fichier caché `name="selfie"`
@@ -16,6 +34,10 @@ export function SelfieCapture() {
   const t = useZone("auth").register;
   const [phase, setPhase] = useState<Phase>("idle");
   const [preview, setPreview] = useState<string | null>(null);
+  // true quand la vidéo affiche de vraies images (lecture + temps d'exposition).
+  const [ready, setReady] = useState(false);
+  const [tooDark, setTooDark] = useState(false);
+  const warmupRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -23,12 +45,33 @@ export function SelfieCapture() {
   const streamRef = useRef<MediaStream | null>(null);
 
   function stopStream() {
+    if (warmupRef.current) clearTimeout(warmupRef.current);
+    warmupRef.current = null;
     streamRef.current?.getTracks().forEach((track) => track.stop());
     streamRef.current = null;
   }
 
   // Coupe la caméra si le composant est démonté.
   useEffect(() => stopStream, []);
+
+  // Branche le flux une fois le <video> réellement monté (après le rendu),
+  // au lieu d'un requestAnimationFrame qui pouvait passer avant le montage et
+  // laisser la vidéo — donc la capture — noire.
+  useEffect(() => {
+    const video = videoRef.current;
+    const stream = streamRef.current;
+    if (phase !== "streaming" || !video || !stream) return;
+    video.srcObject = stream;
+    void video.play().catch(() => {});
+  }, [phase]);
+
+  // La vidéo affiche des images : on attend encore que l'exposition se règle.
+  function onVideoPlaying() {
+    if (warmupRef.current) clearTimeout(warmupRef.current);
+    warmupRef.current = setTimeout(() => {
+      if (videoRef.current?.videoWidth) setReady(true);
+    }, WARMUP_MS);
+  }
 
   async function startCamera() {
     if (!navigator.mediaDevices?.getUserMedia) {
@@ -42,14 +85,10 @@ export function SelfieCapture() {
       });
       streamRef.current = stream;
       setPreview(null);
+      setReady(false);
+      setTooDark(false);
+      // Le flux est branché par l'effet ci-dessus, une fois le <video> monté.
       setPhase("streaming");
-      // Le <video> est monté au rendu suivant ; on branche le flux ensuite.
-      requestAnimationFrame(() => {
-        if (videoRef.current) {
-          videoRef.current.srcObject = stream;
-          void videoRef.current.play();
-        }
-      });
     } catch (err) {
       const name = (err as DOMException)?.name;
       setPhase(name === "NotFoundError" ? "nocam" : "denied");
@@ -59,7 +98,8 @@ export function SelfieCapture() {
   function capture() {
     const video = videoRef.current;
     const canvas = canvasRef.current;
-    if (!video || !canvas) return;
+    // Vidéo pas encore prête (aucune image) : capturer donnerait une image noire.
+    if (!video || !canvas || !ready || !video.videoWidth || !video.videoHeight) return;
 
     // Plafonne la résolution de capture : une webcam de PC filme souvent en
     // bien plus haute définition qu'une caméra de téléphone, ce qui peut faire
@@ -67,8 +107,8 @@ export function SelfieCapture() {
     // fois combinée à la pièce d'identité. 1280px de côté suffit largement
     // pour une vérification d'identité.
     const MAX_DIM = 1280;
-    const nativeW = video.videoWidth || 640;
-    const nativeH = video.videoHeight || 480;
+    const nativeW = video.videoWidth;
+    const nativeH = video.videoHeight;
     const scale = Math.min(1, MAX_DIM / Math.max(nativeW, nativeH));
     const w = Math.round(nativeW * scale);
     const h = Math.round(nativeH * scale);
@@ -77,6 +117,13 @@ export function SelfieCapture() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
     ctx.drawImage(video, 0, 0, w, h);
+
+    // Refuse une image noire ou quasi noire (caméra masquée, pièce sans lumière).
+    if (averageBrightness(ctx, w, h) < MIN_BRIGHTNESS) {
+      setTooDark(true);
+      return;
+    }
+    setTooDark(false);
 
     canvas.toBlob(
       (blob) => {
@@ -109,6 +156,7 @@ export function SelfieCapture() {
             ref={videoRef}
             playsInline
             muted
+            onPlaying={onVideoPlaying}
             // Effet miroir : plus naturel pour un selfie.
             className="aspect-[4/3] w-full -scale-x-100 bg-black object-cover"
           />
@@ -138,7 +186,7 @@ export function SelfieCapture() {
           </button>
         )}
         {phase === "streaming" && (
-          <button type="button" onClick={capture} className="btn-primary text-sm">
+          <button type="button" onClick={capture} disabled={!ready} className="btn-primary text-sm disabled:opacity-50">
             {t.selfieCapture}
           </button>
         )}
@@ -151,6 +199,9 @@ export function SelfieCapture() {
           </>
         )}
       </div>
+      {phase === "streaming" && tooDark && (
+        <p className="mt-1 text-xs text-amber-600">{t.selfieTooDark}</p>
+      )}
     </div>
   );
 }
